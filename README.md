@@ -7,7 +7,7 @@ Integrantes:
 - Brian Carusi
 - Martin Velazquez, 26 Años, Buenos Aires. 
 - Marisa Ferrada 
--
+- Hernan Escudero, 26 Años ,Cordoba 
 
 Descripción:
 El sitio ofrece productos para la construcción y re modelaje del hogar, así como también materiales de construcción y ferreteria.
@@ -30,3 +30,10 @@ https://www.diy.com/
 
 (Marisa) Sitios de referencia por funcionalidades:
 https://www.centraloeste.com.ar/
+
+(Hernan) Sitios seleccionados segun su estética
+Etsy - https://www.etsy.com/
+TunnelBear - https://www.tunnelbear.com/
+Digital Marketing Agency | Bike Bear - https://www.bikebear.com.my/
+McDonald's - Argentina - https://www.mcdonalds.com.ar/
+Brubank - https://www.brubank.com/
