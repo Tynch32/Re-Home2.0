@@ -4,7 +4,7 @@
 Integrantes:
 - Brian Carusi
 - Martin Velazquez
--   
+- Marisa Ferrada 
 -
 
 (Brian) Sitio por los clientes a los que apuntan:
@@ -19,3 +19,6 @@ https://www.easy.com.ar/
 https://www.sodimac.com.ar/sodimac-ar/
 https://ar.blackanddecker.global/
 https://www.diy.com/
+
+(Marisa) Sitios de referencia por funcionalidades:
+https://www.centraloeste.com.ar/
