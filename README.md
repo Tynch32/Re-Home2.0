@@ -4,10 +4,14 @@
 "REdiseña, REconstrui y REinventa tu hogar con ReHogar"
 
 Integrantes:
-- Brian Carusi
-- Martin Velazquez, 26 Años, Buenos Aires. 
-- Marisa Ferrada 
-- Hernan Escudero, 26 Años ,Cordoba 
+- Brian Carusi:
+  Tengo 31 años,  mi hobby es jugar tcg y soy de Monte Grande
+- Martin Velazquez:
+  Tengo 26 años, me dedico a reparacion de PC, trabajo hace 8 años en gastronomia, soy de Jose C. Paz, y me apasiona leer fantasia epica, ademas de la ciencia y la tecnologia.
+- Marisa Ferrada:
+  Me gusta leer, especialmente sobre la historia antigua.Soy de Morón
+- Hernan Escudero:
+  Tengo 26 años, estudio ing en sistemas y me gusta mucho el anime 
 
 Descripción:
 El sitio ofrece productos para la construcción y re modelaje del hogar, así como también materiales de construcción y ferreteria.
