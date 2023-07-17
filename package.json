@@ -1,0 +1,15 @@
+{
+  "name": "grupo_10_rehome",
+  "version": "1.0.0",
+  "description": "\"REdiseña, REconstrui y REinventa tu hogar con ReHogar\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
