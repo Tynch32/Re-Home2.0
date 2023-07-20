@@ -1,0 +1,54 @@
+/* FOOTER */
+
+.home__footer {
+    background-color: var(--colorSopot);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+
+.home__footer--nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+@media (min-width:768px) {
+
+    /* FOOTER */
+
+    .home__footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+
+    .home__footer--nosotros {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .home__footer--nosotros ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+}
+
+@media (min-width:1024px) {
+
+    /* FOOTER */
+    .home__footer--nosotros {
+        width: 100%;
+    }
+
+}

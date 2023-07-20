@@ -1,0 +1,26 @@
+.buttons {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+
+.buttons__primary {
+  
+    color: #ffffff;
+    background-color: orangered;
+}
+
+.buttons__secondary {
+    color: #ffffff;
+    background-color: gray;
+}
+
+.buttons__primary:hover {
+    background-color: darkorange;
+
+}
+
+.buttons__secondary:hover {
+    
+    background-color: silver;
+}
