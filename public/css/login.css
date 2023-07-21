@@ -1,0 +1,154 @@
+/* 
+font-family: 'Kanit';
+font-family: 'Inconsolata', monospace;
+font-family: 'Lilita One', cursive;
+font-family: 'Lobster', cursive; 
+*/
+
+body {
+    background-color: var(--colorIseo);
+}
+
+/* HEADER */
+
+.home__header h1 {
+    display: flex;
+    margin: 5px;
+    padding: 20px;
+    font-family: 'lilita One';
+    font-weight: 900;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 50px;
+}
+
+/* MAIN */
+
+.home__main {
+    margin: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home__main label {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Kanit';
+}
+
+.home__main--barra {
+    border-radius: 3px;
+    width: 90vw;
+    border: 1px solid lightgray;
+    padding: 2px 5px;
+}
+
+.home__main__div--email {
+    padding: 5px;
+}
+
+.home__main__div--password {
+    padding: 5px;
+}
+
+.home__main__div--password a {
+    display: flex;
+    justify-content: end;
+    font-size: 10px;
+}
+
+.home__main__section__botones a {
+    display: flex;
+    font-size: 10px;
+}
+
+.home__main__div--ingreso {
+    display: flex;
+    margin: 5px 0;
+}
+
+.home__main__div--ingreso button {
+    display: flex;
+    font-family: 'Kanit';
+    text-transform: uppercase;
+    padding: 1px 25px;
+    border-radius: 10px;
+    border: solid 1px lightgrey;
+    background-color: lightgrey;
+}
+
+.home__main__div--nueva-cuenta {
+    display: none;
+    margin: 5px 0;
+}
+
+/* ASIDE */
+
+.home__aside {
+    display: none;
+}
+
+/* FOOTER */
+
+.home__footer h6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+
+@media (min-width: 768px) {
+
+    /* MAIN */
+
+    .home__main--barra {
+        border-radius: 3px;
+        width: 50vw;
+    }
+
+    .home__main__div--password a {
+        width: 50vw;
+    }
+
+    .home__main__section__botones a {
+        display: none;
+    }
+
+    .home__main__div--nueva-cuenta {
+        display: flex;
+        margin: 5px 0;
+    }
+
+    .home__main__div--nueva-cuenta button {
+        display: flex;
+        font-family: 'Kanit';
+        text-transform: uppercase;
+        padding: 1px 25px;
+        border-radius: 10px;
+        border: solid 1px lightgrey;
+        background-color: lightgrey;
+        margin-top: 5px;
+    }
+
+    /* ASIDE */
+
+    
+     /* .home__aside {
+        display: flex;
+        position: absolute;
+        left: 60%;
+        bottom: 47%;
+    }
+
+    .home__aside--logo {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 40vw;
+
+    } 
+    */
+
+}

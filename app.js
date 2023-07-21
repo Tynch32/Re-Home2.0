@@ -8,10 +8,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 /* Rutas */
 app.get('/',(req,res) => res.sendFile(path.join(__dirname,'views','home.html')));
-app.get("/register", (req, res) => res.sendFile(path.join(__dirname, "views", "register.html")));
-app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "views", "login.html")));
+
 
 /* PARTIALS */
+app.get("/register", (req, res) => res.sendFile(path.join(__dirname, "views", "partials", "register.html")));
+app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "views", "partials","login.html")));
 app.get("/footer", (req, res) =>  res.sendFile(path.join(__dirname, "views","partials","footer.html")));
 
 

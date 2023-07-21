@@ -1,6 +1,4 @@
 @import './general.css';
-@import './home.css';
 @import './header.css';
-@import './forms.css';
-@import './buttons.css';
+@import './login.css';
 @import './footer.css';
