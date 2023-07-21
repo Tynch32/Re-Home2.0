@@ -135,8 +135,8 @@ body {
 
     /* ASIDE */
 
-    
-     /* .home__aside {
+
+    /* .home__aside {
         display: flex;
         position: absolute;
         left: 60%;
@@ -151,4 +151,53 @@ body {
     } 
     */
 
+}
+
+@media (min-width: 1023px) {
+
+    /* HEADER */
+
+    .home__header h1 {
+        display: flex;
+        margin-top: 50px;
+        margin-left: 30px;
+    }
+
+    /* MAIN */
+
+
+    .home__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 50px;
+        gap: 20px;
+    }
+
+
+    .home__main--barra {
+        border-radius: 3px;
+        width: 45vw;
+    }
+
+    .home__main__div--email {
+        margin-left: 30px;
+    }
+    
+    .home__main__div--password {
+        margin-left: 30px;
+    }
+
+    .home__main__div--ingreso {
+        margin-left: 35px;
+    }
+
+    .home__main__div--ingreso button {
+        padding: 5px 15px;
+    }
+
+    .home__main__div--nueva-cuenta button {
+        padding: 8px 20px;
+        margin-top: 20px;
+    }
 }
