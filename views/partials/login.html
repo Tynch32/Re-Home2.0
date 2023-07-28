@@ -20,13 +20,51 @@
 <body class="home">
 
     <header class="home__header">
-        <h1>
-            <span>Accede</span>
-            <span>a tu cuenta </span>
-        </h1>
+
     </header>
 
     <main class="home__main">
+        <div class="home__main__div">
+            <div class="home__main__div--content">
+                <h1>
+                    <span>Accede</span>
+                    <span>a tu cuenta </span>
+                </h1>
+                <div class="home__main__div--email">
+                    <label>Email:</label>
+                    <form class="home__main--form" action="register" method="POST">
+                        <input class="home__main--barra" type="text" placeholder="">
+                    </form>
+                </div>
+
+                <div class="home__main__div--password">
+                    <label>Contraseña:</label>
+                    <form class="home__main--form" action="password" method="POST">
+                        <input class="home__main--barra" type="password" placeholder="">
+                    </form>
+                    <input type="checkbox" name="Recuerdame" value="Recuerdame">Recuerdame
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <section class="home__main__section__botones">
+                    <div class="home__main__div--ingreso">
+                        <button type="submit">Ingresar</button>
+                    </div>
+                    <a href="#">¿Ya tienes cuenta?</a>
+                    <div class="home__main__div--nueva-cuenta">
+                        <button type="submit">Crea una nueva cuenta</button>
+                    </div>
+                </section>
+            </div>
+            <div class="home__main__div--image">
+                <img class="home__aside__section--logo" src="\img\logo_rehogar.png">
+            </div>
+        </div>
+
+        <!-- <h1>
+            <span>Accede</span>
+            <span>a tu cuenta </span>
+        </h1>
         <div class="home__main__div--email">
             <label>Email:</label>
             <form class="home__main--form" action="register" method="POST">
@@ -39,6 +77,8 @@
             <form class="home__main--form" action="password" method="POST">
                 <input class="home__main--barra" type="password" placeholder="">
             </form>
+            <input type="checkbox" name="Recuerdame" value="Recuerdame">Recuerdame
+
             <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
 
@@ -50,22 +90,21 @@
             <div class="home__main__div--nueva-cuenta">
                 <button type="submit">Crea una nueva cuenta</button>
             </div>
-        </section>
+        </section> -->
     </main>
-    
 
-    <aside class="home__aside">
-        <section class="home__aside__section">
-            <article class="home__aside__section__article">
-                <img class="home__aside__section--logo" src="/img/Logo.jpg">
-            </article>
-        </section>               
-    </aside>
-
-    <footer class="home__footer">
-        <h6>TODOS LOS DERECHOS RESERVADOS.</h6>
-    </footer>
-
+        <footer class="home__footer">
+            <nav class="home__footer--nosotros">
+                <ul>
+                    <li><a href="">Condiciones</a></li>
+                    <li><a href="">Contacto</a></li>
+                    <li><a href="">Quienes somos</a></li>
+                    <li><a href="">Donde estamos</a></li>
+                    <li><a href="">Sucursales</a></li>
+                </ul>
+            </nav>
+        </footer>
+        
 </body>
 
 </html>
