@@ -111,10 +111,13 @@
         flex-direction: row;
         justify-content: space-between;
         width: 40vw;
-        padding-top: 15px;
+        align-self: center;
     }
     .product_simil_box{
         display: flex;
         flex-direction: row;
+    }
+    .productDetail_main{
+        padding-top: 50px;
     }
 }
