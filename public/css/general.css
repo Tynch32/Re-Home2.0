@@ -1,6 +1,29 @@
-:root{
-    --colorSopot:#A87564;
+:root {
+    --colorSopot: #A87564;
     --colorViñaDelMar: #AEB4B2;
+    --GrisClaro: #ebebeb;
+    --GrisOscuro: #666;
     --colorSanAndres: #3A3F43;
     --colorIseo: #B28F59;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
 }

@@ -1,3 +1,98 @@
-*{
-    
+/*borrar*/
+.test_header{
+    height: 100px;
+}
+.test_header img{
+    height: 100%;
+}
+/*Ahora si*/
+
+/*Textos*/
+.productDetail_main h1, .productDetail_main h2{
+    color: var(--GrisOscuro);
+}
+/*Fondo*/
+.product_detail_body{
+    background-color: var(--colorIseo);
+}
+/*Titulos*/
+.productDetail_main{
+    width: 95vw;
+    margin: auto;
+}
+.product_name_model{
+    margin: 0;
+    padding: 5px;  
+    font-size: 20px;
+}
+/*Carrousel*/
+.product_carrousel_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+}
+.product_carrousel_img{
+    width: 33%;
+}
+.product_carrousel_img img{
+    width: 100%;
+}
+.product_carrousel_img:hover{
+    width: 66%;
+}
+
+/*Botones*/
+.product_precio_buttons_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+.product_buttons{
+    width: 100%;
+    text-align: right;
+}
+.product_precio_buttons_box div input{
+    width: 40%;
+    border: 0;
+    outline: none;
+    color: var(--colorViñaDelMar);
+    padding-bottom: 5px;
+    font-size: 18px;
+}
+.product_buttons a input{
+    border-radius: 5px;
+    background-color: var(--colorSanAndres);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+}
+/*Productos similares*/
+.box_flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.vendedor_info{
+    text-align: center;
+    width: 40vw;
+}
+.box1{
+    width: 50vw;
+}
+.product_description{
+    width: 100%;
+}
+.product_simil_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.product_simil_box div{
+    width: 49%;
+}
+.product_simil_box img{
+    width: 100%;
 }
