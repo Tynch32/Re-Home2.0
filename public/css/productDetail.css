@@ -13,7 +13,7 @@
 }
 /*Fondo*/
 .product_detail_body{
-    background-color: var(--colorIseo);
+    background-color: var(--colorViñaDelMar);
 }
 /*Titulos*/
 .productDetail_main{
@@ -30,7 +30,9 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding-bottom: 15px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 .product_carrousel_img{
     width: 33%;
@@ -40,6 +42,7 @@
 }
 .product_carrousel_img:hover{
     width: 66%;
+    order:-1;
 }
 
 /*Botones*/
@@ -75,10 +78,18 @@
     flex-direction: row;
     justify-content: space-between;
 }
+/*Info del vendedor*/
 .vendedor_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     width: 40%;
 }
+.vendedor_info div a{
+    color: var(--colorSanAndres);
+}
+/*test*/
 .box1{
     width: 50%;
 }
@@ -112,6 +123,7 @@
         justify-content: space-between;
         width: 40vw;
         align-self: center;
+        padding-left: 10px;
     }
     .product_simil_box{
         display: flex;
