@@ -52,6 +52,7 @@
 .product_buttons{
     width: 100%;
     text-align: right;
+    padding-right: 5px;
 }
 .product_precio_buttons_box div input{
     width: 40%;
@@ -76,10 +77,10 @@
 }
 .vendedor_info{
     text-align: center;
-    width: 40vw;
+    width: 40%;
 }
 .box1{
-    width: 50vw;
+    width: 50%;
 }
 .product_description{
     width: 100%;
@@ -87,7 +88,6 @@
 .product_simil_box{
     width: 100%;
     display: flex;
-    flex-direction: row;
     gap: 5px;
 }
 .product_simil_box div{
@@ -95,4 +95,26 @@
 }
 .product_simil_box img{
     width: 100%;
+}
+
+/*media querie tablet*/
+@media (min-width:768px) {
+    .product{
+        display: flex;
+        flex-direction: row;
+    }
+    .test1{
+        width: 70vw;
+    }
+    .box_flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 40vw;
+        padding-top: 15px;
+    }
+    .product_simil_box{
+        display: flex;
+        flex-direction: row;
+    }
 }
