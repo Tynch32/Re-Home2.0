@@ -1,4 +1,12 @@
 @import './general.css';
-@import './home.css';
+@import './index.css';
 @import './header.css';
-@import './productDetail.css'
+@import './productDetail.css';
+@import './footer.css';
+
+*{
+    margin:0;
+    pad: 0;
+    box-sizing: border-box;
+
+}
