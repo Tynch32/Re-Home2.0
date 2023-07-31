@@ -13,7 +13,7 @@ app.get('/productDetail', (req, res) => res.sendFile(path.join(__dirname, 'views
 //app.get('/register',(req,res) => res.sendFile(path.join(__dirname,'views','register.html')));
 //app.get('/login',(req,res) => res.sendFile(path.join(__dirname,'views','login.html')));
 app.get('/header', (req, res) => res.sendFile(path.join(__dirname, 'views', 'partials', 'header.html')));
-app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'views', '404.html')));
+// app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'views', '404.html')));
 
 
 /* PARTIALS */
