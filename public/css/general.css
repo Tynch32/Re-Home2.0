@@ -6,13 +6,19 @@
     --colorSanAndres: #3A3F43;
     --colorIseo: #B28F59;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 body {
     width: 100vw;
+}
+    
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+li{
+    list-style: none;
 }
 
 a {
@@ -20,10 +26,14 @@ a {
     color: #ffff;
 }
 
-li {
-    list-style: none;
-}
-
 ul {
     padding: 0;
+    color: var(--SanAndres);
 }
+
+/* :root{
+    --colorSopot:#A87564;
+    --colorViñaDelMar: #AEB4B2;
+    --colorSanAndres: #3A3F43;
+    --colorIseo: #B28F59;
+} */

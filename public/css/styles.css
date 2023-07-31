@@ -3,10 +3,5 @@
 @import './header.css';
 @import './productDetail.css';
 @import './footer.css';
+@import './login.css';
 
-*{
-    margin:0;
-    pad: 0;
-    box-sizing: border-box;
-
-}
