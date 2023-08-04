@@ -1,8 +1,8 @@
 header{
     background-color: var(--colorSopot);
     font-family: var(--tipografia);
-    margin-top: 2%;
-    padding: 2%;
+    /* margin-top: 2%; */
+    /* padding: 2%; */
 }
 
 .header__top-container{
