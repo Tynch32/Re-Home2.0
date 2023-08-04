@@ -1,0 +1,96 @@
+/* MAIN */
+
+.register__main__form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+}
+
+.register__main__form__div {
+    margin-bottom: 30px;
+}
+
+.register__main__form__div--barra{
+    width: 100%;
+    padding: 3px;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    /* width: 90vw; */
+}
+
+.register__main--button {
+    font-family: 'Kanit';
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+.home__footer {
+    background-color: var(--colorSopot);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+
+}
+
+
+.home__footer--nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+
+
+
+@media (min-width: 768px) {
+
+    /* MAIN */
+
+    .register__main--button {
+        width: 30vw;
+    }
+
+    /* FOOTER */
+
+    .home__footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .home__footer--nosotros {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .home__footer--nosotros ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+}
+
+@media (min-width: 1023px) {
+
+        /* FOOTER */
+        .home__footer--nosotros {
+            width: 100%;
+        }
+
+}
