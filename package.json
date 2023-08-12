@@ -1,16 +1,16 @@
 {
-  "name": "grupo_10_rehome",
-  "version": "1.0.0",
-  "description": "\"REdiseña, REconstrui y REinventa tu hogar con ReHogar\"",
-  "main": "app.js",
+  "name": "src",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node ./src/bin/www"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "normalize.css": "^8.0.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }

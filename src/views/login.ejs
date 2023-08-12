@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('partials/head') %>
+
+  <body class="home">
+
+    <%- include('partials/header') %>
+
+      <main class="home__main">
+        <div class="home__main__div">
+          <div class="home__main__div--content">
+            <h1>
+              <span>Accede</span>
+              <span>a tu cuenta </span>
+            </h1>
+            <div class="home__main__div--email">
+              <label>Email:</label>
+              <form class="home__main--form" action="register" method="POST">
+                <input class="home__main--barra" type="text" placeholder="">
+              </form>
+            </div>
+
+            <div class="home__main__div--password">
+              <label>Contraseña:</label>
+              <form class="home__main--form" action="password" method="POST">
+                <input class="home__main--barra" type="password" placeholder="">
+              </form>
+              <input type="checkbox" name="Recuerdame" value="Recuerdame">Recuerdame
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <section class="home__main__section__botones">
+              <div class="home__main__div--ingreso">
+                <button type="submit">Ingresar</button>
+              </div>
+              <div class="home__main__section__botones--ya-tienes-cuenta">
+                <a href="/register">¿Ya tienes cuenta?</a>
+              </div>
+              <div class="home__main__div--nueva-cuenta">
+                <a href="/register"><button type="submit">Crea tu cuenta</button></a>
+              </div>
+            </section>
+          </div>
+          <div class="home__main__div--image">
+            <img class="home__aside__section--logo" src="\img\logo_rehogar.png">
+          </div>
+        </div>
+      </main>
+
+      <%- include('partials/footer') %>
+
+  </body>
+
+</html>
