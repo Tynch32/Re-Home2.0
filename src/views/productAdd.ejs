@@ -1,16 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head') %>
-<body>
-    <%- include('partials/header') %>
+<%- include('partials/head') %>
 
-    <main>
+    <body>
+        <%- include('partials/header') %>
+
+            <main class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto mt-5">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4 class="card-title">Agregar producto</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="" method="POST" class="row">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="name" class="form-label">Título</label>
+                                        <input type="text" class="form-control" id="name"
+                                            placeholder="Título del producto" name="title">
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="category" class="form-label">Categoría</label>
+                                        <select class="form-select" aria-label="Default select example" name="category"
+                                            id="category">
+                                            <option value="" selected hidden>Seleccione...</option>
+                                            <option value="1">Baños y Cocinas</option>
+                                            <option value="2">Electricidad</option>
+                                            <option value="3">Textil</option>
+                                            <option value="4">Herramientas</option>
+                                            <option value="5">Iluminacion</option>
+                                            <option value="6">Jardin y Aire Libre</option>
+                                            <option value="7">Pisos y Revestimientos</option>
+                                            <option value="8">Pinturas</option>
+                                            <option value="9">Aberturas</option>
+                                            <option value="10">Construccion</option>
+                                            <option value="11">Maderas</option>
+                                            <option value="12">Ferreteria</option>
 
 
-        
-    </main>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="price" class="form-label">Precio</label>
+                                        <input type="number" class="form-control" id="price" name="price">
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="discount" class="form-label">Descuento</label>
+                                        <input type="number" class="form-control" id="discount" name="discount">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="description" class="form-label">Descripción</label>
+                                        <textarea name="description" id="description" class="form-control"
+                                            style="resize: none;"></textarea>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end gap-2 mb-3">
+                                        <label for="image" class="btn btn-secondary">Agregar imagen</label>
+                                        <input type="file" name="image" id="image" hidden>
+                                        <button class="btn btn-dark">Guardar cambios</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
 
 
-    <%- include('partials/footer') %>
-</body>
+            <%- include('partials/footer') %>
+    </body>
+
 </html>
