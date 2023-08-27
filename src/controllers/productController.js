@@ -4,5 +4,6 @@ module.exports = {
     create : require('./products/create'),
     read : require('./products/detail'),
     update : require('./products/update'),
+    edit : require('./products/edit'),
     remove : require('./products/remove'),
 }
