@@ -17,6 +17,7 @@
 }
 /*Titulos*/
 .productDetail_main{
+    background-color: var(--colorViñaDelMar);
     width: 95vw;
     margin: auto;
 }
