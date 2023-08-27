@@ -1,4 +1,4 @@
-Sprint 2:
+----Retro del Sprint 2----:
 
 Comenzar a hacer :
 Preguntar con tiempo, empezar con entusiasmo los sprint,organizar mejor los tiempos.
@@ -16,7 +16,7 @@ Dejar de Hacer :
 Procrastinar.
 
 
-----Retro del Sprint 3 ----
+----Retro del Sprint 3----
 Comenzar a hacer:
 Desde el primer dia que se presenta el sprint comenzar a organizarlo al menos y asignar las tareas correspondientes
 Hacer mas:
