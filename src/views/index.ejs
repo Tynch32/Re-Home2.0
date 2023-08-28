@@ -6,56 +6,59 @@
   <body class="index">
     <%- include('partials/header') %>
 
-      <main class="index__main">
-
-        <div class="index__main__reversor">
-          <section class="index__main__section">
-
-            <% products.forEach({id,name,descripcion,price,image} => { %>
-              <a href="/users/productDetail">
-                <article class="index__main__section--ofert">
-                  <img src="<%= image %>" alt="imagen de la caja de herramientas" />
-                  <div class="index__section__article--description">
-                    <p class="name">$<%= name %></p>
-                    <p class="descripcion"><%= descripcion %></p>
-                    <p class="precio">$<%= price %></p>
-                  </div>
-                </article>
-              </a>
-            <% }) %>
-            
-            <div class="index__main_section--oferts">
-              
+    <main class="index__main">
+      
+       <div class="index__main__reversor">
+        <section class="index__main__section">
+          <% products.forEach(product => { %>
+            <a href="/users/productDetail">
               <article class="index__main__section--ofert">
-                <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
+                <img src="<%= product.image %>" alt="imagen del producto" />
                 <div class="index__section__article--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
+                  <p class="name"><%= product.name %></p>
+                  <p class="descripcion"><%= product.description %></p>
+                  <p class="precio">$<%= product.price %></p>
                 </div>
               </article>
-            </div>
+            </a>
+          <% }) %>
+        </section>
+      </div>
+              
 
-            <div class="index__main_section--selledMostAfter">
-              <article class="index__main_section--selled">
+                <div class="index__main_section--oferts">
 
-                <img src="/img/taladro.jpg" alt="imagen de la caja de herramientas" />
-
-                <div class="index__section__selled--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
+                  <article class="index__main__section--ofert">
+                    <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
+                    <div class="index__section__article--description">
+                      <p class="descripcion">Caja de Herramientas Raulito</p>
+                      <p class="precio">$6.770</p>
+                    </div>
+                  </article>
                 </div>
-              </article>
 
-              <article class="index__main_section--selled">
-                <img src="/img/llave2.jpg" alt="imagen de la caja de herramientas" />
+                <div class="index__main_section--selledMostAfter">
+                  <article class="index__main_section--selled">
 
-                <div class="index__section__selled--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
+                    <img src="/img/taladro.jpg" alt="imagen de la caja de herramientas" />
+
+                    <div class="index__section__selled--description">
+                      <p class="descripcion">Caja de Herramientas Raulito</p>
+                      <p class="precio">$6.770</p>
+                    </div>
+                  </article>
+
+                  <article class="index__main_section--selled">
+                    <img src="/img/llave2.jpg" alt="imagen de la caja de herramientas" />
+
+                    <div class="index__section__selled--description">
+                      <p class="descripcion">Caja de Herramientas Raulito</p>
+                      <p class="precio">$6.770</p>
+                    </div>
+                  </article>
                 </div>
-              </article>
-            </div>
           </section>
+
           <section class="index__main__section--tabletPC">
 
             <div class="index__main_section--oferts">
