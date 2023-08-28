@@ -11,17 +11,21 @@
         <div class="index__main__reversor">
           <section class="index__main__section">
 
-            <div class="index__main_section--oferts">
+            <% products.forEach({id,name,descripcion,price,image} => { %>
               <a href="/users/productDetail">
                 <article class="index__main__section--ofert">
-                  <img src="/img/caja.jpg" alt="imagen de la caja de herramientas" />
-
+                  <img src="<%= image %>" alt="imagen de la caja de herramientas" />
                   <div class="index__section__article--description">
-                    <p class="descripcion">Caja de Herramientas Raulito</p>
-                    <p class="precio">$6.770</p>
+                    <p class="name">$<%= name %></p>
+                    <p class="descripcion"><%= descripcion %></p>
+                    <p class="precio">$<%= price %></p>
                   </div>
                 </article>
               </a>
+            <% }) %>
+            
+            <div class="index__main_section--oferts">
+              
               <article class="index__main__section--ofert">
                 <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
                 <div class="index__section__article--description">
