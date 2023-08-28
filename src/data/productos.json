@@ -1,11 +1,105 @@
 [
     {
         "id" : 1,
-        "name": "ejemplo 1",
-        "description" :"description_ejemplo1",
+        "name": "Hidrolavadora",
+        "description" :"Ideal para trabajos de limpieza ligeros.",
         "price": 300,
-        "category" : "construccion_ejemplo1",
+        "category" : "Herramientas de Mano",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    
+    {
+        "id": 2,
+        "name": "Martillo",
+        "description": "Ideal para trabajos de construcción ligeros.",
+        "price": 250,
+        "category": "Herramientas de Mano",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 3,
+        "name": "Sierra Circular",
+        "description": "Perfecta para proyectos de bricolaje en el hogar.",
+        "price": 300,
+        "category": "Herramientas de Corte",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 4,
+        "name": "Cincel",
+        "description": "Herramienta esencial para trabajos de albañilería.",
+        "price": 350,
+        "category": "Herramientas de Corte",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 5,
+        "name": "Taladro",
+        "description": "Perfecta para cortes precisos en madera y metal.",
+        "price": 280,
+        "category": "Herramientas de Corte",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 6,
+        "name": "Llave Inglesa",
+        "description": "Herramienta versátil para múltiples tareas de construcción.",
+        "price": 320,
+        "category": "Herramientas de Mano",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 7,
+        "name": "Lijadora",
+        "description": "Ideal para trabajos de acabado y detalles finos.",
+        "price": 270,
+        "category": "Herramientas de Corte",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 8,
+        "name": "Mazo",
+        "description": "Herramienta resistente para tareas de demolición.",
+        "price": 310,
+        "category": "Herramientas de Mano",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 9,
+        "name": "Cinta Métrica",
+        "description": "Perfecta para medir y trazar en proyectos de construcción.",
+        "price": 290,
+        "category": "Herramientas de Medición",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 10,
+        "name": "Tornillo de Banco",
+        "description": "Herramienta ergonómica para largas jornadas de trabajo.",
+        "price": 330,
+        "category": "Herramientas de Mano",
+        "image": null,
+        "createAt": "fecha creada"
+    },
+    {
+        "id": 11,
+        "name": "Destornillador",
+        "description": "Herramienta esencial en trabajos de instalación y montaje.",
+        "price": 280,
+        "category": "Herramientas de Fijación",
         "image": null,
         "createAt": "fecha creada"
     }
+
+    
+    
 ]

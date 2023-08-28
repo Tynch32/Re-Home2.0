@@ -1,10 +1,22 @@
 [
     {
-        "id:" : 1,
-        "category" : "Ejemplo1"
+        "id": 1,
+        "name": "Herramientas de Corte"
     },
     {
-        "id:" : 2,
-        "category" : "Ejemplo2"
+        "id": 2,
+        "name": "Herramientas de Medición"
+    },
+    {
+        "id": 3,
+        "name": "Herramientas de Mano"
+    },
+    {
+        "id": 4,
+        "name": "Herramientas Eléctricas"
+    },
+    {
+        "id": 5,
+        "name": "Herramientas de Fijación"
     }
 ]
