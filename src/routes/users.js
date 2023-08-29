@@ -1,5 +1,6 @@
 var express = require('express');
 const userController = require('../controllers/userController');
+const search = require('../controllers/products/search');
 const add = require("../controllers/products/add")
 const create = require("../controllers/products/create");
 const upload = require('../middlewares/upload');
@@ -17,9 +18,10 @@ router.post('/productErase/:id',remove);
 router.get('/productEdit', userController.productEdit);
 router.get('/register', userController.register);
 router.get('/login', userController.login);
+// router.get('/results', search);
+router.get('/results', userController.searchResult);
 router.get('/results', userController.searchResult);
 router.get('/*', userController.notFound);
-
 
 
 module.exports = router;

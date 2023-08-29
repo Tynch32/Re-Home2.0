@@ -5,8 +5,9 @@ const upload = require('../middlewares/upload');
 /* /products */
 
 router.get('/detail/:id', productController.detail);
-router.get('/add', productController.add);
-router.post('/add',upload.single('image'),create);
+router.get('/result', productController.search);
+// router.get('/add', productController.add);
+// router.post('/add',productController.create);
 router.get('/edit/:id',productController.edit);
 router.put('/update/:id',productController.update);
 // router.delete('/remove/:id',productController.remove);
