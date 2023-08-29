@@ -6,101 +6,107 @@
   <body class="index">
     <%- include('partials/header') %>
 
-    <main class="index__main">
-      
-       <div class="index__main__reversor">
-        <section class="index__main__section">
-          <% products.forEach(product => { %>
+      <main class="index__main">
+
+        <div class="index__main__reversor">
+          <section class="index__main__section">
             <a href="/users/productDetail">
-              <article class="index__main__section--ofert">
-                <img src="<%= product.image %>" alt="imagen del producto" />
-                <div class="index__section__article--description">
-                  <p class="name"><%= product.name %></p>
-                  <p class="descripcion"><%= product.description %></p>
-                  <p class="precio">$<%= product.price %></p>
-                </div>
-              </article>
+              <% productos.forEach(({id,name,description,price,image,category})=> { %>
+                <article class="index__main__section--ofert">
+                  <img src="<%= image %>" alt="imagen del producto" />
+                  <div class="index__section__article--description">
+                    <p class="name">
+                      <%= name %>
+                    </p>
+                    <p class="descripcion">
+                      <%= description %>
+                    </p>
+                    <p class="precio">
+                      $<%= price %>
+                    </p>
+                  </div>
+                </article>
+                <% }) %>
             </a>
-          <% }) %>
+          </section>
+        </div>
+
+
+        <div class="index__main_section--oferts">
+
+          <article class="index__main__section--ofert">
+            <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
+            <div class="index__section__article--description">
+              <p class="descripcion">Caja de Herramientas Raulito</p>
+              <p class="precio">$6.770</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="index__main_section--selledMostAfter">
+          <article class="index__main_section--selled">
+
+            <img src="/img/taladro.jpg" alt="imagen de la caja de herramientas" />
+
+            <div class="index__section__selled--description">
+              <p class="descripcion">Caja de Herramientas Raulito</p>
+              <p class="precio">$6.770</p>
+            </div>
+          </article>
+
+          <article class="index__main_section--selled">
+            <img src="/img/llave2.jpg" alt="imagen de la caja de herramientas" />
+
+            <div class="index__section__selled--description">
+              <p class="descripcion">Caja de Herramientas Raulito</p>
+              <p class="precio">$6.770</p>
+            </div>
+          </article>
+        </div>
         </section>
-      </div>
-              
 
-                <div class="index__main_section--oferts">
+        <section class="index__main__section--tabletPC">
 
-                  <article class="index__main__section--ofert">
-                    <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
-                    <div class="index__section__article--description">
-                      <p class="descripcion">Caja de Herramientas Raulito</p>
-                      <p class="precio">$6.770</p>
-                    </div>
-                  </article>
-                </div>
+          <div class="index__main_section--oferts">
+            <article class="index__main__section--ofert">
+              <img src="/img/caja.jpg" alt="imagen de la caja de herramientas" />
 
-                <div class="index__main_section--selledMostAfter">
-                  <article class="index__main_section--selled">
+              <div class="index__section__article--description">
+                <p class="descripcion">Caja de Herramientas Raulito</p>
+                <p class="precio">$6.770</p>
+              </div>
+            </article>
 
-                    <img src="/img/taladro.jpg" alt="imagen de la caja de herramientas" />
+            <article class="index__main__section--ofert">
+              <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
 
-                    <div class="index__section__selled--description">
-                      <p class="descripcion">Caja de Herramientas Raulito</p>
-                      <p class="precio">$6.770</p>
-                    </div>
-                  </article>
+              <div class="index__section__article--description">
+                <p class="descripcion">Caja de Herramientas Raulito</p>
+                <p class="precio">$6.770</p>
+              </div>
+            </article>
+          </div>
 
-                  <article class="index__main_section--selled">
-                    <img src="/img/llave2.jpg" alt="imagen de la caja de herramientas" />
+          <div class="index__main_section--selledMostAfter">
+            <article class="index__main_section--selled">
+              <img src="/img/taladro.jpg" alt="imagen de la caja de herramientas" />
 
-                    <div class="index__section__selled--description">
-                      <p class="descripcion">Caja de Herramientas Raulito</p>
-                      <p class="precio">$6.770</p>
-                    </div>
-                  </article>
-                </div>
-          </section>
+              <div class="index__section__selled--description">
+                <p class="descripcion">Caja de Herramientas Raulito</p>
+                <p class="precio">$6.770</p>
+              </div>
+            </article>
 
-          <section class="index__main__section--tabletPC">
+            <article class="index__main_section--selled">
+              <img src="/img/llave2.jpg" alt="imagen de la caja de herramientas" />
 
-            <div class="index__main_section--oferts">
-              <article class="index__main__section--ofert">
-                <img src="/img/caja.jpg" alt="imagen de la caja de herramientas" />
-
-                <div class="index__section__article--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
-                </div>
-              </article>
-
-              <article class="index__main__section--ofert">
-                <img src="/img/caja2.jpg" alt="imagen de otra caja de herramientas" />
-
-                <div class="index__section__article--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
-                </div>
-              </article>
-            </div>
-
-            <div class="index__main_section--selledMostAfter">
-              <article class="index__main_section--selled">
-                <img src="/img/taladro.jpg" alt="imagen de la caja de herramientas" />
-
-                <div class="index__section__selled--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
-                </div>
-              </article>
-
-              <article class="index__main_section--selled">
-                <img src="/img/llave2.jpg" alt="imagen de la caja de herramientas" />
-
-                <div class="index__section__selled--description">
-                  <p class="descripcion">Caja de Herramientas Raulito</p>
-                  <p class="precio">$6.770</p>
-                </div>
-              </article>
-            </div>
-          </section>
+              <div class="index__section__selled--description">
+                <p class="descripcion">Caja de Herramientas Raulito</p>
+                <p class="precio">$6.770</p>
+              </div>
+            </article>
+          </div>
+        </section>
         </div>
 
         <!---  aca va la  seccon inferior -->
