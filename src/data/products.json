@@ -5,7 +5,7 @@
         "description" :"Ideal para trabajos de limpieza ligeros.",
         "price": 300,
         "category" : "Herramientas de Mano",
-        "image": null,
+        "image": "taladrote.jpg",
         "createAt": "fecha creada"
     },
     

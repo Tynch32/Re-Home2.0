@@ -9,29 +9,9 @@
       <main class="index__main">
 
 
-        <h1>Seccion ofertas</h1>
+        <h1>Resultado de la busqueda</h1>
         <section class="index__main__section">
-          <% products.forEach(product=> { %>
-            <article class="index__main__section--ofert">
-              <img src="/img/<%= product.image %>" alt="imagen del producto" />
-              <div class="index__section__article--description">
-                <p class="name">
-                  <%= product.name %>
-                </p>
-                <p class="descripcion">
-                  <%= product.description %>
-                </p>
-                <p class="precio">
-                  $<%= product.price %>
-                </p>
-              </div>
-            </article>
-            <% }) %>
-        </section>
-
-        <h1>Seccion mas vendidos</h1>
-        <section class="index__main__section">
-          <% products.forEach(product=> { %>
+          <% productosFiltrados.forEach(product=> { %>
             <article class="index__main__section--ofert">
               <img src="/img/<%= product.image %>" alt="imagen del producto" />
               <div class="index__section__article--description">
