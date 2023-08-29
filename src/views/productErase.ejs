@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <main class="container">
+                <div class="row">
+                    <!-- empieza el formulario -->
+                    <div class="col-12 col-md-8 mx-auto mt-5">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4 class="card-title">Eliminar producto </h4>
+                            </div>
+                            <div class="card-body">
+                                <% productos.forEach( producto => { %>
+                      
+                                    <tr>
+                                        <td>
+                                            <%= producto.name %>
+                                        </td>
+                                        <td>
+                                            <%= producto.category  %>
+                                        </td>
+                                        <td>
+                                            <%= producto.price %>
+                                        </td>
+
+                                        <td>
+                                            <div class="d-flex gap-1">
+                    
+                                               
+                    
+                                                <div class="modal fade" id="detailProduct<%=producto.id%>" tabindex="-1"
+                                                    aria-labelledby="detailProduct<%=producto.id%>Label" aria-hidden="true">
+                                                    <div class="modal-dialog  modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="detailProduct<%=producto.id%>Label">
+                                                                    <%= producto.name %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card mb-3" style="max-width: 540px;">
+                                                                    <div class="row g-0">
+                                                                        <div class="col-md-6">
+                                                                            <img src=""
+                                                                                class="img-fluid rounded-start" alt="...">
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="card-body">
+                                                                                <h5 class="card-title">
+                                                                                    <%=producto.name%>
+                                                                                </h5>
+                                                                                <p class="card-text">
+                                                                                    <%=producto.description%>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Cerrar</button>
+                    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                    
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProduct<%= producto.id %>">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                    
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="removeProduct<%= producto.id %>" tabindex="-1" aria-labelledby="removeProduct<%= producto.id %>Label"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" id="removeProduct<%= producto.id %>Label">ADVERTENCIA</h1>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Estás seguro que querés eliminar el producto <b><%= producto.name %></b></p> 
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                                    <form action="" method="POST">
+                                                                        <button type="submit" class="btn btn-danger">Eliminalo</button>
+                                                                    </form>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                   <% }) %>
+                                 <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
+                                                    <button type="submit" class="btn btn-danger">Eliminalo</button>
+                                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

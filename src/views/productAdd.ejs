@@ -13,31 +13,19 @@
                                 <h4 class="card-title">Agregar producto</h4>
                             </div>
                             <div class="card-body">
-                                <form action="" method="POST" class="row">
+                                <form action="" method="POST" class="row" enctype="multipart/form-data">
                                     <div class="col-12 col-md-6 mb-3">
-                                        <label for="name" class="form-label">Título</label>
+                                        <label for="name" class="form-label">Nombre</label>
                                         <input type="text" class="form-control" id="name"
-                                            placeholder="Título del producto" name="title">
+                                            placeholder="Nombre del producto" name="name">
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="category" class="form-label">Categoría</label>
                                         <select class="form-select" aria-label="Default select example" name="category"
                                             id="category">
-                                            <option value="" selected hidden>Seleccione...</option>
-                                            <option value="1">Baños y Cocinas</option>
-                                            <option value="2">Electricidad</option>
-                                            <option value="3">Textil</option>
-                                            <option value="4">Herramientas</option>
-                                            <option value="5">Iluminacion</option>
-                                            <option value="6">Jardin y Aire Libre</option>
-                                            <option value="7">Pisos y Revestimientos</option>
-                                            <option value="8">Pinturas</option>
-                                            <option value="9">Aberturas</option>
-                                            <option value="10">Construccion</option>
-                                            <option value="11">Maderas</option>
-                                            <option value="12">Ferreteria</option>
-
-
+                                            <% categories.forEach(category => { %>
+                                                <option value="<%= category.name %>"><%= category.name %></option>
+                                               <% }) %>
 
                                         </select>
                                     </div>
@@ -53,11 +41,12 @@
                                         <label for="description" class="form-label">Descripción</label>
                                         <textarea name="description" id="description" class="form-control"
                                             style="resize: none;"></textarea>
+                                            <label for="images" class="form-label">Subir imagen </label>
+                                            <input class="form-control" type="file" id="images" name="image">
                                     </div>
                                     <div class="col-12 d-flex justify-content-end gap-2 mb-3">
-                                        <label for="image" class="btn btn-secondary">Agregar imagen</label>
-                                        <input type="file" name="image" id="image" hidden>
-                                        <button class="btn btn-dark">Guardar cambios</button>
+                                       
+                                        <button  type="submit" class="btn btn-dark">Guardar cambios</button>
                                     </div>
                                 </form>
                             </div>

@@ -15,11 +15,9 @@ module.exports = {
     login : (req,res) => {
         return res.render('login')
     },
-    productAdd : (req,res) => {
-        return res.render('productAdd',categories);
-    },
+    
     productEdit : (req,res) => {
-        return res.render('productEdit',categories);
+        return res.render('productErase');
     },
     notFound : (req,res) => {
         return res.render('404')
