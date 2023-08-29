@@ -17,6 +17,7 @@ router.post('/productErase/:id',remove);
 router.get('/productEdit', userController.productEdit);
 router.get('/register', userController.register);
 router.get('/login', userController.login);
+router.get('/results', userController.searchResult);
 router.get('/*', userController.notFound);
 
 
