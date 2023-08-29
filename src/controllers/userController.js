@@ -1,30 +1,43 @@
 const { readJSON } = require("../data");
 const { detail } = require("./productController");
 const categories = readJSON('../data/categories.json');
-const productos = readJSON("productos.json")
+const productos = readJSON("products.json")
 
 
 module.exports = {
-    productCart : (req,res) => {
+    productCart: (req, res) => {
         return res.render('productCart')
     },
-    productDetail : (req,res) => {
-        return res.render('productDetail',detail)
+    productDetail: (req, res) => {
+        return res.render('productDetail', { detail })
     },
-    register : (req,res) => {
+    register: (req, res) => {
         return res.render('register')
     },
-    login : (req,res) => {
+    login: (req, res) => {
         return res.render('login')
     },
-    productEdit : (req,res) => {
-        return res.render('productEdit',{productos});
+    productAdd: (req, res) => {
+        return res.render('productAdd', { categories });
+    },
+    productEdit: (req, res) => {
+        return res.render('productEdit', { categories });
+    },
+    notFound: (req, res) => {
+        return res.render('404');
+    },
+    searchResult: (req, res) => {
+        console.log(req.body, "este es el body");
+        console.log(req.body.keywords, "key");
+        console.log(req.params.keywords, "pa key");
+        const productos = readJSON('../data/products.json');
+        // const productosFiltrados = productos.filter(product => { (product.name).toLowerCase().includes(req.params.keywords.toLowerCase()) });
+
+        return res.render('results');
+
     },
     productErase : (req,res) => {
         return res.render('productErase',{productos})
     },
-    notFound : (req,res) => {
-        return res.render('404')
-    }
     
 }

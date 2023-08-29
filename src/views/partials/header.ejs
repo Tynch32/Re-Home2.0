@@ -19,11 +19,14 @@
     </nav>
   </div>
   <div class="header__searchbar-nav--container">
-    <div class="header__searchbar--container">
-      <input class="header__searchbar" type="search" placeholder="Buscar productos, marcas." /><button>
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
+
+
+
+				<form action="/users/results" method="GET" class="search-form">
+					<input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+					<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+				</form>
+
 
 
     <nav class="header__nav">
