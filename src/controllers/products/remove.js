@@ -7,11 +7,12 @@ module.exports = (req,res) => {
 
     const productos = readJSON('productos.JSON');
      console.log(req.body)
-    const productsModify = productos.filter(product = producto.id !== req,params.id)
+     
+    const productsModify = productos.filter(product = producto.id !== req.params.id)
 
     writeJSON(productsModify, 'products.JSON');
 
-    return res.redirect('/index') 
+    return res.render("productErase") 
 
 }
 

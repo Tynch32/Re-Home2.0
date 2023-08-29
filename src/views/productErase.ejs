@@ -73,11 +73,7 @@
                                                 </div>
                                             
                     
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#removeProduct<%= producto.id %>">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
+                                             
                     
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="removeProduct<%= producto.id %>" tabindex="-1" aria-labelledby="removeProduct<%= producto.id %>Label"
@@ -106,10 +102,11 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <form action="/products/remove/<%= producto.id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-danger">Eliminalo</button>
+                                    </form>
                                    <% }) %>
-                                 <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
-                                                    <button type="submit" class="btn btn-danger">Eliminalo</button>
-                                                </form>
+                              
                             </div>
 
                         </div>
