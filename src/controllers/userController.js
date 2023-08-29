@@ -26,4 +26,5 @@ module.exports = {
     notFound : (req,res) => {
         return res.render('404')
     }
+    
 }

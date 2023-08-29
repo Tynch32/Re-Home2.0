@@ -1,32 +1,5 @@
 [
    {
-      "id": 1,
-      "name": "Hidrolavadora",
-      "description": "Ideal para trabajos de limpieza ligeros.",
-      "price": 300,
-      "category": "Herramientas de Mano",
-      "image": null,
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 2,
-      "name": "Martillo",
-      "description": "Ideal para trabajos de construcción ligeros.",
-      "price": 250,
-      "category": "Herramientas de Mano",
-      "image": null,
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 3,
-      "name": "Sierra Circular",
-      "description": "Perfecta para proyectos de bricolaje en el hogar.",
-      "price": 300,
-      "category": "Herramientas de Corte",
-      "image": null,
-      "createAt": "fecha creada"
-   },
-   {
       "id": 4,
       "name": "Cincel",
       "description": "Herramienta esencial para trabajos de albañilería.",
@@ -204,5 +177,29 @@
       "description": "ssrwerwer",
       "category": "Herramientas Eléctricas",
       "createAt": "2023-08-28T09:27:20.359Z"
+   },
+   {
+      "id": "50a22821-a976-433d-a124-c6be2a223b1a",
+      "name": "fsdfsdfsdf",
+      "price": 31211,
+      "description": "a ver",
+      "category": "Herramientas de Corte",
+      "createAt": "2023-08-29T04:06:31.966Z"
+   },
+   {
+      "id": "68a86c4d-a223-49db-bc46-dead6166fecb",
+      "name": "asdasd",
+      "price": 1,
+      "description": "1",
+      "category": "Herramientas de Corte",
+      "createAt": "2023-08-29T04:23:42.670Z"
+   },
+   {
+      "id": "5e96be19-eced-4bb7-84fa-a83743a2e60f",
+      "name": "asdasd",
+      "price": 1,
+      "description": "1",
+      "category": "Herramientas de Corte",
+      "createAt": "2023-08-29T04:25:34.712Z"
    }
 ]

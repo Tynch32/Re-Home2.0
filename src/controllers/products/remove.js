@@ -1,18 +1,16 @@
-//const { readJSON, writeJSON } = require("../../data");
-//const categories = readJSON('../data/categories.json');
-const data = require("../../data")
-const read = data.readJSON
+const { readJSON, writeJSON } = require("../../data")
+
 
 module.exports = (req,res) => {
 
-    const productos = readJSON('productos.JSON');
-     console.log(req.body)
-     
-    const productsModify = productos.filter(product = producto.id !== req.params.id)
+    const productos = readJSON("productos.json")
+     const params= parseInt(req.params.id)
+    
+    const productsModify = productos.filter( producto => producto.id != params)
+    
+    writeJSON(productsModify,"productos.json")
 
-    writeJSON(productsModify, 'products.JSON');
-
-    return res.render("productErase") 
+    return res.redirect("/") 
 
 }
 

@@ -4,6 +4,5 @@
 module.exports = (req,res) => {
    
     const categories = read('categories.json');
-    //console.log(categories)
     return res.render('productAdd',{categories})
 }
