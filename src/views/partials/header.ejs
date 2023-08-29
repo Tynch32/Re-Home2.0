@@ -20,14 +20,13 @@
   </div>
   <div class="header__searchbar-nav--container">
 
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <form class="d-flex" role="search" action="" method="GET">
-          <input class="form-control me-2" type="search" placeholder="Buscar productos, marcas." aria-label="Search">
-          <button class="btn btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-      </div>
-    </nav>
+
+
+				<form action="/users/results" method="GET" class="search-form">
+					<input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+					<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+				</form>
+
 
 
     <nav class="header__nav">
