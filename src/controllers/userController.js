@@ -1,7 +1,7 @@
 const { readJSON } = require("../data");
 const { detail } = require("./productController");
 const categories = readJSON('../data/categories.json');
-const productos = readJSON("productos.json")
+const productos = readJSON("products.json")
 
 
 module.exports = {
@@ -17,11 +17,11 @@ module.exports = {
     login: (req, res) => {
         return res.render('login')
     },
-    productAdd : (req,res) => {
-        return res.render('productAdd',{categories});
+    productAdd: (req, res) => {
+        return res.render('productAdd', { categories });
     },
-    productEdit : (req,res) => {
-        return res.render('productEdit',{categories});
+    productEdit: (req, res) => {
+        return res.render('productEdit', { categories });
     },
     notFound: (req, res) => {
         return res.render('404');
@@ -35,5 +35,9 @@ module.exports = {
 
         return res.render('results');
 
-    }
+    },
+    productErase : (req,res) => {
+        return res.render('productErase',{productos})
+    },
+    
 }
