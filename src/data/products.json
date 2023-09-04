@@ -1,18 +1,9 @@
 [
    {
-      "id": 3,
-      "name": "Sierra Circular",
-      "description": "Perfecta para proyectos de bricolaje en el hogar.",
-      "price": 300,
-      "category": "Herramientas de Corte",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
-   },
-   {
       "id": 4,
-      "name": "Cincel",
+      "name": "",
       "description": "Herramienta esencial para trabajos de albañilería.",
-      "price": 350,
+      "price": "",
       "category": "Herramientas de Corte",
       "image": "taladro.jpg",
       "createAt": "fecha creada"

@@ -12,11 +12,6 @@ module.exports = {
     login: (req, res) => {
         return res.render('login')
     },
-    productEdit: (req, res) => {
-        const products = readJSON("products.json")
-        const selectedProduct = products.find( producto => producto.id == req.params.id)
-        res.render('productEdit', { categories:categories,productEdit:selectedProduct });
-    },
     notFound: (req, res) => {
         return res.render('404');
     }
