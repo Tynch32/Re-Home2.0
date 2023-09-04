@@ -1,6 +1,6 @@
 body.index{
     background-color: var(--colorSopot);
-      font-family: var(--tipografia);
+     /* font-family: var(--tipografia);*/
       box-sizing: border-box;
      width: 100vw;
       
