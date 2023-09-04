@@ -79,5 +79,15 @@
       "category": "Herramientas de Fijación",
       "image": "taladro.jpg",
       "createAt": "fecha creada"
+   },
+   
+   {
+      "id": "c6d7f884-3c10-47e4-9b0d-4396dc8f743c",
+      "name": "Emiliax",
+      "price": 13,
+      "description": "test creacion correcion de imagen",
+      "image": "emilia-about.jpg",
+      "category": "Herramientas de Corte",
+      "createAt": "2023-09-04T17:19:36.520Z"
    }
 ]
