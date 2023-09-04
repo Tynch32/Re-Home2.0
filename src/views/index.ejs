@@ -13,18 +13,20 @@
         <section class="index__main__section">
           <% products.forEach(product=> { %>
             <article class="index__main__section--ofert">
-              <img src="/img/<%= product.image %>" alt="imagen del producto" />
-              <div class="index__section__article--description">
-                <p class="name">
-                  <%= product.name %>
-                </p>
-                <p class="descripcion">
-                  <%= product.description %>
-                </p>
-                <p class="precio">
-                  $<%= product.price %>
-                </p>
-              </div>
+              <a href="/products/<%= product.id %>" >
+                <img src="/img/<%= product.image %>" alt="imagen del producto" />
+                <div class="index__section__article--description">
+                  <p class="name">
+                    <%= product.name %>
+                  </p>
+                  <p class="descripcion">
+                    <%= product.description %>
+                  </p>
+                  <p class="precio">
+                    $<%= product.price %>
+                  </p>
+                </div>
+              </a>
             </article>
             <% }) %>
         </section>
@@ -33,6 +35,7 @@
         <section class="index__main__section">
           <% products.forEach(product=> { %>
             <article class="index__main__section--ofert">
+              <a href="/products/<%= product.id %>" >
               <img src="/img/<%= product.image %>" alt="imagen del producto" />
               <div class="index__section__article--description">
                 <p class="name">
@@ -45,6 +48,7 @@
                   $<%= product.price %>
                 </p>
               </div>
+              </a>
             </article>
             <% }) %>
         </section>

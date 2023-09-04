@@ -1,11 +1,9 @@
 const { readJSON } = require("../../data")
 
 module.exports = (req,res) => {
-
-    const products = readJSON('products.json')
-    const product = products.find(product => product.id === req.params.id)
-
-    return res.render('results', {
-        product
-    })
+    const productos = readJSON('../data/products.json');
+    const productosFiltrados = productos.filter((producto) => {
+        return Object.values(producto).some((valor) => valor == req.query.keywords);
+      });
+    res.render('results',{productosFiltrados:productosFiltrados});
 }

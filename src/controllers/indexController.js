@@ -1,18 +1,14 @@
 const { readJSON } = require("../data");
-
+const products = readJSON('products.json');
 
 
 module.exports = {
     index: (req, res) => {
-        const products = readJSON('products.json');
+        
         return res.render('index', {products});
     },
-    admin : (req,res)  => {
-        const products = readJSON('products.json');
-        const categories = readJSON('categories.json');
-        return res.render('admin', {
-            products,
-            categories
-        })
-    }
+    admin : (req,res) => {
+        console.log(products)
+        return res.render('admin',{products})
+    },
 }

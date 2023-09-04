@@ -5,17 +5,17 @@
 
 <body class="product_detail_body">
     <%- include('partials/header') %>
-
     <main class="productDetail_main">
         <div class="product">
             <div class="test1">
                 <div class="product_name_model">
-                    <h1>Nombre del producto</h1>
+                    <h1><%= detail.name %> </h1>
                     <h2>Modelo</h2>
                 </div>
                 <div class="product_carrousel_box">
                     <div class="product_carrousel_img">
-                        <img src="/img/productDetail_img/img_product_1.jpg">
+                        <img src="/img/<%= detail.image %>">
+                        
                     </div>
                     <div class="product_carrousel_img">
                         <img src="/img/productDetail_img/img_product_2.jpg">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="product_precio_buttons_box">
                     <div class="product_precio">
-                        <h1>$99.999</h1>
+                        <h1>$<%= detail.price %></h1>
                     </div>
                     <div class="product_buttons">
                         <a href="#"><input type="button" value="Comprar"></a>
@@ -38,10 +38,7 @@
                 <div class="box1">
                     <div class="product_description">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat quae similique odit eos
-                            architecto saepe officia? Facilis amet quae, id fuga itaque alias nulla natus in sit
-                            aspernatur
-                            veritatis!
+                            <%= detail.description %>
                         </p>
                     </div>
                     <div class="product_simil">
@@ -56,6 +53,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Datos del vendedor -->
                 <div class="vendedor_info">
                     <div>
                         <a href="#">
@@ -74,7 +72,6 @@
                             <i class="fa-solid fa-id-card"></i>
                             <p>Información del vendedor </p>
                         </a>
-
                     </div>
                     <div>
                         <a href="#">
@@ -82,8 +79,6 @@
                             <p>Dirección de entrega </p>
                         </a>
                     </div>
-
-
 
                 </div>
             </div>

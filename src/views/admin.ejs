@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Habria que completar la vista de administrador
-</body>
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/headerAdmin') %>
+
+            <main class="container">
+                <div class="row">
+                    <!-- empieza el formulario -->
+                    <div class="col-12 col-md-8 mx-auto mt-5">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4 class="card-title"> Administrador de Productos </h4>
+                            </div>
+                            <div class="card-body">
+                                <% products.forEach( producto => { %>
+                                    <tr>
+                                        <td>
+                                            <%= producto.name %>
+                                        </td>
+                                        <td>
+                                            <%= producto.category  %>
+                                        </td>
+                                        <td>
+                                            $<%= producto.price %>
+                                        </td>
+
+                                    </tr>
+                                    <div class="m-3 d-flex justify-content-">
+                                        <form  clas="" action="/products/<%= producto.id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="btn btn-danger">Eliminalo</button>
+                                        </form>
+                                        <a href="/users/productEdit/<%= producto.id %>/edit">
+                                            <button type="submit" class="btn btn-primary ">Editalo</button>
+                                        </a>
+                                   </div>
+                                   <% }) %>
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+            <%- include('partials/footer') %>
+    </body>
+
 </html>
