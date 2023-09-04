@@ -1,48 +1,63 @@
 <!-- reestructurado pedido  -->
 <header class="header">
   <div class="header__top-container">
-    <img class="header__banner--top" src="/img/logo_rehogar.png" alt="bandera mercadolibre" />
-    <nav class="header__nav--header">
-
-      <ul class="home__nav__ul ">
-        <a href="/users/login">
-          <li> <i class="fa-regular fa-address-card"></i> Ingresa a tu cuenta / Registrate</li>
-        </a>
-
-        <a href="/users/productCart">
-          <li> <i class="fa-solid fa-basket-shopping"></i>Mis compras <p>0</p>
-          </li>
-        </a>
-        <li><a href="/users/productEdit">Editar producto</a></li>
-        <li><a href="/users/productAdd">Agregar producto</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="header__searchbar-nav--container">
-
-
-
-				<form action="/users/results" method="GET" class="search-form">
-					<input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
-					<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-				</form>
-
-
-
-    <nav class="header__nav">
-
-      <ul class="home__nav__ul ">
-        <a href="/users/login">
-          <li> <i class="fa-regular fa-address-card"></i></li>
-        </a>
-
-        <a>
-          <li> <i class="fa-solid fa-basket-shopping"></i>
-            <p>0</p>
-          </li>
-        </a>
-      </ul>
-    </nav>
+    <img
+      class="header__banner--top"
+      src="/img/logo_rehogar.png"
+      alt="bandera ReHome"
+    />
   </div>
 
+  <nav class="navbar navbar-expand-lg p-3 navbar-light bg-light">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mt-2 mt-lg-0 ">
+        <li>
+          <a href="/users/login" class="nav-link ml-2">
+            <i class="fa-regular fa-address-card"></i> Ingresa a tu cuenta /
+            Registrate
+          </a>
+        </li>
+        <li>
+          <a href="/users/productCart" class="nav-link ml-2">
+            <i class="fa-solid fa-basket-shopping ml-3"></i>Mis compras
+            <span>0</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="nav-link ml-2" href="/users/productEdit">Editar producto</a>
+        </li>
+        <li>
+          <a class="nav-link ml-2" href="/users/productAdd">Agregar producto</a>
+        </li>
+      </ul>
+      <form
+        action="/users/results"
+        method="GET"
+        class="search-form form-inline d-flex ml-2 my-2 my-lg-0"
+      >
+        <input
+          type="text"
+          name="keywords"
+          placeholder="Buscar productos, marcas y más"
+          class="form-control mr-sm-2"
+        />
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </nav>
 </header>
