@@ -4,9 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const productsRouter = require('./routes/products');
+const indexRouter = require('./routes/index.routes');
+const usersRouter = require('./routes/users.routes');
+const productsRouter = require('./routes/products.routes');
 const methodOverride = require("method-override")
 const app = express();
 
