@@ -1,14 +1,6 @@
 module.exports = {
-    productCart: (req, res) => {
-        return res.render('productCart')
-    },
-    register: (req, res) => {
-        return res.render('register')
-    },
-    login: (req, res) => {
-        return res.render('login')
-    },
-    notFound: (req, res) => {
-        return res.render('404');
-    }  
+    productCart: require('./users/productCart'),
+    register : require('./users/register'),
+    login : require('./users/login'),
+    notFound : require('./users/404'),
 }

@@ -1,9 +1,9 @@
 [
    {
       "id": 4,
-      "name": "",
+      "name": "Test",
       "description": "Herramienta esencial para trabajos de albañilería.",
-      "price": "",
+      "price": "500",
       "category": "Herramientas de Corte",
       "image": "taladro.jpg",
       "createAt": "fecha creada"

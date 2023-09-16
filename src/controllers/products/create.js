@@ -1,8 +1,8 @@
 const { readJSON, writeJSON } = require("../../data")
-const Product = require("../../data/product")
+const Product = require("../../data/Product");
 
 module.exports=(req,res)=>{
-
+    
     const productosDatabse = readJSON("products.json")
     const productoNuevo = new Product(req.body)
     productoNuevo.image = req.file.originalname
@@ -10,5 +10,5 @@ module.exports=(req,res)=>{
     console.log(req.body)
     writeJSON(productosDatabse,"products.json")
     return res.send(req.file)
-    
+
 }

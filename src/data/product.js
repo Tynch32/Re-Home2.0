@@ -11,6 +11,7 @@ const Product = function ({name,price,description,category,image}) {
     this.image = image;
     this.category=category.trim();
     this.createAt = new Date;
+    
 }
 
 module.exports = Product
