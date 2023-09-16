@@ -1,27 +1,37 @@
-var createError = require('http-errors');
-var express = require('express');
+// Requires
+const createError = require('http-errors');
+const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+const session = require('express-session');
 
+// Require de routes
 const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
-const methodOverride = require("method-override")
+
 const app = express();
 
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'..','public')));
 
+app.use(methodOverride('_method'));
+app.use(session({
+  secret : "grupoReHome10",
+  resave : true,
+  saveUninitialized : true
+}));
 
+// Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products',productsRouter)
@@ -41,8 +51,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-
 
 module.exports = app;
