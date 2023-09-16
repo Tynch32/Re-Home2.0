@@ -5,7 +5,7 @@ font-family: 'Lilita One', cursive;
 font-family: 'Lobster', cursive; 
 */
 
-body {
+body{
     background-color: var(--colorIseo);
     display: flex;
     flex-direction: column;
@@ -135,7 +135,7 @@ body {
         width: 100%;
     }
 
-    .home__main__section__botones--ya-tienes-cuenta{
+    .home__main__section__botones--ya-tienes-cuenta {
         display: none;
     }
 

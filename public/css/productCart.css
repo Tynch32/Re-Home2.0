@@ -1,114 +1,119 @@
-body.cart{
-    background-color: var(--colorSopot);
-      font-family: var(--tipografia);
-      box-sizing: border-box;
-     width: 100vw;
-      
+body.cart {
+  background-color: var(--colorSopot);
+  font-family: var(--tipografia);
+  box-sizing: border-box;
+  width: 100vw;
+
+}
+
+.cart__main {
+  align-self: center;
+  background-color: #ebebeb;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+
+.cart_main_section {
+  width: 100%;
+
+}
+
+
+.cart_main_section--article {
+  background-color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: block;
+
+}
+
+.cart_section_article--description {
+  background-color: white;
+  border-top: solid 1px #ebebeb;
+  padding: 15px;
+  position: relative;
+
+}
+
+.cart_main_section--article img {
+  margin: auto;
+  width: 100%
+}
+
+.cart__main_section--selledMostAfter {
+  background-color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.cart__main_section--selledMostAfter img {
+  margin: auto;
+  width: 49%;
+
+}
+
+.cart_section_selled--description {
+  width: 48%;
+  background-color: white;
+  border-top: solid 1px #ebebeb;
+  padding: 15px;
+
+}
+
+.cart__main_section--selled {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+}
+
+
+
+
+/*-------- Seccion ofertas */
+.cart__main_section--oferts {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+@media screen and (min-width: 361px) {
+
+
+  .cart_main_section {
+    max-width: 60vw;
+
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+
+
+  .index_main_section {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
   }
 
-  .cart__main {
-      align-self: center;
-      background-color:#ebebeb;
-      margin: 0 auto;
-      padding: 10px;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 100vw;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  
-     
-   }
-   .cart_main_section{
-      width: 100%;
-      
-   }
- 
- 
-   .cart_main_section--article {
-     background-color: white;
-     margin-bottom: 10px;
-     box-sizing: border-box;
-     height: 100%;
-     width: 100%;
-     display: block;
-  
-   }
-   
-   .cart_section_article--description   {
-      background-color: white;
-      border-top: solid 1px #ebebeb;
-      padding: 15px;
-      position: relative;
-   
-    }
-    .cart_main_section--article img{
-      margin:auto;
-      width: 100%
-    
-    }
-    .cart__main_section--selledMostAfter{
-      background-color: white;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-  
-    }
-    .cart__main_section--selledMostAfter img{
-      margin:auto;
-      width: 49%;
-    
-    }
-    .cart_section_selled--description{
-      width: 48%;
-      background-color: white;
-      border-top: solid 1px #ebebeb;
-      padding: 15px;
-     
-    }
-    .cart__main_section--selled{
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 2%;
-  }
-    
-    
-   
-  
-  /*-------- Seccion ofertas */
-  .cart__main_section--oferts{
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-  }
-  
 
-  
-  @media screen and (min-width: 361px) {
-   
-  
-    .cart_main_section{
-      max-width: 60vw;
-     
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    }
-  
-    
-    @media screen and (min-width: 769px) {
-      
-  
-    .index_main_section {
-      width: 100%;
-      display: flex;
-      flex-direction: row-reverse;
-  }
-  
- 
-      
-    }
+
+}

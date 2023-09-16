@@ -8,5 +8,5 @@ module.exports = {
     admin : (req,res) => {
         console.log(products)
         return res.render('admin',{products})
-    },
+    }
 }

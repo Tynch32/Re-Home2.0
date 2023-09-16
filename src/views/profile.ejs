@@ -8,7 +8,7 @@
   <%- include('partials/header') %>
 
     <main class="register__main">
-        <form action="" method="POST" class="row">
+        <form action="/users/update?_method=PUT" method="POST" class="row">
                 <div class="col-12 col-md-4 mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
@@ -46,7 +46,7 @@
                     <input type="contrasena" class="form-control" id="contrasena2" placeholder="Confirme su contraseña" name="contrasena2">
                 </div>
                 <div class="col-12 col-md-4 mb-3">
-                    <button type="submit" class="btn btn-dark">Registrarse</button>
+                    <button type="submit" class="btn btn-dark">  Registrarse  </button>
                 </div>
         </form>
     </main>

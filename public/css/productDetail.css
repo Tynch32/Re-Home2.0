@@ -1,63 +1,74 @@
 /*borrar*/
-.test_header{
+.test_header {
     height: 100px;
 }
-.test_header img{
+
+.test_header img {
     height: 100%;
 }
 /*Ahora si*/
 
 /*Textos*/
-.productDetail_main h1, .productDetail_main h2{
+.productDetail_main h1,
+.productDetail_main h2 {
     color: var(--GrisOscuro);
 }
+
 /*Fondo*/
-.product_detail_body{
+.product_detail_body {
     background-color: var(--colorViñaDelMar);
 }
+
 /*Titulos*/
-.productDetail_main{
+.productDetail_main {
     background-color: var(--colorViñaDelMar);
     width: 95vw;
     margin: auto;
 }
-.product_name_model{
+
+.product_name_model {
     margin: 0;
-    padding: 5px;  
+    padding: 5px;
     font-size: 20px;
 }
+
 /*Carrousel*/
-.product_carrousel_box{
+.product_carrousel_box {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 15px;
 }
-.product_carrousel_img{
+
+.product_carrousel_img {
     width: 33%;
 }
-.product_carrousel_img img{
+
+.product_carrousel_img img {
     width: 100%;
 }
-.product_carrousel_img:hover{
+
+.product_carrousel_img:hover {
     width: 66%;
-    order:-1;
+    order: -1;
 }
 
 /*Botones*/
-.product_precio_buttons_box{
+.product_precio_buttons_box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 15px;
 }
-.product_buttons{
+
+.product_buttons {
     width: 100%;
     text-align: right;
     padding-right: 5px;
 }
-.product_precio_buttons_box div input{
+
+.product_precio_buttons_box div input {
     width: 40%;
     border: 0;
     outline: none;
@@ -65,59 +76,70 @@
     padding-bottom: 5px;
     font-size: 18px;
 }
-.product_buttons a input{
+
+.product_buttons a input {
     border-radius: 5px;
     background-color: var(--colorSanAndres);
     color: white;
     padding: 8px;
     text-decoration: none;
 }
+
 /*Productos similares*/
-.box_flex{
+.box_flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 /*Info del vendedor*/
-.vendedor_info{
+.vendedor_info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
     width: 40%;
 }
-.vendedor_info div a{
+
+.vendedor_info div a {
     color: var(--colorSanAndres);
 }
+
 /*test*/
-.box1{
+.box1 {
     width: 50%;
 }
-.product_description{
+
+.product_description {
     width: 100%;
 }
-.product_simil_box{
+
+.product_simil_box {
     width: 100%;
     display: flex;
     gap: 5px;
 }
-.product_simil_box div{
+
+.product_simil_box div {
     width: 49%;
 }
-.product_simil_box img{
+
+.product_simil_box img {
     width: 100%;
 }
 
 /*media querie tablet*/
 @media (min-width:768px) {
-    .product{
+    .product {
         display: flex;
         flex-direction: row;
     }
-    .test1{
+
+    .test1 {
         width: 70vw;
     }
-    .box_flex{
+
+    .box_flex {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -125,11 +147,13 @@
         align-self: center;
         padding-left: 10px;
     }
-    .product_simil_box{
+
+    .product_simil_box {
         display: flex;
         flex-direction: row;
     }
-    .productDetail_main{
+
+    .productDetail_main {
         padding-top: 50px;
     }
 }

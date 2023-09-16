@@ -5,6 +5,8 @@ const router = express.Router();
 /* GET home page. */
 router.get('/', indexController.index);
 router.get('/products', indexController.index);
+
+//Vista solo para los admin
 router.get('/admin', indexController.admin)
 
 module.exports = router;

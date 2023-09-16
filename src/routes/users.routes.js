@@ -9,6 +9,5 @@ var router = express.Router();
 router.get('/productCart',userController.productCart);
 router.get('/register',userController.register);
 router.get('/login',userController.login);
-router.get('/*',userController.notFound);
 
 module.exports = router;

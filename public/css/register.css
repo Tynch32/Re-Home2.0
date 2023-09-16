@@ -10,7 +10,7 @@
     margin-bottom: 30px;
 }
 
-.register__main__form__div--barra{
+.register__main__form__div--barra {
     width: 100%;
     padding: 3px;
     border: none;
@@ -88,9 +88,9 @@
 
 @media (min-width: 1023px) {
 
-        /* FOOTER */
-        .home__footer--nosotros {
-            width: 100%;
-        }
+    /* FOOTER */
+    .home__footer--nosotros {
+        width: 100%;
+    }
 
 }

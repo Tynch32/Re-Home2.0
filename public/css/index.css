@@ -1,192 +1,207 @@
-body.index{
-    background-color: var(--colorSopot);
-     /* font-family: var(--tipografia);*/
-      box-sizing: border-box;
-     width: 100vw;
-      
+body.index {
+  background-color: var(--colorSopot);
+  /* font-family: var(--tipografia);*/
+  box-sizing: border-box;
+  width: 100vw;
+
+}
+
+.article_price-discount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index__main {
+  align-self: center;
+  background-color: #ebebeb;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100vw;
+
+}
+
+.index__main__section {
+  width: 100%;
+}
+
+.index__main__reversor {
+  width: 100%;
+
+}
+
+.index__main__section--tabletPC {
+  display: none;
+}
+
+.index__main__section--article {
+  background-color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: block;
+
+}
+
+.index__main__section--ofert {
+  background-color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 49%;
+  display: block;
+
+}
+
+.index__main__section--ofert img {
+  width: 100%;
+}
+
+.index__section__article--description {
+  background-color: white;
+  border-top: solid 1px #ebebeb;
+  padding: 15px;
+  position: relative;
+
+}
+
+.index__main__section--article img {
+  margin: auto;
+  width: 100%
+}
+
+.index__main_section--selledMostAfter {
+  background-color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.index__main_section--selledMostAfter img {
+  margin: auto;
+  width: 49%;
+
+}
+
+.index__section__selled--description {
+  width: 48%;
+  background-color: white;
+  border-top: solid 1px #ebebeb;
+  padding: 15px;
+
+}
+
+.index__main_section--selled {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+}
+
+
+/*----------------------------- Estilos para Productos*/
+
+h2.titular {
+  font-size: 24px;
+  margin: 3%;
+  color: #666;
+
+}
+
+.main_section_article p.precio {
+  font-size: 18px;
+  width: 30%
+}
+
+.main_section_article p.descuento {
+  font-size: 16px;
+  color: #39b54a;
+  width: 70%;
+}
+
+.main_section_article p.descripcion {
+  font-size: 16px;
+  display: none;
+}
+
+
+/*-------- Seccion ofertas */
+.index__main_section--oferts {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.index__main_section--selledMostAfterTabletPC {
+  display: none;
+}
+
+/*----------------------------- Estilos para Footer*/
+
+
+
+
+@media screen and (min-width: 361px) {
+  .index__main__reversor {
+    display: flex;
+    flex-direction: row;
   }
-  .article_price-discount{
-      display: flex;
-      justify-content: space-between;
+
+  .index__main__section--tabletPC {
+    width: 50%;
+    display: flex;
+    /* display: block; */
+    flex-direction: column-reverse;
   }
-  
-  .index__main {
-      align-self: center;
-      background-color:#ebebeb;
-      margin: 0 auto;
-      padding: 10px;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 100vw;
-     
-   }
-   .index__main__section{
-      width: 100%;
-   }
-   .index__main__reversor{
-    width: 100%;
-  
-   }
-   .index__main__section--tabletPC{
-    display: none;
-   }
-  
-   .index__main__section--article {
-     background-color: white;
-     margin-bottom: 10px;
-     box-sizing: border-box;
-     height: 100%;
-     width: 100%;
-     display: block;
-  
-   }
-   .index__main__section--ofert{
-      background-color: white;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      height: 100%;
-      width: 49%;
-      display: block;
-  
-   }
-   .index__main__section--ofert img{
-      width: 100%;
-   }
-   .index__section__article--description   {
-      background-color: white;
-      border-top: solid 1px #ebebeb;
-      padding: 15px;
-      position: relative;
-   
-    }
-    .index__main__section--article img{
-      margin:auto;
-      width: 100%
-    
-    }
-    .index__main_section--selledMostAfter{
-      background-color: white;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-  
-    }
-    .index__main_section--selledMostAfter img{
-      margin:auto;
-      width: 49%;
-    
-    }
-    .index__section__selled--description{
-      width: 48%;
-      background-color: white;
-      border-top: solid 1px #ebebeb;
-      padding: 15px;
-     
-    }
-    .index__main_section--selled{
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 2%;
-  }
-    
-    
-    /*----------------------------- Estilos para Productos*/
-  
-  h2.titular{
-      font-size: 24px;
-      margin:3%;
-      color: #666;
-      
-  }
-  
-  .main_section_article p.precio {
-      font-size: 18px;
-      width: 30%
-  }
-  .main_section_article p.descuento{
-      font-size: 16px;
-      color: #39b54a;
-      width: 70%;
-  }
-  .main_section_article p.descripcion{
-      font-size: 16px;
-      display: none;
-  }
-  
-  
-  /*-------- Seccion ofertas */
-  .index__main_section--oferts{
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-  }
-  
-  .index__main_section--selledMostAfterTabletPC{
-    display: none;
-  }
-  
-  /*----------------------------- Estilos para Footer*/
-  
-  
-  
-  
-  @media screen and (min-width: 361px) {
-    .index__main__reversor{
-      display: flex;
-      flex-direction: row;
-    }
-   
-    .index__main__section--tabletPC {
-      width: 50%;
-      display: flex;
-      /* display: block; */
-      flex-direction: column-reverse;
-  }
-    .index__main__section{
-      /*width: 50%;*/
-      display: flex;
-      flex-direction: column-reverse;
-      flex-wrap: wrap;
+
+  .index__main__section {
+    /*width: 50%;*/
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
     align-content: center;
-    }
-    .index__main_section--selledMostAfterTabletPC{
-      display: contents;
-    }
   }
-    
-    @media screen and (min-width: 769px) {
-      
-      .index__main__reversor {
-        display: flex;
-        flex-direction: column;
-    }
-    .index__main__reversor {
-        width: 100%;
-    }
-    .index__main__section {
-      width: 100%;
+
+  .index__main_section--selledMostAfterTabletPC {
+    display: contents;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .index__main__reversor {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index__main__reversor {
+    width: 100%;
+  }
+
+  .index__main__section {
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: space-between;
 
   }
-  .index__main__section--tabletPC{
-    
+
+  .index__main__section--tabletPC {
+
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
   }
-  
-  .index__main__section--last{
+
+  .index__main__section--last {
     display: flex;
-    flex-direction:row ;
+    flex-direction: row;
   }
-      
-    }
-    
-  
-    
+
+}
