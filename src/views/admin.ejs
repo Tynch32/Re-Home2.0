@@ -14,29 +14,28 @@
                                 <h4 class="card-title"> Administrador de Productos </h4>
                             </div>
                             <div class="card-body">
-                                <% products.forEach( producto => { %>
+                                <% products.forEach( producto=> { %>
                                     <tr>
                                         <td>
                                             <%= producto.name %>
                                         </td>
                                         <td>
-                                            <%= producto.category  %>
+                                            <%= producto.category %>
                                         </td>
                                         <td>
                                             $<%= producto.price %>
                                         </td>
-
+                                        <td>
+                                                <form clas="" action="/products/<%= producto.id %>?_method=DELETE"
+                                                    method="POST">
+                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                </form>
+                                                <a href="/products/<%= producto.id %>/edit">
+                                                    <button type="submit" class="btn btn-primary ">Editar</button>
+                                                </a>
+                                        </td>
                                     </tr>
-                                    <div class="m-3 d-flex justify-content-">
-                                        <form  clas="" action="/products/<%= producto.id %>?_method=DELETE" method="POST">
-                                            <button type="submit" class="btn btn-danger">Eliminalo</button>
-                                        </form>
-                                        <a href="/products/<%= producto.id %>/edit">
-                                            <button type="submit" class="btn btn-primary ">Editalo</button>
-                                        </a>
-                                   </div>
-                                   <% }) %>
-                              
+                                <% }) %>
                             </div>
 
                         </div>
