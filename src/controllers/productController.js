@@ -1,6 +1,3 @@
-const { readJSON } = require("../data");
-const categories = readJSON('../data/categories.json');
-
 module.exports = {
     detail : require('./products/detail'),
     add :require("./products/add"),

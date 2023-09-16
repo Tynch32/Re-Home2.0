@@ -2,9 +2,8 @@ const { readJSON, writeJSON } = require("../../data");
 
 module.exports = (req,res) => {
     
-     const products = readJSON('products.json');
-       
-     const productsModify = products.map(product => {
+    const products = readJSON('products.json');
+    const productsModify = products.map(product => {
         if(product.id == req.params.id){
             
             product.name = req.body.name
@@ -15,6 +14,6 @@ module.exports = (req,res) => {
         return product
     })
     writeJSON(productsModify, 'products.json') 
-    
     return res.redirect("/admin")
+    
 }

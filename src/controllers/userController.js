@@ -1,7 +1,3 @@
-const { readJSON } = require("../data");
-const { detail } = require("./productController");
-const categories = readJSON('../data/categories.json');
-
 module.exports = {
     productCart: (req, res) => {
         return res.render('productCart')
