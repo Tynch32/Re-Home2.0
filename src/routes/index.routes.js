@@ -11,6 +11,6 @@ router.get('/', indexController.index);
 router.get('/products', indexController.index);
 
 //Vista SOLO para los admin
-router.get('/admin',adminCheck, indexController.admin)
+router.get('/admin', indexController.admin)
 
 module.exports = router;

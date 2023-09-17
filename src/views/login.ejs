@@ -8,8 +8,8 @@
     <%- include('partials/header') %>
 
       <main>
-        <h1>Accede a tu cuenta</h1>
-        <form action="" method="POST" class="row align-items-start">
+        <form action="" method="POST" class="container row p-5">
+          <h1>Accede a tu cuenta</h1>
           <div class="co-12 mb-3">
             <label for="email" class="form-label">Ingrese su email:</label>
             <input type="email" class="form-control" id="email" aria-describedby="noExisteElMail">
@@ -20,11 +20,14 @@
             <input type="password" class="form-control" id="contraseña" aria-describedby="contraseñaIncorrecta">
             <div id="contraseñaIncorrecta" class="form-text"></div>
           </div>
-          <div class="mb-3 form-check">
+          <div class="container  p-4  form-check">
+           
             <input type="checkbox" class="form-check-input" id="recordame">
             <label class="form-check-label" for="recordame">Recordame</label>
+         
+            <button type="submit" class="btn btn-dark">Ingresar</button>
           </div>
-          <button type="submit" class="btn btn-dark">Ingresar</button>
+          
         </form>
         <div class="home__main__div--image">
           <img class="home__aside__section--logo" src="\img\logo_rehogar.png">

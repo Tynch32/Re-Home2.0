@@ -9,8 +9,8 @@ const adminCheck = require('../middlewares/adminCheck');
 
 /* -----SOLO Acceso ADMINISTRADOR----- */
 //Crear Nuevo Producto
-router.get('/create',adminCheck, productController.add); 
-router.post('/create',adminCheck, upload.single('image'),productController.create);
+router.get('/create', productController.add); 
+router.post('/create',upload.single('image'),productController.create);
 
 //Editar Producto
 router.get('/edit/:id',adminCheck,productController.edit);
