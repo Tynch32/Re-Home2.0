@@ -1,22 +1,27 @@
 const express = require('express');
-const productController = require('../controllers/productController');
-const upload = require('../middlewares/upload');
 const router  = express.Router();
 
-//Crear Nuevo Producto
-router.get('/create', productController.add); 
-router.post('/create',upload.single('image'),productController.create);
+//Controller
+const productController = require('../controllers/productController');
+//Middlewares
+const upload = require('../middlewares/upload');
+const adminCheck = require('../middlewares/adminCheck');
 
-//Ver Detalles Del Producto
-router.get('/detail/:id',productController.detail);
+/* -----SOLO Acceso ADMINISTRADOR----- */
+//Crear Nuevo Producto
+router.get('/create',adminCheck, productController.add); 
+router.post('/create',adminCheck, upload.single('image'),productController.create);
 
 //Editar Producto
-router.get('/edit/:id',productController.edit);
-router.put('/edit/:id',upload.single('image'),productController.update);
+router.get('/edit/:id',adminCheck,productController.edit);
+router.put('/edit/:id',adminCheck,upload.single('image'),productController.update);
 
 //Eliminar Producto
-router.delete('/:id',productController.remove);
+router.delete('/:id',adminCheck,productController.remove);
 
+/* -----     Acceso TODOS     -----*/
+//Ver Detalles Del Producto
+router.get('/detail/:id',productController.detail);
 //Buscar un producto
 router.get('/results',productController.search);
 

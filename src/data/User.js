@@ -10,9 +10,9 @@ const User = function ({nombre,apellido,domicilio,ciudad,provincia,pais,email,co
     this.provincia = provincia.trim();
     this.pais = pais.trim();
     this.email = email.trim();
-    this.createAt = new Date;
     this.contraseña = hashSync(contraseña,10);
     this.rol = 'user';
+    this.createAt = new Date;
 }
 
 module.exports = User

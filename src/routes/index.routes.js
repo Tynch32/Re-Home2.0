@@ -1,13 +1,16 @@
 var express = require('express');
-const indexController = require('../controllers/indexController');
 const router = express.Router();
+
+//Controller
+const indexController = require('../controllers/indexController');
+//Middlewares
 const adminCheck = require('../middlewares/adminCheck');
 
-/* GET home page. */
+//Vista al index
 router.get('/', indexController.index);
 router.get('/products', indexController.index);
 
-//Vista solo para los admin
+//Vista SOLO para los admin
 router.get('/admin',adminCheck, indexController.admin)
 
 module.exports = router;
