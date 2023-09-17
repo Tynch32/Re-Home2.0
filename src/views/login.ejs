@@ -7,44 +7,27 @@
 
     <%- include('partials/header') %>
 
-      <main class="home__main">
-        <div class="home__main__div">
-          <div class="home__main__div--content">
-            <h1>
-              <span>Accede</span>
-              <span>a tu cuenta </span>
-            </h1>
-            <div class="home__main__div--email">
-              <label>Email:</label>
-              <form class="home__main--form" action="register" method="POST">
-                <input class="home__main--barra" type="text" placeholder="">
-              </form>
-            </div>
-
-            <div class="home__main__div--password">
-              <label>Contraseña:</label>
-              <form class="home__main--form" action="password" method="POST">
-                <input class="home__main--barra" type="password" placeholder="">
-              </form>
-              <input type="checkbox" name="Recuerdame" value="Recuerdame">Recuerdame
-              <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-
-            <section class="home__main__section__botones">
-              <div class="home__main__div--ingreso">
-                <button type="submit">Ingresar</button>
-              </div>
-              <div class="home__main__section__botones--ya-tienes-cuenta">
-                <a href="/users/register">¿Ya tienes cuenta?</a>
-              </div>
-              <div class="home__main__div--nueva-cuenta">
-                <a href="/users/register"><button type="submit">Crea tu cuenta</button></a>
-              </div>
-            </section>
+      <main>
+        <h1>Accede a tu cuenta</h1>
+        <form action="" method="POST" class="row align-items-start">
+          <div class="co-12 mb-3">
+            <label for="email" class="form-label">Ingrese su email:</label>
+            <input type="email" class="form-control" id="email" aria-describedby="noExisteElMail">
+            <div id="noExisteElMail" class="form-text"></div>
           </div>
-          <div class="home__main__div--image">
-            <img class="home__aside__section--logo" src="\img\logo_rehogar.png">
+          <div class="col-12">
+            <label for="contraseña" class="form-label">Ingrese su contraseña:</label>
+            <input type="password" class="form-control" id="contraseña" aria-describedby="contraseñaIncorrecta">
+            <div id="contraseñaIncorrecta" class="form-text"></div>
           </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="recordame">
+            <label class="form-check-label" for="recordame">Recordame</label>
+          </div>
+          <button type="submit" class="btn btn-dark">Ingresar</button>
+        </form>
+        <div class="home__main__div--image">
+          <img class="home__aside__section--logo" src="\img\logo_rehogar.png">
         </div>
       </main>
 

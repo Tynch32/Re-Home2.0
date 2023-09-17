@@ -12,7 +12,7 @@ router.get('/detail/:id',productController.detail);
 
 //Editar Producto
 router.get('/edit/:id',productController.edit);
-router.put('/edit/:id',productController.update);
+router.put('/edit/:id',upload.single('image'),productController.update);
 
 //Eliminar Producto
 router.delete('/:id',productController.remove);

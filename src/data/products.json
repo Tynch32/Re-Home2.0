@@ -1,15 +1,5 @@
 [
    {
-      "id": 4,
-      "name": "asdasd",
-      "description": "Herramienta esencial para trabajos de albañilería.",
-      "discount": 0,
-      "price": "",
-      "category": "Herramientas de Corte",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
-   },
-   {
       "id": 5,
       "name": "Taladro",
       "description": "Perfecta para cortes precisos en madera y metal.",
