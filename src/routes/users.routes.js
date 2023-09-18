@@ -14,20 +14,26 @@ const loginValidator = require('../validations/loginValidator');
 
 //Login
 router.get('/login', notUserCheck, userController.login);
-router.post('/login', loginValidator, userController.processLogin);
+router.post('/login',loginValidator ,userController.processLogin);
+
+//PROFILE 
+router.get('/profile',userCheck, userController.profile);
+router.put('/profile', userController.editProfile)
 
 //Registro
 router.get('/register', notUserCheck, userController.register);
-//router.post('/register', userController.processRegister);
+router.post('/register',userController.processRegister);
 
 /* -----Usuario LOGEADO----- */
 
-//Editar perfil
- router.get('/editProfile', userController.profile);
+
+
 //Ver carrito de compras
+
 //router.get('/productCart', userController.productCart);
+
 //Desloguear
-//router.get('/logout', userController.logout);
+router.get('/logout', userController.logout);
 
 
 //Export

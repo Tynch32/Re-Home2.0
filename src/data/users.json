@@ -12,5 +12,19 @@
       "rol": "user",
       "image": "",
       "createAt": "2023-09-17T22:04:16.177Z"
+   },
+   {
+      "id": "2",
+      "nombre": "Hernan",
+      "apellido": "123t3",
+      "domicilio": "123123",
+      "ciudad": "123123",
+      "provincia": "123123",
+      "pais": "123123",
+      "email": "123@gmail.com",
+      "contrasena": "$2a$10$T7s8PG4hD0QqIffLn1atCON48xl6UmuGugeRDLJ75RqzIBX9sTI46",
+      "rol": "user",
+      "image": "",
+      "createAt": "2023-09-17T23:37:32.572Z"
    }
 ]

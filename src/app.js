@@ -1,18 +1,19 @@
 // Requires
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var methodOverride = require('method-override');
-var session = require('express-session');
-
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+const session = require('express-session');
+const userSessionCheck = require("./middlewares/userSessionCheck")
+const cookieCheck = require('./middlewares/cookieCheck');
 // Require de routes
-var indexRouter = require('./routes/index.routes');
-var usersRouter = require('./routes/users.routes');
-var productsRouter = require('./routes/products.routes');
+const indexRouter = require('./routes/index.routes');
+const usersRouter = require('./routes/users.routes');
+const productsRouter = require('./routes/products.routes');
 
-var app = express();
+const app = express();
 
 // View engine setup
 
@@ -33,6 +34,10 @@ app.use(session({
   resave : true,
   saveUninitialized : true
 }));
+
+//Validators
+app.use(cookieCheck);
+app.use(userSessionCheck)
 
 // Routes
 app.use('/', indexRouter);
