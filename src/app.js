@@ -7,6 +7,10 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 
+//Middlewares
+const userSessionCheck = require('./middlewares/userSessionCheck');
+const cookieCheck = require('./middlewares/cookieCheck');
+
 // Require de routes
 var indexRouter = require('./routes/index.routes');
 var usersRouter = require('./routes/users.routes');
@@ -16,8 +20,6 @@ var app = express();
 
 // View engine setup
 
-
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
@@ -26,7 +28,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'..','public')));
-
 
 app.use(session({
   secret : "grupoReHome10",
@@ -38,6 +39,10 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter)
+
+//Validators
+app.use(cookieCheck);
+app.use(userSessionCheck);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
