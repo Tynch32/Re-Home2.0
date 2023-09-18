@@ -12,6 +12,7 @@ const User = function ({nombre,apellido,domicilio,ciudad,provincia,pais,email,co
     this.email = email.trim();
     this.contrasena = hashSync(contrasena,10);
     this.rol = 'user';
+    this.image = image
     this.createAt = new Date;
 }
 

@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<%- include('partials/head') %>
+  <%- include('partials/head') %>
 
   <body class="home">
-
     <%- include('partials/header') %>
 
-      <main>
-        <h1>Accede a tu cuenta</h1>
-        <form action="" method="POST" class="row align-items-start">
-          <div class="co-12 mb-3">
-            <label for="email" class="form-label">Ingrese su email:</label>
-            <input type="email" class="form-control" id="email" aria-describedby="noExisteElMail">
-            <div id="noExisteElMail" class="form-text"></div>
-          </div>
-          <div class="col-12">
-            <label for="contraseña" class="form-label">Ingrese su contraseña:</label>
-            <input type="password" class="form-control" id="contraseña" aria-describedby="contraseñaIncorrecta">
-            <div id="contraseñaIncorrecta" class="form-text"></div>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="recordame">
-            <label class="form-check-label" for="recordame">Recordame</label>
-          </div>
-          <button type="submit" class="btn btn-dark">Ingresar</button>
-        </form>
-        <div class="home__main__div--image">
-          <img class="home__aside__section--logo" src="\img\logo_rehogar.png">
+    <main class="container">
+      <form action="/users/login" method="POST" class="container row align-items-start">
+        <div class="co-12 mb-3">
+          <label for="email" class="form-label">Ingrese su email:</label>
+          <input type="email" class="form-control" id="email" aria-describedby="noExisteElMail" name="email">
+          <div id="noExisteElMail" class="form-text"></div>
         </div>
-      </main>
+        <div class="col-12">
+          <label for="contraseña" class="form-label">Ingrese su contraseña:</label>
+          <input type="password" class="form-control" id="contraseña" aria-describedby="contraseñaIncorrecta" name="password">
+          <div id="contraseñaIncorrecta" class="form-text"></div>
+        </div>
+        <div class="mb-3 form-check">
+          
+          <label class="form-check-label" for="remember">Recordame</label>
+          <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
+        </div>
+        <button type="submit" class="btn btn-dark">Ingresar</button>
+      </form>
+      <div class="home__main__div--image">
+        <img class="home__aside__section--logo" src="\img\logo_rehogar.png" />
+      </div>
+    </main>
 
-      <%- include('partials/footer') %>
-
+    <%- include('partials/footer') %>
   </body>
-
 </html>

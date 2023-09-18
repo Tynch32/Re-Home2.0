@@ -6,5 +6,6 @@ module.exports = {
     login : require('./users/login'),
     processLogin : require('./users/processLogin'),
     profile : require('./users/profile'),
+    editProfile:require('./users/editProfile'),
     notFound : require('./users/404'),
 }

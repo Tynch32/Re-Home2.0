@@ -10,6 +10,6 @@ module.exports=(req,res)=>{
     productosDatabse.push(productoNuevo)
     console.log(req.body)
     writeJSON(productosDatabse,"products.json")
-    return res.send(req.file)
+    return res.redirect("/")
 
 }
