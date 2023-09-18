@@ -1,0 +1,15 @@
+[
+   {
+      "id": "e38b4f8e-a968-4152-b43a-198aa9cf622c",
+      "nombre": "Martin",
+      "apellido": "Velazquez",
+      "domicilio": "Calle Falsa 123",
+      "ciudad": "Jose C. Paz",
+      "provincia": "Buenos Aires",
+      "pais": "Argentina",
+      "email": "martingonzalovelazquez@gmail.com",
+      "contrasena": "$2a$10$wtIsGTcKHN/jmaoIpJp2Hu/0d/1SBQgaPV8dK4f9cjwCF6d4.4arC",
+      "rol": "user",
+      "createAt": "2023-09-18T01:45:59.040Z"
+   }
+]

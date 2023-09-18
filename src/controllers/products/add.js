@@ -1,4 +1,4 @@
-const {readJSON} = require("../../data/index");
+const { readJSON } = require("../../data")
 const categories = readJSON('../data/categories.json');
 
 module.exports = (req,res) => {
