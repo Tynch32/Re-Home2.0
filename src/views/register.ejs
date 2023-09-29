@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('partials/head') %>
-
-<body>
-
-  <%- include('partials/header') %>
+    <%- include('partials/head',{title: "Registrate"}) %>
 
 
-    <main class="register__main">
-        <form action="/" method="GET" class="register__main__form">
-            <div class="register__main__form__div">
-                <input type="text" name="name" placeholder="Nombre y apellido" class="register__main__form__div--barra">
+<body class="detalle">
+    <%- include('partials/header') %>
+
+    <main class="detalle__main">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                <div class="card mb-3 shadow-lg">
+                  <div class="card-header">
+                    Registro de usuario
+                  </div>
+                  <div class="card-body">
+                    <form action="" method="POST" class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" name="name">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="surname" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="surname" placeholder="Ingrese su apellido" name="surname">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="adress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="adress" placeholder="Ingrese su domicilio" name="adress">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="city" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="province" class="form-label">Provincia</label>
+                            <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="country" class="form-label">País</label>
+                            <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Tu email" name="email">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Tu contraseña" name="password">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="password2" class="form-label">Confirma contraseña</label>
+                            <input type="password" class="form-control" id="password2" placeholder="Confirma tu contraseña" name="password2">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="image" class="form-label">Subir imagen</label>
+                            <input class="form-label" type="file" id="image" name="image">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-dark">Registrate</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
             </div>
-            <div class="register__main__form__div">
-                <input type="text" name="adress" placeholder="Domicilio" class="register__main__form__div--barra">
-            </div>
-            <div class="register__main__form__div">
-                <input type="text" name="userName" placeholder="Nombre de usuario"
-                    class="register__main__form__div--barra">
-            </div>
-            <div class="register__main__form__div">
-                <input type="password" name="password" class="register__main__form__div--barra"
-                    placeholder="Contraseña">
-            </div>
-            <div class="register__main__form__div">
-                <input type="password" name="password" class="register__main__form__div--barra"
-                    placeholder="Confirmar contraseña">
-            </div>
-            <div>
-                <a href="/"><button class="register__main--button">Crea tu cuenta</button></a>
-            </div>
-        </form>
+        </div>
     </main>
-
     <%- include('partials/footer') %>
-
+    <%- include('partials/scripts') %>
 
 </body>
 

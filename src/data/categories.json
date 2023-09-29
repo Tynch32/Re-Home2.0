@@ -1,22 +1,70 @@
 [
     {
         "id": 1,
-        "name": "Herramientas de Corte"
+        "name": "Baños y Cocinas"
     },
     {
         "id": 2,
-        "name": "Herramientas de Medición"
+        "name": "Electrodomésticos"
     },
     {
         "id": 3,
-        "name": "Herramientas de Mano"
+        "name": "Muebles de exterior"
     },
     {
         "id": 4,
-        "name": "Herramientas Eléctricas"
+        "name": "Textil"
     },
     {
         "id": 5,
-        "name": "Herramientas de Fijación"
+        "name": "Organizacióny Limpieza"
+    },
+    {
+        "id": 6,
+        "name": "Herramientas"
+    },
+    {
+        "id": 7,
+        "name": "Iluminación y Deco"
+    },
+    {
+        "id": 8,
+        "name": "Jardíny y Aire Libre"
+    },
+    {
+        "id": 9,
+        "name": "Automotor"
+    },
+    {
+        "id": 10,
+        "name": "Pisos"
+    },
+    {
+        "id": 11,
+        "name": "Pinturas"
+    },
+    {
+        "id": 12,
+        "name": "Aberturas"
+    },
+    {
+        "id": 13,
+        "name": "Construcción"
+    },
+    {
+        "id": 14,
+        "name": "Maderas"
+    },
+    {
+        "id": 15,
+        "name": "Plomería"
+    },
+    {
+        "id": 16,
+        "name": "Electricidad"
+    },
+    {
+        "id": 17,
+        "name": "Ferretería"
     }
 ]

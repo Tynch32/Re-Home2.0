@@ -1,8 +1,10 @@
-const { readJSON, writeJSON } = require("../../data")
-const categories = readJSON('../data/categories.json');
+const { readJSON } = require("../../data")
 
 module.exports = (req,res) => {
-  
-        return res.render('productAdd', { categories });
-    
+
+    const categories = readJSON('categories.json');
+
+    return res.render('productAdd',{
+        categories,
+    })
 }

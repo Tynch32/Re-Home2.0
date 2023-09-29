@@ -1,14 +1,34 @@
-const express = require('express');
-const {detail,add,remove, create, edit, update,search} = require('../controllers/productController');
-const upload = require('../middlewares/upload');
-const router  = express.Router();
+//Express
+const express = require("express");
+//Controller
+const {
+  detail,
+  add,
+  create,
+  edit,
+  update,
+  remove,
+  search
+} = require("../controllers/productsController");
+//Middlewares y validations
+const productAddValidator = require("../validations/productAddValidator");
+const upload = require("../middlewares/upload");
+const productsEditValidator = require("../validations/productsEditValidator");
+const adminCheck = require("../middlewares/adminCheck");
+const router = express.Router();
 
-router.get('/results', search);
-router.get('/create',add );//lleva a la vista  
-router.get('/:id/edit', edit);
-router.post('/',upload.single('image'),create);//crea el producto y sube la imagen
-router.get('/:id',detail)
-router.put('/:id',update);
-router.delete('/:id',remove);
-    
+//Detalles del producto
+router.get("/detail/:id", detail);
+//Crear nuevo producto
+router.get("/add",adminCheck, add);
+router.post("/add",upload.fields([{name: "image",},{name: "images",},]),productAddValidator,create);
+//Actualizar producto
+router.get("/edit/:id",adminCheck, edit);
+router.put("/update/:id",upload.fields([{name: "image",},{name: "images",},]),productsEditValidator,update);
+//Borrar producto
+router.delete("/remove/:id", remove);
+//Buscar un producto
+router.get('/search',search);
+
+//Export
 module.exports = router;

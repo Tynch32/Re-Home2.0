@@ -1,40 +1,33 @@
 :root {
-    --colorSopot: #A87564;
-    --colorViñaDelMar: #AEB4B2;
-    --GrisClaro: #ebebeb;
-    --GrisOscuro: #666;
-    --colorSanAndres: #3A3F43;
-    --colorIseo: #B28F59;
+  --colorRojo: #b81e14;
+  --colorGris: #92908b;
+  --colorGrisOscuro : #444444;
+  --colorSopot: #A87564;
+  --colorViñaDelMar: #AEB4B2;
+  --GrisClaro: #ebebeb;
+  --GrisOscuro: #666;
+  --colorSanAndres: #3A3F43;
+  --colorIseo: #B28F59;
 }
 
-body {
-    width: 100vw;
-    background-color: var(--colorViñaDelMar);
-}
-    
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding:0;
-}
-
-li{
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: #ffff;
+}
+
+li {
+  list-style: none;
 }
 
 ul {
-    padding: 0;
-    color: var(--SanAndres);
+  padding: 0;
 }
-
-/* :root{
-    --colorSopot:#A87564;
-    --colorViñaDelMar: #AEB4B2;
-    --colorSanAndres: #3A3F43;
-    --colorIseo: #B28F59;
-} */
+body{
+  background-color: var(--colorViñaDelMar);
+}

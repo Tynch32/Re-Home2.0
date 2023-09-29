@@ -1,10 +1,15 @@
-var express = require('express');
-const indexController = require('../controllers/indexController');
+//Express
+const express = require('express');
 const router = express.Router();
+//Controller
+const { index, admin } = require('../controllers/indexController');
+//Middlewares
+const adminCheck = require('../middlewares/adminCheck');
 
-/* GET home page. */
-router.get('/', indexController.index);
-router.get('/products', indexController.index);
-router.get('/admin', indexController.admin)
+//Vista visitante
+router.get('/', index);
+//vista admin
+router.get('/admin', adminCheck, admin);
 
+//Export
 module.exports = router;

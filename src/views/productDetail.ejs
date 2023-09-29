@@ -1,92 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: name}) %>
 
-<%- include('partials/head') %>
+	<body>
+		<!-- Header -->
+		<%- include('partials/header') %>
+			<!-- /Header -->
 
-<body class="product_detail_body">
-    <%- include('partials/header') %>
-    <main class="productDetail_main">
-        <div class="product">
-            <div class="test1">
-                <div class="product_name_model">
-                    <h1><%= detail.name %> </h1>
-                    <h2>Modelo</h2>
-                </div>
-                <div class="product_carrousel_box">
-                    <div class="product_carrousel_img">
-                        <img src="/img/<%= detail.image %>">
-                        
-                    </div>
-                    <div class="product_carrousel_img">
-                        <img src="/img/productDetail_img/img_product_2.jpg">
-                    </div>
-                    <div class="product_carrousel_img">
-                        <img src="/img/productDetail_img/img_product_3.jpg">
-                    </div>
-                </div>
-                <div class="product_precio_buttons_box">
-                    <div class="product_precio">
-                        <h1>$<%= detail.price %></h1>
-                    </div>
-                    <div class="product_buttons">
-                        <a href="#"><input type="button" value="Comprar"></a>
-                        <a href="#"><input type="button" value="Enviar"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="box_flex">
-                <div class="box1">
-                    <div class="product_description">
-                        <p>
-                            <%= detail.description %>
-                        </p>
-                    </div>
-                    <div class="product_simil">
-                        <h2>Productos similares</h2>
-                        <div class="product_simil_box">
-                            <div>
-                                <img src="/img/productDetail_img/img_relation_1.jpg">
-                            </div>
-                            <div>
-                                <img src="/img/productDetail_img/img_relation_2.jpg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Datos del vendedor -->
-                <div class="vendedor_info">
-                    <div>
-                        <a href="#">
-                            <i class="fa-solid fa-truck"></i>
-                            <p>Información de envios </p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <i class="fa-solid fa-credit-card"></i>
-                            <p>Metodos de pago </p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <i class="fa-solid fa-id-card"></i>
-                            <p>Información del vendedor </p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p>Dirección de entrega </p>
-                        </a>
-                    </div>
+			<!-- product detail -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-name">Detalle del producto: <%= name %>
+						</h2>
+					</div>
+				</div>
+				<div class="product-detail">
+					<div class="row">
+						<div class="col-12 col-lg-8">
+							<img src="/img/products/<%= image || 'default-image.png' %>" alt="product image"
+								class="product-detail-img">
+							<p class="product-detail-description">
+								<%= description %>
+							</p>
+						</div>
+						<div class="col-12 col-lg-4">
+							<article class="product-detail-info">
+								<h2 class="product-detail-name">
+									<%= name %>
+								</h2>
+								<% if (discount) { %>
+									<p class="product-detail-price small">
+										<span>$<%= toThousand(price) %></span>
+										/
+										<b>
+											<%= discount %>% OFF
+										</b>
+									</p>
+									<p class="product-detail-price">
+										$<%= toThousand(price - (price * discount / 100).toFixed(0)) %>
+									</p>
+									<% } %>
+										<ul class="actions-list">
+											<li>
+												<i class="fas fa-credit-card"></i>
+												<p>Pagá en 12 cuotas sin interes</p>
+											</li>
+											<li>
+												<i class="fas fa-store"></i>
+												<p>Retiro gratis en locales del vendedor</p>
+											</li>
+										</ul>
 
-                </div>
-            </div>
-        </div>
-    </main>
+										<a href="#" class="buy-now-button">COMPRAR AHORA</a>
+										<hr>
 
-    <%- include('partials/footer') %>
-</body>
+										<a href="/products/edit/<%= id %>" class="action-button edit">EDITAR
+											PRODUCTO</a>
+										<form action="/products/delete/<%= id %>?_method=DELETE" method="POST"
+											style="display: inline-flex">
+											<button type="submit" class="action-button delete">ELIMINAR</button>
+										</form>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /product detail -->
 
+			<!-- footer -->
+			<%- include('partials/footer') %>
+				<!-- /footer -->
+
+	</body>
 
 </html>

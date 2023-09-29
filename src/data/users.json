@@ -1,0 +1,54 @@
+[
+   {
+      "id": "45107052-0d57-4607-be73-6c5fdb652acc",
+      "name": "Martin",
+      "surname": "Velazquez",
+      "adress": "Calle falsa 123",
+      "city": "San Miguel",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "email": "martin@gmail.com",
+      "password": "$2a$10$.RBke19Ceeb7f7P8lwgoEulmFRK6vcN16mIxBQTuMeiUcbzH50u7e",
+      "role": "admin",
+      "createAt": "2023-09-29T05:19:36.728Z"
+   },
+   {
+      "id": "75750664-a3f4-4611-b8bc-12ea42d0b1d9",
+      "name": "Juan",
+      "surname": "Gonzalez",
+      "adress": "Triunvirato 24",
+      "city": "Palermo",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$9Rj7wIqXf5OwPva0Fc2j..5DxEq6r0K1RmaetHxngdJVPixrf/a96",
+      "role": "user",
+      "createAt": "2023-09-29T05:37:52.917Z"
+   },
+   {
+      "id": "d0d7daba-1e87-4607-bcd1-144bd1556e66",
+      "name": "Juan",
+      "surname": "Velazquez",
+      "adress": "XXX2756",
+      "city": "Palermo",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "email": "juan@gmail.com",
+      "password": "$2a$10$h3xHIs5mQ/ky1LiA7bJGS.bFrU.DJks94sgQ/oYuTyUBtkckf2SNi",
+      "role": "user",
+      "createAt": "2023-09-29T14:46:05.566Z"
+   },
+   {
+      "id": "e10eff03-71d6-4a38-bb46-fd966e86a581",
+      "name": "Hernan",
+      "surname": "Escudero",
+      "adress": "Calle falsa 123",
+      "city": "San Miguel",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "email": "hernan123@gmail.com",
+      "password": "$2a$10$WKftOiBtgt4lvOfwHFFjpeMouedtpnYaQkxKVb2EwRrck80mxiRpa",
+      "role": "user",
+      "createAt": "2023-09-29T15:38:52.717Z"
+   }
+]

@@ -1,63 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head') %>
+<%- include('partials/head',{title: "Añadir Producto"}) %>
 
-    <body>
-        <%- include('partials/header') %>
+  <body class="productAdd">
+    <%- include('partials/header') %>
 
-            <main class="container">
-                <div class="row">
-                    <div class="col-12 col-md-8 mx-auto mt-5">
-                        <div class="card shadow">
-                            <div class="card-header">
-                                <h4 class="card-title">Agregar producto</h4>
-                            </div>
-                            <div class="card-body">
-                                <form action="/products" method="POST" class="row" enctype="multipart/form-data">
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="name" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" id="name"
-                                            placeholder="Nombre del producto" name="name">
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="category" class="form-label">Categoría</label>
-                                        <select class="form-select" aria-label="Default select example" name="category"
-                                            id="category">
-                                            <% categories.forEach(category => { %>
-                                                <option value="<%= category.name %>"><%= category.name %></option>
-                                               <% }) %>
+      <main class="container">
+        <div class="row">
+          <div class="col-12 col-md-8 mx-auto mt-5">
+            <div class="card shadow">
+              <div class="card-header">
+                <h4 class="card-name">Agregar producto</h4>
+              </div>
 
-                                        </select>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="price" class="form-label">Precio</label>
-                                        <input type="number" class="form-control" id="price" name="price">
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="discount" class="form-label">Descuento</label>
-                                        <input type="number" class="form-control" id="discount" name="discount">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <label for="description" class="form-label">Descripción</label>
-                                        <textarea name="description" id="description" class="form-control"
-                                            style="resize: none;"></textarea>
-                                            <label for="images" class="form-label">Subir imagen </label>
-                                            <input class="form-control" type="file" id="images" name="image">
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-end gap-2 mb-3">
-                                       
-                                        <button  type="submit" class="btn btn-dark">Guardar cambios</button>
-                                    </div>
-                                </form>
-                            </div>
+              <div class="card-body">
+                <form action="" method="POST" class="row" enctype="multipart/form-data">
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="name" class="form-label">Título</label>
+                    <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>"
+                      id="name" placeholder="Título del producto" name="name"
+                      value="<%= locals.old && (old.name && old.name ) %>" />
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && (errors.name && errors.name.msg) %>
+                    </small>
+                  </div>
 
-                        </div>
-                    </div>
-                </div>
-            </main>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="category" class="form-label">Categoría</label>
+                    <select class="form-select  <%= locals.errors && (errors.category && 'is-invalid') %>"
+                      aria-label="Default select example" name="category" id="category">
+                      <option value="" selected hidden>Seleccione...</option>
+                      <% categories.forEach(category=> { %>
+                        <option value="<%= category.name %>" <%=locals.old && (locals.old.category===category.name
+                          && 'selected' ) %>>
+                          <%= category.name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && (errors.category && errors.category.msg) %>
+                    </small>
 
+                  </div>
+                  <div class="col-12 col-md-4 mb-3">
+                    <label for="price" class="form-label">Precio</label>
+                    <input type="number" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
+                      id="price" name="price" value="<%= locals.old && (old.price && old.price ) %>" />
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && (errors.price && errors.price.msg) %>
+                    </small>
 
-            <%- include('partials/footer') %>
-    </body>
+                  </div>
+                  <div class="col-12 col-md-4 mb-3">
+                    <label for="discount" class="form-label">Descuento</label>
+                    <input type="number" class="form-control" id="discount" name="discount" />
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <label for="description" class="form-label">Descripción</label>
+                    <textarea name="description" id="description"
+                      class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>"
+                      style="resize: none"><%= locals.old && (old.description && old.description ) %></textarea>
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && (errors.description && errors.description.msg) %>
+                    </small>
+
+                  </div>
+                  <div class="col-12 d-flex justify-content-end gap-2 mb-3">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && (errors.image && errors.image.msg) %>
+                    </small>
+                    <label for="image" class="btn <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secondary' %>">Imagen principal</label>
+                    <input type="file" name="image" id="image" hidden />
+                    <label for="images" class="btn btn-secondary">Imágenes</label>
+                    <input type="file" multiple name="images" id="images" hidden />
+                    <button class="btn btn-dark">Guardar cambios</button>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <%- include('partials/footer') %> <%- include('partials/scripts') %>
+  </body>
 
 </html>
