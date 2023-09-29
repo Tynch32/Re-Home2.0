@@ -1,34 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
-  <%- include('partials/head') %>
+<html lang="en">
+    <%- include('partials/head', {title: "Ingresar!"}) %>
 
-  <body class="home">
+
+<body class="detalle">
     <%- include('partials/header') %>
 
-    <main class="container">
-      <form action="/users/login" method="POST" class="container row align-items-start">
-        <div class="co-12 mb-3">
-          <label for="email" class="form-label">Ingrese su email:</label>
-          <input type="email" class="form-control" id="email" aria-describedby="noExisteElMail" name="email">
-          <div id="noExisteElMail" class="form-text"></div>
+    <main class="detalle__main">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                <div class="card mb-3 shadow-lg">
+                  <div class="card-header">
+                    Ingresá
+                  </div>
+                  <div class="card-body">
+                    <form action="" method="POST" class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Tu email" name="email">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Tu contraseña" name="password">
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
+                                <label class="form-check-label" for="remember">
+                                  Recordarme
+                                </label>
+                              </div>
+                            <button type="submit" class="btn btn-dark">Ingresá</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
         </div>
-        <div class="col-12">
-          <label for="contraseña" class="form-label">Ingrese su contraseña:</label>
-          <input type="password" class="form-control" id="contraseña" aria-describedby="contraseñaIncorrecta" name="password">
-          <div id="contraseñaIncorrecta" class="form-text"></div>
-        </div>
-        <div class="mb-3 form-check">
-          
-          <label class="form-check-label" for="remember">Recordame</label>
-          <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
-        </div>
-        <button type="submit" class="btn btn-dark">Ingresar</button>
-      </form>
-      <div class="home__main__div--image">
-        <img class="home__aside__section--logo" src="\img\logo_rehogar.png" />
-      </div>
     </main>
-
     <%- include('partials/footer') %>
-  </body>
+    <%- include('partials/scripts') %>
+
+</body>
+
 </html>

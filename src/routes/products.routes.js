@@ -1,29 +1,34 @@
-const express = require('express');
-const router  = express.Router();
-
+//Express
+const express = require("express");
 //Controller
-const productController = require('../controllers/productController');
-//Middlewares
-const upload = require('../middlewares/upload');
-const adminCheck = require('../middlewares/adminCheck');
+const {
+  detail,
+  add,
+  create,
+  edit,
+  update,
+  remove,
+  search
+} = require("../controllers/productsController");
+//Middlewares y validations
+const productAddValidator = require("../validations/productAddValidator");
+const upload = require("../middlewares/upload");
+const productsEditValidator = require("../validations/productsEditValidator");
+const adminCheck = require("../middlewares/adminCheck");
+const router = express.Router();
 
-/* -----SOLO Acceso ADMINISTRADOR----- */
-//Crear Nuevo Producto
-router.get('/create', productController.add); 
-router.post('/create',upload.single('image'),productController.create);
-
-//Editar Producto
-router.get('/edit/:id',adminCheck,productController.edit);
-router.put('/edit/:id',adminCheck,upload.single('image'),productController.update);
-
-//Eliminar Producto
-router.delete('/:id',adminCheck,productController.remove);
-
-/* -----     Acceso TODOS     -----*/
-//Ver Detalles Del Producto
-router.get('/detail/:id',productController.detail);
+//Detalles del producto
+router.get("/detail/:id", detail);
+//Crear nuevo producto
+router.get("/add",adminCheck, add);
+router.post("/add",upload.fields([{name: "image",},{name: "images",},]),productAddValidator,create);
+//Actualizar producto
+router.get("/edit/:id",adminCheck, edit);
+router.put("/update/:id",upload.fields([{name: "image",},{name: "images",},]),productsEditValidator,update);
+//Borrar producto
+router.delete("/remove/:id", remove);
 //Buscar un producto
-router.get('/results',productController.search);
+router.get('/search',search);
 
 //Export
 module.exports = router;

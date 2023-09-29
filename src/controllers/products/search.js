@@ -1,11 +1,13 @@
-const { readJSON,writeJSON } = require("../../data")
+const { readJSON } = require("../../data");
 
-module.exports = (req,res) => {
+module.exports = (req, res) => {
+  
+  const products = readJSON('products.json');
 
-    const productos = readJSON('../data/products.json');
-    const productosFiltrados = productos.filter((producto) => {
-        return Object.values(producto).some((valor) => valor == req.query.keywords);
-    });
-    res.render('results',{productosFiltrados:productosFiltrados});
-    
-}
+  const results = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()))
+		
+  return res.render('search',{
+			results,
+			keywords : req.query.keywords
+		})
+};

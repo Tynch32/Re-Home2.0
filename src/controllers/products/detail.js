@@ -1,10 +1,11 @@
-const { readJSON,writeJSON } = require("../../data")
+const { readJSON } = require("../../data")
 
 module.exports = (req,res) => {
 
-    const products = readJSON("products.json")
-    const selectedProduct = products.find( producto => producto.id == req.params.id)
-    console.log(selectedProduct)
-    return res.render('productDetail',{detail:selectedProduct})
-    
+    const products = readJSON('products.json')
+    const product = products.find(product => product.id === req.params.id)
+
+    return res.render('productDetail', {
+        ...product
+    })
 }

@@ -1,72 +1,79 @@
 [
    {
-      "id": 5,
-      "name": "Taladro",
-      "description": "Perfecta para cortes precisos en madera y metal.",
+      "id": "4502d387-1d5e-4c03-afd6-23241be7a6bb",
+      "name": "Cinta Metrica",
+      "category": "Herramientas\r\n                                            ",
+      "price": 1250,
       "discount": 0,
-      "price": 280,
-      "category": "Herramientas de Corte",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
+      "description": "Ideal para hacer todas tus mediciones con presicion",
+      "image": "1695947867474_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T00:37:47.546Z"
    },
    {
-      "id": 6,
-      "name": "Llave Inglesa",
-      "description": "Herramienta versátil para múltiples tareas de construcción.",
-      "discount": 0,
-      "price": 320,
-      "category": "Herramientas de Mano",
-      "image": "taladrote.jpg",
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 7,
-      "name": "Lijadora",
-      "description": "Ideal para trabajos de acabado y detalles finos.",
-      "discount": 0,
-      "price": 270,
-      "category": "Herramientas de Corte",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 8,
-      "name": "Mazo",
-      "description": "Herramienta resistente para tareas de demolición.",
-      "discount": 0,
-      "price": 310,
-      "category": "Herramientas de Mano",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 9,
-      "name": "Cinta Métrica",
-      "description": "Perfecta para medir y trazar en proyectos de construcción.",
-      "discount": 0,
-      "price": 290,
-      "category": "Herramientas de Medición",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 10,
-      "name": "Tornillo de Banco",
-      "description": "Herramienta ergonómica para largas jornadas de trabajo.",
-      "discount": 0,
-      "price": 330,
-      "category": "Herramientas de Mano",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
-   },
-   {
-      "id": 11,
+      "id": "089e069d-324d-4f7a-86bc-6986097b6f01",
       "name": "Destornillador",
-      "description": "Herramienta esencial en trabajos de instalación y montaje.",
+      "category": "Herramientas",
+      "price": 850,
       "discount": 0,
-      "price": 280,
-      "category": "Herramientas de Fijación",
-      "image": "taladro.jpg",
-      "createAt": "fecha creada"
+      "description": "Destornillador plano, mango antideslizante.",
+      "image": "1695950120523_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T01:15:20.558Z"
+   },
+   {
+      "id": "6ae21882-a65d-4878-b15c-7275301dab74",
+      "name": "Lijadora",
+      "category": "Herramientas",
+      "price": 27500,
+      "discount": 0,
+      "description": "Lijadora de precisión, apta para todo tipo de maderas",
+      "image": "1695950185484_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T01:16:25.510Z"
+   },
+   {
+      "id": "be25b9d2-5c90-4594-a49d-6c720b4e7d3c",
+      "name": "Llave inglesa",
+      "category": "Herramientas",
+      "price": 5900,
+      "discount": 0,
+      "description": "Llave inglesa de fuerza.",
+      "image": "1695950258990_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T01:17:39.009Z"
+   },
+   {
+      "id": "241b405b-b6b4-4f6f-a017-623e05bb29e0",
+      "name": "Mazo 5kg",
+      "category": "Herramientas",
+      "price": 2400,
+      "discount": 0,
+      "description": "Mazo de 5kg, con mango de madera barnizada",
+      "image": "1695950312911_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T01:18:32.939Z"
+   },
+   {
+      "id": "9101d39d-92f1-4369-86f7-b669edfbaf99",
+      "name": "Taladro Inalambrico",
+      "category": "Herramientas",
+      "price": 9450,
+      "discount": 0,
+      "description": "Taladro inalambrico, duración de la batería de 6hs.",
+      "image": "1695950441218_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T01:20:41.237Z"
+   },
+   {
+      "id": "65d77d52-dec0-4ebb-b45c-f015475ca541",
+      "name": "Madera",
+      "category": "Maderas",
+      "price": 2000,
+      "discount": 0,
+      "description": "Madera de algarrobo, de perfecta calidad",
+      "image": "1696002046650_products_.jpg",
+      "images": [],
+      "createAt": "2023-09-29T15:40:46.654Z"
    }
 ]

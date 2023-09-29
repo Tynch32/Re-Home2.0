@@ -1,16 +1,15 @@
-var express = require('express');
+//Express
+const express = require('express');
 const router = express.Router();
-
 //Controller
-const indexController = require('../controllers/indexController');
+const { index, admin } = require('../controllers/indexController');
 //Middlewares
 const adminCheck = require('../middlewares/adminCheck');
 
-//Vista al index
-router.get('/', indexController.index);
-router.get('/products', indexController.index);
+//Vista visitante
+router.get('/', index);
+//vista admin
+router.get('/admin', adminCheck, admin);
 
-//Vista SOLO para los admin
-router.get('/admin', indexController.admin)
-
+//Export
 module.exports = router;

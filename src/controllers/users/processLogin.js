@@ -1,30 +1,27 @@
 const { validationResult } = require("express-validator")
-const { readJSON } = require("../../data/index")
+const { readJSON } = require("../../data")
 
 module.exports = (req,res) => {
 
     const errors = validationResult(req);
 
     if(errors.isEmpty()){
-
         const users = readJSON('users.json')
-        const {id,nombre,rol} = users.find(user => user.email === req.body.email)
-
+        const {id,name,role} = users.find(user => user.email === req.body.email)
+        
         req.session.userLogin = {
             id,
-            nombre,
-            rol
+            name,
+            role
         }
-         req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin,{
-            maxAge : 1000 * 60 * 5
-        })
+
+        req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin)
         
-    
+        //console.log(req.session.userLogin);
         
         return res.redirect('/')
     }else {
-        //const error = errors.mapped()
-        return  res.redirect('login')
+        return res.send(errors.mapped())
     }
 
   

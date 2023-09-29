@@ -1,0 +1,28 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cant. Prod.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% categories.forEach(({id, name, image},index)=> { %>                                                     
+                <tr>
+                    <th scope="row">
+                        <%= index + 1 %>
+                    </th>
+                    <td>
+                        <%= name %>
+                    </td>
+                    <td>
+                        <%= products.filter(product=> product.category ===
+                            name).length %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+      
+    </table>
+</div>

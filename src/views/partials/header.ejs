@@ -1,73 +1,39 @@
-<!-- reestructurado pedido  -->
-<header class="header">
-  <a href="/">
-  <div class="header__top-container">
-    <img
-      class="header__banner--top"
-      src="/img/logo_rehogar.png"
-      alt="bandera ReHome"
-    />
+<header class="home__header">
+  <div>
+    <a href="/">
+      <div class="contenedor_titulo">
+        <div class="header__top-container">
+          <img class="home_header_logo" src="/img/logo_rehogar.png" alt="falta logo ReHome" />
+        </div>
+        <div>
+          <h1 class="header_titulo">Re-Hogar</h1>
+        </div>
+      </div>
+    </a>
   </div>
-</a>
-
-  <nav class="navbar navbar-expand-lg p-3 navbar-light bg-light">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mt-2 mt-lg-0 ">
-        <li>
-          <a href="/users/login" class="nav-link ml-2">
-            <i class="fa-solid fa-right-to-bracket"></i> Ingresa a tu cuenta
-          </a>
-        </li>
-        <li>
-          <a href="/users/register" class="nav-link ml-2">
-            <i class="fa-regular fa-address-card"></i>
-            Registrate
-          </a>
-        </li>
-        <li>
-          <a href="/users/productCart" class="nav-link ml-2">
-            <i class="fa-solid fa-basket-shopping ml-3"></i>Mis compras
-            <span>0</span>
-          </a>
-        </li>
-        <li>
-          <a href="/admin" class="nav-link ml-2">
-            Admin
-          </a>
-        </li>
-        <li>
-          <a href="/users/profile" class="nav-link ml-2">
-            perfil
-          </a>
-        </li>
-      </ul>
-      <form
-        action="/products/results"
-        method="GET"
-        class="search-form form-inline d-flex ml-2 my-2 my-lg-0"
-      >
-        <input
-          type="text"
-          name="keywords"
-          placeholder="Buscar productos, marcas y más"
-          class="form-control mr-sm-2"
-        />
-        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-    </div>
+  <nav class="home__header__nav--menu">
+    <ul>
+      <li><a href="/">home</a></li>
+          <div id="sinEstilo">
+            <form action="/products/search" method="GET" class="search-form">
+              <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+              <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+            </form>
+          </form>
+        </div>
+      <% if (locals.userLogin) { %>
+        <% if (userLogin.role==="admin" ) { %>
+          <li><a href="/admin">ADMIN</a></li>
+          <% } %>
+          <% if (userLogin.role==="user" ) { %>
+            <li><a href="/users/productCart">Carrito</a></li>
+            <% } %>
+            <li><a href="/users/profile">Editar Perfil</a></li>
+            <li><a href="/users/logout">salir</a></li>
+            <% }else{ %>
+              <li><a href="/users/register">registro</a></li>
+              <li><a href="/users/login">ingresar</a></li>
+              <% } %>
+    </ul>
   </nav>
 </header>

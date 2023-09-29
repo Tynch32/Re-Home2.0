@@ -1,18 +1,18 @@
 const { v4: uuidv4 } = require('uuid');
 const {hashSync} = require('bcryptjs');
 
-const User = function ({nombre,apellido,domicilio,ciudad,provincia,pais,email,contrasena}) {
+const User = function ({name, surname, adress, city, province,country, email, password}) {
+
     this.id = uuidv4();
-    this.nombre = nombre.trim();
-    this.apellido = apellido.trim();
-    this.domicilio = domicilio.trim();
-    this.ciudad = ciudad.trim();
-    this.provincia = provincia.trim();
-    this.pais = pais.trim();
+    this.name = name.trim();
+    this.surname = surname.trim();
+    this.adress = adress.trim();
+    this.city = city.trim();
+    this.province = province.trim();
+    this.country = country.trim();
     this.email = email.trim();
-    this.contrasena = hashSync(contrasena,10);
-    this.rol = 'user';
-    this.image = image
+    this.password = hashSync(password,10);
+    this.role = 'user';
     this.createAt = new Date;
 }
 
