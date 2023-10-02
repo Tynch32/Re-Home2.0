@@ -26,7 +26,7 @@ router.post("/add",upload.fields([{name: "image",},{name: "images",},]),productA
 router.get("/edit/:id",adminCheck, edit);
 router.put("/update/:id",upload.fields([{name: "image",},{name: "images",},]),productsEditValidator,update);
 //Borrar producto
-router.delete("/remove/:id", remove);
+router.delete("/remove/:id",adminCheck, remove);
 //Buscar un producto
 router.get('/search',search);
 
