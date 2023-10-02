@@ -24,7 +24,7 @@ module.exports = (req, res) => {
 
     writeJSON(usersModify, "users.json");
 
-    return res.redirect("/admin");
+    return res.redirect("/");
   } else {
     const categories = readJSON('categories.json');
 

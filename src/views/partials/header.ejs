@@ -14,13 +14,11 @@
   <nav class="home__header__nav--menu">
     <ul>
       <li><a href="/">home</a></li>
-          <div id="sinEstilo">
-              <div class="container-fluid">
-                <form action="/products/search" method="GET" class="d-flex gap-0" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Buscar productos, marcas y más" aria-label="Search">
-                  <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-              </div>
+          <div class="header_searchbar">
+            <form action="/products/search" method="GET" class="search-form">
+              <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+              <button class="header_searchbar_button" type="submit"><i class="fas fa-search"></i></button>
+            </form>
         </div>
       <% if (locals.userLogin) { %>
         <% if (userLogin.role==="admin" ) { %>
