@@ -68,12 +68,16 @@
    {
       "id": "65d77d52-dec0-4ebb-b45c-f015475ca541",
       "name": "Madera",
-      "category": "Maderas",
+      "category": "Maderas\r\n                                            ",
       "price": 2000,
       "discount": 0,
       "description": "Madera de algarrobo, de perfecta calidad",
       "image": "1696002046650_products_.jpg",
-      "images": [],
+      "images": [
+         "1696260043981_products_.jpg",
+         "1696260043982_products_.jpg",
+         "1696260043999_products_.jpg"
+      ],
       "createAt": "2023-09-29T15:40:46.654Z"
    }
 ]
