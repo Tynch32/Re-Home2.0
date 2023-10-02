@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', {title: "Inicio"}) %>
+<%- include('partials/head', {title: "Inicio" }) %>
 
     <body class="home">
         <%- include('partials/header') %>
             <main class="home__main">
-                <div class="home__main__section--products">
-                    <% products.forEach(({name, description, id, image, price})=> { %>
-                        <article class="home__main__section__article" data-aos="zoom-in-right" data-aos-duration="500">
-                            <div class="home__main__section__article--box">
-                                <img class="home__main__section__article--image"
-                                    src="/img/products/<%= image ? image : 'img-pdto-1.jpg' %>" alt="producto1">
-                                <a class="home__main__section__article--zoom" href="/products/detail/<%= id %>">Ver más info</a>
+                <div class="container products-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="products-title">Basado en tu última visita</h2>
+                        </div>
+                        <% products.forEach(product=> { %>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <%- include('partials/productCard', { ...product}) %>
                             </div>
-                            <h4 class="home__main__section__article--name">
-                                <%= name %>
-                            </h4>
-                            <p class="home__main__section__article--description">
-                                $<%= price %>
-                            </p>
-                        </article>
-                        <% }) %>
+                            <% }) %>
+                    </div>
                 </div>
-                <a class="home__main--whatsapp" href=""><img width="50px" src="/img/volver_arriba_flecha.png" alt=""></a>
+                <a class="home__main--whatsapp" href=""><img width="50px" src="/img/volver_arriba_flecha.png"alt=""></a>
             </main>
-
             <%- include('partials/footer') %>
                 <%- include('partials/scripts') %>
-
-
-
     </body>
 
 </html>

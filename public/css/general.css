@@ -1,13 +1,20 @@
 :root {
   --colorRojo: #b81e14;
   --colorGris: #92908b;
-  --colorGrisOscuro : #444444;
-  --colorSopot: #A87564;
-  --colorViñaDelMar: #AEB4B2;
+  --colorGrisOscuro: #444444;
+  --colorSopot: #a87564;
+  --colorViñaDelMar: #aeb4b2;
   --GrisClaro: #ebebeb;
-  --GrisOscuro: #666;
-  --colorSanAndres: #3A3F43;
-  --colorIseo: #B28F59;
+  --colorSanAndres: #3a3f43;
+  --colorIseo: #b28f59;
+  --yellow: #eac926;
+  --dark-blue: #03264c;
+  --light-blue: #1259c3;
+  --gray: #6e918a;
+  --martin: #dda546;
+  --light-gray: #ebebeb;
+  --green: #39b54a;
+  --base-font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -28,6 +35,6 @@ li {
 ul {
   padding: 0;
 }
-body{
+body {
   background-color: var(--colorViñaDelMar);
 }

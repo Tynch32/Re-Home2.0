@@ -32,14 +32,14 @@
 								</h2>
 								<% if (discount) { %>
 									<p class="product-detail-price small">
-										<span>$<%= toThousand(price) %></span>
+										<span>$<%= price %></span>
 										/
 										<b>
 											<%= discount %>% OFF
 										</b>
 									</p>
 									<p class="product-detail-price">
-										$<%= toThousand(price - (price * discount / 100).toFixed(0)) %>
+										$<%= price - (price * discount / 100) %>
 									</p>
 									<% } %>
 										<ul class="actions-list">

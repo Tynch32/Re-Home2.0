@@ -1,0 +1,29 @@
+<article class="productCard">
+    <a href="/products/detail/<%= id %>">
+        <div class="productCard_box">
+            <div class="productCard_img">
+                <img src="/img/products/<%= image || 'default-image.png' %>" alt="imagen de producto">
+            </div>
+            <div class="productCard_info"><i class="fa-solid fa-circle-info"></i></div>
+            <% if (discount) { %>
+            <div class="productCard_originalPrice">
+                $<%= price %>
+            </div>
+            <% } %>
+            <div class="productCard_boxInfo">
+                <div class="productCard_finalPrice">
+                    $<%= (price - (price * discount / 100)) %>
+                </div>
+                <% if (discount) { %>
+                <div class="productCard_discount">
+                    <%= discount %>% OFF
+                </div>
+                <% } %>
+            </div>
+            
+            <div class="productCard_name">
+                <%= name %>
+            </div>
+        </div>
+    </a>
+</article>
