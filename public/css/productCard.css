@@ -7,7 +7,7 @@
 }
 
 .productCard_box:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 .productCard_img{
     border-radius: 5px;
