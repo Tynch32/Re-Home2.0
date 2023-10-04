@@ -8,7 +8,6 @@ module.exports = {
         })
     },
     admin : (req,res)  => {
-
         const products = readJSON('products.json');
         const categories = readJSON('categories.json');
         const users = readJSON('users.json');

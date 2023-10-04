@@ -1,16 +1,16 @@
 <div class="table-responsive">
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Ciudad</th>
-                <th scope="col">Provincia</th>
-                <th scope="col">País</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Fecha de Registro</th>
             </tr>
         </thead>
         <tbody>
-            <% users.forEach(({name,city,province,country},index)=> { %>                                                     
+            <% users.forEach(({id, name, surname, role, createAt, image},index)=> { %>                                                     
                 <tr>
                     <th scope="row">
                         <%= index + 1 %>
@@ -19,13 +19,16 @@
                         <%= name %>
                     </td>
                     <td>
-                        <%= province%>
+                        <%= surname %>
                     </td>
                     <td>
-                        <%=country%>
+                        <%= role %>
+                    </td>
+                    <td>
+                        <%= createAt %>
                     </td>
                 </tr>
-                <% }) %>
+            <% }) %>
         </tbody>
       
     </table>
