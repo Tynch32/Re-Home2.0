@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Roboto:wght@100;300;400;700;800;900;1000&display=swap');
 @import './general.css';
-@import './home.css';
 @import './footer.css';
+@import './home.css';
 @import './productDetail.css';
 @import './header.css';
 @import './productCard.css';
-
-@import './productCard2.css';

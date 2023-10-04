@@ -71,6 +71,6 @@
 
 @media (max-width: 574px) {
     .productCard_box{
-        width: 75%;
+        width: 100%;
     }
 }

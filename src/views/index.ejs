@@ -5,17 +5,9 @@
 
     <body class="home">
         <%- include('partials/header') %>
-            <main class="home__main">
+            <main class="home_main">
                 <div class="container products-wrapper">
                     <div class="row d-inline-flex p-2">
-                        <div class="col-12 row d-flex-justify-content-between">
-                            <div class="col-6">
-                                <h2 class="products-title">Productos destacados</h2>
-                            </div>
-                            <div class="col-6">
-                                <h2 class="products-title">Productos destacados</h2>
-                            </div>
-                        </div>
                         <% products.forEach(product=> { %>
                             <div class="col-12 col-lg-3 col-md-4 col-sm-6">
                                 <%- include('partials/productCard', { ...product}) %>
@@ -23,7 +15,7 @@
                             <% }) %>
                     </div>
                 </div>
-                <a class="home__main--whatsapp" href=""><img width="50px" src="/img/volver_arriba_flecha.png"alt=""></a>
+                <a class="home_main_top_arrow" href=""><img width="50px" src="/img/volver_arriba_flecha.png"alt=""></a>
             </main>
             <%- include('partials/footer') %>
     </body>
