@@ -2,8 +2,8 @@
    {
       "id": "4502d387-1d5e-4c03-afd6-23241be7a6bb",
       "name": "Cinta Metrica",
-      "category": "Herramientas\r\n                                            ",
-      "price": 1250,
+      "category": "Baños y Cocinas\r\n                                            ",
+      "price": 12500,
       "discount": 15,
       "description": "Ideal para hacer todas tus mediciones con presicion",
       "image": "1695947867474_products_.jpg",
@@ -79,5 +79,16 @@
          "1696260043999_products_.jpg"
       ],
       "createAt": "2023-09-29T15:40:46.654Z"
+   },
+   {
+      "id": "ebeaf09a-26d9-461c-85ec-5a2b284adb98",
+      "name": "Mondongo",
+      "category": "Textil",
+      "price": 9000,
+      "discount": 99,
+      "description": "asdasdafafasfasfasfaafsafa",
+      "image": "1696460842315_products_.jpg",
+      "images": [],
+      "createAt": "2023-10-04T23:07:22.324Z"
    }
 ]

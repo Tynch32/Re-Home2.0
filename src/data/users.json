@@ -54,5 +54,19 @@
       "role": "user",
       "shopping_cart": [],
       "createAt": "2023-09-29T15:38:52.717Z"
+   },
+   {
+      "id": "0dcce3d7-e1bc-49e4-8371-26bccf91a5ab",
+      "name": "Marisa",
+      "surname": "Ferrada",
+      "adress": "callefalsa",
+      "city": "san miguel",
+      "province": "buenos aires",
+      "country": "argentina",
+      "email": "marisa@gmail.com",
+      "password": "$2a$10$Sj74MorMzlcJVgIkrx06uuDnQL1lvNLYMdg3x63EvrQbe6/MkWN8S",
+      "role": "user",
+      "shopping_cart": [],
+      "createAt": "2023-10-04T23:08:56.454Z"
    }
 ]

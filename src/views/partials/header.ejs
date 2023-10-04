@@ -26,13 +26,13 @@
             <li><a href="/admin">ADMIN</a></li>
             <% } %>
               <% if (userLogin.role==="user" ) { %>
-                <li><a href="/users/productCart">Carrito</a></li>
+                <li><a href="/users/productCart">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
                 <% } %>
-                  <li><a href="/users/profile">Editar Perfil</a></li>
-                  <li><a href="/users/logout">salir</a></li>
+                  <li><a href="/users/profile">Editar Perfil <i class="fa-regular fa-address-card"></i></a></li>
+                  <li><a href="/users/logout">salir <i class="fa-solid fa-door-open"></i></a></li>
                   <% }else{ %>
-                    <li><a href="/users/register">registro</a></li>
-                    <li><a href="/users/login">ingresar</a></li>
+                    <li><a href="/users/register">registro <i class="fa-regular fa-address-card"></i></a></li>
+                    <li><a href="/users/login">ingresar <i class="fa-solid fa-right-to-bracket"></i></a></li>
                     <% } %>
       </ul>
     </nav>
