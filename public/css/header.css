@@ -1,18 +1,17 @@
-header {
-  background-color: var(--colorSopot);
-}
-.home__header {
-  padding-bottom: 5px;
+.header_contenido{
+  background-image: url('../img/banner_2.jpg');
+  background-repeat: no-repeat;
+  background-size : auto  100%;
+  padding: 20px 0;
 }
 .home_header_logo {
   height: 10rem;
   width: auto;
-  text-shadow: 0px 0px 20px rgb(0, 0, 0);
 }
 .header_titulo {
   font-family: "Abril Fatface", cursive;
   color: white;
-  text-shadow: 0px 0px 15px rgb(0, 0, 0);
+  text-shadow: 0px 0px 20px rgb(0, 0, 0);
   margin: 0px;
   font-size: 70px;
 }
@@ -32,10 +31,15 @@ header {
   border-radius: 5px;
   cursor: pointer;
 }
+.header_ul{
+  margin: 0;
+}
 .contenedor_titulo {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 5px;
+  flex-direction: row-reverse;
 }
 .home__header__nav--menu ul li {
     display: flex;
@@ -53,24 +57,38 @@ header {
 }
 
 @media (max-width: 550px) {
+  .header_contenido{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+  .contenedor_titulo{
+    gap:5px;
+    display: flex;
+    padding-right: 5px;
+  }
   .header_titulo {
-    font-size: 36px;
+    font-size: 50px;
+  }
+  .header_contenido{
+    background-image: url('../img/banner_large.jpg');
+    background-repeat: no-repeat;
+    background-size : 150% 100%;
   }
   .home__header__nav--menu ul {
     display: flex;
-
-    justify-content: space-between;
-
-    align-content: center;
-
     flex-direction: column;
-
     align-items: center;
-
-    flex-wrap: nowrap;
   }
   .home__header__nav--menu ul li {
     background-color: var(--colorSanAndres);
-    
+    width: 50%;
+  }
+}
+@media (min-width: 1242px) {
+}
+@media (min-width: 1374px) {
+  .header_contenido{
+    background-size : 100%  100%;
   }
 }
