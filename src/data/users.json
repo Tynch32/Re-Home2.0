@@ -10,6 +10,7 @@
       "email": "martin@gmail.com",
       "password": "$2a$10$.RBke19Ceeb7f7P8lwgoEulmFRK6vcN16mIxBQTuMeiUcbzH50u7e",
       "role": "admin",
+      "shopping_cart": [],
       "createAt": "2023-09-29T05:19:36.728Z"
    },
    {
@@ -23,6 +24,7 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$9Rj7wIqXf5OwPva0Fc2j..5DxEq6r0K1RmaetHxngdJVPixrf/a96",
       "role": "user",
+      "shopping_cart": [],
       "createAt": "2023-09-29T05:37:52.917Z"
    },
    {
@@ -36,6 +38,7 @@
       "email": "juan@gmail.com",
       "password": "$2a$10$h3xHIs5mQ/ky1LiA7bJGS.bFrU.DJks94sgQ/oYuTyUBtkckf2SNi",
       "role": "user",
+      "shopping_cart": [],
       "createAt": "2023-09-29T14:46:05.566Z"
    },
    {
@@ -49,6 +52,7 @@
       "email": "hernan123@gmail.com",
       "password": "$2a$10$WKftOiBtgt4lvOfwHFFjpeMouedtpnYaQkxKVb2EwRrck80mxiRpa",
       "role": "user",
+      "shopping_cart": [],
       "createAt": "2023-09-29T15:38:52.717Z"
    }
 ]
