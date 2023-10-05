@@ -14,14 +14,15 @@ module.exports = (req,res) => {
             name,
             role
         }
-
-        req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin)
-        
-        //console.log(req.session.userLogin);
-        
+        req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin,{
+            maxAge : 1000 * 60 * 60
+        })
         return res.redirect('/')
     }else {
-        return res.send(errors.mapped())
+        return res.render('login',{
+            errors : errors.mapped(),
+            old : req.body
+        });
     }
 
   

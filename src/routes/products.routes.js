@@ -1,15 +1,7 @@
 //Express
 const express = require("express");
 //Controller
-const {
-  detail,
-  add,
-  create,
-  edit,
-  update,
-  remove,
-  search
-} = require("../controllers/productsController");
+const {detail,add,create,edit,update,remove,search} = require("../controllers/productsController");
 //Middlewares y validations
 const productAddValidator = require("../validations/productAddValidator");
 const upload = require("../middlewares/upload");
@@ -21,10 +13,10 @@ const router = express.Router();
 router.get("/detail/:id", detail);
 //Crear nuevo producto
 router.get("/add",adminCheck, add);
-router.post("/add",upload.fields([{name: "image",},{name: "images",},]),productAddValidator,create);
+router.post("/add",upload.fields([{name: "image"},{name: "images"}]),productAddValidator,create);
 //Actualizar producto
 router.get("/edit/:id",adminCheck, edit);
-router.put("/update/:id",upload.fields([{name: "image",},{name: "images",},]),productsEditValidator,update);
+router.put("/update/:id",upload.fields([{name: "image"},{name: "images"}]),productsEditValidator,update);
 //Borrar producto
 router.delete("/remove/:id",adminCheck, remove);
 //Buscar un producto

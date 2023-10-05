@@ -8,7 +8,7 @@ module.exports = (req, res) => {
   const users = readJSON("users.json");
 
   if (errors.isEmpty()) {
-    const { name , surname, adress, city, province, country} = req.body;
+    const { name , surname, adress, city, province, country,image} = req.body;
 
     const usersModify = users.map((user) => {
       if (user.id === req.params.id) {
@@ -18,6 +18,7 @@ module.exports = (req, res) => {
         user.city = city.trim();
         user.province = province.trim();
         user.country = country.trim()
+        user.image=image;
       }
       return user;
     });

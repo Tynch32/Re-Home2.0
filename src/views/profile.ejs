@@ -14,7 +14,7 @@
                     Perfil usuario
                   </div>
                   <div class="card-body">
-                    <form action="/users/update/<%= id %>?_method=PUT" method="POST" class="row">
+                    <form action="/users/update/<%= id %>?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="name" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="name" placeholder="Tu nombre" name="name" value="<%= name %>">
@@ -39,8 +39,10 @@
                             <label for="country" class="form-label">País</label>
                             <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country" value="<%= country %>">
                         </div>
-                        
-                      
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="image" class="form-label">Subir imagen</label>
+                            <input class="form-label" type="file" id="image" name="image">
+                        </div>
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-dark">Guardar cambios</button>
                         </div>
