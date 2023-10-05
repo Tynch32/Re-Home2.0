@@ -23,7 +23,7 @@
         </div>
         <% if (locals.userLogin) { %>
           <% if (userLogin.role==="admin" ) { %>
-            <li><a href="/admin">ADMIN</a></li>
+            <li><a href="/admin">ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
             <% } %>
               <% if (userLogin.role==="user" ) { %>
                 <li><a href="/users/productCart">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>

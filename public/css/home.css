@@ -1,4 +1,4 @@
-.home__main{
+.home_main{
   display: relative;
   width: 100vw;
 }
@@ -8,12 +8,16 @@
   margin-bottom: 1px;
   padding: 8px 0;
 }
-
 .home_main_top_arrow {
   position: fixed;
   bottom: 10px;
   right: 10px;
   z-index: 1000;
+}
+
+.profile_photo_box{
+  border: 1px solid var(--GrisClaro);
+  border-radius: 5px;
 }
 
 @media (min-width: 481px) {
