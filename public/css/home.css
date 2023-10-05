@@ -16,8 +16,14 @@
 }
 
 .profile_photo_box{
+  display: flex;
   border: 1px solid var(--GrisClaro);
   border-radius: 5px;
+  justify-content: center;
+}
+.profile_photo{
+  width: 50%;
+  height: 100%;
 }
 
 @media (min-width: 481px) {
