@@ -1,7 +1,7 @@
 //Express
 const express = require("express");
 //Controller
-const {detail,add,create,edit,update,remove,search} = require("../controllers/productsController");
+const {detail,add,create,edit,update,remove,search,addToCart} = require("../controllers/productsController");
 //Middlewares y validations
 const productAddValidator = require("../validations/productAddValidator");
 const upload = require("../middlewares/upload");
@@ -21,6 +21,8 @@ router.put("/update/:id",upload.fields([{name: "image"},{name: "images"}]),produ
 router.delete("/remove/:id",adminCheck, remove);
 //Buscar un producto
 router.get('/search',search);
+//Añadir producto al carrito de compras
+router.post('/addProductCart/:id',addToCart);
 
 //Export
 module.exports = router;

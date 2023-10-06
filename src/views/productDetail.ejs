@@ -34,9 +34,13 @@
 											</b>
 										</p>
 										<p class="product-detail-price">
-											$<%=price - (price * discount / 100) %>
+											$<%=Math.floor((price - (price * discount / 100))) %>
 										</p>
-										<% } %>
+										<% }else{ %>
+											<p class="product-detail-price">
+												$<%=Math.floor(price)%>
+											</p>
+											<% } %>
 											<ul class="actions-list">
 												<li>
 													<i class="fas fa-credit-card"></i>

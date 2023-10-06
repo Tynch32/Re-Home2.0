@@ -17,8 +17,9 @@ router.get('/login',notUserCheck, login);
 router.post('/login',loginValidator, processLogin);//Funcionando
 //Editar perfil
 router.get('/profile',userCheck, profile);
-router.put('/update/:id',uploadUser.single("image"),userEditValidator,update);//Actualizar
-router.get("/productCart",productCart);
+router.put('/update/:id',uploadUser.single("image"),userEditValidator,update);
+//Carrito de compras
+router.get("/productCart/:id",productCart);
 //Deslogear
 router.get('/logout',logout);
 
