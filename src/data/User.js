@@ -14,7 +14,7 @@ const User = function ({name, surname, adress, city, province,country, email, pa
     this.password = hashSync(password,10);
     this.role = 'user';
     this.image = image;
-    this.shopping_cart= [];
+    this.shoppingCart= [];
     this.createAt = new Date;
 }
 

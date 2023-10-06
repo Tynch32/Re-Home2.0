@@ -51,7 +51,9 @@
 													<p>Retiro gratis en locales del vendedor</p>
 												</li>
 											</ul>
-											<a href="#" class="buy-now-button">AÑADIR AL CARRITO</a>
+											<form action="/products/addToCart/<%= id %>" method="POST" class="row">
+												<button type="submit" class="btn btn-success">Agregar al carrito <i class="fa-solid fa-basket-shopping"></i></button>
+											</form>
 								</article>
 							</div>
 						</div>

@@ -25,15 +25,15 @@
           <% if (userLogin.role==="admin" ) { %>
             <li><a href="/admin">ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
             <% } %>
-              <% if (userLogin.role==="user" ) { %>
+              <% if (userLogin.role==="user") {%>
                 <li><a href="/users/productCart/<%= userLogin.id %>">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
-                <% } %>
+              <% }%>
                   <li><a href="/users/profile">Editar Perfil <i class="fa-regular fa-address-card"></i></a></li>
                   <li><a href="/users/logout">salir <i class="fa-solid fa-door-open"></i></a></li>
-                  <% }else{ %>
+        <% }else{ %>
                     <li><a href="/users/register">registro <i class="fa-regular fa-address-card"></i></a></li>
                     <li><a href="/users/login">ingresar <i class="fa-solid fa-right-to-bracket"></i></a></li>
-                    <% } %>
+        <% } %>
       </ul>
     </nav>
     <a class="home_main_top_arrow" href=""><img width="50px" src="/img/volver_arriba_flecha.png"alt=""></a>

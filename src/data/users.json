@@ -11,7 +11,7 @@
       "password": "$2a$10$K8B.KwPdMWbgMvFNPbP3Fe6u7VppCGBTFgEcXySq9a1DxCwhUsjtm",
       "role": "admin",
       "image": "1696533697360_users_.jpg",
-      "shopping_cart": [],
+      "shoppingCart": [],
       "createAt": "2023-10-05T19:21:37.443Z"
    },
    {
@@ -26,7 +26,7 @@
       "password": "$2a$10$LWB21Nk.zqqVPzMLebn0kutABh52e6.Z9BvY/11ZlHMGH5L/SMWkK",
       "role": "user",
       "image": "1696560879548_users_.png",
-      "shopping_cart": [],
+      "shoppingCart": ["asd"],
       "createAt": "2023-10-06T02:54:39.640Z"
    }
 ]

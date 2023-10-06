@@ -7,7 +7,7 @@ module.exports = (req,res) => {
     const user = users.find(user => user.id === req.session.userLogin.id);
     if(user){
         const carrito = [];
-        user.shopping_cart.forEach( elementId => {
+        user.shoppingCart.forEach( elementId => {
             let producto = products.find(product => product.id==elementId);
             if(producto){
                 carrito.push(producto);

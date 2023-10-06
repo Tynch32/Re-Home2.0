@@ -22,7 +22,7 @@ router.delete("/remove/:id",adminCheck, remove);
 //Buscar un producto
 router.get('/search',search);
 //Añadir producto al carrito de compras
-router.post('/addProductCart/:id',addToCart);
+router.post('/addToCart/:id',addToCart);//agregar uso de ruta en html
 
 //Export
 module.exports = router;
