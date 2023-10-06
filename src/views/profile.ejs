@@ -18,10 +18,16 @@
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="name" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="name" placeholder="Tu nombre" name="name" value="<%= name %>">
+                            <small class="text-danger ms-2">
+                                <%= locals.errors && (errors.name && errors.name.msg) %>
+                            </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="surname" class="form-label">Apellido</label>
                             <input type="text" class="form-control" id="surname" placeholder="Ingrese su apellido" name="surname" value="<%= surname %>">
+                            <small class="text-danger ms-2">
+                                <%= locals.errors && (errors.surname && errors.surname.msg) %>
+                            </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="adress" class="form-label">Dirección</label>

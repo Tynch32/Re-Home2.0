@@ -18,7 +18,7 @@
       "id": "40890456-9be5-4abc-b9fc-9ae77cc73d62",
       "name": "Marisa",
       "surname": "Ferrada",
-      "adress": "Calle falsa 123",
+      "adress": "Calle falsa 777",
       "city": "San Miguel",
       "province": "Buenos Aires",
       "country": "Argentina",
@@ -26,7 +26,7 @@
       "password": "$2a$10$LWB21Nk.zqqVPzMLebn0kutABh52e6.Z9BvY/11ZlHMGH5L/SMWkK",
       "role": "user",
       "image": "1696560879548_users_.png",
-      "shoppingCart": ["asd"],
+      "shoppingCart": [],
       "createAt": "2023-10-06T02:54:39.640Z"
    }
 ]

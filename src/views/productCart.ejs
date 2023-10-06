@@ -6,7 +6,7 @@
 <body class="home">
   <%- include('partials/header') %>
       <main class="home_main">
-        <div>Carrito de compras de: <%= userLogin.name %></div>
+        <div><h2>Carrito de compras de: <%= locals.userLogin.name %></h2></div>
         <div class="container products-wrapper">
           <div class="row d-inline-flex p-2">
               <% carrito.forEach(product=> { %>
