@@ -1,28 +1,33 @@
 //Express
 const express = require("express");
-//Controller
-const {detail,add,create,edit,update,remove,search,addToCart} = require("../controllers/productsController");
-//Middlewares y validations
-const productAddValidator = require("../validations/productAddValidator");
-const upload = require("../middlewares/upload");
-const productsEditValidator = require("../validations/productsEditValidator");
-const adminCheck = require("../middlewares/adminCheck");
 const router = express.Router();
+//Products Controller
+const {detail,add,create,edit,update,remove,search,addToCart} = require("../controllers/productsController");
+//Middlewares
+const adminCheck = require("../middlewares/adminCheck");
+const userCheck = require('../middlewares/userCheck');
+const cookieCheck= require('../middlewares/cookieCheck');
+const upload = require("../middlewares/upload");
+//Validations
+const productAddValidator = require("../validations/productAddValidator");
+const productsEditValidator = require("../validations/productsEditValidator");
 
-//Detalles del producto
+/* ----Products---- */
+
+//Product Detail
 router.get("/detail/:id", detail);
-//Crear nuevo producto
+//Create product
 router.get("/add",adminCheck, add);
 router.post("/add",upload.fields([{name: "image"},{name: "images"}]),productAddValidator,create);
-//Actualizar producto
+//Update product
 router.get("/edit/:id",adminCheck, edit);
 router.put("/update/:id",upload.fields([{name: "image"},{name: "images"}]),productsEditValidator,update);
-//Borrar producto
+//Delete product
 router.delete("/remove/:id",adminCheck, remove);
-//Buscar un producto
+//Search product
 router.get('/search',search);
-//Añadir producto al carrito de compras
-router.post('/addToCart/:id',addToCart);//agregar uso de ruta en html
+//Add product to cart
+router.post('/addToCart/:id',cookieCheck,userCheck,addToCart);
 
 //Export
 module.exports = router;

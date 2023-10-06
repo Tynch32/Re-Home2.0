@@ -1,3 +1,4 @@
+const {unlinkSync, existsSync} = require('fs');
 const { validationResult } = require("express-validator");
 const { readJSON, writeJSON } = require("../../data");
 const User = require("../../data/User");
@@ -16,13 +17,13 @@ module.exports = (req, res) => {
     writeJSON(users, "users.json");
     return res.redirect("/users/login");
   } else {
-    
-      existsSync(`./public/img/users/${req.file.filename}`) &&
-      unlinkSync(`./public/img/users/${req.file.filename}`);
-
-    return res.render("register", {
+    if(existsSync(`./public/img/users/${req.file.filename}`)){
+      unlinkSync(`./public/img/users/${req.file.filename}`)
+    }
+  return res.render("register", {
       errors: errors.mapped(),
       old: req.body,
+      imageError: "Debes volver a cargar la imagen"
     });
   }
 };

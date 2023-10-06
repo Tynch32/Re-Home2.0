@@ -1,32 +1,32 @@
 [
    {
-      "id": "7c3e7407-e613-449b-8a41-87c4c2b9e521",
+      "id": "29c07dcb-4d66-456f-806f-14434967db92",
       "name": "Martin",
       "surname": "Velazquez",
-      "adress": "Calle falsa 123",
+      "adress": "Calle 123",
       "city": "Jose C. Paz",
       "province": "Buenos Aires",
       "country": "Argentina",
       "email": "martin@gmail.com",
-      "password": "$2a$10$K8B.KwPdMWbgMvFNPbP3Fe6u7VppCGBTFgEcXySq9a1DxCwhUsjtm",
+      "password": "$2a$10$bH70EZM8fFVad0y61uy3E.GkQ3LhJvripjShgjrT049WlQ5SncyDC",
       "role": "admin",
-      "image": "1696533697360_users_.jpg",
+      "image": "1696631076554_users_.jpg",
       "shoppingCart": [],
-      "createAt": "2023-10-05T19:21:37.443Z"
+      "createAt": "2023-10-06T22:24:36.656Z"
    },
    {
-      "id": "40890456-9be5-4abc-b9fc-9ae77cc73d62",
+      "id": "a1b04b6b-5af3-499c-8a57-64f8fe9a6820",
       "name": "Marisa",
       "surname": "Ferrada",
-      "adress": "Calle falsa 777",
-      "city": "San Miguel",
+      "adress": "Calle falsa 123",
+      "city": "Palermo",
       "province": "Buenos Aires",
       "country": "Argentina",
       "email": "marisa@gmail.com",
-      "password": "$2a$10$LWB21Nk.zqqVPzMLebn0kutABh52e6.Z9BvY/11ZlHMGH5L/SMWkK",
+      "password": "$2a$10$/lCLK7VxFU7fs7fvwJz8eO9fyqi1KYJS7mNuXhp1VWwVPRoSnn2Wq",
       "role": "user",
-      "image": "1696560879548_users_.png",
+      "image": "1696631134852_users_.png",
       "shoppingCart": [],
-      "createAt": "2023-10-06T02:54:39.640Z"
+      "createAt": "2023-10-06T22:25:34.948Z"
    }
 ]

@@ -17,14 +17,16 @@
                     <form action="" method="POST" class="row" enctype="multipart/form-data">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" name="name">
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" name="name"
+                            value="<%= locals.old && (old.name && old.name ) %>">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.name && errors.name.msg) %>
                             </small>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="surname" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="surname" placeholder="Ingrese su apellido" name="surname">
+                            <input type="text" class="form-control" id="surname" placeholder="Ingrese su apellido" name="surname"
+                            value="<%= locals.old && (old.surname && old.surname ) %>">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.surname && errors.surname.msg) %>
                               </small>
@@ -47,7 +49,8 @@
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Tu email" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="Tu email" name="email"
+                            value="<%= locals.old && (old.email && old.email ) %>">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.email && errors.email.msg) %>
                             </small>
@@ -70,7 +73,7 @@
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.image && errors.image.msg) %>
                             </small>
-                            <label for="image" class="btn <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secondary' %>">Imagen principal</label>
+                            <label for="image" class="btn <%= ((locals.errors && errors.image) ? 'btn-danger' : 'btn-secondary')%>">Imagen principal</label>
                             <input type="file" name="image" id="image" hidden />
                         </div>
                         <div class="d-flex justify-content-end">

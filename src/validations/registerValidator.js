@@ -26,11 +26,11 @@ module.exports = [
         }
         return true
   }).withMessage('Las contraseñas no coinciden'),
-  body('image')
-    .custom((value,{req}) => {
+  body('image').custom((value,{req}) => {
       if(req.file){
         return true
+      }else{
+        return false
       }
-      return false
-    }).withMessage('Debes subir una foto de perfil')
+  }).withMessage('Debes subir una foto de perfil')
 ];

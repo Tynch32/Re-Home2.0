@@ -32,18 +32,30 @@
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="adress" class="form-label">Dirección</label>
                             <input type="text" class="form-control" id="adress" placeholder="Ingrese su domicilio" name="adress" value="<%=adress%>">
+                            <small class="text-danger ms-2">
+                                <%= locals.errors && (errors.adress && errors.adress.msg) %>
+                            </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="city" class="form-label">Ciudad</label>
                             <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city" value="<%= city %>">
+                            <small class="text-danger ms-2">
+                                <%= locals.errors && (errors.city && errors.city.msg) %>
+                            </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="province" class="form-label">Provincia</label>
                             <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province" value="<%= province %>">
+                            <small class="text-danger ms-2">
+                                <%= locals.errors && (errors.province && errors.province.msg) %>
+                            </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="country" class="form-label">País</label>
                             <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country" value="<%= country %>">
+                            <small class="text-danger ms-2">
+                                <%= locals.errors && (errors.country && errors.country.msg) %>
+                            </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="foto" class="form-label">Imagen de perfil:</label>

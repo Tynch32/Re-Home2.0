@@ -8,6 +8,7 @@ const adminCheck = require('../middlewares/adminCheck');
 
 //Vista visitante
 router.get('/', index);
+
 //vista admin
 router.get('/admin', adminCheck, admin);
 

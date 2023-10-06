@@ -11,7 +11,6 @@ module.exports = (req,res) => {
         
         req.session.userLogin = {
             id,
-            name,
             role
         }
         req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin,{
