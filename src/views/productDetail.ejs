@@ -5,10 +5,57 @@
 	<body>
 		<%- include('partials/header') %>
 			<main>
-				
+				<div class="container products-wrapper">
+					<div class="product-detail">
+						<div class="row">
+							<div class="col-12">
+								<h2 class="products-title">Detalle del producto: <%= name %>
+								</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 col-lg-8">
+								<img src="/img/products/<%= image || 'default-image.png' %>" alt="product image"
+									class="product-detail-img">
+								<p class="product-detail-description">
+									<%= description %>
+								</p>
+							</div>
+							<div class="col-12 col-lg-4">
+								<article class="product-detail-info">
+									<h2 class="product-detail-title">
+										<%= name %>
+									</h2>
+									<% if (discount) { %>
+										<p class="product-detail-price small">
+											<span>$<%= price %></span>
+											<b>
+												<%= discount %>% OFF
+											</b>
+										</p>
+										<p class="product-detail-price">
+											$<%=price - (price * discount / 100) %>
+										</p>
+										<% } %>
+											<ul class="actions-list">
+												<li>
+													<i class="fas fa-credit-card"></i>
+													<p>Pagá en 12 cuotas sin interes</p>
+												</li>
+												<li>
+													<i class="fas fa-store"></i>
+													<p>Retiro gratis en locales del vendedor</p>
+												</li>
+											</ul>
+											<a href="#" class="buy-now-button">AÑADIR AL CARRITO</a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
 			</main>
 			<%- include('partials/footer') %>
-			<%- include('partials/scripts') %>
+				<%- include('partials/scripts') %>
 	</body>
 
 </html>
