@@ -18,8 +18,8 @@ module.exports = (req,res) => {
                 user.shoppingCart.push(productToAdd.id);
             }
         }
-        return res.redirect('/');
+        return res.render('No entro a la vista');
     }else{
-        return res.render('login');
+        return res.send("No entro a la vista");
     }
 }
