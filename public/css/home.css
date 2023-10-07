@@ -1,6 +1,5 @@
 .home_main{
-  display: relative;
-  width: 100vw;
+  margin-top: 30px;
 }
 .home__header__nav--menu ul li {
   background-color: var(--colorGris);
