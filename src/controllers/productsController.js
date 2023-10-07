@@ -6,5 +6,6 @@ module.exports = {
     update : require('./products/update'),
     remove : require('./products/remove'),
     search : require('./products/search'),
-    addToCart: require('./products/addToCart')
+    addToCart: require('./products/addToCart'),
+    removeToCart: require('./products/removeToCart')
 }

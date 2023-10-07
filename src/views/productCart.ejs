@@ -17,25 +17,32 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">SubTotal</th>
+                        <th scope="col">Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <% carrito.forEach(product=> { %>
                       <tr>
-                        <td scope="row">Product_Ejemplo</td>
-                        <td>5000</td>
-                        <td>5</td>
-                        <td>25000</td>
+                        <td class="productCart_imagebox" scope="row"><img src="/img/products/<%= product.image || 'default-image.png' %>" alt="imagen de producto"></td>
+                        <td><%=product.name%></td>
+                        <td><%=product.price%></td>
+                        <td>1</td>
+                        <td><%=product.price%></td>
+                        <td>
+                          <div class="productCart_box">
+                            <div class="productCart_button_info"><a href="/products/detail/<%= product.id %>"><i class="fa-solid fa-circle-info"></i></a></div>
+                            <form action="/products/removeToCart/<%= product.id %>" method="POST">
+                              <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                          </div>
+                        </td>
                       </tr>
-                      <tr>
-                        <td scope="row">Product_Ejemplo</td>
-                        <td>5000</td>
-                        <td>5</td>
-                        <td>25000</td>
-                      </tr>
+                      <% }) %>
                     </tbody>
                   </table>
                 </div>
@@ -45,7 +52,7 @@
         </div>
       </main>
       <%- include('partials/footer') %>
-        <%- include('partials/scripts') %>
+      <%- include('partials/scripts') %>
   </body>
 
 </html>

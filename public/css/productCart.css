@@ -1,0 +1,22 @@
+.productCart_imagebox{
+    height: 64px;
+    width: 64px;
+}
+
+.productCart_imagebox img{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.productCart_box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+.productCart_button_info{
+    background-color: rgb(33, 197, 197);
+    padding: 5px 10px;
+    border-radius: 5px;
+}

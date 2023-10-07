@@ -4,7 +4,7 @@ module.exports = (req, res) => {
   const users = readJSON("users.json");
   const products = readJSON("products.json");
   var user = null;
-  var usersModify=null;
+  var usersModify= null;
   if (req.session.userLogin) {
     user = users.find((user) => user.id === req.session.userLogin.id);
   }
@@ -15,7 +15,7 @@ module.exports = (req, res) => {
       if (!user.shoppingCart.find((element) => element.id == productToAdd.id)) {
         usersModify = users.map(element=>{
             if(element.id==req.session.userLogin.id){
-                element.shoppingCart.push(productToAdd.id);
+                element.shoppingCart.filter(product=> product!=productToAdd.id);
             }
             return element;
         });

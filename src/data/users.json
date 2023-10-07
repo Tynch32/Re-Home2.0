@@ -26,7 +26,12 @@
       "password": "$2a$10$/lCLK7VxFU7fs7fvwJz8eO9fyqi1KYJS7mNuXhp1VWwVPRoSnn2Wq",
       "role": "user",
       "image": "1696631134852_users_.png",
-      "shoppingCart": [],
+      "shoppingCart": [
+         "4502d387-1d5e-4c03-afd6-23241be7a6bb",
+         "be25b9d2-5c90-4594-a49d-6c720b4e7d3c",
+         "6ae21882-a65d-4878-b15c-7275301dab74",
+         "be25b9d2-5c90-4594-a49d-6c720b4e7d3c"
+      ],
       "createAt": "2023-10-06T22:25:34.948Z"
    }
 ]
