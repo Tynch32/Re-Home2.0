@@ -23,7 +23,16 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      Listado de compras
+                      <% carrito.forEach(product=> { %>
+                        <div class="productCart_modal">
+                          <div>
+                            <%= product.name %>
+                          </div>
+                          <div>
+                            $<%= product.price %>
+                          </div>
+                        </div>
+                      <% }) %>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>

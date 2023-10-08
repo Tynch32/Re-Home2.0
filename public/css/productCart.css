@@ -23,3 +23,7 @@
     align-items: center;
     font-size: 20px;
 }
+.productCart_modal{
+    display: flex;
+    justify-content: space-between;
+}
