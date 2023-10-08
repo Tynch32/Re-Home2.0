@@ -15,8 +15,11 @@ module.exports = (req,res) => {
                 }
             }
         });
-        return res.render('productCart',{carrito})
+        var total = 0;
+        carrito.forEach(element=> total+=element.price);
+        return res.render('productCart',{carrito,total})
     }else{
         return res.redirect('login');
     }
+
 }

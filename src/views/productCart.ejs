@@ -9,15 +9,36 @@
         <div class="row">
           <div class="col-12 col-lg-10 mx-auto mt-5">
             <div class="card shadow">
-              <div class="card-header">
-                <a class="btn btn btn-secondary" href="">Calcular Total <i class="fa-solid fa-cash-register"></i></a>
+              <div class="card-header text-end">
+                <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#CarritoCompras">
+                Calcular Total <i class="fa-solid fa-cash-register"></i>
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="CarritoCompras" tabindex="-1" aria-labelledby="CarritoComprasLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="CarritoComprasLabel"> SU TOTAL ES: $<%= total %></h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Listado de compras
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                      <button type="button" class="btn btn-success">Realizar Compra <i class="fa-solid fa-truck-fast"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Imagen</th>
                         <th scope="col">Producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>
@@ -36,9 +57,32 @@
                         <td>
                           <div class="productCart_box">
                             <div class="productCart_button_info"><a href="/products/detail/<%= product.id %>"><i class="fa-solid fa-circle-info"></i></a></div>
-                            <form action="/products/removeToCart/<%= product.id %>" method="POST">
-                              <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                            </form>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#removeProduct<%= product.id %>">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                            <div class="modal fade" id="removeProduct<%= product.id %>" tabindex="-1" aria-labelledby="removeProduct<%= product.id %>Label"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-name fs-5" id="removeProduct<%= product.id %>Label">ADVERTENCIA</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>¿Estás seguro que quieres eliminar el producto: <b><%= product.name %></b> de tu carrito de compras?</p> 
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                                <form action="/products/removeToCart/<%= product.id %>" method="POST">
+                                                  <button type="submit" class="btn btn-danger">Sí, Eliminar <i class="fa-solid fa-trash-can"></i></button>
+                                              </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                           </div>
                         </td>
                       </tr>

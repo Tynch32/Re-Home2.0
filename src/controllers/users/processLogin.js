@@ -7,11 +7,12 @@ module.exports = (req,res) => {
 
     if(errors.isEmpty()){
         const users = readJSON('users.json')
-        const {id,name,role} = users.find(user => user.email === req.body.email)
-        
+        const {id,name,role,shoppingCart} = users.find(user => user.email === req.body.email)
+        const cantProduct=shoppingCart?shoppingCart.length:0;
         req.session.userLogin = {
             id,
-            role
+            role,
+            cantProduct
         }
         req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin,{
             maxAge : 1000 * 60 * 60

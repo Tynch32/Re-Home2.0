@@ -26,7 +26,13 @@
             <li><a href="/admin">ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
             <% } %>
               <% if (userLogin.role==="user") {%>
-                <li><a href="/users/productCart/<%= locals.userLogin.id %>">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="/users/productCart/<%= locals.userLogin.id %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
+                  <% if (locals.userLogin.cantProduct) { %>
+                    <%= locals.userLogin.cantProduct %>
+                  <% }else{%>
+                      0
+                  <% } %>
+                </a></li>
               <% }%>
                   <li><a href="/users/profile">Editar Perfil <i class="fa-regular fa-address-card"></i></a></li>
                   <li><a href="/users/logout">salir <i class="fa-solid fa-door-open"></i></a></li>

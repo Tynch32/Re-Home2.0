@@ -4,9 +4,8 @@
 }
 
 .productCart_imagebox img{
-    display: flex;
     width: 100%;
-    justify-content: center;
+    height: 100%;
 }
 
 .productCart_box{
@@ -16,7 +15,11 @@
 }
 
 .productCart_button_info{
+    display: flex;
     background-color: rgb(33, 197, 197);
     padding: 5px 10px;
     border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
 }
