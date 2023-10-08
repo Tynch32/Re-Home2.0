@@ -44,6 +44,7 @@
 .productCard_originalPrice{
     color: var(--colorGris);
     font-size: 17px;
+    font-weight: 600;
     text-decoration:line-through;
     padding-left: 5px;
     display: none;
@@ -59,9 +60,12 @@
 .productCard_finalPrice{
     color: black;
     font-size: 25px;
+    font-weight: 600;
 }
 .productCard_discount{
-    color: var(--green)
+    color: var(--green);
+    font-size: 20px;
+    font-weight: 600;
 }
 .productCard_name{
     padding: 0px 5px 5px 5px;
