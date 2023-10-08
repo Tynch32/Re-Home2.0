@@ -6,5 +6,6 @@ module.exports = {
     profile : require('./users/profile'),
     update : require('./users/update'),
     logout : require('./users/logout'),
-    productCart: require('./users/productCart')
+    productCart: require('./users/productCart'),
+    faq: require('./users/faq')
 }
