@@ -17,8 +17,10 @@ module.exports = (req, res) => {
     writeJSON(users, "users.json");
     return res.redirect("/users/login");
   } else {
-    if(existsSync(`./public/img/users/${req.file.filename}`)){
+    if(req.file){
+      if(existsSync(`./public/img/users/${req.file.filename}`)){
       unlinkSync(`./public/img/users/${req.file.filename}`)
+      }
     }
   return res.render("register", {
       errors: errors.mapped(),

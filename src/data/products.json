@@ -2,7 +2,7 @@
    {
       "id": "4502d387-1d5e-4c03-afd6-23241be7a6bb",
       "name": "Cinta Metrica",
-      "category": "Herramientas",
+      "category": "Herramientas\r\n                                            ",
       "price": 12500,
       "discount": 15,
       "description": "Ideal para hacer todas tus mediciones con presicion",
