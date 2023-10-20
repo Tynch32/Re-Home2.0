@@ -1,28 +1,46 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+module.exports = (sequelize, dataTypes) => {
+  let alias = 'User';
+  let cols = {
+      id: {
+          type: dataTypes.BIGINT(10).UNSIGNED,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
+      },
+      name: {
+          type: dataTypes.STRING(255),
+          allowNull: false
+      },
+      surname: {
+          type: dataTypes.STRING(255),
+          allowNull: false
+      },
+      email: {
+          type: dataTypes.STRING(255),
+          allowNull: false
+      },
+      password:{
+          type: dataTypes.STRING(255),
+          allowNull: false,
+      }
+  };
+  let config = {
+      timestamps: true,
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
+      deletedAt: false
   }
-  User.init({
-    name: DataTypes.STRING,
-    surname: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    role_id: DataTypes.INTEGER,
-    image_id: DataTypes.INTEGER,
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
-  return User;
+  const User = sequelize.define(alias, cols, config); 
+
+  User.associate = function (models){
+      User.belongsTo(models.Role,{
+          as: 'role_id',
+          foreignKey: 'user_role_id'
+      }),
+      User.belongsTo(models.Role,{
+        as: 'image_id',
+        foreignKey: 'user_image_id'
+      })
+  }
+  return User
 };
