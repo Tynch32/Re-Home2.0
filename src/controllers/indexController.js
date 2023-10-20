@@ -1,8 +1,13 @@
-const { readJSON } = require("../data");
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 
 module.exports = {
     index : (req,res) => {   
-        const products = readJSON('products.json');
+        db.Product.findAll()
+            .then(products => {
+                res.render('index', {products})
+            })
         return res.render('index', {
             products
         })
