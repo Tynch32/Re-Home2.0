@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
     createdAt: "created_at",
     updatedAt: "updated_at",
     deletedAt: false,
-    tableName: "Order",
+    tableName: "orders",
   };
   const Order = sequelize.define(alias, cols, config);
   Order.associate = function (models) {

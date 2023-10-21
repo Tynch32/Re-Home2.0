@@ -4,11 +4,11 @@ const images_product = require("../database/models/images_product");
 
 module.exports = {
   index: (req, res) => {
-    db.Order.findAll()
+    db.Category.findAll()
       .then((products) => {
         return res.render("index", {products});
       })
-      .catch((errors) => console.log(">>",errors));
+      .catch((errors) => console.log(errors));
   },
   admin: (req, res) => {
     db.Product.findAll()

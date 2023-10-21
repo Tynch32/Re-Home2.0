@@ -34,8 +34,16 @@ module.exports = (sequelize, dataTypes) => {
 
   Product.associate = function (models){
       Product.belongsTo(models.Category,{
-          as: 'categoryProduct',
+          as: 'category_product',
           foreignKey: 'category_id'
+      }),
+      Product.hasMany(models.Order,{
+        as: 'order_product',
+        foreignKey: 'product_id'
+      }),
+      Product.hasMany(models.Images_product,{
+        as: 'product_image',
+        foreignKey: 'image_id'
       })
   }
   return Product

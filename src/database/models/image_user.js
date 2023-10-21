@@ -21,7 +21,12 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Image_user = sequelize.define(alias, cols, config);
 
-  
+  Image_user.associate = function (models) {
+    Image_user.hasMany(models.User, {
+      as: "user_image",
+      foreignKey: "image_id",
+    });
+  };
 
   return Image_user;
 };
