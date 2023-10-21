@@ -7,10 +7,6 @@ module.exports = (sequelize, dataTypes) => {
           allowNull: false,
           autoIncrement: true
       },
-      amount: {
-          type: dataTypes.BIGINT(10),
-          allowNull: false
-      }
   };
   let config = {
       timestamps: true,
@@ -22,10 +18,14 @@ module.exports = (sequelize, dataTypes) => {
   const Shopping_cart = sequelize.define(alias, cols, config); 
 
   Shopping_cart.associate = function (models){
-      Shopping_cart.belongsTo(models.Product,{
-          as: 'product_shoppingcart',
-          foreignKey: 'shoppingcart_product_id'
-      })
-  }
+    Shopping_cart.belongsTo(models.Order,{
+        as: 'order',
+        foreignKey: 'shoppingcart_id'
+    }),
+    Shopping_cart.belongsTo(models.Product,{
+            as: 'product',
+            foreignKey: 'product_id'
+    })
+  };
   return Shopping_cart
 };
