@@ -26,20 +26,28 @@ module.exports = (sequelize, dataTypes) => {
   };
   let config = {
       timestamps: true,
-      createdAt: 'createdAt',
-      updatedAt: 'updatedAt',
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
       deletedAt: false
   }
   const User = sequelize.define(alias, cols, config); 
 
   User.associate = function (models){
       User.belongsTo(models.Role,{
-          as: 'role_id',
-          foreignKey: 'user_role_id'
+          as: 'roleId',
+          foreignKey: 'role_id'
       }),
-      User.belongsTo(models.Role,{
-        as: 'image_id',
-        foreignKey: 'user_image_id'
+      User.belongsTo(models.Image_user,{
+        as: 'imageId',
+        foreignKey: 'image_id'
+      }),
+      User.belongsTo(models.Shopping_cart,{
+        as: 'shoppingcartId',
+        foreignKey: 'shoppingcart_id'
+      }),
+      User.belongsTo(models.Address,{
+        as: 'addressId',
+        foreignKey: 'address_id'
       })
   }
   return User

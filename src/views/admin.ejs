@@ -34,11 +34,11 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="products" role="tabpanel"
                                         aria-labelledby="products-tab">
-                                        <%- include('partials/tableProducts',{ products }) %>
+                                        <%- include('partials/tableProducts',{products, images_product}) %>
                                     </div>
                                     <div class="tab-pane fade" id="categories" role="tabpanel"
                                         aria-labelledby="categories-tab">
-                                        <%- include('partials/tableCategories',{ categories }) %>
+                                        <%- include('partials/tableCategories',{ products, categories }) %>
                                     </div>
                                     <div class="tab-pane fade" id="users" role="tabpanel"
                                         aria-labelledby="users-tab">

@@ -4,7 +4,6 @@ module.exports = (sequelize, dataTypes) => {
       id: {
           type: dataTypes.BIGINT(10).UNSIGNED,
           primaryKey: true,
-          allowNull: false,
           autoIncrement: true
       },
       name: {
@@ -19,7 +18,8 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: true,
       createdAt: 'created_at',
       updatedAt: 'updated_at',
-      deletedAt: false
+      deletedAt: false,
+      tableName: 'categories'
   }
   const Category = sequelize.define(alias, cols, config);
 

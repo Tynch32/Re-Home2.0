@@ -17,8 +17,8 @@
                         <%= name %>
                     </td>
                     <td>
-                        <%= products.filter(product=> product.category ===
-                            name).length %>
+                        <%= products.filter(product=> product.category_id ==
+                            id).length %>
                     </td>
                 </tr>
                 <% }) %>

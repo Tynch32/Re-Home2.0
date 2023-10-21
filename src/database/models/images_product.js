@@ -12,18 +12,21 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false,
       },
   };
+
   let config = {
     timestamps: true,
-    createdAt: "createdAt",
-    updatedAt: "updatedAt",
+    createdAt: "created_at",
+    updatedAt: "updated_at",
     deletedAt: false,
+    tableName: 'images_product'
   };
+
   const Images_product = sequelize.define(alias, cols, config);
 
   Images_product.associate = function (models) {
     Images_product.belongsTo(models.Product, {
-      as: "product_id",
-      foreignKey: "imagesproduct_product_id",
+      as: "imageProduct",
+      foreignKey: "product_id",
     });
   };
   return Images_product;

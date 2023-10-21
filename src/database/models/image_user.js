@@ -16,7 +16,8 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: true,
       createdAt: 'created_at',
       updatedAt: 'updated_at',
-      deletedAt: false
+      deletedAt: false,
+      tableName: 'image_user'
   }
   const Image_user = sequelize.define(alias, cols, config);
 

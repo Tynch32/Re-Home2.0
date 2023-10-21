@@ -14,20 +14,17 @@ module.exports = (sequelize, dataTypes) => {
   };
   let config = {
       timestamps: true,
-      createdAt: 'createdAt',
-      updatedAt: 'updatedAt',
-      deletedAt: false
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+      deletedAt: false,
+      tableName:'shopping_cart'
   }
   const Shopping_cart = sequelize.define(alias, cols, config); 
 
   Shopping_cart.associate = function (models){
-      Shopping_cart.belongsTo(models.Order,{
-          as: 'order_id',
-          foreignKey: 'Shoppingcart_order_id'
-      }),
       Shopping_cart.belongsTo(models.Product,{
-        as: 'product_id',
-        foreignKey: 'shoppingcart_product_id'
+          as: 'product_shoppingcart',
+          foreignKey: 'shoppingcart_product_id'
       })
   }
   return Shopping_cart

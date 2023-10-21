@@ -1,26 +1,27 @@
+const path = require('path');
 const db = require('../database/models');
-const sequelize = db.sequelize;
-
+const moment = require('moment');
+const images_product = require('../database/models/images_product');
 
 module.exports = {
-    index : (req,res) => {   
+    index : (req,res) => {
         db.Product.findAll()
             .then(products => {
-                res.render('index', {products})
-            })
-        return res.render('index', {
-            products
-        })
+                db.Images_product.findAll().then(images_product=>{
+                    return res.render('index', {products,images_product})
+                }
+                ).catch(errors=> console.log(errors))
+            }).catch(errors=> console.log(errors))
     },
     admin : (req,res)  => {
-        const products = readJSON('products.json');
-        const categories = readJSON('categories.json');
-        const users = readJSON('users.json');
-        
-        return res.render('admin', {
-            products,
-            users,
-            categories,
-        })
+        db.Product.findAll().then(products => {
+            db.Category.findAll().then(categories=>{
+                db.User.findAll().then(users=>{
+                    db.Images_product.findAll().then(images_product=>{
+                        return res.render('admin', {products,categories,users,images_product})
+                    }).catch(errors=> console.log(errors))
+                }).catch(errors=> console.log(errors))
+            }).catch(errors=> console.log(errors))
+        }).catch(errors=> console.log(errors))
     }
 }

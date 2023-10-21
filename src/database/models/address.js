@@ -22,17 +22,11 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: true,
-        createdAt: 'createdAt',
-        updatedAt: 'updatedAt',
-        deletedAt: false
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false,
+        tableName:'addresses'
     }
     const Address = sequelize.define(alias, cols, config); 
-  
-    Address.associate = function (models){
-        Address.belongsTo(models.User,{
-            as: 'user_id',
-            foreignKey: 'address_user_id'
-        })
-    }
     return Address
   };
