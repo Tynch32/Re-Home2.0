@@ -4,7 +4,7 @@ const images_product = require("../database/models/images_product");
 
 module.exports = {
   index: (req, res) => {
-    db.Product.findAll()
+    db.Order.findAll()
       .then((products) => {
         return res.render("index", {products});
       })

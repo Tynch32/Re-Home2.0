@@ -21,13 +21,13 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Order = sequelize.define(alias, cols, config);
   Order.associate = function (models) {
-    Order.belongsTo(models.Shopping_cart, {
-      as: "shopping_cart",
-      foreignKey: "shoppingcart_id",
-    }),
     Order.belongsTo(models.Product, {
       as: "product",
       foreignKey: "product_id",
+    }),
+    Order.belongsTo(models.Shopping_cart, {
+      as: "shopping_cart",
+      foreignKey: "shoppingcart_id",
     })
   };
   return Order;
