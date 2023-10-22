@@ -1,6 +1,6 @@
 [
    {
-      "id": "4502d387-1d5e-4c03-afd6-23241be7a6bb",
+      "id": "1",
       "name": "Cinta Metrica",
       "category": "Herramientas\r\n                                            ",
       "price": 12500,
@@ -11,7 +11,7 @@
       "createAt": "2023-09-29T00:37:47.546Z"
    },
    {
-      "id": "089e069d-324d-4f7a-86bc-6986097b6f01",
+      "id": "2",
       "name": "Destornillador",
       "category": "Herramientas",
       "price": 850,
@@ -22,7 +22,7 @@
       "createAt": "2023-09-29T01:15:20.558Z"
    },
    {
-      "id": "6ae21882-a65d-4878-b15c-7275301dab74",
+      "id": "3",
       "name": "Lijadora",
       "category": "Herramientas",
       "price": 27500,
@@ -33,7 +33,7 @@
       "createAt": "2023-09-29T01:16:25.510Z"
    },
    {
-      "id": "be25b9d2-5c90-4594-a49d-6c720b4e7d3c",
+      "id": "4",
       "name": "Llave inglesa",
       "category": "Herramientas",
       "price": 5900,
@@ -44,7 +44,7 @@
       "createAt": "2023-09-29T01:17:39.009Z"
    },
    {
-      "id": "241b405b-b6b4-4f6f-a017-623e05bb29e0",
+      "id": "5",
       "name": "Mazo 5kg",
       "category": "Herramientas",
       "price": 2400,
@@ -55,7 +55,7 @@
       "createAt": "2023-09-29T01:18:32.939Z"
    },
    {
-      "id": "9101d39d-92f1-4369-86f7-b669edfbaf99",
+      "id": "6",
       "name": "Taladro Inalambrico",
       "category": "Herramientas",
       "price": 9450,
@@ -66,7 +66,7 @@
       "createAt": "2023-09-29T01:20:41.237Z"
    },
    {
-      "id": "65d77d52-dec0-4ebb-b45c-f015475ca541",
+      "id": "7",
       "name": "Madera",
       "category": "Maderas",
       "price": 2000,
