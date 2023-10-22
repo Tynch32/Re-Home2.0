@@ -2,7 +2,7 @@
     <a href="/products/detail/<%= id %>">
         <div class="productCard_box">
             <div class="productCard_img">
-                <img src="/img/products/<%= product. || 'default-image.png' %>" alt="imagen de producto">
+                <img src="/img/products/<%= img[0].file || 'default-image.png' %>" alt="imagen de producto">
             </div>
             <div class="productCard_info_price">
               <% if (discount) { %>
