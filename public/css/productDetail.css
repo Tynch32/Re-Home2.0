@@ -3,6 +3,22 @@
   border-radius: 8px;
   margin: 30px;
 }
+.productDetail_multiple_image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.productDetail_multiple_image img{
+  padding: 10px;
+  height: 45vh;
+}
+.page-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .product-detail-img {
   width: 50%;

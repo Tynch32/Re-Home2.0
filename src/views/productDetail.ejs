@@ -15,8 +15,36 @@
 						</div>
 						<div class="row">
 							<div class="col-12 col-lg-8">
+								<% if(images.length>0){%>
+									<div class="productDetail_multiple_image">
+										<img id="main-image" src="/img/products/<%= image || 'default-image.png' %>" class="img-fluid  animate__animated animate__flipInX" alt="...">
+										<nav aria-label="Page navigation example">
+											<ul class="pagination">
+											  <li class="page-item">
+												<a class="page-link" href="#" aria-label="Previous">
+												  <span aria-hidden="true">&laquo;</span>
+												</a>
+											  </li>
+									<% images.forEach((image,id) => {%>
+										<li class="page-item">
+											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
+											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=image%>')">
+												<%= id+1 %>
+											</div>
+										</li>
+									  <%}); %> 
+									  <li class="page-item">
+												<a class="page-link" href="#" aria-label="Next">
+												  <span aria-hidden="true">&raquo;</span>
+												</a>
+											  </li>
+											</ul>
+										</nav>	
+									</div>
+								<%}else{%>
 								<img src="/img/products/<%= image || 'default-image.png' %>" alt="product image"
 									class="product-detail-img">
+								<%}%>
 								<p class="product-detail-description">
 									<%= description %>
 								</p>
