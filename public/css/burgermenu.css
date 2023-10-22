@@ -1,0 +1,24 @@
+@media(max-width: 600px){
+    .header_menu_desplegado{
+      display: none;
+    }
+    .header_menu_desplegable{
+      display: flex;
+    }
+    .header_menu_desplegable ul{
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      flex-direction: column;
+      align-content: center;
+    }
+    .header_menu_desplegable li{
+      padding-bottom: 5px;
+    }
+    .header_menu_desplegable a{
+      color: black;
+      font-size: 24px;
+    }
+    #header_menu_desplegable_fondo{
+    }
+  }

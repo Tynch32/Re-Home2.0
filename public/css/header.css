@@ -22,6 +22,7 @@
   border-radius: 5px;
   padding: 3px 6px;
   align-items: center;
+  justify-content: space-evenly;
 }
 .header_searchbar_button {
   padding: 5px 1px;
@@ -55,7 +56,49 @@
 .home__header__nav--menu ul li {
   background-color: var(--colorSanAndres);
 }
-
+.header_menu_desplegable{
+  display: none;
+}
+@media(max-width: 600px){
+  .header_menu_desplegado{
+    display: none;
+  }
+  .header_menu_desplegable{
+    display: flex;
+  }
+  .header_menu_desplegable ul{
+    display: flex;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: column;
+    align-content: center;
+  }
+  .header_menu_desplegable li{
+    display:flex;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    padding: 4px 0px;
+    width: 100%;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--colorSanAndres);
+  }
+  .header_menu_desplegable a{
+    font-size: 20px;
+  }
+  .bg-body-tertiary {
+    background-color: rgba(0, 0, 0, 0)!important;
+  }
+  .navbar-toggler {
+    background-color:white
+  }
+  .pe-3 {
+    padding-right: 0px!important;
+  }
+  
+}
 @media (max-width: 550px) {
   .header_contenido{
     display: flex;
@@ -85,8 +128,7 @@
     width: 50%;
   }
 }
-@media (min-width: 1242px) {
-}
+
 @media (min-width: 1374px) {
   .header_contenido{
     background-size : 100%  100%;

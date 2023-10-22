@@ -12,7 +12,8 @@
         </div>
       </a>
     </div>
-    <nav class="home__header__nav--menu">
+    <div class="header_menu_desplegado">
+      <nav class="home__header__nav--menu">
       <ul class="header_ul">
         <li><a href="/">home <i class="fa-solid fa-house"></i></a></li>
         <div class="header_searchbar">
@@ -42,6 +43,54 @@
         <% } %>
       </ul>
     </nav>
+    </div>
+    <div class="header_menu_desplegable">
+      <nav class="navbar bg-body-tertiary fixed-top" id="header_menu_desplegable_fondo">
+        <div class="container-fluid justify-content-end">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a href="/">Home <i class="fa-solid fa-house"></i></a>
+                </li>
+                <% if (locals.userLogin) { %>
+                  <% if (locals.userLogin.role==="admin" ) { %>
+                    <li><a href="/admin">ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
+                    <% } %>
+                      <% if (userLogin.role==="user") {%>
+                        <li><a href="/users/productCart/<%= locals.userLogin.id %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
+                          <% if (locals.userLogin.cantProduct) { %>
+                            <%= locals.userLogin.cantProduct %>
+                          <% }else{%>
+                              0
+                          <% } %>
+                        </a></li>
+                      <% }%>
+                          <li><a href="/users/profile">Editar Perfil <i class="fa-regular fa-address-card"></i></a></li>
+                          <li><a href="/users/logout">salir <i class="fa-solid fa-door-open"></i></a></li>
+                <% }else{ %>
+                            <li><a href="/users/register">Registro <i class="fa-regular fa-address-card"></i></a></li>
+                            <li><a href="/users/login">Ingresar <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <% } %>
+              </ul>
+              <div class="header_searchbar">
+                <form action="/products/search" method="GET" class="search-form">
+                  <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+                  <button class="header_searchbar_button" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
     <a class="home_main_top_arrow" href=""><img width="50px" src="/img/volver_arriba_flecha.png"alt=""></a>
   </div>
 
