@@ -1,7 +1,4 @@
-const path = require("path");
 const db = require("../database/models");
-const images_product = require("../database/models/images_product");
-const { error } = require("console");
 
 module.exports = {
   index: (req, res) => {

@@ -1,5 +1,4 @@
-const { validationResult } = require("express-validator")
-const { readJSON } = require("../../data")
+const db = require("../../database/models");
 
 module.exports = (req,res) => {
 
@@ -7,7 +6,7 @@ module.exports = (req,res) => {
 
     if(errors.isEmpty()){
         const users = readJSON('users.json')
-        const {id,name,role,shoppingCart} = users.find(user => user.email === req.body.email)
+        const {id,role,shoppingCart} = users.find(user => user.email === req.body.email)
         const cantProduct=shoppingCart?shoppingCart.length:0;
         req.session.userLogin = {
             id,
