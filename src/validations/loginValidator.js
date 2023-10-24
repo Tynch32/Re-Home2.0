@@ -1,5 +1,5 @@
 const { check, body } = require("express-validator");
-const { readJSON } = require("../data");
+const db = require("../database/models");
 const { compareSync } = require("bcryptjs");
 module.exports = [
   check("email")
@@ -8,9 +8,8 @@ module.exports = [
     .isEmail()
     .withMessage("Formato inválido"),
   body("password")
-    .custom((value, {req}) => {
-        const users = readJSON('users.json');
-        const user = users.find(user => user.email === req.body.email);
+    .custom(async(value, {req}) => {
+        const user = await db.User.findOne({ where: { email: req.body.email } });
         if(!user || !compareSync(value,user.password)){
             return false
         }

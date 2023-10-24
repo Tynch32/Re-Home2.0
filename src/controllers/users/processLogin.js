@@ -1,21 +1,21 @@
+const { validationResult } = require("express-validator")
 const db = require("../../database/models");
 
-module.exports = (req,res) => {
+module.exports = async (req,res) => {
 
     const errors = validationResult(req);
 
     if(errors.isEmpty()){
-        const users = readJSON('users.json')
-        const {id,role,shoppingCart} = users.find(user => user.email === req.body.email)
-        const cantProduct=shoppingCart?shoppingCart.length:0;
+        const user = await db.User.findOne({ where: { email: req.body.email } });
+        const role = await db.Role.findByPk(user.role_id);
         req.session.userLogin = {
-            id,
-            role,
-            cantProduct
+            id : user.id,
+            role : role.name
         }
         req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin,{
             maxAge : 1000 * 60 * 60
         })
+        console.log(req.session.userLogin)
         return res.redirect('/')
     }else {
         return res.render('login',{
@@ -23,6 +23,4 @@ module.exports = (req,res) => {
             old : req.body
         });
     }
-
-  
 }
