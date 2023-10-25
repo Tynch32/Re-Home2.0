@@ -4,25 +4,32 @@
 
 	<body>
 		<%- include('partials/header') %>
-			<div class="container products-wrapper">
-				<div class="row d-inline-flex p-2">
-					<div class="col-12">
-						<h2 class="products-title">Resultados de la búsqueda: "<%= keywords%>"
-						</h2>
-					</div>
-					<% if(results.length){ %>
-						<% results.forEach((product)=> { %>
-							<%- include('partials/productCard', { ...product}) %>
-						<% }) %>
-					<% }else{ %>
+			<main class="home_main">
+				<div class="container products-wrapper">
+					<div class="row d-inline-flex p-2">
 						<div class="col-12">
-							<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+							<h2 class="products-title">Resultados de la búsqueda: "<%= keywords%>"
+							</h2>
 						</div>
-					<% } %>
+						<% if(results.length){ %>
+							<% results.forEach((product)=> { %>
+								<div class="col-12 col-lg-6 col-md-6 col-sm-12">
+									<% let file = null %>
+                                	<% images.forEach(image=>{if(image.product_id==product.id){file=image.file}}) %>
+									<%- include('partials/productCard', {product,file}) %>
+								</div>
+							<% }) %>
+						<% }else{ %>
+											<div class="col-12">
+												<h2 class="products-title" style="color: tomato;">No hay productos que
+													coincidan con esa búsqueda</h2>
+											</div>
+											<% } %>
+					</div>
 				</div>
-			</div>
+			</main>
 			<%- include('partials/footer') %>
-			<%- include('partials/scripts') %>
+				<%- include('partials/scripts') %>
 	</body>
 
 </html>
