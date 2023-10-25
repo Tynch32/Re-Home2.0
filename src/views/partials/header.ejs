@@ -58,26 +58,26 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a href="/">Home <i class="fa-solid fa-house"></i></a>
+                  <a href="/"><b>Home <i class="fa-solid fa-house"></i></b></a>
                 </li>
                 <% if (locals.userLogin) { %>
                   <% if (locals.userLogin.role==="admin" ) { %>
-                    <li><a href="/admin">ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
+                    <li><a href="/admin"><b>ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></b></a></li>
                     <% } %>
                       <% if (userLogin.role==="user") {%>
-                        <li><a href="/users/productCart/<%= locals.userLogin.id %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
+                        <li><a href="/users/productCart/<%= locals.userLogin.id %>"><b>Carrito <i class="fa-solid fa-cart-shopping"></i></b>
                           <% if (locals.userLogin.cantProduct) { %>
                             <%= locals.userLogin.cantProduct %>
                           <% }else{%>
-                              0
+                              <b>0</b>
                           <% } %>
                         </a></li>
                       <% }%>
-                          <li><a href="/users/profile">Editar Perfil <i class="fa-regular fa-address-card"></i></a></li>
-                          <li><a href="/users/logout">salir <i class="fa-solid fa-door-open"></i></a></li>
+                          <li><a href="/users/profile"><b>Editar Perfil <i class="fa-regular fa-address-card"></i></b></a></li>
+                          <li><a href="/users/logout"><b>Salir <i class="fa-solid fa-door-open"></i></b> </a></li>
                 <% }else{ %>
-                            <li><a href="/users/register">Registro <i class="fa-regular fa-address-card"></i></a></li>
-                            <li><a href="/users/login">Ingresar <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                            <li><a href="/users/register"><b>Registro <i class="fa-regular fa-address-card"></i></b></a></li>
+                            <li><a href="/users/login"><b>Ingresar <i class="fa-solid fa-right-to-bracket"></i></b></a></li>
                 <% } %>
               </ul>
               <div class="header_searchbar">
