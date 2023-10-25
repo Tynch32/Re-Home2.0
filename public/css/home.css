@@ -2,6 +2,9 @@
   margin-top: 30px;
   background-image: url('../img/background_rehogar.jpg');
 }
+#home_main{
+  background-image: url('../img/background_rehogar.jpg');
+}
 .home__header__nav--menu ul li {
   background-color: var(--colorGris);
   text-transform: uppercase;
