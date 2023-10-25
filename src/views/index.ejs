@@ -21,6 +21,9 @@
             </main>
             <%- include('partials/footer') %>
             <%- include('partials/scripts') %>
+            <% if(!cookie){ %>
+                <%- include('partials/cookieAlert',{cookie}) %>
+            <%} %>
     </body>
 
 </html>

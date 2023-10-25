@@ -36,6 +36,7 @@
     border-right: 0;
   }
   
+  
   @media (max-width: 781px) {
     .home__footer--nosotros ul {
       flex-direction: column;

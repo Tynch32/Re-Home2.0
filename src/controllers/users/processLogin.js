@@ -12,8 +12,12 @@ module.exports = async (req,res) => {
             id : user.id,
             role : role.name
         }
+        if(req.body.remember == undefined){
+            res.cookie('grupoReHome10',req.session.userLogin,{
+                maxAge : 1000 * 60 * 60})
+        }
         req.body.remember !== undefined && res.cookie('grupoReHome10',req.session.userLogin,{
-            maxAge : 1000 * 60 * 60
+            maxAge : 1000 * 60 * 60 * 24 * 365
         })
         console.log(req.session.userLogin)
         return res.redirect('/')

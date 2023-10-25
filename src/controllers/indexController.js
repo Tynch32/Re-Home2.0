@@ -10,7 +10,8 @@ module.exports = {
               ['id', 'DESC']
           ]
       }).then((images)=>{
-          return res.render("index", {products,images});
+          let cookie= req.cookies.grupoReHome10_cookie
+          return res.render("index", {products,images,cookie});
         }).catch((errors)=>console.log(errors));
       }).catch((errors) => console.log(errors));
   },
@@ -32,4 +33,10 @@ module.exports = {
           }).catch((errors)=>console.log(errors));
       }).catch((errors) => console.log(errors));
   },
+  cookieContract: (req, res) => {
+    let valueCookie=true;
+    res.cookie('grupoReHome10_cookie',valueCookie,{
+      maxAge : 1000 * 60 * 60})
+    return res.redirect('/');
+  }
 };
