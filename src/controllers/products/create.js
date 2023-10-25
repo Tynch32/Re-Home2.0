@@ -22,8 +22,8 @@ module.exports = async (req,res) => {
                     product_id: maxId
                 })
                 if(req.files.images) {
-                    req.files.images.forEach(file => {
-                        db.Images_product.create({
+                    req.files.images.forEach(async file => {
+                        await db.Images_product.create({
                             file: file.filename,
                             product_id: maxId
                         })
