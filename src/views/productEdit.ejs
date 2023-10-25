@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head',{title: name}) %>
+    <%- include('partials/head',{title: 'Edicion de producto'}) %>
 
     <body class="productAdd">
         <%- include('partials/header') %>
@@ -41,7 +41,7 @@
                                     <label for="price" class="form-label">Precio</label>
                                     <input type="number" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
                                         id="price" name="price"
-                                        value="<%= price %>">
+                                        value="<%= Math.trunc(price) %>">
                                         <small class="text-danger ms-2">
                                             <%= locals.errors && (errors.price && errors.price.msg) %>
                                           </small>

@@ -33,8 +33,7 @@ module.exports = async (req,res) => {
             })
         
     }else{
-        let categories;
-
+        
         (req.files.image && existsSync(`./public/img/products/${req.files.image[0].filename }`)) && unlinkSync(`./public/img/products/${req.files.image[0].filename }`);
 
         if(req.files.images) {
