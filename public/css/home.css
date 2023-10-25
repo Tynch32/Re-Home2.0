@@ -1,5 +1,6 @@
 .home_main{
   margin-top: 30px;
+  background-image: url('../img/background_rehogar.jpg');
 }
 .home__header__nav--menu ul li {
   background-color: var(--colorGris);
@@ -13,7 +14,6 @@
   right: 10px;
   z-index: 1000;
 }
-
 .profile_photo_box{
   display: flex;
   border: 1px solid var(--GrisClaro);
