@@ -25,7 +25,7 @@
                         <%= roles[user.role_id-1].name%>
                     </td>
                     <td>
-                        <% user.created_at%>
+                        <%= moment(user.created_at).format('DD/MM/YYYY')%>
                     </td>
                 </tr>
             <% }) %>

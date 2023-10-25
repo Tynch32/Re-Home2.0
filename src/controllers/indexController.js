@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const moment = require('moment');
 
 module.exports = {
   index: (req, res) => {
@@ -20,7 +21,7 @@ module.exports = {
                   .then((users) => {
                     db.Role.findAll()
                     .then((roles) => {
-                      return res.render("admin", {products,images_product,categories,users,roles});
+                      return res.render("admin", {products,images_product,categories,users,roles,moment});
                     }).catch((errors)=>console.log(errors));
                   }).catch((errors)=>console.log(errors));
               }).catch((errors)=>console.log(errors));
