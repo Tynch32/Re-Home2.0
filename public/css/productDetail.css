@@ -93,3 +93,6 @@
   border: none;
   margin-bottom: 5px;
 }
+#image_product_edit img{
+ width: 100%;
+}

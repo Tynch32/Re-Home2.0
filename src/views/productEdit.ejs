@@ -29,16 +29,11 @@
                                 </div>
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="category" class="form-label">Categoría</label>
-                                    <select class="form-select"
-                                        aria-label="Default select example"
-                                        name="category"
-                                        id="category">
-                                        <% categories.forEach(item=> { %>
-                                        <option <%=item.name===category &&
-                                            'selected' %> value="<%= item.name
-                                            %>
-                                            "><%= item.name %>
-                                        </option>
+                                    <select class="form-select" aria-label="Default select example" name="category" id="category">
+                                        <% categories.forEach(category_i=> { %>
+                                            <option <%=category_i.name==category.name?'selected':'' %> value="<%= category_i.name%>">
+                                            <%= category_i.name %>
+                                            </option>
                                         <% }) %>
                                     </select>
                                 </div>
@@ -69,10 +64,12 @@
                                           </small>
                                 </div>
                                 
-                                <div class="col-12 col-md-6">
+                                <div id="image_product_edit" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                                    <% images.forEach(image=> { %>
                                     <img
-                                        src="/img/<%= image || 'img-pdto-1.jpg' %>"
+                                        src="/img/products/<%= image.file || 'img-pdto-1.jpg' %>"
                                         alt>
+                                    <% }) %>
                                 </div>
                                 <div
                                     class="col-12 d-flex justify-content-end gap-2 mb-3">
