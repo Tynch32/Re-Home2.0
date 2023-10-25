@@ -10,22 +10,22 @@
             </tr>
         </thead>
         <tbody>
-            <% users.forEach(({id, name, surname, role, createAt, image},index)=> { %>                                                     
+            <% users.forEach((user,index)=> { %>                                                     
                 <tr>
                     <th scope="row">
                         <%= index + 1 %>
                     </th>
                     <td>
-                        <%= name %>
+                        <%= user.name %>
                     </td>
                     <td>
-                        <%= surname %>
+                        <%= user.surname %>
                     </td>
                     <td>
-                        <%= role.toUpperCase() %>
+                        <%= roles[user.role_id-1].name%>
                     </td>
                     <td>
-                        <%= createAt.split("T")[0] %>
+                        <% user.created_at%>
                     </td>
                 </tr>
             <% }) %>

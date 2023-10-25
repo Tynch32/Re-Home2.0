@@ -1,24 +1,39 @@
 const {unlinkSync, existsSync} = require('fs');
 const {validationResult} = require('express-validator');
-const Product = require('../../data/Product');
-const { readJSON, writeJSON } = require('../../data');
+const db = require("../../database/models");
 
-module.exports = (req,res) => {
-
+module.exports = async (req,res) => {
     const errors = validationResult(req);
+    
     if(errors.isEmpty()){
-        const products = readJSON('products.json');
-        const data = {
-            ...req.body,
-            image : req.files.image ? req.files.image[0].filename : null,
-            images : req.files.images ? req.files.images.map(image => image.filename) : []
-        }
-        const newProduct = new Product(data);
-        products.push(newProduct);
-        writeJSON(products, 'products.json')
-        return res.redirect('/admin')
-    }else {
-        const categories = readJSON('categories.json');
+        await db.Product.create({
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount?req.body.discount:0,
+            description: req.body.description,
+            category_id: req.body.category
+        })
+        await db.Product.findOne({
+            attributes: [[db.Sequelize.fn('max', db.Sequelize.col('id')), 'max_id']],
+            }).then(result => {
+            let maxId = result.get('max_id');
+                db.Images_product.create({
+                    file: req.files.image[0].filename,
+                    product_id: maxId
+                })
+                if(req.files.images) {
+                    req.files.images.forEach(file => {
+                        db.Images_product.create({
+                            file: file.filename,
+                            product_id: maxId
+                        })
+                    })
+                }
+                return res.redirect('/admin')
+            })
+        
+    }else{
+        let categories;
 
         (req.files.image && existsSync(`./public/img/products/${req.files.image[0].filename }`)) && unlinkSync(`./public/img/products/${req.files.image[0].filename }`);
 
@@ -26,13 +41,17 @@ module.exports = (req,res) => {
             req.files.images.forEach(file => {
                 existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
             })
-        } 
-          return res.render('productAdd',{
+        }
+        db.Category.findAll({
+            order: [
+                ['name', 'ASC']
+            ]
+        }).then(categories=> {
+            return res.render('productAdd',{
                 categories,
                 errors : errors.mapped(),
                 old : req.body
-            })
+            });
+        })
     }
-    
-
 }

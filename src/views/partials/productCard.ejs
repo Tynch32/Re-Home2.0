@@ -1,34 +1,34 @@
 <article class="productCard">
-    <a href="/products/detail/<%= id %>">
+    <a href="/products/detail/<%= product.id %>">
         <div class="productCard_box">
             <div class="productCard_img">
-                <img src="/img/products/<%= img[0].file || 'default-image.png' %>" alt="imagen de producto">
+                <img src="/img/products/<%= file || "default-image.png" %>" alt="imagen de producto">
             </div>
             <div class="productCard_info_price">
-              <% if (discount) { %>
+              <% if (product.discount) { %>
                 <div class="productCard_originalPrice">
-                    Antes $<%= price %>
+                    Antes $<%= product.price %>
                 </div>
                 <div class="productCard_originalPrice_fake"></div>
                 <div class="productCard_info"><i class="fa-solid fa-circle-info"></i></div>
             <% } %>
             </div>
-            <% if (!discount) { %>
+            <% if (!product.discount) { %>
                 <div class="productCard_info_2"><i class="fa-solid fa-circle-info"></i></div>
             <% } %>
             <div class="productCard_boxInfo">
                 <div class="productCard_finalPrice">
-                    $<%= Math.floor((price - (price * discount / 100))) %>
+                    $<%= Math.floor((product.price - (product.price * product.discount / 100))) %>
                 </div>
-                <% if (discount) { %>
+                <% if (product.discount) { %>
                 <div class="productCard_discount">
-                    <%= discount %>% OFF
+                    <%= product.discount %>% OFF
                 </div>
                 <% } %>
             </div>
             
             <div class="productCard_name">
-                <%= name %>
+                <%= product.name %>
             </div>
         </div>
     </a>

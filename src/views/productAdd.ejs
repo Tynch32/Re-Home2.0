@@ -27,11 +27,12 @@
 
                   <div class="col-12 col-md-6 mb-3">
                     <label for="category" class="form-label">Categoría</label>
+                    
                     <select class="form-select  <%= locals.errors && (errors.category && 'is-invalid') %>"
                       aria-label="Default select example" name="category" id="category">
                       <option value="" selected hidden>Seleccione...</option>
-                      <% categories.forEach(category=> { %>
-                        <option value="<%= category.name %>" <%=locals.old && (locals.old.category===category.name
+                      <% categories.forEach((category,index)=> { %>
+                        <option value="<%= category.id %>" <%=locals.old && (locals.old.category===category.name
                           && 'selected' ) %>>
                           <%= category.name %>
                         </option>

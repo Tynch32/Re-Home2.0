@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head' , {title: "Panel Admin" }) %>
-
-
     <body class="">
         <%- include('partials/header') %>
-
             <main class="container">
                 <div class="row">
                     <div class="col-12 col-lg-10 mx-auto mt-5">
@@ -42,7 +39,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="users" role="tabpanel"
                                         aria-labelledby="users-tab">
-                                        <%- include('partials/tableUsers',{ users }) %>
+                                        <%- include('partials/tableUsers',{ users, roles}) %>
                                     </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel"
                                         aria-labelledby="contact-tab">
