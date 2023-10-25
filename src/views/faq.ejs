@@ -6,33 +6,121 @@
     <body>
         <%- include('partials/header') %>
             <main class="home_main">
-                <div>
-                    Contacto: 0800-0000-0000
-                </div>
-                <div>
-                    Preguntas Frecuentes:
-                </div>
-                <div>
-                    ¿Quienes Somos?
-                </div>
-                <div>
-                    Nuestros Locales:
-                </div>
-                <div>
-                    Venta A Empresas:
-                </div>
-                <div>
-                    Medios De Pago:
-                </div>
-                <div>
-                    Garantias: Ninguna
-                </div>
-                <div>
-                    Terminos y Condiciones
+                <div class="col-12 col-md-8 mx-auto mt-5">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <b><i class="fa-solid fa-address-book"></i> Contacto</b>
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p><i class="fa-solid fa-phone-volume"></i> <b>Cel:</b> 11 9999 7777</p>
+                                    <p><i class="fa-solid fa-phone-volume"></i> <b>Tel:</b> 02320 45687</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <b><i class="fa-regular fa-circle-question"></i> Preguntas Frecuentes</b>
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p><b>¿Cual es la tematica de su sitio?</b>, el sitio esta orientado a la venta de productos para el hogar, desde construcción hasta la decoracion de la misma.</p>
+                                    <p><b>¿Hacen envios a domicilio?</b> Solamente realizamos envios de materiales de construcción.</p>
+                                    <p><b>¿Hacen precios a mayorista?</b> No, solo realizamos venta minorista.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <b><i class="fa-solid fa-person-chalkboard"></i> ¿Quienes Somos?</b>
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p><b>Re-Hogar</b>, ofrece productos para la construcción y remodelaje del hogar, así como también materiales de construcción y ferreteria.</p>
+                                    <p><b>Re</b>Diseña, <b>Re</b>Construí, <b>Re</b>Ilumina, <b>Re</b>Pinta, <b>Re</b>Decora, <b>Re</b>Inventa tu <b>RE-Hogar</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    <b><i class="fa-solid fa-shop"></i> Nuestros Locales <i class="fa-solid fa-location-dot"></i></b>
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Nuestros Locales:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    Venta A Empresas:
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Venta A Empresas:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                    Medios De Pago:
+                                </button>
+                            </h2>
+                            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Medios De Pago:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                    Garantias: Ninguna
+                                </button>
+                            </h2>
+                            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Garantias: Ninguna
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                    Terminos y Condiciones
+                                </button>
+                            </h2>
+                            <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Terminos y Condiciones
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
             <%- include('partials/footer') %>
-            <%- include('partials/scripts') %>
+                <%- include('partials/scripts') %>
     </body>
 
 </html>
