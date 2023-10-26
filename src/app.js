@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
-
+const favicon = require('serve-favicon');
 const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'..', 'public')));
-
+app.use(favicon(path.join(__dirname,'..','public','img','favicon','favicon.ico')))
 app.use(methodOverride('_method'));
 app.use(session({
   secret : "grupoReHome10",

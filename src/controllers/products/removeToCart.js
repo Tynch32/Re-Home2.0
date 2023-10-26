@@ -17,7 +17,7 @@ module.exports = (req, res) => {
       return element;
   });
     writeJSON(usersModify,'users.json');
-    return res.redirect('/'); //VEIRIFICAR POR LAS DUDAS
+    return res.redirect('/'); 
   } else {
     return res.redirect('/users/login');
   }
