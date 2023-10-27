@@ -3,35 +3,24 @@ const moment = require('moment');
 
 module.exports = {
   index: (req, res) => {
-    db.Product.findAll()
+    db.Product.findAll({include:'product_image'})
       .then((products) => {
-        db.Images_product.findAll({
-          order: [
-              ['id', 'DESC']
-          ]
-      }).then((images)=>{
-          let cookie= req.cookies.grupoReHome10_cookie
-          return res.render("index", {products,images,cookie});
-        }).catch((errors)=>console.log(errors));
-      }).catch((errors) => console.log(errors));
+          let cookie= req.cookies.grupoReHome10_cookie;
+      return res.render("index", {products,cookie});
+    }).catch((errors)=>console.log(errors));
   },
   admin: (req, res) => {
-    db.Product.findAll()
-      .then((products) => {
-        db.Images_product.findAll()
-          .then((images_product)=>{
-            db.Category.findAll()
-              .then((categories) => {
-                db.User.findAll()
-                  .then((users) => {
-                    db.Role.findAll()
-                    .then((roles) => {
-                      return res.render("admin", {products,images_product,categories,users,roles,moment});
-                    }).catch((errors)=>console.log(errors));
-                  }).catch((errors)=>console.log(errors));
-              }).catch((errors)=>console.log(errors));
+    db.Product.findAll({
+      include:['product_image','product_category']
+    }).then((products) => {
+        db.User.findAll({include:['roleId']})
+        .then((users) => {
+          db.Category.findAll({include:['product_category']})
+          .then((categories) => {
+            return res.render("admin", {products,users,categories,moment});
           }).catch((errors)=>console.log(errors));
-      }).catch((errors) => console.log(errors));
+        }).catch((errors)=>console.log(errors));
+      }).catch((errors)=>console.log(errors));
   },
   cookieContract: (req, res) => {
     let valueCookie=true;

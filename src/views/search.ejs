@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head', {title: 'Resultados de tu búsqueda' }) %>
+<%- include('partials/head', {title: `Resultados de tu búsqueda:${keywords}`}) %>
 
 	<body>
 		<%- include('partials/header') %>
@@ -13,23 +13,20 @@
 						</div>
 						<% if(results.length){ %>
 							<% results.forEach((product)=> { %>
-								<div class="col-12 col-lg-6 col-md-6 col-sm-12">
-									<% let file = null %>
-                                	<% images.forEach(image=>{if(image.product_id==product.id){file=image.file}}) %>
-									<%- include('partials/productCard', {product,file}) %>
+								<div class="col-12 col-lg-4 col-md-6 col-sm-12">
+									<%- include('partials/productCard', {product}) %>
 								</div>
 							<% }) %>
 						<% }else{ %>
-											<div class="col-12">
-												<h2 class="products-title" style="color: tomato;">No hay productos que
-													coincidan con esa búsqueda</h2>
-											</div>
-											<% } %>
+							<div class="col-12">
+								<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+							</div>
+						<% } %>
 					</div>
 				</div>
 			</main>
 			<%- include('partials/footer') %>
-				<%- include('partials/scripts') %>
+			<%- include('partials/scripts') %>
 	</body>
 
 </html>

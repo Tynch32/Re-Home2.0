@@ -31,9 +31,7 @@ module.exports = async (req,res) => {
                 }
                 return res.redirect('/admin')
             })
-        
     }else{
-        
         (req.files.image && existsSync(`./public/img/products/${req.files.image[0].filename }`)) && unlinkSync(`./public/img/products/${req.files.image[0].filename }`);
 
         if(req.files.images) {
@@ -41,6 +39,7 @@ module.exports = async (req,res) => {
                 existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
             })
         }
+
         db.Category.findAll({
             order: [
                 ['name', 'ASC']
@@ -53,4 +52,5 @@ module.exports = async (req,res) => {
             });
         })
     }
+    
 }

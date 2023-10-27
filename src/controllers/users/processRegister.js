@@ -1,11 +1,8 @@
 const {unlinkSync, existsSync} = require('fs');
 const { validationResult } = require("express-validator");
-const { readJSON, writeJSON } = require("../../data");
-const User = require("../../data/User");
 
 module.exports = (req, res) => {
   const errors = validationResult(req);
-
   if (errors.isEmpty()) {
     const users = readJSON("users.json");
     const data = {
@@ -29,3 +26,4 @@ module.exports = (req, res) => {
     });
   }
 };
+//https://chat.openai.com/c/60f12921-f49b-43da-a77b-3f399adc9593

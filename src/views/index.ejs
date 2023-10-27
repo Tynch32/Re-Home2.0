@@ -8,12 +8,9 @@
             <main class="home_main">
                 <div class="container products-wrapper">
                     <div class="row d-inline-flex p-2">
-                        
                         <% products.forEach(product =>  { %>
                             <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-                                <% let file = null %>
-                                <% images.forEach(image=>{if(image.product_id==product.id){file=image.file}}) %>
-                                <%- include('partials/productCard', {product,file}) %>
+                                <%- include('partials/productCard', {product}) %>
                             </div>
                         <% }) %>
                     </div>

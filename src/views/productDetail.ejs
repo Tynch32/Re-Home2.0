@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head', {title: name}) %>
+<%- include('partials/head', {title: product.name}) %>
 
 	<body>
 		<%- include('partials/header') %>
@@ -9,34 +9,34 @@
 					<div class="product-detail">
 						<div class="row">
 							<div class="col-12">
-								<h2 class="products-title">Detalle del producto: <%= name %>
+								<h2 class="products-title">Detalle del producto: <%= product.name %>
 								</h2>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12 col-lg-8">
-								<% if(imagenes.length>1){%>
+								<% if(product.product_image.length>1){%>
 									<div class="productDetail_multiple_image">
-										<img id="main-image" src="/img/products/<%= imagenes[0] || 'default-image.png' %>" class="img-fluid  animate__animated animate__flipInX" alt="...">
+										<img id="main-image" src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>" class="img-fluid  animate__animated animate__flipInX" alt="...">
 										<nav aria-label="Page navigation example">
 											<ul class="pagination">
 											  <li class="page-item">
-												<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
-													onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=imagenes[0]%>')">
+												<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
+													onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[0].file%>')">
 												  <span aria-hidden="true">&laquo;</span>
 												</div>
 											  </li>
-									<% imagenes.forEach((image,id) => {%>
+									<% product.product_image.forEach((image,id) => {%>
 										<li class="page-item">
 											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
-											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=image%>')">
+											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[id].file%>')">
 												<%= id+1 %>
 											</div>
 										</li>
 									<%}); %> 
 									  <li class="page-item">
-										<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
-											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=imagenes[imagenes.length-1]%>')">
+										<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
+											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[product.product_image.length-1].file%>')">
 												  <span aria-hidden="true">&raquo;</span>
 												</div>
 											  </li>
@@ -44,31 +44,31 @@
 										</nav>	
 									</div>
 								<%}else{%>
-								<img src="/img/products/<%= imagenes[0] || 'default-image.png' %>" alt="product image"
+								<img src="/img/products/<%= product.product_image[0] || 'default-image.png' %>" alt="product image"
 									class="product-detail-img">
 								<%}%>
 								<p class="product-detail-description">
-									<%= description %>
+									<%= product.description %>
 								</p>
 							</div>
 							<div class="col-12 col-lg-4">
 								<article class="product-detail-info">
 									<h2 class="product-detail-title">
-										<%= name %>
+										<%= product.name %>
 									</h2>
-									<% if (discount) { %>
+									<% if (product.discount) { %>
 										<p class="product-detail-price small">
-											<span>$<%= price %></span>
+											<span>$<%= product.price %></span>
 											<b>
-												<%= discount %>% OFF
+												<%= product.discount %>% OFF
 											</b>
 										</p>
 										<p class="product-detail-price">
-											$<%=Math.floor((price - (price * discount / 100))) %>
+											$<%=Math.floor((product.price - (product.price * product.discount / 100))) %>
 										</p>
 										<% }else{ %>
 											<p class="product-detail-price">
-												$<%=Math.floor(price)%>
+												$<%=Math.floor(product.price)%>
 											</p>
 											<% } %>
 											<ul class="actions-list">
@@ -81,7 +81,7 @@
 													<p>Retiro gratis en locales del vendedor</p>
 												</li>
 											</ul>
-											<form action="/products/addToCart/<%= id %>" method="POST" class="row">
+											<form action="/products/addToCart/<%= product.id %>" method="POST" class="row">
 												<button type="submit" class="btn btn-success">Agregar al carrito <i class="fa-solid fa-basket-shopping"></i></button>
 											</form>
 								</article>

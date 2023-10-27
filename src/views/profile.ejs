@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head',{title: "Perfil"}) %>
+    <%- include('partials/head',{title: `Perfil: ${name}`}) %>
 
 
 <body class="detalle">
@@ -30,29 +30,29 @@
                             </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
-                            <label for="adress" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="adress" placeholder="Ingrese su domicilio" name="adress" value="<%=adress%>">
+                            <label for="address" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="address" placeholder="Ingrese su domicilio" name="address" value="<%= addressId.address%>">
                             <small class="text-danger ms-2">
-                                <%= locals.errors && (errors.adress && errors.adress.msg) %>
+                                <%= locals.errors && (errors.address && errors.address.msg) %>
                             </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="city" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city" value="<%= city %>">
+                            <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city" value="<%= addressId.city %>">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.city && errors.city.msg) %>
                             </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="province" class="form-label">Provincia</label>
-                            <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province" value="<%= province %>">
+                            <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province" value="<%= addressId.province %>">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.province && errors.province.msg) %>
                             </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="country" class="form-label">País</label>
-                            <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country" value="<%= country %>">
+                            <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country" value="<%= addressId.country %>">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.country && errors.country.msg) %>
                             </small>
@@ -60,7 +60,7 @@
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="foto" class="form-label">Imagen de perfil:</label>
                             <div class="profile_photo_box" id="foto">
-                                <img class= "profile_photo" src="/img/users/<%= image %>">
+                                <img class= "profile_photo" src="/img/users/<%= imageId.file %>">
                             </div>
                         </div>
                         <!-- <div class="col-12 col-lg-4 col-md-3">

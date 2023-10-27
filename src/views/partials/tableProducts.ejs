@@ -12,41 +12,41 @@
             </tr>
         </thead>
         <tbody>
-            <% products.forEach(({id,name,category, price,discount, image, description},index)=> { %>
+            <% products.forEach((product,index)=> { %>
                 <tr>
                     <th scope="row">
                         <%= index + 1 %>
                     </th>
                     <td>
-                        <%= name %>
+                        <%= product.name %>
                     </td>
                     <td>
-                        <%= category || 'Sin especificar' %>
+                        <%= product.product_category.name || 'Sin especificar' %>
                     </td>
                     <td>
-                        <%= price %>
+                        <%= product.price %>
                     </td>
                     <td>
-                        <%= discount %>
+                        <%= product.discount %>
                     </td>
                     <td>
-                        <%= price - (price * discount / 100) %>
+                        <%= product.price - (product.price * product.discount / 100) %>
                     </td>
                     <td>
                         <div class="d-flex gap-1">
 
                             <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#detailProduct<%=id%>">
+                                data-bs-target="#detailProduct<%=product.id%>">
                                 <i class="fas fa-eye"></i>
                             </button>
 
-                            <div class="modal fade" id="detailProduct<%=id%>" tabindex="-1"
-                                aria-labelledby="detailProduct<%=id%>Label" aria-hidden="true">
+                            <div class="modal fade" id="detailProduct<%=product.id%>" tabindex="-1"
+                                aria-labelledby="detailProduct<%=product.id%>Label" aria-hidden="true">
                                 <div class="modal-dialog modal-lg  modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-name" id="detailProduct<%=id%>Label">
-                                                <%= name %>
+                                            <h5 class="modal-name" id="detailProduct<%=product.id%>Label">
+                                                <%= product.name %>
                                             </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -55,16 +55,16 @@
                                             <div class="card mb-3">
                                                 <div class="row g-0">
                                                     <div class="col-md-6">
-                                                        <img src="/img/products/<%= images_product.file || 'img-pdto-1.jpg'%>"
+                                                        <img src="/img/products/<%= product.product_image[0].file || 'img-pdto-1.jpg'%>"
                                                             class="img-fluid" alt="...">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="card-body">
                                                             <h5 class="card-name">
-                                                                <%=name%>
+                                                                <%=product.name%>
                                                             </h5>
                                                             <p class="card-text">
-                                                                <%=description%>
+                                                                <%=product.description%>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -79,29 +79,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn btn-sm btn-success" href="/products/edit/<%= id %>"><i
+                            <a class="btn btn-sm btn-success" href="/products/edit/<%= product.id %>"><i
                                     class="fas fa-edit"></i></a>
 
                             <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#removeProduct<%= id %>">
+                                data-bs-target="#removeProduct<%= product.id %>">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
-                            <div class="modal fade" id="removeProduct<%= id %>" tabindex="-1" aria-labelledby="removeProduct<%= id %>Label"
+                            <div class="modal fade" id="removeProduct<%= product.id %>" tabindex="-1" aria-labelledby="removeProduct<%= product.id %>Label"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-name fs-5" id="removeProduct<%= id %>Label">ADVERTENCIA</h1>
+                                            <h1 class="modal-name fs-5" id="removeProduct<%= product.id %>Label">ADVERTENCIA</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Estás seguro que querés eliminar el producto <b><%= name %></b></p> 
+                                            <p>Estás seguro que querés eliminar el producto <b><%= product.name %></b></p> 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Cancelar</button>
-                                                <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
+                                                <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
                                                     <button type="submit" class="btn btn-danger">Eliminalo</button>
                                                 </form>
                                         </div>

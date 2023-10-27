@@ -31,15 +31,15 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="products" role="tabpanel"
                                         aria-labelledby="products-tab">
-                                        <%- include('partials/tableProducts',{products, images_product}) %>
+                                        <%- include('partials/tableProducts',{products}) %>
                                     </div>
                                     <div class="tab-pane fade" id="categories" role="tabpanel"
                                         aria-labelledby="categories-tab">
-                                        <%- include('partials/tableCategories',{ products, categories }) %>
+                                        <%- include('partials/tableCategories',{categories}) %>
                                     </div>
                                     <div class="tab-pane fade" id="users" role="tabpanel"
                                         aria-labelledby="users-tab">
-                                        <%- include('partials/tableUsers',{ users, roles, moment}) %>
+                                        <%- include('partials/tableUsers',{users, moment}) %>
                                     </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel"
                                         aria-labelledby="contact-tab">
