@@ -22,6 +22,10 @@ module.exports = (sequelize, dataTypes) => {
       password:{
           type: dataTypes.STRING(255),
           allowNull: false,
+      },
+      address_id:{
+        type: dataTypes.BIGINT(10).UNSIGNED,
+        allowNull: false
       }
   };
   let config = {

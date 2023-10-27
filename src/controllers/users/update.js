@@ -1,38 +1,55 @@
 const { unlinkSync, existsSync } = require("fs");
 const { validationResult } = require("express-validator");
-const { readJSON, writeJSON } = require("../../data");
+const db = require("../../database/models");
 
 module.exports = (req, res) => {
   const errors = validationResult(req);
-  const users = readJSON("users.json");
 
   if (errors.isEmpty()) {
-    const { name, surname, adress, city, province, country } = req.body;
 
-    const usersModify = users.map((user) => {
-      if (user.id === req.params.id) {
-        user.name = name.trim();
-        user.surname = surname.trim();
-        user.adress = adress.trim();
-        user.city = city.trim();
-        user.province = province.trim();
-        user.country = country.trim()
+    const datosPersonales= {
+      name: req.body.name.trim(), 
+      surname: req.body.surname.trim(),
+      updated_at: new Date()
+    }
+    const direccionNueva={
+      address: req.body.address.trim(),
+      city: req.body.city.trim(),
+      province: req.body.province.trim(),
+      country: req.body.country.trim(),
+      updated_at: new Date()
+    }
+    db.User.update(datosPersonales,{
+      where:{
+        id:req.params.id,
       }
-      return user;
-    });
-
-    writeJSON(usersModify, "users.json");
-    return res.redirect("/");
+    }).catch(error=>console.log(error));
+    db.User.findByPk(req.params.id).then(user=>{
+      db.Address.update(direccionNueva,{
+          where:{
+            id:user.address_id
+          }
+        }).catch(error=>console.log(error));
+      }).then((user)=> {return res.redirect('/');
+    }).catch(error=>console.log(error));
+    
   } else {
+
     if(req.file){
       if(existsSync(`./public/img/users/${req.file.filename}`)){
         unlinkSync(`./public/img/users/${req.file.filename}`)
       }
     }
-    const user = users.find(user => user.id === req.params.id)
-    return res.render('profile',{
-        errors: errors.mapped(),
-        ...user
-    })
+
+    db.User.findByPk(req.params.id,{include:['addressId','imageId']}).then(
+      user=>{
+
+        return res.render('profile',{
+          errors: errors.mapped(),
+          ...user.dataValues
+      })
+
+    }).catch(error=>console.log(error));
+    
   }
 };

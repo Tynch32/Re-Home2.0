@@ -12,7 +12,8 @@ module.exports = async (req, res) => {
       price:req.body.price,
       discount:req.body.discount,
       description:req.body.description,
-      category_id:0
+      category_id:0,
+      updated_at: new Date()
     }
     db.Category.findAll({where:{
       name:req.body.category
@@ -33,10 +34,10 @@ module.exports = async (req, res) => {
           db.Images_product.create({
             file: file.filename,
             product_id: req.params.id
+            })
           })
-        })
+        }
         return res.redirect('/admin')
-      }
       }).catch(error=>console.log(error))
     }).catch(error=>console.log(error));
   }else{

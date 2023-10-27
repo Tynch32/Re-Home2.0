@@ -44,7 +44,7 @@
 										</nav>	
 									</div>
 								<%}else{%>
-								<img src="/img/products/<%= product.product_image[0] || 'default-image.png' %>" alt="product image"
+								<img src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>" alt="product image"
 									class="product-detail-img">
 								<%}%>
 								<p class="product-detail-description">

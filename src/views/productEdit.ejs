@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head',{title: `Editar: ${name}`}) %>
+    <%- include('partials/head',{title: `Editar: ${product.name}`}) %>
 
     <body class="productAdd">
         <%- include('partials/header') %>
@@ -14,7 +14,7 @@
                         </div>
                         <div class="card-body">
                             <form
-                                action="/products/update/<%= id %>?_method=PUT"
+                                action="/products/update/<%= product.id %>?_method=PUT"
                                 method="POST" class="row"
                                 enctype="multipart/form-data">
                                 <div class="col-12 col-md-6 mb-3">
@@ -22,7 +22,7 @@
                                     <input type="text"  class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>"
                                         id="name"
                                         placeholder="Título del producto"
-                                        name="name" value="<%= name %>">
+                                        name="name" value="<%= product.name %>">
                                         <small class="text-danger ms-2">
                                             <%= locals.errors && (errors.name && errors.name.msg) %>
                                           </small>
@@ -31,7 +31,7 @@
                                     <label for="category" class="form-label">Categoría</label>
                                     <select class="form-select" aria-label="Default select example" name="category" id="category">
                                         <% categories.forEach(category_i=> { %>
-                                            <option <%=category_i.name==category.name?'selected':'' %> value="<%= category_i.name%>">
+                                            <option <%=category_i.name==product.product_category.name?'selected':'' %> value="<%= category_i.name%>">
                                             <%= category_i.name %>
                                             </option>
                                         <% }) %>
@@ -41,7 +41,7 @@
                                     <label for="price" class="form-label">Precio</label>
                                     <input type="number" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
                                         id="price" name="price"
-                                        value="<%= Math.trunc(price) %>">
+                                        value="<%= Math.trunc(product.price) %>">
                                         <small class="text-danger ms-2">
                                             <%= locals.errors && (errors.price && errors.price.msg) %>
                                           </small>
@@ -51,21 +51,21 @@
                                     <label for="discount" class="form-label">Descuento</label>
                                     <input type="number" class="form-control"
                                         id="discount" name="discount"
-                                        value="<%= discount %>">
+                                        value="<%= product.discount %>">
                                 </div>
 
                                 <div class="col-12 mb-3">
                                     <label for="description" class="form-label">Descripción</label>
                                     <textarea name="description"
                                         id="description"  class="form-control  <%= locals.errors && (errors.description && 'is-invalid') %>"
-                                        style="resize: none;"><%= description %></textarea>
+                                        style="resize: none;"><%= product.description %></textarea>
                                         <small class="text-danger ms-2">
                                             <%= locals.errors && (errors.description && errors.description.msg) %>
                                           </small>
                                 </div>
                                 
                                 <div id="image_product_edit" class="col-12 col-lg-3 col-md-3 col-sm-3 d-flex">
-                                    <% images.forEach(image=> { %>
+                                    <% product.product_image.forEach(image=> { %>
                                     <img
                                         src="/img/products/<%= image.file || 'img-pdto-1.jpg' %>"
                                         alt>

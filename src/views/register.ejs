@@ -33,19 +33,23 @@
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="adress" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="adress" placeholder="Ingrese su domicilio" name="adress">
+                            <input type="text" class="form-control" id="adress" placeholder="Ingrese su domicilio" name="adress"
+                            value="<%= locals.old && (old.adress && old.adress ) %>">
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="city" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city">
+                            <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city"
+                            value="<%= locals.old && (old.city && old.city ) %>">
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="province" class="form-label">Provincia</label>
-                            <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province">
+                            <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province"
+                            value="<%= locals.old && (old.province && old.province ) %>">
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="country" class="form-label">País</label>
-                            <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country">
+                            <input type="text" class="form-control" id="country" placeholder="Ingrese su País" name="country"
+                            value="<%= locals.old && (old.country && old.country ) %>">
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -60,6 +64,7 @@
                             <input type="password" class="form-control" id="password" placeholder="Tu contraseña" name="password">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.password && errors.password.msg) %>
+                                <%= !locals.errors ?"":("Debes volver a escribir la contraseña") %>
                             </small>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
@@ -67,6 +72,7 @@
                             <input type="password" class="form-control" id="password2" placeholder="Confirma tu contraseña" name="password2">
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.password2 && errors.password2.msg) %>
+                                <%= !locals.errors ?"":("Debes volver a escribir la contraseña") %>
                             </small>
                         </div>
                         <div class="col-12 col-md-6 mb-3">

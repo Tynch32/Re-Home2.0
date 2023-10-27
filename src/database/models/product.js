@@ -21,6 +21,9 @@ module.exports = (sequelize, dataTypes) => {
       description:{
         type: dataTypes.STRING(255),
         allowNull: false
+      },
+      category_id:{
+        type: dataTypes.BIGINT(10)
       }
   };
   let config = {
