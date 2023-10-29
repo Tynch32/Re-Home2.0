@@ -1,25 +1,16 @@
-const { readJSON } = require("../../data")
+const db = require("../../database/models");
 
-module.exports = (req,res) => {
-
-    const users = readJSON('users.json');
-    const products = readJSON('products.json');
-    const user = users.find(user => user.id === req.session.userLogin.id);
-    var carrito =[];
-    if(user){
-        user.shoppingCart.forEach(elementId => {
-            let producto = products.find(product => product.id==elementId);
-            if(producto){
-                if(!user.shoppingCart.includes(producto)){
-                    carrito.push(producto);
-                }
-            }
+module.exports = async (req,res) => {
+    db.Order.findAll({where:{
+        shoppingcart_id: req.params.id}
+    ,include:'product'}
+    ).then(async carrito=>{
+        let total=0;
+        await carrito.forEach(producto => {
+            total+= producto.product.price - (producto.product.price * producto.product.discount / 100);
         });
-        var total = 0;
-        carrito.forEach(element=> total+=element.price);
         return res.render('productCart',{carrito,total})
-    }else{
-        return res.redirect('login');
-    }
+    })
+    
 
 }

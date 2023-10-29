@@ -27,3 +27,16 @@
     display: flex;
     justify-content: space-between;
 }
+.totalCarritoCompras{
+    width: 100%;
+}
+.productCart_subtotal{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    gap: 20px;
+    justify-content: space-between;
+}
+.productCart_price{
+    text-decoration:line-through;
+}

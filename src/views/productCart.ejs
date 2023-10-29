@@ -19,20 +19,26 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="CarritoComprasLabel"> SU TOTAL ES: $<%= total %></h1>
+                      <h1 class="modal-title fs-5" id="CarritoComprasLabel"> SUS PRODUCTOS:</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <% carrito.forEach(product=> { %>
                         <div class="productCart_modal">
                           <div>
-                            <%= product.name %>
+                            <%= product.product.name %>
                           </div>
-                          <div>
-                            $<%= product.price %>
+                          <div class="productCart_subtotal">
+                            <div class="productCart_price">
+                              $<%= product.product.price %>
+                            </div>
+                            <div>
+                            $<%= product.product.price - (product.product.price * product.product.discount / 100)  %>
+                            </div>
                           </div>
                         </div>
                       <% }) %>
+                      <h1 class="modal-title fs-5" id="totalCarritoCompras"> SU TOTAL ES: $<%= total %></h1>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
@@ -58,34 +64,34 @@
                     <tbody>
                       <% carrito.forEach(product=> { %>
                       <tr>
-                        <td class="productCart_imagebox" scope="row"><img src="/img/products/<%= product.image || 'default-image.png' %>" alt="imagen de producto"></td>
-                        <td><%=product.name%></td>
-                        <td><%=product.price%></td>
+                        <td class="productCart_imagebox" scope="row"><img src="/img/products/<%= product.product.file || 'default-image.png' %>" alt="imagen de producto"></td>
+                        <td><%=product.product.name%></td>
+                        <td><%=product.product.price%></td>
                         <td>1</td>
-                        <td><%=product.price%></td>
+                        <td><%=product.product.price%></td>
                         <td>
                           <div class="productCart_box">
-                            <div class="productCart_button_info"><a href="/products/detail/<%= product.id %>"><i class="fa-solid fa-circle-info"></i></a></div>
+                            <div class="productCart_button_info"><a href="/products/detail/<%= product.product.id %>"><i class="fa-solid fa-circle-info"></i></a></div>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#removeProduct<%= product.id %>">
+                                data-bs-target="#removeProduct<%= product.product.id %>">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
-                            <div class="modal fade" id="removeProduct<%= product.id %>" tabindex="-1" aria-labelledby="removeProduct<%= product.id %>Label"
+                            <div class="modal fade" id="removeProduct<%= product.product.id %>" tabindex="-1" aria-labelledby="removeProduct<%= product.product.id %>Label"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-name fs-5" id="removeProduct<%= product.id %>Label">ADVERTENCIA</h1>
+                                            <h1 class="modal-name fs-5" id="removeProduct<%= product.product.id %>Label">ADVERTENCIA</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>¿Estás seguro que quieres eliminar el producto: <b><%= product.name %></b> de tu carrito de compras?</p> 
+                                            <p>¿Estás seguro que quieres eliminar el producto: <b><%= product.product.name %></b> de tu carrito de compras?</p> 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Cancelar</button>
-                                                <form action="/products/removeToCart/<%= product.id %>" method="POST">
+                                                <form action="/products/removeToCart/<%= product.product.id %>" method="POST">
                                                   <button type="submit" class="btn btn-danger">Sí, Eliminar <i class="fa-solid fa-trash-can"></i></button>
                                               </form>
                                         </div>
