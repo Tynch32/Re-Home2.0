@@ -147,7 +147,7 @@ CREATE TABLE `orders` (
   KEY `orders_product_id_idx` (`product_id`),
   CONSTRAINT `orders_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `orders_shoppingcart_id` FOREIGN KEY (`shoppingcart_id`) REFERENCES `shopping_cart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,3,1,NULL,NULL,1),(2,4,1,NULL,NULL,1),(3,2,1,NULL,NULL,1),(4,6,1,NULL,NULL,1),(5,2,1,NULL,NULL,2),(6,1,1,NULL,NULL,2),(7,3,1,NULL,NULL,2),(8,4,1,NULL,NULL,2),(9,5,1,NULL,NULL,2);
+INSERT INTO `orders` VALUES (1,3,1,NULL,NULL,4),(2,4,1,NULL,NULL,4),(3,2,1,NULL,NULL,4),(4,6,1,NULL,NULL,4),(5,2,1,NULL,NULL,2),(6,1,1,NULL,NULL,2),(7,3,1,NULL,NULL,2),(8,4,1,NULL,NULL,2),(9,5,1,NULL,NULL,2);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-27 18:49:58
+-- Dump completed on 2023-10-29 14:29:32
