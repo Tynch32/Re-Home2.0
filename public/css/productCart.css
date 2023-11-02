@@ -16,7 +16,7 @@
 
 .productCart_button_info{
     display: flex;
-    background-color: rgb(33, 197, 197);
+    background-color: var(--info);
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
