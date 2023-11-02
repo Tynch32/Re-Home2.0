@@ -65,7 +65,7 @@
                     <li><a href="/admin"><b>ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></b></a></li>
                     <% } %>
                       <% if (userLogin.role==="user") {%>
-                        <li><a href="/users/productCart/<%= locals.userLogin.shopping_cart %>"><b>Carrito <i class="fa-solid fa-cart-shopping"></i></b>
+                        <li><a href="/users/productCart/<%= locals.userLogin.id %>"><b>Carrito <i class="fa-solid fa-cart-shopping"></i></b>
                           <% if (locals.userLogin.cantProduct) { %>
                             <%= locals.userLogin.cantProduct %>
                           <% }else{%>
