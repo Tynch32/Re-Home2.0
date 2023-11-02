@@ -23,14 +23,18 @@
                     <td>
                         <%= product.product_category.name || 'Sin especificar' %>
                     </td>
-                    <td>
-                        <%= product.price %>
+                    <td class="admin_tableProduct_price">
+                        $ <%= Math.floor(product.price) %>
                     </td>
                     <td>
-                        <%= product.discount %>
+                        <%if(product.discount>0){%>
+                            <b><%=product.discount%> %</b>
+                        <%}else{%>
+                            <%=product.discount%> %
+                        <%}%>
                     </td>
                     <td>
-                        <%= product.price - (product.price * product.discount / 100) %>
+                        $ <%= Math.floor(product.price - (product.price * product.discount / 100)) %>
                     </td>
                     <td>
                         <div class="d-flex gap-1">
@@ -61,11 +65,31 @@
                                                     <div class="col-md-6">
                                                         <div class="card-body">
                                                             <h5 class="card-name">
-                                                                <%=product.name%>
+                                                                <div>
+                                                                    Precio Original:
+                                                                </div>
                                                             </h5>
-                                                            <p class="card-text">
-                                                                <%=product.description%>
-                                                            </p>
+                                                                <div class="productCard_finalPrice" id="admin_tableProduct_price">
+                                                                    Antes $<%= Math.floor(product.price) %>
+                                                                </div>
+                                                                <div class="d-flex gap-1">
+                                                                    <div class="productCard_finalPrice">
+                                                                        $<%= Math.floor((product.price - (product.price * product.discount / 100))) %>
+                                                                    </div>
+                                                                    <% if (product.discount) { %>
+                                                                        <div class="productCard_discount">
+                                                                            <%= product.discount %>% OFF
+                                                                        </div>
+                                                                    <% } %>
+                                                                </div>
+                                                                <p class="card-text">
+                                                                    Descripción:<br>
+                                                                    <%=product.description%>
+                                                                </p>
+                                                                <p class="card-text">
+                                                                    Categoría:<br>
+                                                                <b><%=product.product_category.name%></b>
+                                                                </p>
                                                         </div>
                                                     </div>
                                                 </div>

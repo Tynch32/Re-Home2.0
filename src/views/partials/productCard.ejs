@@ -7,7 +7,7 @@
             <div class="productCard_info_price">
               <% if (product.discount) { %>
                 <div class="productCard_originalPrice">
-                    Antes $<%= product.price %>
+                    Antes $<%= Math.floor(product.price) %>
                 </div>
                 <div class="productCard_originalPrice_fake"></div>
                 <div class="productCard_info"><i class="fa-solid fa-circle-info"></i></div>
@@ -26,9 +26,8 @@
                 </div>
                 <% } %>
             </div>
-            
             <div class="productCard_name">
-                <%= product.name %>
+                <b><%= product.name %></b>
             </div>
         </div>
     </a>

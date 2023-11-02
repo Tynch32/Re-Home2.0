@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     name: {
       [db.Sequelize.Op.like]: `%${req.query.keywords.toLowerCase()}%`
     }
-  },include:'product_image'})
+  },include:['product_image','product_category']})
     .then((results) => {
         return res.render('search',{
           results, keywords : req.query.keywords

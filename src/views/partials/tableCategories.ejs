@@ -17,7 +17,11 @@
                         <%= category.name %>
                     </td>
                     <td>
-                        <%= category.product_category.length %>
+                        <%if(category.product_category.length>0){%>
+                            <b><%=category.product_category.length%></b>
+                        <%}else{%>
+                            <%=category.product_category.length%>
+                        <%}%>
                     </td>
                 </tr>
                 <% }) %>

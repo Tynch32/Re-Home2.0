@@ -145,6 +145,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`),
   KEY `orders_shoppingcart_id_idx` (`shoppingcart_id`),
   KEY `orders_product_id_idx` (`product_id`),
+  CONSTRAINT `orders_image_id` FOREIGN KEY (`product_id`) REFERENCES `images_product` (`product_id`),
   CONSTRAINT `orders_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `orders_shoppingcart_id` FOREIGN KEY (`shoppingcart_id`) REFERENCES `shopping_cart` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -305,4 +306,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-02 13:29:35
+-- Dump completed on 2023-11-02 20:20:28

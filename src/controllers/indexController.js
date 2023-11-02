@@ -3,10 +3,12 @@ const moment = require('moment');
 
 module.exports = {
   index: (req, res) => {
-    db.Product.findAll({include:'product_image'})
+    db.Product.findAll({include:['product_image','product_category']})
       .then((products) => {
           let cookie= req.cookies.grupoReHome10_cookie;
-      return res.render("index", {products,cookie});
+          let categories = [];
+          products.forEach(product => {if(!categories.includes(product.product_category.name)){categories.push(product.product_category.name)}});
+      return res.render("index", {products,cookie,categories});
     }).catch((errors)=>console.log(errors));
   },
   admin: (req, res) => {

@@ -58,7 +58,7 @@
 									</h2>
 									<% if (product.discount) { %>
 										<p class="product-detail-price small">
-											<span>$<%= product.price %></span>
+											<span>$<%= Math.floor(product.price) %></span>
 											<b>
 												<%= product.discount %>% OFF
 											</b>
@@ -74,7 +74,7 @@
 											<ul class="actions-list">
 												<li>
 													<i class="fas fa-credit-card"></i>
-													<p>Pagá en 12 cuotas sin interes</p>
+													<p>Pagá en 12 cuotas sin interés</p>
 												</li>
 												<li>
 													<i class="fas fa-store"></i>

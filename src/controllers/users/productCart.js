@@ -3,7 +3,7 @@ const db = require("../../database/models");
 module.exports = async (req,res) => {
     db.Order.findAll({where:{
         shoppingcart_id: req.params.id}
-    ,include:'product'}
+    ,include:['product','imageOrder']}
     ).then(async carrito=>{
         let total=0;
         await carrito.forEach(producto => {

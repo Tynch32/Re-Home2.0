@@ -72,6 +72,10 @@
     color: black;
     overflow: hidden;
 }
+#admin_tableProduct_price{
+    text-decoration: line-through;
+    color: var(--colorGris);
+}
 
 @media (max-width: 574px) {
     .productCard_box{
