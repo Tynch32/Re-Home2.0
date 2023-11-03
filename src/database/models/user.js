@@ -26,6 +26,10 @@ module.exports = (sequelize, dataTypes) => {
       address_id:{
         type: dataTypes.BIGINT(10).UNSIGNED,
         allowNull: false
+      },
+      shoppingcart_id:{
+        type: dataTypes.BIGINT(10).UNSIGNED,
+        allowNull: false
       }
   };
   let config = {

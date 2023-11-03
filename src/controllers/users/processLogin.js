@@ -11,7 +11,7 @@ module.exports = async (req,res) => {
         req.session.userLogin = {
             id : user.id,
             role : role.name,
-            shoppingcartId:user.shoppingcartId_id,
+            shoppingcartId:user.shoppingcart_id,
             cantProducts: user.shoppingcartId.cantProducts
         }
         if(req.body.remember == undefined){

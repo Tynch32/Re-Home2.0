@@ -8,6 +8,7 @@ const userCheck = require('../middlewares/userCheck');
 const notUserCheck = require('../middlewares/notUserCheck');
 const cookieCheck= require('../middlewares/cookieCheck');
 const uploadUser = require("../middlewares/uploadUser");
+const userSessionCheck = require("../middlewares/userSessionCheck");
 //Validations
 const registerValidator = require('../validations/registerValidator');
 const userEditValidator = require('../validations/userEditValidator');
@@ -20,7 +21,7 @@ router.get('/register', notUserCheck, register);
 router.post('/register',uploadUser.single("image"),registerValidator,processRegister,);
 //Login
 router.get('/login',notUserCheck, login);
-router.post('/login',loginValidator, processLogin);
+router.post('/login',loginValidator, processLogin,userSessionCheck);
 //Edit profile
 router.get('/profile',cookieCheck,userCheck, profile);
 router.put('/update/:id',cookieCheck,userCheck,uploadUser.single("image"),userEditValidator,update);

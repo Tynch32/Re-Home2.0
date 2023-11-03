@@ -150,6 +150,7 @@
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Cancelar</button>
                                                 <form action="/products/removeToCart/<%= product.product.id %>" method="POST">
+                                                  <input style="display: none" type="text" name="var1" value="<%= locals.userLogin.shoppingcartId %>">
                                                   <button type="submit" class="btn btn-danger">Sí, Eliminar <i class="fa-solid fa-trash-can"></i></button>
                                               </form>
                                         </div>
