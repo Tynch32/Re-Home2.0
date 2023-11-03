@@ -28,10 +28,10 @@
             <% } %>
               <% if (userLogin.role==="user") {%>
                 <li><a href="/users/productCart/<%= locals.userLogin.id %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
-                  <% if (locals.userLogin.cantProduct) { %>
-                    <%= locals.userLogin.cantProduct %>
+                  <% if (locals.userLogin.cantProducts) { %>
+                    <%= locals.userLogin.cantProducts %>
                   <% }else{%>
-                      0
+                    0
                   <% } %>
                 </a></li>
               <% }%>

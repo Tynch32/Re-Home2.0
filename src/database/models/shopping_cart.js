@@ -7,6 +7,10 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
       autoIncrement: true,
     },
+    cantProducts: {
+      type: dataTypes.BIGINT(10).UNSIGNED,
+      allowNull: false,
+    }
   };
   let config = {
     timestamps: true,
