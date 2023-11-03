@@ -1,0 +1,25 @@
+<nav class="navbar">
+    <div class="container-fluid">
+      <button id="filtrarProductos_button" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+        <span>
+            Categorías <i class="fa-solid fa-ellipsis"></i>
+        </span>
+      </button>
+      <div class="offcanvas offcanvas-start text-bg-Dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasNavbar2Label">Categorías</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+            <% categories.forEach(category => {%>
+              <li class="nav-item">
+                <a id="filterProducts_categorias" href="/products/searchCategory/<%=category.id%>"><h5 class="offcanvas-title" id="offcanvasNavbar2Label"><i class="fa-solid fa-star"></i> <u><%=category.name%></u></h5></a>
+                <br>
+              </li>
+            <% });%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

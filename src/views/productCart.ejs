@@ -30,19 +30,19 @@
                           </div>
                           <div class="productCart_subtotal">
                             <div class="productCart_price">
-                              $<%= product.product.price %>
+                              $<%= addPuntos(Math.floor(product.product.price)) %>
                             </div>
                             <div>
-                            $<%= product.product.price - (product.product.price * product.product.discount / 100)  %>
+                            $<%= addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100)))  %>
                             </div>
                           </div>
                         </div>
                       <% }) %>
-                      <h1 class="modal-title fs-5" id="totalCarritoCompras"> SU TOTAL ES: $<%= total %></h1>
+                      <h1 class="modal-title fs-5" id="totalCarritoCompras"> SU TOTAL ES: $<%= addPuntos(total) %></h1>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                      <button type="button" class="btn btn-success">Realizar Compra <i class="fa-solid fa-truck-fast"></i></button>
+                      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Realizar Compra <i class="fa-solid fa-truck-fast"></i></button>
                     </div>
                   </div>
                 </div>
@@ -66,9 +66,9 @@
                       <tr>
                         <td class="productCart_imagebox" scope="row"><img src="/img/products/<%= product.imageOrder.file || 'default-image.png' %>" alt="imagen de producto"></td>
                         <td><%=product.product.name%></td>
-                        <td>$<%=Math.floor(product.product.price)%></td>
+                        <td>$<%=addPuntos(Math.floor(product.product.price))%></td>
                         <td>1</td>
-                        <td>$<%=Math.floor(product.product.price - (product.product.price * product.product.discount / 100))%></td>
+                        <td>$<%=addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100)))%></td>
                         <td>
                           <div class="productCart_box">
                             <!-- Button trigger modal Precio final-->
@@ -102,11 +102,11 @@
                                                               </div>
                                                           </h5>
                                                               <div class="productCard_finalPrice" id="admin_tableProduct_price">
-                                                                  Antes $<%= Math.floor(product.product.price) %>
+                                                                  Antes $<%= addPuntos(Math.floor(product.product.price)) %>
                                                               </div>
                                                               <div class="d-flex gap-1">
                                                                   <div class="productCard_finalPrice">
-                                                                      $<%= Math.floor((product.product.price - (product.product.price * product.product.discount / 100))) %>
+                                                                      $<%= addPuntos(Math.floor((product.product.price - (product.product.price * product.product.discount / 100)))) %>
                                                                   </div>
                                                                   <% if (product.product.discount) { %>
                                                                       <div class="productCard_discount">

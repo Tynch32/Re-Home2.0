@@ -27,6 +27,13 @@
   width: 50%;
   height: 100%;
 }
+#filtrarProductos_button{
+  background-color: white;
+  border-color: var(--colorSanAndres);
+}
+#filterProducts_categorias{
+  color: var(--colorSanAndres);
+}
 
 @media (min-width: 481px) {
   .home__header__nav--menu ul {

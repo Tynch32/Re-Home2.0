@@ -7,5 +7,5 @@ module.exports = {
     update : require('./users/update'),
     logout : require('./users/logout'),
     productCart: require('./users/productCart'),
-    faq: require('./users/faq')
+    faq: require('./users/faq'),
 }

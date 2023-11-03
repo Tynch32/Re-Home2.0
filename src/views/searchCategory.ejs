@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head', {title: `Resultados de tu búsqueda:${keywords}`}) %>
+<%- include('partials/head', {title: `Resultados de tu búsqueda:${id}`}) %>
 
 	<body>
 		<%- include('partials/header') %>
@@ -8,18 +8,17 @@
 				<div class="container products-wrapper">
 					<div class="row d-inline-flex p-2">
 						<div class="col-12">
-							<h2 class="products-title">Resultados de la búsqueda: "<%= keywords%>"
-							</h2>
+							<h2 class="products-title">Productos de la categoría: "<%=id%>"</h2>
 						</div>
-						<% if(results.length){ %>
-							<% results.forEach((product)=> { %>
+						<% if(products.length){ %>
+							<% products.forEach((product)=> { %>
 								<div class="col-12 col-lg-4 col-md-6 col-sm-12">
 									<%- include('partials/productCard', {product}) %>
 								</div>
 							<% }) %>
 						<% }else{ %>
 							<div class="col-12">
-								<h2 class="products-title" style="color: red;">No hay productos que coincidan con esa búsqueda!</h2>
+								<h2 class="products-title" style="color: red;">No hay productos en esta categoría.</h2>
 							</div>
 						<% } %>
 					</div>
@@ -28,5 +27,3 @@
 			<%- include('partials/footer') %>
 			<%- include('partials/scripts') %>
 	</body>
-
-</html>

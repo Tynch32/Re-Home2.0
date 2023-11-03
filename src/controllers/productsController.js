@@ -7,5 +7,6 @@ module.exports = {
     remove : require('./products/remove'),
     search : require('./products/search'),
     addToCart: require('./products/addToCart'),
-    removeToCart: require('./products/removeToCart')
+    removeToCart: require('./products/removeToCart'),
+    searchCategory: require('./products/searchCategory')
 }

@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 //Products Controller
-const {detail,add,create,edit,update,remove,search,addToCart,removeToCart} = require("../controllers/productsController");
+const {detail,add,create,edit,update,remove,search,addToCart,removeToCart, searchCategory} = require("../controllers/productsController");
 //Middlewares
 const adminCheck = require("../middlewares/adminCheck");
 const userCheck = require('../middlewares/userCheck');
@@ -26,6 +26,7 @@ router.put("/update/:id",upload.fields([{name: "image"},{name: "images"}]),produ
 router.delete("/remove/:id",adminCheck, remove);
 //Search product
 router.get('/search',search);
+router.get('/searchCategory/:id',searchCategory);
 //Add product to cart
 router.post('/addToCart/:id',cookieCheck,userCheck,addToCart);
 //Remove product to cart

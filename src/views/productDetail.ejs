@@ -58,17 +58,17 @@
 									</h2>
 									<% if (product.discount) { %>
 										<p class="product-detail-price small">
-											<span>$<%= Math.floor(product.price) %></span>
+											<span>$<%= addPuntos(Math.floor(product.price)) %></span>
 											<b>
 												<%= product.discount %>% OFF
 											</b>
 										</p>
 										<p class="product-detail-price">
-											$<%=Math.floor((product.price - (product.price * product.discount / 100))) %>
+											$<%=addPuntos(Math.floor((product.price - (product.price * product.discount / 100)))) %>
 										</p>
 										<% }else{ %>
 											<p class="product-detail-price">
-												$<%=Math.floor(product.price)%>
+												$<%=addPuntos(Math.floor(product.price))%>
 											</p>
 											<% } %>
 											<ul class="actions-list">

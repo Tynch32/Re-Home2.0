@@ -7,6 +7,7 @@
         <%- include('partials/header') %>
             <main class="home_main">
                 <div class="container products-wrapper">
+                    <%- include('partials/filterProducts',{categories})%>
                     <div class="row d-inline-flex p-2">
                         <% products.forEach(product =>  { %>
                             <div class="col-12 col-lg-3 col-md-4 col-sm-6">
