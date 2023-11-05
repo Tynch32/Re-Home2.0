@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `re_hogar` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `re_hogar`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: re_hogar
@@ -145,7 +147,7 @@ CREATE TABLE `orders` (
   KEY `orders_product_id_idx` (`product_id`),
   CONSTRAINT `orders_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `orders_shoppingcart_id` FOREIGN KEY (`shoppingcart_id`) REFERENCES `shopping_cart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +156,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (2,4,1,NULL,NULL,4),(4,6,1,NULL,NULL,4),(8,4,1,NULL,NULL,2),(9,5,1,NULL,NULL,2),(17,7,1,'2023-11-03 03:04:41','2023-11-03 03:04:41',2),(18,6,1,'2023-11-03 03:04:47','2023-11-03 03:04:47',2),(20,30,1,'2023-11-03 03:31:59','2023-11-03 03:31:59',2),(22,36,1,'2023-11-03 03:55:41','2023-11-03 03:55:41',2),(23,31,1,'2023-11-03 04:49:09','2023-11-03 04:49:09',2),(24,29,1,'2023-11-03 04:49:11','2023-11-03 04:49:11',2),(40,1,1,'2023-11-03 06:14:28','2023-11-03 06:14:28',4);
+INSERT INTO `orders` VALUES (2,4,1,NULL,NULL,4),(4,6,1,NULL,NULL,4),(8,4,1,NULL,NULL,2),(17,7,1,'2023-11-03 03:04:41','2023-11-03 03:04:41',2),(18,6,1,'2023-11-03 03:04:47','2023-11-03 03:04:47',2),(20,30,1,'2023-11-03 03:31:59','2023-11-03 03:31:59',2),(22,36,1,'2023-11-03 03:55:41','2023-11-03 03:55:41',2),(23,31,1,'2023-11-03 04:49:09','2023-11-03 04:49:09',2),(24,29,1,'2023-11-03 04:49:11','2023-11-03 04:49:11',2),(40,1,1,'2023-11-03 06:14:28','2023-11-03 06:14:28',4);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,7 +231,6 @@ CREATE TABLE `shopping_cart` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `cantProducts` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -240,7 +241,7 @@ CREATE TABLE `shopping_cart` (
 
 LOCK TABLES `shopping_cart` WRITE;
 /*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-INSERT INTO `shopping_cart` VALUES (1,NULL,'2023-11-03 05:38:16',0),(2,NULL,'2023-11-03 06:09:09',8),(4,'2023-10-27 20:41:57','2023-11-03 06:14:49',3);
+INSERT INTO `shopping_cart` VALUES (1,NULL,'2023-11-03 05:38:16'),(2,NULL,'2023-11-05 04:39:05'),(4,'2023-10-27 20:41:57','2023-11-03 06:14:49');
 /*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -304,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-05  1:25:27
+-- Dump completed on 2023-11-05  3:02:18

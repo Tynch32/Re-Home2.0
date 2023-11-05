@@ -47,15 +47,28 @@
     text-align: center;
     border-radius: 5px;
     width: 15%;
-    color: black;
     font-weight: 700;
     margin-bottom: 0;
     align-items: center;
     justify-content: center;
+    background-color: var(--colorSanAndres);
 }
-.home__header__nav--menu ul li {
-  background-color: var(--colorSanAndres);
+#header_button_1:hover{
+  box-shadow: 0 0 15px white;
 }
+#header_button_2:hover{
+  box-shadow: 0 0 15px white;
+}
+#header_button_3:hover{
+  box-shadow: 0 0 15px white;
+}
+#header_button_4:hover{
+  box-shadow: 0 0 15px white;
+}
+#header_button_5:hover{
+  box-shadow: 0 0 15px white;
+}
+
 .header_menu_desplegable{
   display: none;
 }

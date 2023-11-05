@@ -1,8 +1,9 @@
 <nav class="navbar">
-    <div class="container-fluid">
-      <button id="filtrarProductos_button" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+  
+    <div class="container-fluid" id="filtrarCategoriasBox">
+      <button id="filtrarProductos_button" class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
         <span>
-            Categorías <i class="fa-solid fa-ellipsis"></i>
+            CATEGORíAS <i class="fa-solid fa-box-open"></i>
         </span>
       </button>
       <div class="offcanvas offcanvas-start text-bg-Dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
@@ -14,7 +15,7 @@
           <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
             <% categories.forEach(category => {%>
               <li class="nav-item">
-                <a id="filterProducts_categorias" href="/products/searchCategory/<%=category.id%>"><h5 class="offcanvas-title" id="offcanvasNavbar2Label"><i class="fa-solid fa-star"></i> <u><%=category.name%></u></h5></a>
+                <a id="filterProducts_categorias" href="/products/searchCategory/<%=category.id%>"><h5 class="offcanvas-title" id="offcanvasNavbar2Label"><i class="fa-solid fa-star"></i><%=category.name%></h5></a>
                 <br>
               </li>
             <% });%>

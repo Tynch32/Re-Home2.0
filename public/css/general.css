@@ -1,14 +1,12 @@
 :root {
   --colorViñaDelMar: #aeb4b2;
+  --colorSanAndres: #3a3f43;
+  --colorSopot:#A87564;
+  --colorIseo:#EBDD6C;
   --light-blue: #1259c3;
   --gray: #6e918a;
-  --base-font-family: "Roboto", sans-serif;
-  --info: rgb(33, 197, 197);
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --colorGris: #92908b;
-  --GrisClaro: #ebebeb;
-  --colorSanAndres: #3a3f43;
 }
 
 * {

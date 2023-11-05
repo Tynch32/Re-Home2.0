@@ -82,7 +82,7 @@
 												</li>
 											</ul>
 											<form action="/products/addToCart/<%= product.id %>" method="POST" class="row">
-												<input hidden type="text" name="var1" value="<%= locals.userLogin.shoppingcartId %>">
+												<input hidden type="text" name="var1" value="<%= locals.userLogin?locals.userLogin.shoppingcartId:0 %>">
 												<button type="submit" class="btn btn-success">Agregar al carrito <i class="fa-solid fa-basket-shopping"></i></button>
 											</form>
 								</article>

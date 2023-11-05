@@ -5,9 +5,8 @@
     transition: 300ms;
     margin-bottom: 20px;
 }
-
 .productCard_box:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
 .productCard_img{
     border-radius: 5px;
@@ -42,7 +41,7 @@
     justify-content: flex-end;
 }
 .productCard_originalPrice{
-    color: var(--colorGris);
+    color: var(--colorViñaDelMar);
     font-size: 17px;
     font-weight: 600;
     text-decoration:line-through;
@@ -74,7 +73,7 @@
 }
 #admin_tableProduct_price{
     text-decoration: line-through;
-    color: var(--colorGris);
+    color: var(--colorViñaDelMar);
 }
 
 @media (max-width: 574px) {

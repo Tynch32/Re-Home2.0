@@ -19,7 +19,6 @@
   align-items: center;
 }
 
-
 .product-detail-img {
   width: 50%;
   display: block;
@@ -81,18 +80,6 @@
   margin: 0;
 }
 
-.buy-now-button {
-  background-color: var(--light-blue);
-  font-size: 1em;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 5px;
-}
 #image_product_edit img{
  width: 100%;
  padding-bottom: 5px;
