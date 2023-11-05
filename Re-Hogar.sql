@@ -115,7 +115,7 @@ CREATE TABLE `images_product` (
   PRIMARY KEY (`id`),
   KEY `image_product_id_idx` (`product_id`),
   CONSTRAINT `image_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `images_product` (
 
 LOCK TABLES `images_product` WRITE;
 /*!40000 ALTER TABLE `images_product` DISABLE KEYS */;
-INSERT INTO `images_product` VALUES (1,'1695947867474_products_.jpg',1,NULL,NULL),(2,'1695950120523_products_.jpg',2,NULL,NULL),(3,'1695950185484_products_.jpg',3,NULL,NULL),(4,'1695950258990_products_.jpg',4,NULL,NULL),(5,'1695950312911_products_.jpg',5,NULL,NULL),(6,'1695950441218_products_.jpg',6,NULL,NULL),(7,'1696002046650_products_.jpg',7,NULL,NULL),(8,'1696260043981_products_.jpg',7,NULL,NULL),(9,'1696260043982_products_.jpg',7,NULL,NULL),(10,'1696260043999_products_.jpg',7,NULL,NULL),(48,'1698193096910_products_.jpg',27,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(49,'1698193096911_products_.jpg',27,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(54,'1698193293995_products_.jpg',29,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(56,'1698193293998_products_.jpg',29,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(57,'1698196833522_products_.jpg',30,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(58,'1698196833523_products_.jpg',30,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(60,'1698196833524_products_.jpg',30,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(61,'1698196895975_products_.jpg',31,'2023-10-25 01:21:36','2023-10-25 01:21:36'),(63,'1698196895987_products_.jpg',31,'2023-10-25 01:21:36','2023-10-25 01:21:36'),(65,'1698196895988_products_.jpg',31,'2023-10-25 01:21:36','2023-10-25 01:21:36'),(67,'1698258993534_products_.jpg',1,'2023-10-25 18:36:33','2023-10-25 18:36:33'),(68,'1698259117608_products_.jpg',1,'2023-10-25 18:38:37','2023-10-25 18:38:37'),(70,'1698259666962_products_.jpg',2,'2023-10-25 18:47:46','2023-10-25 18:47:46'),(71,'1698259666963_products_.jpg',2,'2023-10-25 18:47:46','2023-10-25 18:47:46'),(72,'1698435518527_products_.webp',3,'2023-10-27 19:38:38','2023-10-27 19:38:38'),(73,'1698435518528_products_.jpg',3,'2023-10-27 19:38:38','2023-10-27 19:38:38');
+INSERT INTO `images_product` VALUES (1,'1695947867474_products_.jpg',1,NULL,NULL),(2,'1695950120523_products_.jpg',2,NULL,NULL),(3,'1695950185484_products_.jpg',3,NULL,NULL),(4,'1695950258990_products_.jpg',4,NULL,NULL),(5,'1695950312911_products_.jpg',5,NULL,NULL),(6,'1695950441218_products_.jpg',6,NULL,NULL),(7,'1696002046650_products_.jpg',7,NULL,NULL),(8,'1696260043981_products_.jpg',7,NULL,NULL),(9,'1696260043982_products_.jpg',7,NULL,NULL),(10,'1696260043999_products_.jpg',7,NULL,NULL),(48,'1698193096910_products_.jpg',27,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(49,'1698193096911_products_.jpg',27,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(54,'1698193293995_products_.jpg',29,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(56,'1698193293998_products_.jpg',29,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(57,'1698196833522_products_.jpg',30,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(58,'1698196833523_products_.jpg',30,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(60,'1698196833524_products_.jpg',30,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(61,'1698196895975_products_.jpg',31,'2023-10-25 01:21:36','2023-10-25 01:21:36'),(63,'1698196895987_products_.jpg',31,'2023-10-25 01:21:36','2023-10-25 01:21:36'),(65,'1698196895988_products_.jpg',31,'2023-10-25 01:21:36','2023-10-25 01:21:36'),(67,'1698258993534_products_.jpg',1,'2023-10-25 18:36:33','2023-10-25 18:36:33'),(68,'1698259117608_products_.jpg',1,'2023-10-25 18:38:37','2023-10-25 18:38:37'),(70,'1698259666962_products_.jpg',2,'2023-10-25 18:47:46','2023-10-25 18:47:46'),(71,'1698259666963_products_.jpg',2,'2023-10-25 18:47:46','2023-10-25 18:47:46'),(72,'1698435518527_products_.webp',3,'2023-10-27 19:38:38','2023-10-27 19:38:38'),(73,'1698435518528_products_.jpg',3,'2023-10-27 19:38:38','2023-10-27 19:38:38'),(78,'1698983718870_products_.jpg',36,'2023-11-03 03:55:18','2023-11-03 03:55:18'),(79,'1698983718871_products_.jpg',36,'2023-11-03 03:55:18','2023-11-03 03:55:18'),(80,'1698983718871_products_.webp',36,'2023-11-03 03:55:18','2023-11-03 03:55:18');
 /*!40000 ALTER TABLE `images_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `orders` (
   CONSTRAINT `orders_image_id` FOREIGN KEY (`product_id`) REFERENCES `images_product` (`product_id`),
   CONSTRAINT `orders_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `orders_shoppingcart_id` FOREIGN KEY (`shoppingcart_id`) REFERENCES `shopping_cart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +157,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,3,1,NULL,NULL,4),(2,4,1,NULL,NULL,4),(3,2,1,NULL,NULL,4),(4,6,1,NULL,NULL,4),(5,2,1,NULL,NULL,2),(6,1,1,NULL,NULL,2),(7,3,1,NULL,NULL,2),(8,4,1,NULL,NULL,2),(9,5,1,NULL,NULL,2);
+INSERT INTO `orders` VALUES (2,4,1,NULL,NULL,4),(4,6,1,NULL,NULL,4),(8,4,1,NULL,NULL,2),(9,5,1,NULL,NULL,2),(17,7,1,'2023-11-03 03:04:41','2023-11-03 03:04:41',2),(18,6,1,'2023-11-03 03:04:47','2023-11-03 03:04:47',2),(20,30,1,'2023-11-03 03:31:59','2023-11-03 03:31:59',2),(22,36,1,'2023-11-03 03:55:41','2023-11-03 03:55:41',2),(23,31,1,'2023-11-03 04:49:09','2023-11-03 04:49:09',2),(24,29,1,'2023-11-03 04:49:11','2023-11-03 04:49:11',2),(40,1,1,'2023-11-03 06:14:28','2023-11-03 06:14:28',4);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +180,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `product_category_id_idx` (`category_id`),
   CONSTRAINT `product_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +189,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Cintra Metrica',12500.00,10,'Ideal para hacer todas tus mediciones con precisión',6,NULL,'2023-10-25 18:38:48'),(2,'Destornillador',850.00,10,'Destornillador plano, mango antideslizante y punta magnetica',6,NULL,'2023-10-25 18:47:46'),(3,'Lijadora para madera',76500.00,10,'Lijadora de precisión, apta para todo tipo de maderas, 220v de gran potencia',6,NULL,'2023-10-27 19:38:38'),(4,'Llave Inglesa',11250.00,12,'Llave inglesa de fuerza, de metal reforzado',6,NULL,NULL),(5,'Mazo 5Kg',6000.00,13,'Mazo de 5kg, con mango de madera barnizada',6,NULL,NULL),(6,'Taladro Inalambrico',55000.00,5,'Taladro inalambrico, bateria con independencia de 6hs de uso continuo, bateria recargable de litio. Tiempo de recarga total de la bateria de 2hs',6,NULL,NULL),(7,'Madera de pino x1mt2',25000.00,0,'Madera de pino, de perfecta calidad, barnizada con doble capa, aislante de temperatura, capa recubierta anti insectos.',14,NULL,'2023-10-25 23:00:52'),(27,'Ventana de baño',49000.00,5,'Ventana de 45x70 cm ideal entrada de luz, con marco de aluminio reforzado, y trabador en el centro.',12,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(29,'Ladrillo T8, pallet x144u',43000.00,0,'Ladrillo T8 común de construcción, solo venta por pallet, no se fracciona!',13,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(30,'Puerta estilo granero',135000.00,3,'Puerta estilo granero, de madera de roble barnizada, con corredera y guia incluida, medida estandar.',12,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(31,'Barral para cortinas de acero inoxidable',35000.00,0,'Barral para cortinas de acero inoxidable, adaptable (alcanza los 3mts)',7,'2023-10-25 01:21:35','2023-10-25 01:21:35');
+INSERT INTO `products` VALUES (1,'Cintra Metrica',12500.00,10,'Ideal para hacer todas tus mediciones con precisión',6,NULL,'2023-10-25 18:38:48'),(2,'Destornillador',850.00,10,'Destornillador plano, mango antideslizante y punta magnetica',6,NULL,'2023-10-25 18:47:46'),(3,'Lijadora para madera',76500.00,10,'Lijadora de precisión, apta para todo tipo de maderas, 220v de gran potencia',6,NULL,'2023-10-27 19:38:38'),(4,'Llave Inglesa',11250.00,12,'Llave inglesa de fuerza, de metal reforzado',6,NULL,NULL),(5,'Mazo 5Kg',6000.00,13,'Mazo de 5kg, con mango de madera barnizada',6,NULL,NULL),(6,'Taladro Inalambrico',55000.00,5,'Taladro inalambrico, bateria con independencia de 6hs de uso continuo, bateria recargable de litio. Tiempo de recarga total de la bateria de 2hs',6,NULL,NULL),(7,'Madera de pino x1mt2',25000.00,0,'Madera de pino, de perfecta calidad, barnizada con doble capa, aislante de temperatura, capa recubierta anti insectos.',14,NULL,'2023-10-25 23:00:52'),(27,'Ventana de baño',49000.00,5,'Ventana de 45x70 cm ideal entrada de luz, con marco de aluminio reforzado, y trabador en el centro.',12,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(29,'Ladrillo T8, pallet x144u',43000.00,0,'Ladrillo T8 común de construcción, solo venta por pallet, no se fracciona!',13,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(30,'Puerta estilo granero',135000.00,3,'Puerta estilo granero, de madera de roble barnizada, con corredera y guia incluida, medida estandar.',12,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(31,'Barral para cortinas de acero inoxidable',35000.00,0,'Barral para cortinas de acero inoxidable, adaptable (alcanza los 3mts)',7,'2023-10-25 01:21:35','2023-10-25 01:21:35'),(36,'Pintura Blanca 5lts',17000.00,5,'Pintura blanca, de mayor cobertura en el mercado, la unica que con solo una pasada queda el color perfecto',11,'2023-11-03 03:55:18','2023-11-03 03:55:18');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,6 +232,7 @@ CREATE TABLE `shopping_cart` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `cantProducts` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -242,7 +243,7 @@ CREATE TABLE `shopping_cart` (
 
 LOCK TABLES `shopping_cart` WRITE;
 /*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-INSERT INTO `shopping_cart` VALUES (1,NULL,NULL),(2,NULL,NULL),(4,'2023-10-27 20:41:57','2023-10-27 20:41:57');
+INSERT INTO `shopping_cart` VALUES (1,NULL,'2023-11-03 05:38:16',0),(2,NULL,'2023-11-03 06:09:09',8),(4,'2023-10-27 20:41:57','2023-11-03 06:14:49',3);
 /*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-02 20:20:28
+-- Dump completed on 2023-11-04 12:40:58
