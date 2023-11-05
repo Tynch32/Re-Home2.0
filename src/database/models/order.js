@@ -24,11 +24,7 @@ module.exports = (sequelize, dataTypes) => {
     Order.belongsTo(models.Product, {
       as: "product",
       foreignKey: "product_id",
-    }),
-    Order.belongsTo(models.Images_product,{
-      as: 'imageOrder',
-      foreignKey: 'product_id'
-    }),
+    })
     Order.belongsTo(models.Shopping_cart, {
       as: "shopping_cart",
       foreignKey: "shoppingcart_id",
