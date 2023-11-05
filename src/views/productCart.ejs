@@ -64,7 +64,7 @@
                     <tbody>
                       <% carrito.forEach((product,index)=> { %>
                       <tr>
-                        <td class="productCart_imagebox" scope="row"><img src="/img/products/<%= product.imageOrder ? product.imageOrder.file : 'default-image.png' %>" alt="imagen de producto"></td>
+                        <td class="productCart_imagebox" scope="row"><img src="/img/products/<%= product.product.product_image ? product.product.product_image[0].file : 'default-image.png' %>" alt="imagen de producto"></td>
                         <td><%=product.product.name%></td>
                         <td>$<%=addPuntos(Math.floor(product.product.price))%></td>
                         <td>1</td>
@@ -91,7 +91,7 @@
                                           <div class="card mb-3">
                                               <div class="row g-0">
                                                   <div class="col-md-6">
-                                                      <img src="/img/products/<%= product.imageOrder ? product.imageOrder.file : 'default-image.png' %>"
+                                                      <img src="/img/products/<%= product.product.product_image ? product.product.product_image[0].file : 'default-image.png' %>"
                                                           class="img-fluid" alt="...">
                                                   </div>
                                                   <div class="col-md-6">

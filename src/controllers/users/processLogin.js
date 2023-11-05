@@ -6,13 +6,12 @@ module.exports = async (req,res) => {
     const errors = validationResult(req);
 
     if(errors.isEmpty()){
-        const user = await db.User.findOne({ where: { email: req.body.email },include:'shoppingcartId' });
+        const user = await db.User.findOne({ where: { email: req.body.email }});
         const role = await db.Role.findByPk(user.role_id);
         req.session.userLogin = {
             id : user.id,
             role : role.name,
-            shoppingcartId:user.shoppingcart_id,
-            cantProducts: user.shoppingcartId.cantProducts
+            shoppingcartId:user.shoppingcart_id
         }
         if(req.body.remember == undefined){
             res.cookie('grupoReHome10',req.session.userLogin,{
