@@ -50,7 +50,7 @@
 
 .small {
   font-size: 1.5em;
-  color: var(--green);
+  color: var(--verde);
 }
 
 .small span {
@@ -69,13 +69,13 @@
 }
 
 .actions-list i {
-  color: var(--green);
+  color: var(--verde);
   font-size: 2em;
   margin-right: 15px;
 }
 
 .actions-list p {
-  color: var(--gray);
+  color: var(--viñaDelMar);
   font-size: 1.5em;
   margin: 0;
 }

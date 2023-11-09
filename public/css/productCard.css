@@ -41,7 +41,7 @@
     justify-content: flex-end;
 }
 .productCard_originalPrice{
-    color: var(--colorViñaDelMar);
+    color: var(--viñaDelMar);
     font-size: 17px;
     font-weight: 600;
     text-decoration:line-through;
@@ -62,7 +62,7 @@
     font-weight: 600;
 }
 .productCard_discount{
-    color: var(--green);
+    color: var(--verde);
     font-size: 20px;
     font-weight: 600;
 }
@@ -73,7 +73,7 @@
 }
 #admin_tableProduct_price{
     text-decoration: line-through;
-    color: var(--colorViñaDelMar);
+    color: var(--viñaDelMar);
 }
 
 @media (max-width: 574px) {

@@ -1,11 +1,15 @@
-.header_contenido{
-  background-image: url('../img/banner_2.jpg');
-  background-repeat: no-repeat;
-  background-size : auto  100%;
-  padding: 20px 0;
+.home_header_nav-menu ul li {
+  text-transform: uppercase;
+  margin-bottom: 1px;
+  border: 8px 0;
+}
+.home__header{
+  background: var(--headerGradiente);
+  padding: 30px 0px 20px 0px;
+  border-radius: 0 0 20px 20px;
 }
 .home_header_logo {
-  height: 10rem;
+  height: 11rem;
   width: auto;
 }
 .header_titulo {
@@ -18,15 +22,15 @@
 .header_searchbar{
   display: flex;
   flex-direction: row;
-  background-color: var(--colorSanAndres);
+  background: var(--botonesDorados);
   border-radius: 5px;
   padding: 3px 6px;
   align-items: center;
+  width: max-content;
   justify-content: space-evenly;
 }
 .header_searchbar_button {
-  padding: 5px 1px;
-  background-color: var(--colorSanAndres);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
   border-radius: 5px;
@@ -35,6 +39,10 @@
 .header_ul{
   margin: 0;
 }
+#searchbar_header{
+  border:0;
+  border-radius:5px;
+}
 .contenedor_titulo {
   display: flex;
   justify-content: center;
@@ -42,7 +50,7 @@
   padding-bottom: 5px;
   flex-direction: row-reverse;
 }
-.home__header__nav--menu ul li {
+.home_header_nav-menu ul li {
     display: flex;
     text-align: center;
     border-radius: 5px;
@@ -51,7 +59,7 @@
     margin-bottom: 0;
     align-items: center;
     justify-content: center;
-    background-color: var(--colorSanAndres);
+    background: var(--botonesDorados);
 }
 #header_button_1:hover{
   box-shadow: 0 0 15px white;
@@ -72,12 +80,16 @@
 .header_menu_desplegable{
   display: none;
 }
+
 @media(max-width: 700px){
   .header_menu_desplegado{
     display: none;
   }
   .header_menu_desplegable{
     display: flex;
+  }
+  #button_menu_desplegable{
+    background: var(--botonesDorados);
   }
   .header_menu_desplegable ul{
     display: flex;
@@ -96,7 +108,7 @@
     margin-bottom: 15px;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--colorSanAndres);
+    background: var(--botonesDorados);
   }
   .header_menu_desplegable a{
     font-size: 20px;
@@ -104,20 +116,24 @@
   .bg-body-tertiary {
     background-color: rgba(0, 0, 0, 0)!important;
   }
-  .navbar-toggler {
-    background-color:white
-  }
   .pe-3 {
     padding-right: 0px!important;
+  }
+  .header_searchbar{
+    width: 100%;
+    height: 38px;
+  }
+  #offcanvasNavbar{
+    background: var(--headerMenus);
+    color:white
+  }
+  #button_menu_desplegable{
+    background: var(--botonesDorados);
+    border:0;
   }
   
 }
 @media (max-width: 550px) {
-  .header_contenido{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column-reverse;
-  }
   .contenedor_titulo{
     gap:5px;
     display: flex;
@@ -126,13 +142,13 @@
   .header_titulo {
     font-size: 50px;
   }
-  .home__header__nav--menu ul {
+  .home_header_nav-menu ul {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .home__header__nav--menu ul li {
-    background-color: var(--colorSanAndres);
+  .home_header_nav-menu ul li {
+    background-color: var(--sanAndres);
     width: 50%;
   }
 }
@@ -141,4 +157,5 @@
   .header_contenido{
     background-size : 100%  100%;
   }
+  
 }

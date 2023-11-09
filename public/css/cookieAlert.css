@@ -10,9 +10,9 @@
     left: 0;
     width: 100%;
     color:white;
-    padding: 10px 0;
+    padding: 15px 15px;
     border-radius: 30px 30px 0 0;
-    background-color: var(--colorSanAndres);
+    background: var(--sanAndres);
 }
 .hidden {
     display: none;
@@ -20,5 +20,11 @@
 .div_cookies_buttons{
     display: flex;
     justify-content: center;
-    gap: 2px;
+    gap: 3px;
+}
+#button_cookies{
+    background: var(--botonesDorados);
+    border:0;
+    font-weight: bold;
+    color:black
 }

@@ -31,3 +31,9 @@
 .productCart_price{
     text-decoration:line-through;
 }
+#button_calcularTotal{
+    background: var(--botonesDorados);
+    border: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}

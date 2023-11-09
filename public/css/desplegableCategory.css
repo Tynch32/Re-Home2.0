@@ -2,25 +2,37 @@
     display: flex;
     color:white;
     text-align: center;
+    border:0;
     border-radius: 5px;
     padding: 10px 30px;
     font-weight: 700;
     justify-content: center;
-    background-color: var(--colorSanAndres);
+    background: var(--botonesDorados);
 }
 #filtrarProductos_button:hover {
   box-shadow: 0 0 15px white;
 }
 #filterProducts_categorias{
-  color: var(--colorSanAndres);
+  color: var(--sanAndres);
 }
 #filtrarCategoriasBox{
   padding: 8px;
 }
 
 #filterProducts_categorias:hover h5 i {
-    color:var(--colorIseo);
+    color:var(--iseo);
 }
 #filterProducts_categorias:hover h5{
     text-decoration:underline;
+}
+#offcanvasNavbar2{
+  background: var(--headerMenus);
+  color:white
+}
+#button_menu_desplegable{
+  background: var(--botonesDorados);
+  border:0;
+}
+#menu_desplegable_categorias ul li a h5{
+  color:white
 }

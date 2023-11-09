@@ -9,13 +9,13 @@
       <div class="offcanvas offcanvas-start text-bg-Dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
         <div class="offcanvas-header">
           <h3 class="offcanvas-title" id="offcanvasNavbar2Label">Categorías</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button id="button_menu_desplegable" type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
         </div>
-        <div class="offcanvas-body">
+        <div id="menu_desplegable_categorias" class="offcanvas-body">
           <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
             <% categories.forEach(category => {%>
               <li class="nav-item">
-                <a id="filterProducts_categorias" href="/products/searchCategory/<%=category.id%>"><h5 class="offcanvas-title" id="offcanvasNavbar2Label"><i class="fa-solid fa-star"></i><%=category.name%></h5></a>
+                <a id="filterProducts_categorias" href="/products/searchCategory/<%=category.id%>"><h5 class="offcanvas-title" id="offcanvasNavbar2Label"><i class="fa-solid fa-star"></i> <%=category.name%></h5></a>
                 <br>
               </li>
             <% });%>

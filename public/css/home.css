@@ -1,22 +1,18 @@
 .home_main{
   margin-top: 30px;
-  background-image: url('../img/background_rehogar.jpg');
+  background-color: var(--sanAndres);
 }
 #home_main{
-  background-image: url('../img/background_rehogar.jpg');
+  background-color: var(--sanAndres);
 }
-.home__header__nav--menu ul li {
-  background-color: var(--colorViñaDelMar);
-  text-transform: uppercase;
-  margin-bottom: 1px;
-  padding: 8px 0;
-}
+
 .home_main_top_arrow {
   position: fixed;
   bottom: 10px;
   right: 10px;
   z-index: 1000;
 }
+
 .profile_photo_box{
   display: flex;
   border: 1px solid var(--GrisClaro);
@@ -29,7 +25,7 @@
 }
 
 @media (min-width: 481px) {
-  .home__header__nav--menu ul {
+  .home_header_nav-menu ul {
     display: flex;
     justify-content: space-around;
     align-items: stretch;
@@ -37,14 +33,14 @@
   }
 }
 @media (min-width: 600px) {
-  .home__header__nav--menu ul li {
+  .home_header_nav-menu ul li {
     font-size: 0.8rem;
   }
 }
 
 @media (min-width: 1180px) {
 
-  .home__header__nav--menu ul li {
+  .home_header_nav-menu ul li {
     font-size: 1rem;
     height: 50px;
     padding: 15px;

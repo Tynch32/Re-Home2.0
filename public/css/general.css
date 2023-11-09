@@ -1,12 +1,15 @@
 :root {
-  --colorViñaDelMar: #aeb4b2;
-  --colorSanAndres: #3a3f43;
-  --colorSopot:#A87564;
-  --colorIseo:#EBDD6C;
-  --light-blue: #1259c3;
-  --gray: #6e918a;
+  /*Paleta de colores*/
+  --viñaDelMar: #aeb4b2;
+  --sanAndres: #232323;;
+  --sopot:#A87564;
+  --iseo: rgb(255, 243, 68);
   --light-gray: #ebebeb;
-  --green: #39b54a;
+  --verde: #39b54a;
+  --botonesDorados: linear-gradient(to right, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%);
+  --headerGradiente: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
+  --headerMenus: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(74, 74, 74) 100%);
+  --footerGradiente: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
 }
 
 * {
@@ -28,7 +31,7 @@ ul {
   padding: 0;
 }
 body {
-  background-color: var(--colorViñaDelMar);
+  background-color: var(--sanAndres);
 }
 
 main {
@@ -39,7 +42,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: var(--colorSanAndres);
+  background-color: var(--sanAndres);
   color: white;
   padding: 10px;
 }
