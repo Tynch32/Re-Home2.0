@@ -9,12 +9,12 @@
 					<div class="product-detail">
 						<div class="row">
 							<div class="col-12">
-								<h2 class="products-title">Detalle del producto: <%= product.name %>
+								<h2 class="products-title"><%= product.name %>
 								</h2>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-12 col-lg-8">
+							<div id="detalle_product_section_info" class="col-12 col-lg-8">
 								<% if(product.product_image.length>1){%>
 									<div class="productDetail_multiple_image">
 										<img id="main-image" src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>" class="img-fluid  animate__animated animate__flipInX" alt="...">
@@ -47,11 +47,12 @@
 								<img src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>" alt="product image"
 									class="product-detail-img">
 								<%}%>
-								<p class="product-detail-description">
+								<div class="product-detail-description">
+									<h5>Detalles del producto:</h5>
 									<%= product.description %>
-								</p>
+								</div>
 							</div>
-							<div class="col-12 col-lg-4">
+							<div id="detalle_product_section_value" class="col-12 col-lg-4">
 								<article class="product-detail-info">
 									<h2 class="product-detail-title">
 										<%= product.name %>
@@ -71,19 +72,46 @@
 												$<%=addPuntos(Math.floor(product.price))%>
 											</p>
 											<% } %>
+											<div class="product-detail-mediosPagos">Medios de pago:</div>
 											<ul class="actions-list">
 												<li>
-													<i class="fas fa-credit-card"></i>
-													<p>Pagá en 12 cuotas sin interés</p>
+													<div class="medio_de_pago">
+														<i class="fas fa-credit-card"></i>
+														<p>Tarjetas de crédito</p>
+													</div>
+													<div class="logos_medios_de_pago">
+														<img src="/img/mediosPagos/logo_visa.jpg" alt="logo_visa">
+														<img src="/img/mediosPagos/logo_american_express.png" alt="logo_american_express">
+														<img src="/img/mediosPagos/logo_naranja.png" alt="logo_naranja">
+														<img src="/img/mediosPagos/logo_mastercard.svg.png" alt="logo_mastercard">
+													</div>
 												</li>
 												<li>
-													<i class="fas fa-store"></i>
-													<p>Retiro gratis en locales del vendedor</p>
+													<div class="medio_de_pago">
+														<i class="fas fa-credit-card"></i>
+														<p>Tarjetas de débito</p>
+													</div>
+													<div class="logos_medios_de_pago">
+														<img src="/img/mediosPagos/logo_visa.jpg" alt="logo_visa">
+														<img src="/img/mediosPagos/logo_maestro.svg.png" alt="logo_maestro">
+														<img src="/img/mediosPagos/logo_mastercard.svg.png" alt="logo_mastercard">
+														<img src="/img/mediosPagos/logo_cabal_debito.png" alt="logo_cabal_debito">
+													</div>
+												</li>
+												<li>
+													<div class="medio_de_pago">
+														<i class="fa-solid fa-money-bill-1-wave"></i>
+														<p>Efectivo</p>
+													</div>
+													<div class="logos_medios_de_pago">
+														<img src="/img/mediosPagos/log_pago_facil.png" alt="logo_pago_facil">
+														<img src="/img/mediosPagos/logo_rapipago.png" alt="logo_rapipago">
+													</div>
 												</li>
 											</ul>
-											<form action="/products/addToCart/<%= product.id %>" method="POST" class="row">
+											<form id="formulario_button_agregar" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
 												<input hidden type="text" name="var1" value="<%= locals.userLogin?locals.userLogin.shoppingcartId:0 %>">
-												<button type="submit" class="btn btn-success">Agregar al carrito <i class="fa-solid fa-basket-shopping"></i></button>
+												<button id="button_agregar_producto" type="submit" class="btn btn-success">Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i></button>
 											</form>
 								</article>
 							</div>

@@ -62,19 +62,19 @@
     background: var(--botonesDorados);
 }
 #header_button_1:hover{
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px rgb(198, 192, 126);
 }
 #header_button_2:hover{
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px rgb(198, 192, 126);
 }
 #header_button_3:hover{
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px rgb(198, 192, 126);
 }
 #header_button_4:hover{
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px rgb(198, 192, 126);
 }
 #header_button_5:hover{
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px rgb(198, 192, 126);
 }
 
 .header_menu_desplegable{

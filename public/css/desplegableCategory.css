@@ -10,7 +10,7 @@
     background: var(--botonesDorados);
 }
 #filtrarProductos_button:hover {
-  box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px rgb(198, 192, 126);
 }
 #filterProducts_categorias{
   color: var(--sanAndres);

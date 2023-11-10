@@ -26,30 +26,35 @@
 }
 .products-title{
   padding: 15px;
+  margin: 0;
 }
 .product-detail-info {
   border-left: 1px solid var(--light-gray);
-  padding: 15px;
+  padding: 0px 15px;
   height: 100%;
 }
 .product-detail-title {
-  font-weight: 400;
-  font-size: 2.6em;
+  font-weight: 500;
+  font-size: 1.6em;
 }
-
+.product-detail-description_header {
+  padding: 15px;
+  font-size: 1.1em;
+  background-color: var(--light-gray);
+}
 .product-detail-description {
   padding: 15px;
-  font-size: 1.3em;
-  line-height: 1.5;
+  font-size: 1.1em;
+  background-color: var(--light-gray);
 }
 
 .product-detail-price {
-  font-size: 3.0em;
+  font-size: 2em;
   margin: 10px 0;
 }
 
 .small {
-  font-size: 1.5em;
+  font-size: 1.4em;
   color: var(--verde);
 }
 
@@ -61,26 +66,51 @@
   margin-bottom: 50px;
 }
 
-.actions-list li {
+.medio_de_pago{
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  padding: 20px 0;
+  padding: 5px 0;
+  font-size: 0.8em;
+}
+.logos_medios_de_pago{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.logos_medios_de_pago img{
+  
 }
 
-.actions-list i {
-  color: var(--verde);
+.medio_de_pago i {
+  color: rgb(198, 192, 126);
   font-size: 2em;
   margin-right: 15px;
 }
-
-.actions-list p {
-  color: var(--viñaDelMar);
+.medio_de_pago p {
   font-size: 1.5em;
   margin: 0;
 }
 
-#image_product_edit img{
- width: 100%;
- padding-bottom: 5px;
+
+#button_agregar_producto{
+  background: var(--botonesDorados);
+  border: 0;
+  width: 80%;
+}
+
+#detalle_product_section_info{
+  padding-right:0;
+}
+
+#formulario_button_agregar{
+  display: flex;
+  justify-content: center;
+}
+#detalle_product_section_value{
+  padding-left:0;
+}
+
+.product-detail-mediosPagos{
+  font-weight: 500;
+  font-size: 1.3em;
 }
