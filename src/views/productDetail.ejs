@@ -4,123 +4,136 @@
 
 	<body>
 		<%- include('partials/header') %>
-			<main id="home_main" class="home_main">
-				<div class="container products-wrapper">
-					<div class="product-detail">
-						<div class="row">
-							<div class="col-12">
-								<h2 class="products-title"><%= product.name %>
-								</h2>
-							</div>
+			<main class="product_detail_main">
+				<div class="product_detail_container">
+					<div class="product_detail_box">
+						<div class="product_detail_title_box">
+							<h2 class="product_detail_title">
+								<%= product.name %>
+							</h2>
 						</div>
-						<div class="row">
-							<div id="detalle_product_section_info" class="col-12 col-lg-8">
-								<% if(product.product_image.length>1){%>
-									<div class="productDetail_multiple_image">
-										<img id="main-image" src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>" class="img-fluid  animate__animated animate__flipInX" alt="...">
-										<nav aria-label="Page navigation example">
-											<ul class="pagination">
-											  <li class="page-item">
-												<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
-													onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[0].file%>')">
-												  <span aria-hidden="true">&laquo;</span>
-												</div>
-											  </li>
-									<% product.product_image.forEach((image,id) => {%>
+						<div class="product_detail_image_box">
+							<div class="product_detail_image">
+								<img id="main-image"
+								src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>"
+								class="img-fluid  animate__animated animate__flipInX" alt="...">
+							</div>
+							<div class="product_detail_image_navigation_box">
+								<nav aria-label="Page navigation example">
+									<ul class="pagination">
+										<li class="page-item">
+											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[0].file%>')">
+												<span aria-hidden="true">&laquo;</span>
+											</div>
+										</li>
+										<% product.product_image.forEach((image,id)=> {%>
 										<li class="page-item">
 											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
-											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[id].file%>')">
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[id].file%>')">
 												<%= id+1 %>
 											</div>
 										</li>
-									<%}); %> 
-									  <li class="page-item">
-										<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
-											onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[product.product_image.length-1].file%>')">
-												  <span aria-hidden="true">&raquo;</span>
-												</div>
-											  </li>
-											</ul>
-										</nav>	
+										<%}); %>
+										<li class="page-item">
+											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[product.product_image.length-1].file%>')">
+												<span aria-hidden="true">&raquo;</span>
+											</div>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<h5>Detalles del producto:</h5>
+						<div class="product_detail_description_box">
+							<p><%= product.description %></p>
+						</div>
+					</div>
+					<div class="product_detail_buyinfo_box">
+						<div class="product_detail_buyinfo_title">
+							<%= product.name %>
+						</div>
+						<div class="product_detail_buyinfo_price_box">
+							<%if(product.discount){%>
+							<p class="product_detail_buyinfo_discount">
+								<span>$<%= addPuntos(Math.floor(product.price)) %></span>
+								<b>
+									<%= product.discount %>% OFF
+								</b>
+							</p>
+							<p class="product_detail_buyinfo_price">
+								$<%=addPuntos(Math.floor((product.price - (product.price * product.discount
+									/ 100)))) %>
+							</p>
+							<%}else{%>
+							<p class="product_detail_buyinfo_price">
+								$<%=addPuntos(Math.floor(product.price))%>
+							</p>
+							<%}%>
+						</div>
+						<div class="product_detail_buyinfo_mediosPagos">
+							Medios de pago:
+						</div>
+						<div class="product_detail_buyinfo_mediosPagos_box">
+							<ul class="product_detail_buyinfo_mediosPagos_list">
+								<li>
+									<div class="medio_de_pago">
+										<i class="fas fa-credit-card"></i>
+										<p>Tarjetas de crédito</p>
 									</div>
-								<%}else{%>
-								<img src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>" alt="product image"
-									class="product-detail-img">
-								<%}%>
-								<div class="product-detail-description">
-									<h5>Detalles del producto:</h5>
-									<%= product.description %>
-								</div>
-							</div>
-							<div id="detalle_product_section_value" class="col-12 col-lg-4">
-								<article class="product-detail-info">
-									<h2 class="product-detail-title">
-										<%= product.name %>
-									</h2>
-									<% if (product.discount) { %>
-										<p class="product-detail-price small">
-											<span>$<%= addPuntos(Math.floor(product.price)) %></span>
-											<b>
-												<%= product.discount %>% OFF
-											</b>
-										</p>
-										<p class="product-detail-price">
-											$<%=addPuntos(Math.floor((product.price - (product.price * product.discount / 100)))) %>
-										</p>
-										<% }else{ %>
-											<p class="product-detail-price">
-												$<%=addPuntos(Math.floor(product.price))%>
-											</p>
-											<% } %>
-											<div class="product-detail-mediosPagos">Medios de pago:</div>
-											<ul class="actions-list">
-												<li>
-													<div class="medio_de_pago">
-														<i class="fas fa-credit-card"></i>
-														<p>Tarjetas de crédito</p>
-													</div>
-													<div class="logos_medios_de_pago">
-														<img src="/img/mediosPagos/logo_visa.jpg" alt="logo_visa">
-														<img src="/img/mediosPagos/logo_american_express.png" alt="logo_american_express">
-														<img src="/img/mediosPagos/logo_naranja.png" alt="logo_naranja">
-														<img src="/img/mediosPagos/logo_mastercard.svg.png" alt="logo_mastercard">
-													</div>
-												</li>
-												<li>
-													<div class="medio_de_pago">
-														<i class="fas fa-credit-card"></i>
-														<p>Tarjetas de débito</p>
-													</div>
-													<div class="logos_medios_de_pago">
-														<img src="/img/mediosPagos/logo_visa.jpg" alt="logo_visa">
-														<img src="/img/mediosPagos/logo_maestro.svg.png" alt="logo_maestro">
-														<img src="/img/mediosPagos/logo_mastercard.svg.png" alt="logo_mastercard">
-														<img src="/img/mediosPagos/logo_cabal_debito.png" alt="logo_cabal_debito">
-													</div>
-												</li>
-												<li>
-													<div class="medio_de_pago">
-														<i class="fa-solid fa-money-bill-1-wave"></i>
-														<p>Efectivo</p>
-													</div>
-													<div class="logos_medios_de_pago">
-														<img src="/img/mediosPagos/log_pago_facil.png" alt="logo_pago_facil">
-														<img src="/img/mediosPagos/logo_rapipago.png" alt="logo_rapipago">
-													</div>
-												</li>
-											</ul>
-											<form id="formulario_button_agregar" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
-												<input hidden type="text" name="var1" value="<%= locals.userLogin?locals.userLogin.shoppingcartId:0 %>">
-												<button id="button_agregar_producto" type="submit" class="btn btn-success">Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i></button>
-											</form>
-								</article>
-							</div>
+									<div class="logos_medios_de_pago">
+										<img src="/img/mediosPagos/logo_visa.jpg" alt="logo_visa">
+										<img src="/img/mediosPagos/logo_american_express.png"
+											alt="logo_american_express">
+										<img src="/img/mediosPagos/logo_naranja.png"
+											alt="logo_naranja">
+										<img src="/img/mediosPagos/logo_mastercard.svg.png"
+											alt="logo_mastercard">
+									</div>
+								</li>
+								<li>
+									<div class="medio_de_pago">
+										<i class="fas fa-credit-card"></i>
+										<p>Tarjetas de débito</p>
+									</div>
+									<div class="logos_medios_de_pago">
+										<img src="/img/mediosPagos/logo_visa.jpg" alt="logo_visa">
+										<img src="/img/mediosPagos/logo_maestro.svg.png"
+											alt="logo_maestro">
+										<img src="/img/mediosPagos/logo_mastercard.svg.png"
+											alt="logo_mastercard">
+										<img src="/img/mediosPagos/logo_cabal_debito.png"
+											alt="logo_cabal_debito">
+									</div>
+								</li>
+								<li>
+									<div class="medio_de_pago">
+										<i class="fa-solid fa-money-bill-1-wave"></i>
+										<p>Efectivo</p>
+									</div>
+									<div class="logos_medios_de_pago">
+										<img src="/img/mediosPagos/log_pago_facil.png"
+											alt="logo_pago_facil">
+										<img src="/img/mediosPagos/logo_rapipago.png"
+											alt="logo_rapipago">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="product_detail_buyinfo_button">
+							<form id="formulario_button_agregar" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
+								<input hidden type="text" name="var1" value="<%= locals.userLogin?locals.userLogin.shoppingcartId:0 %>">
+									<button id="button_agregar_producto" type="submit" class="btn btn-success">
+										Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i>
+									</button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</main>
 			<%- include('partials/footer') %>
-				<%- include('partials/scripts') %>
+			<%- include('partials/scripts') %>
 	</body>
 
 </html>

@@ -1,116 +1,129 @@
-.product-detail {
-  background-color: white;
-  border-radius: 8px;
-  margin: 30px;
-}
-.productDetail_multiple_image{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-}
-.productDetail_multiple_image img{
-  padding: 10px;
-  height: 45vh;
-}
-.page-link{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.product-detail-img {
-  width: 50%;
-  display: block;
-  margin: auto;
-}
-.products-title{
-  padding: 15px;
-  margin: 0;
-}
-.product-detail-info {
-  border-left: 1px solid var(--light-gray);
-  padding: 0px 15px;
-  height: 100%;
-}
-.product-detail-title {
-  font-weight: 500;
-  font-size: 1.6em;
-}
-.product-detail-description_header {
-  padding: 15px;
-  font-size: 1.1em;
-  background-color: var(--light-gray);
-}
-.product-detail-description {
-  padding: 15px;
-  font-size: 1.1em;
-  background-color: var(--light-gray);
-}
-
-.product-detail-price {
-  font-size: 2em;
-  margin: 10px 0;
-}
-
-.small {
-  font-size: 1.4em;
-  color: var(--verde);
-}
-
-.small span {
-  text-decoration: line-through;
-}
-
-.actions-list {
-  margin-bottom: 50px;
-}
-
-.medio_de_pago{
-  display: flex;
-  align-items: center;
-  padding: 5px 0;
-  font-size: 0.8em;
-}
-.logos_medios_de_pago{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.logos_medios_de_pago img{
-  
-}
-
-.medio_de_pago i {
-  color: rgb(198, 192, 126);
-  font-size: 2em;
-  margin-right: 15px;
-}
-.medio_de_pago p {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-
-#button_agregar_producto{
-  background: var(--botonesDorados);
-  border: 0;
-  width: 80%;
-}
-
-#detalle_product_section_info{
-  padding-right:0;
-}
-
-#formulario_button_agregar{
+.product_detail_main{
   display: flex;
   justify-content: center;
 }
-#detalle_product_section_value{
-  padding-left:0;
+.product_detail_container{
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  border-radius: 15px;
+  width: 80em;
+  margin: 30px 30px 0px 30px;
+}
+/*Product_info_principal*/
+.product_detail_box{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 70%;
+}
+.product_detail_image_box{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+.product_detail_image{
+  display: flex;
+  height:30em;
+  width:30em;
+  align-content: center;
+  justify-content: center;
+}
+#main-image{
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
+.product_detail_description_box{
+  overflow: auto;
+  height: 5em;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
 }
 
-.product-detail-mediosPagos{
+/*Medios de Pago*/
+
+.product_detail_buyinfo_box{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+}
+.product_detail_buyinfo_title{
   font-weight: 500;
-  font-size: 1.3em;
+  font-size: 1.8em;
+  margin: 30px 0;
+}
+.product_detail_buyinfo_discount{
+  font-size: 1.5em;
+  color: var(--verde);
+}
+.product_detail_buyinfo_discount span{
+  text-decoration: line-through;
+}
+.product_detail_buyinfo_price{
+  font-size: 2em;
+  margin: 10px 0;
+  font-weight: 500;
+}
+.product_detail_buyinfo_mediosPagos{
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.medio_de_pago{
+  display: flex;
+  align-items: center;
+}
+.medio_de_pago p {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.medio_de_pago i {
+  color: rgb(198, 192, 126);
+  font-size: 1.8em;
+  margin-right: 15px;
+}
+.logos_medios_de_pago{
+  padding-bottom: 10px;
+}
+.logos_medios_de_pago img{
+  width: 2.5em;
+}
+.product_detail_buyinfo_button{
+  padding: 0px 0px 0px 11px;
+  width: 100%;
+}
+#button_agregar_producto{
+  border: 0;
+  background: var(--botonesDorados);
+}
+
+@media (max-width:750px){
+  .product_detail_container{
+    flex-direction: column;
+    width: 85vw;
+  }
+  .product_detail_buyinfo_title{
+    margin: 0;
+  }
+  .product_detail_image{
+    display: flex;
+    width:80vw;
+    object-fit: contain;
+    align-content: center;
+    justify-content: center;
+  }
+  .product_detail_box{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+  .product_detail_buyinfo_button{
+    padding: 0px 15px 15px 15px;
+    width: 100%;
+  }
+
 }

@@ -23,6 +23,9 @@
   width: 50%;
   height: 100%;
 }
+.products-title-search{
+  color:white
+}
 
 @media (min-width: 481px) {
   .home_header_nav-menu ul {
