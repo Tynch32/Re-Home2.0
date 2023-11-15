@@ -1,0 +1,12 @@
+#image_product_edit{
+    display: flex;
+    flex-direction: row;
+    height: 10em;
+    width: 100%;
+    overflow: scroll;
+}
+#image_product_edit img{
+    width: 33%;
+    height: 100%;
+    object-fit:contain;
+}

@@ -1,12 +1,19 @@
 .productCard_box{
-    overflow: hidden;
     background-color: white;
     border-radius: 5px;
     transition: 300ms;
     margin-bottom: 20px;
+    height: 331px;
+    overflow: hidden;
 }
-.productCard_box:hover {
+.productCard_box:hover{
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    height: auto;
+}
+.productCard_box:hover i{
+    background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 .productCard_img{
     border-radius: 5px;
@@ -41,7 +48,7 @@
     justify-content: flex-end;
 }
 .productCard_originalPrice{
-    color: var(--viñaDelMar);
+    color: var(--fondoCookie);
     font-size: 17px;
     font-weight: 600;
     text-decoration:line-through;

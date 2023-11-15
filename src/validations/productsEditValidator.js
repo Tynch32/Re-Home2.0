@@ -9,7 +9,7 @@ module.exports = [
       min: 4,
       max: 50,
     })
-    .withMessage("Debe tener entre 4 y 20 caracteres"),
+    .withMessage("Debe tener entre 4 y 50 caracteres"),
   check("price")
     .notEmpty()
     .withMessage("Es obligatorio")

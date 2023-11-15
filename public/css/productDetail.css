@@ -81,7 +81,9 @@
   font-size: 1.2em;
 }
 .medio_de_pago i {
-  color: rgb(198, 192, 126);
+  background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
   font-size: 1.8em;
   margin-right: 15px;
 }

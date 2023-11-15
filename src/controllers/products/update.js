@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
     let nuevosValores={
       name:req.body.name,
       price:req.body.price,
-      discount:req.body.discount,
+      discount:req.body.discount||0,
       description:req.body.description,
       category_id:0,
       updated_at: new Date()

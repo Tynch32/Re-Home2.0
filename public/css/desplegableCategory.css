@@ -20,7 +20,9 @@
 }
 
 #filterProducts_categorias:hover h5 i {
-    color:var(--iseo);
+    background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 #filterProducts_categorias:hover h5{
     text-decoration:underline;
@@ -30,7 +32,13 @@
   color:white
 }
 #button_menu_desplegable{
-  background: var(--botonesDorados);
+  background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
+  border:0;
+}
+#button_menu_desplegar{
+  height: 35px;
+  color:black;
+  background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
   border:0;
 }
 #menu_desplegable_categorias ul li a h5{
