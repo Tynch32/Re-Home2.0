@@ -53,4 +53,4 @@ Dejar de hacer:
 Saltearse pasos intermedios como por ejemplo trabajar cada uno en su rama correspondiente en git.
 
 ----Retro del Sprint 6----
-(No se deberia hacer) Seguir el trabajo por cuenta propia (Martin Velazquez)
+Cosas que no deberia de hacer: El trabajo por cuenta propia (Martin Velazquez).

@@ -21,7 +21,7 @@ router.get('/register', notUserCheck, register);
 router.post('/register',uploadUser.single("image"),registerValidator,processRegister,);
 //Login
 router.get('/login',notUserCheck, login);
-router.post('/login',loginValidator, processLogin,userSessionCheck);
+router.post('/login',loginValidator,processLogin);
 //Edit profile
 router.get('/profile',cookieCheck,userCheck, profile);
 router.put('/update/:id',cookieCheck,userCheck,uploadUser.single("image"),userEditValidator,update);

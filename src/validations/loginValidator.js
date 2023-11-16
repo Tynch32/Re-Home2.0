@@ -1,19 +1,29 @@
 const { check, body } = require("express-validator");
 const db = require("../database/models");
-const { compareSync } = require("bcryptjs");
+const {compareSync} = require('bcryptjs');
+
 module.exports = [
-  check("email")
+  body("email")
     .notEmpty()
-    .withMessage("El email es obligatorio")
+    .withMessage("* El email es obligatorio")
     .isEmail()
-    .withMessage("Formato inválido"),
+    .withMessage("* El formato del email es invalido")
+    .custom(async (value, { req }) => {
+      let emailRegistrado = await db.User.findOne({where:{email: value}})
+      if(emailRegistrado!=null){
+        return true;
+      }else{
+        throw new Error('* Datos invalidos');
+      }
+    })
+  .withMessage("* El email no se encuentra registrado"),
   body("password")
     .custom(async(value, {req}) => {
         const user = await db.User.findOne({ where: { email: req.body.email } });
-        if(!user || !compareSync(value,user.password)){
-            return false
+        if(user!=null && compareSync(value,user.password)){
+          return true;
+        }else{
+          throw new Error('* Datos invalidos');
         }
-            return true
-    }).withMessage('Contraseña Incorrecta')
-
+  }).withMessage('* Contraseña incorrecta')
 ];

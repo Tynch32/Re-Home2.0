@@ -1,6 +1,7 @@
 const db = require("../../database/models");
 const { validationResult } = require("express-validator");
 const {hashSync} = require('bcryptjs');
+const {unlinkSync, existsSync} = require('fs');
 
 module.exports = async (req, res) => {
   const errors = validationResult(req);
@@ -29,7 +30,6 @@ module.exports = async (req, res) => {
       return res.redirect("/users/login");
     }).catch(error=>console.log(error));
   } else {
-
     if(req.file){
       if(existsSync(`./public/img/users/${req.file.filename}`)){
       unlinkSync(`./public/img/users/${req.file.filename}`)
@@ -43,4 +43,3 @@ module.exports = async (req, res) => {
     });
   }
 };
-//https://chat.openai.com/c/60f12921-f49b-43da-a77b-3f399adc9593

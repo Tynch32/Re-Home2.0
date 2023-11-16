@@ -6,10 +6,10 @@ module.exports = [
     .withMessage("Es obligatorio")
     .bail()
     .isLength({
-      min: 4,
+      min: 5,
       max: 50,
     })
-    .withMessage("Debe tener entre 4 y 50 caracteres"),
+    .withMessage("Debe tener entre 5 y 50 caracteres"),
   check("category")
     .notEmpty()
     .withMessage("Es requerida"),

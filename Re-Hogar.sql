@@ -138,7 +138,7 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
   `product_id` int NOT NULL,
-  `amount` int DEFAULT NULL,
+  `amount` int DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `shoppingcart_id` int DEFAULT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE `orders` (
   KEY `orders_product_id_idx` (`product_id`),
   CONSTRAINT `orders_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `orders_shoppingcart_id` FOREIGN KEY (`shoppingcart_id`) REFERENCES `shopping_cart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (2,4,1,NULL,NULL,4),(4,6,1,NULL,NULL,4),(8,4,1,NULL,NULL,2),(17,7,1,'2023-11-03 03:04:41','2023-11-03 03:04:41',2),(18,6,1,'2023-11-03 03:04:47','2023-11-03 03:04:47',2),(20,30,1,'2023-11-03 03:31:59','2023-11-03 03:31:59',2),(22,36,1,'2023-11-03 03:55:41','2023-11-03 03:55:41',2),(23,31,1,'2023-11-03 04:49:09','2023-11-03 04:49:09',2),(24,29,1,'2023-11-03 04:49:11','2023-11-03 04:49:11',2),(40,1,1,'2023-11-03 06:14:28','2023-11-03 06:14:28',4);
+INSERT INTO `orders` VALUES (4,6,2,NULL,'2023-11-15 15:57:39',4),(40,1,1,'2023-11-03 06:14:28','2023-11-03 06:14:28',4),(54,1,6,'2023-11-16 15:37:23','2023-11-16 15:49:43',2),(55,29,2,'2023-11-16 15:37:28','2023-11-16 15:49:46',2),(57,5,1,'2023-11-16 15:37:32','2023-11-16 15:37:32',2),(61,30,2,'2023-11-16 15:37:41','2023-11-16 15:50:07',2),(62,36,1,'2023-11-16 15:49:50','2023-11-16 15:49:50',2);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +188,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Cintra Metrica',12500.00,10,'Ideal para hacer todas tus mediciones con precisión',6,NULL,'2023-10-25 18:38:48'),(2,'Destornillador',850.00,10,'Destornillador plano, mango antideslizante y punta magnetica',6,NULL,'2023-10-25 18:47:46'),(3,'Lijadora para madera',76500.00,10,'Lijadora de precisión, apta para todo tipo de maderas, 220v de gran potencia',6,NULL,'2023-10-27 19:38:38'),(4,'Llave Inglesa',11250.00,12,'Llave inglesa de fuerza, de metal reforzado',6,NULL,NULL),(5,'Mazo 5Kg',6000.00,13,'Mazo de 5kg, con mango de madera barnizada',6,NULL,NULL),(6,'Taladro Inalambrico',55000.00,5,'Taladro inalambrico, bateria con independencia de 6hs de uso continuo, bateria recargable de litio. Tiempo de recarga total de la bateria de 2hs',6,NULL,NULL),(7,'Madera de pino x1mt2',25000.00,0,'Madera de pino, de perfecta calidad, barnizada con doble capa, aislante de temperatura, capa recubierta anti insectos.',14,NULL,'2023-10-25 23:00:52'),(27,'Ventana de baño',49000.00,5,'Ventana de 45x70 cm ideal entrada de luz, con marco de aluminio reforzado, y trabador en el centro.',12,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(29,'Ladrillo T8, pallet x144u',43000.00,0,'Ladrillo T8 común de construcción, solo venta por pallet, no se fracciona!',13,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(30,'Puerta estilo granero',135000.00,3,'Puerta estilo granero, de madera de roble barnizada, con corredera y guia incluida, medida estandar.',12,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(31,'Barral para cortinas de acero inoxidable',35000.00,0,'Barral para cortinas de acero inoxidable, adaptable (alcanza los 3mts)',7,'2023-10-25 01:21:35','2023-10-25 01:21:35'),(36,'Pintura Blanca 5lts',17000.00,5,'Pintura blanca, de mayor cobertura en el mercado, la unica que con solo una pasada queda el color perfecto',11,'2023-11-03 03:55:18','2023-11-03 03:55:18');
+INSERT INTO `products` VALUES (1,'Cinta Metrica',12500.00,10,'Ideal para hacer todas tus mediciones con precisión',6,NULL,'2023-11-15 14:29:26'),(2,'Destornillador',850.00,10,'Destornillador plano, mango antideslizante y punta magnetica. Mango ergonomico',6,NULL,'2023-11-07 17:47:04'),(3,'Lijadora para madera (Apta todo tipo de maderas)',76500.00,0,'Lijadora de precisión, apta para todo tipo de maderas, 220v de gran potencia',6,NULL,'2023-11-15 13:26:30'),(4,'Llave Inglesa',11250.00,12,'Llave inglesa de fuerza, de metal reforzado',6,NULL,NULL),(5,'Mazo 5Kg',6000.00,13,'Mazo de 5kg, con mango de madera barnizada',6,NULL,NULL),(6,'Taladro Inalambrico',55000.00,5,'Taladro inalambrico, bateria con independencia de 6hs de uso continuo, bateria recargable de litio. Tiempo de recarga total de la bateria de 2hs',6,NULL,NULL),(7,'Madera de pino x1mt2',25000.00,0,'Madera de pino, de perfecta calidad, barnizada con doble capa, aislante de temperatura, capa recubierta anti insectos.',14,NULL,'2023-10-25 23:00:52'),(27,'Ventana de baño',49000.00,5,'Ventana de 45x70 cm ideal entrada de luz, con marco de aluminio reforzado, y trabador en el centro.',12,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(29,'Ladrillo T8, pallet x144u',43000.00,0,'Ladrillo T8 común de construcción, solo venta por pallet, no se fracciona!',13,'2023-10-25 00:21:34','2023-10-25 00:21:34'),(30,'Puerta estilo granero',135000.00,3,'Puerta estilo granero, de madera de roble barnizada, con corredera y guia incluida, medida estandar.',12,'2023-10-25 01:20:33','2023-10-25 01:20:33'),(31,'Barral de acero inoxidable',35000.00,0,'Barral para cortinas de acero inoxidable, adaptable (alcanza los 3mts)',7,'2023-10-25 01:21:35','2023-11-08 23:01:19'),(36,'Pintura Blanca 5lts',17000.00,5,'Pintura blanca, de mayor cobertura en el mercado, la unica que con solo una pasada queda el color perfecto',11,'2023-11-03 03:55:18','2023-11-03 03:55:18');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-05  3:02:18
+-- Dump completed on 2023-11-16 15:03:58

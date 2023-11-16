@@ -19,19 +19,19 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Tu email" name="email">
                             <small hidden id="login_form_email" class="text-danger ms-2">
-                              *El email es obligatorio
+                              * El email es obligatorio
                             </small>
-                            <small class="text-danger ms-2">
+                            <small id="login_form_email_error" class="text-danger ms-2">
                               <%= locals.errors && (errors.email && errors.email.msg) %>
                             </small>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="password" placeholder="Tu contraseña" name="password">
-                            <small class="text-danger ms-2">
-                              <small hidden id="login_form_password" class="text-danger ms-2">
-                                *La contraseña es obligatoria
-                              </small>
+                            <small hidden id="login_form_password" class="text-danger ms-2">
+                              * La contraseña es obligatoria
+                            </small>
+                            <small id="login_form_password_error" class="text-danger ms-2">
                               <%= locals.errors && (errors.password && errors.password.msg) %>
                             </small>
                         </div>
