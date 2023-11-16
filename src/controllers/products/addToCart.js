@@ -12,13 +12,20 @@ module.exports = async (req, res) => {
       product_id: req.params.id,
       amount: 1,
       shoppingcart_id: req.body.var1
-    }).then(()=> 
-      {return res.redirect('/')})
+    }).then(()=> {
+      req.session.userLogin.cantItems+=1;
+      res.cookie('grupoReHome10',req.session.userLogin,{
+      maxAge : 1000 * 60 * 60})
+        return res.redirect('/')
+    })
     .catch(error=>console.log(error));
   }else{
     product.amount+=1;
-    await product.save()
-    return res.redirect('/')
+    await product.save();
+    req.session.userLogin.cantItems+=1;
+      res.cookie('grupoReHome10',req.session.userLogin,{
+      maxAge : 1000 * 60 * 60})
+    return res.redirect('/');
   }
   
   
