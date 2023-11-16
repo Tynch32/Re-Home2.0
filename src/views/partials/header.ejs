@@ -25,10 +25,8 @@
             <% } %>
               <% if (userLogin.role==="user") {%>
                 <li id="header_button_3"><a href="/users/productCart/<%= locals.userLogin.shoppingcartId %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
-                  <% if (locals.userLogin.cantProducts) { %>
-                    <%= locals.userLogin.cantProducts %>
-                  <% }else{%>
-                    0
+                  <% if (locals.userLogin.cantItems) { %>
+                    <%= locals.userLogin.cantItems %>
                   <% } %>
                 </a></li>
               <% }%>

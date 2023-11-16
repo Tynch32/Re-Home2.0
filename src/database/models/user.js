@@ -30,7 +30,11 @@ module.exports = (sequelize, dataTypes) => {
       shoppingcart_id:{
         type: dataTypes.BIGINT(10).UNSIGNED,
         allowNull: false
-      }
+      },
+      role_id:{
+        type: dataTypes.BIGINT(10).UNSIGNED,
+        allowNull: false
+      },
   };
   let config = {
       timestamps: true,
