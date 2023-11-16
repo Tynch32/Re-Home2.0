@@ -7,7 +7,7 @@
     <%- include('partials/header') %>
       <main id="home_main" class="container">
         <div class="row">
-          <div class="col-12 col-lg-10 mx-auto mt-5">
+          <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-5">
             <div class="card shadow">
               <div class="card-header text-end">
               <button id="button_calcularTotal" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#CarritoCompras">
@@ -66,11 +66,10 @@
                       <tr>
                         <th scope="col">Producto</th>
                         <th scope="col">Precio</th>
-                        <th scope="col">Precio c/Descuento</th>
-                        <th scope="col">Cantidad</th>
+                        <th scope="col">Descuento</th>
+                        <th scope="col">Cant.</th>
                         <th scope="col">SubTotal</th>
-                        <th scope="col">Info.</th>
-                        <th scope="col">Eliminar</th>
+                        <th scope="col">Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -78,7 +77,11 @@
                       <tr>
                         <td><%=product.product.name%></td>
                         <td>$<%=addPuntos(Math.floor(product.product.price))%></td>
-                        <td>$<%=addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100)))%></td>
+                        <% if(product.product.discount>0){%>
+                          <td><b>-<%=product.product.discount%>% OFF</b></td>
+                        <% }else{%>
+                          <td id="productCart_item_discount"><b>--</b></td>
+                        <% }%>
                         <td><%=product.amount%></td>
                         <td>$<%=addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100))*product.amount)%></td>
                         <td>
@@ -86,6 +89,10 @@
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#detailProduct<%=product.product.id%>">
                                 <i class="fas fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#removeProduct<%= product.product.id %>">
+                                <i class="fa-solid fa-trash-can"></i>
                             </button>
                             <div class="modal fade" id="detailProduct<%=product.product.id%>" tabindex="-1"
                               aria-labelledby="detailProduct<%=product.product.id%>Label" aria-hidden="true">
@@ -145,34 +152,29 @@
                                   </div>
                               </div>
                           </div>
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#removeProduct<%= product.product.id %>">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                            <div class="modal fade" id="removeProduct<%= product.product.id %>" tabindex="-1" aria-labelledby="removeProduct<%= product.product.id %>Label"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-name fs-5" id="removeProduct<%= product.product.id %>Label">ADVERTENCIA</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>¿Estás seguro que quieres eliminar el producto: <b><%= product.product.name %></b> de tu carrito de compras?</p> 
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cancelar</button>
-                                                <form action="/products/removeToCart/<%= product.product.id %>" method="POST">
-                                                  <input hidden type="text" name="var1" value="<%= locals.userLogin.shoppingcartId %>">
-                                                  <button type="submit" class="btn btn-danger">Sí, Eliminar <i class="fa-solid fa-trash-can"></i></button>
-                                              </form>
-                                        </div>
-                                    </div>
+                          <div class="modal fade" id="removeProduct<%= product.product.id %>" tabindex="-1" aria-labelledby="removeProduct<%= product.product.id %>Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-name fs-5" id="removeProduct<%= product.product.id %>Label">ADVERTENCIA</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close">
+                                    </button>
                                 </div>
+                                <div class="modal-body">
+                                  <p>¿Estás seguro que quieres eliminar el producto: <b><%= product.product.name %></b> de tu carrito de compras?</p> 
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">
+                                    Cancelar
+                                  </button>
+                                    <form action="/products/removeToCart/<%= product.product.id %>" method="POST">
+                                        <input hidden type="text" name="var1" value="<%= locals.userLogin.shoppingcartId %>">
+                                        <button type="submit" class="btn btn-danger">
+                                          Sí, Eliminar <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </td>

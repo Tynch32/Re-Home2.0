@@ -26,7 +26,7 @@
               <% if (userLogin.role==="user") {%>
                 <li id="header_button_3"><a href="/users/productCart/<%= locals.userLogin.shoppingcartId %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
                   <% if (locals.userLogin.cantItems) { %>
-                    <%= locals.userLogin.cantItems %>
+                    <p><%= locals.userLogin.cantItems %></p>
                   <% } %>
                 </a></li>
               <% }%>
@@ -60,13 +60,11 @@
                     <li><a href="/admin"><b>ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></b></a></li>
                     <% } %>
                       <% if (userLogin.role==="user") {%>
-                        <li><a href="/users/productCart/<%= locals.userLogin.shoppingcartId %>"><b>Carrito <i class="fa-solid fa-cart-shopping"></i></b>
-                          <% if (locals.userLogin.cantProduct) { %>
-                            <%= locals.userLogin.cantProduct %>
-                          <% }else{%>
-                              <b>0</b>
+                        <li id="header_button_3"><b><a href="/users/productCart/<%= locals.userLogin.shoppingcartId %>">Carrito <i class="fa-solid fa-cart-shopping"></i>
+                          <% if (locals.userLogin.cantItems) { %>
+                            <%= locals.userLogin.cantItems %>
                           <% } %>
-                        </a></li>
+                        </a></b></li>
                       <% }%>
                           <li><a href="/users/profile"><b>Editar Perfil <i class="fa-regular fa-address-card"></i></b></a></li>
                           <li><a href="/users/logout"><b>Salir <i class="fa-solid fa-door-open"></i></b> </a></li>

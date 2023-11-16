@@ -67,6 +67,10 @@
 #header_button_2:hover{
   box-shadow: 0 0 15px rgb(198, 192, 126);
 }
+#header_button_3 a{
+  display: flex;
+  align-items: center;
+}
 #header_button_3:hover{
   box-shadow: 0 0 15px rgb(198, 192, 126);
 }
@@ -81,7 +85,7 @@
   display: none;
 }
 
-@media(max-width: 700px){
+@media(max-width: 725px){
   .header_menu_desplegado{
     display: none;
   }
