@@ -9,7 +9,7 @@
     <main id="home_main" class="home_main">
         <div class="row">
             <div class="col-12 col-md-10 col-lg-8 col-sm-11 mx-auto mt-5">
-                <div class="card mb-3 shadow-lg">
+                <div id="formulario_login" class="card mb-3 shadow-lg">
                   <div class="card-header">
                     Ingresá
                   </div>
@@ -17,7 +17,8 @@
                     <form action="" method="POST" class="row">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Tu email" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="Tu email" name="email"
+                            value="<%= locals.old && (old.email && old.email ) %>">
                             <small hidden id="login_form_email" class="text-danger ms-2">
                               * El email es obligatorio
                             </small>
@@ -42,7 +43,7 @@
                                   Recordarme
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-dark">Ingresá <i class="fa-solid fa-right-to-bracket"></i></button>
+                            <button disabled id="button_login_ingresar" type="submit" class="btn btn-dark">Ingresá <i class="fa-solid fa-right-to-bracket"></i></button>
                         </div>
                     </form>
                   </div>

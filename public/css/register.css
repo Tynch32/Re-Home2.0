@@ -1,0 +1,34 @@
+#form_image{
+    border:2px solid red;
+}
+#register_form_password{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+#register_form_password p{
+    color: red;
+    margin: 0;
+}
+#form_register_asteriscos{
+    color:red;
+}
+#form_register_asterisco_name{
+    color:red;
+}
+#form_register_asterisco_surname{
+    color:red;
+}
+#form_register_asterisco_email{
+    color:red;
+}
+#form_register_asterisco_password{
+    color:red;
+}
+#form_register_asterisco_password2{
+    color:red;
+}
+#form_register_asterisco_form_image{
+    color:red;
+}

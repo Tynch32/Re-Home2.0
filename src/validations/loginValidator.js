@@ -18,6 +18,8 @@ module.exports = [
     })
   .withMessage("* El email no se encuentra registrado"),
   body("password")
+    .notEmpty()
+    .withMessage("* La contraseña es obligatoria")
     .custom(async(value, {req}) => {
         const user = await db.User.findOne({ where: { email: req.body.email } });
         if(user!=null && compareSync(value,user.password)){
