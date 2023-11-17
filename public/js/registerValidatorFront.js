@@ -200,18 +200,18 @@ let validarContraseña = (password) =>{
 
 let validacionImagen=(image)=>{
     if(image.files.length>0){
-        $(`form_register_asterisco_form_image`).innerText=' ✓';
-        $(`form_register_asterisco_form_image`).style.color='#39b54a';
-        $(`form_register_asterisco_form_image`).style.fontWeight='bold';
+        $(`form_register_asterisco_image`).innerText=' ✓';
+        $(`form_register_asterisco_image`).style.color='#39b54a';
+        $(`form_register_asterisco_image`).style.fontWeight='bold';
         $('form_image').style.border='2px solid #39b54a'
         $(`image_error`).hidden=true;
         return true;
     }else{
-        $(`form_register_asterisco_form_image`).innerText=' *';
-        $(`form_register_asterisco_form_image`).style.color='red';
-        $(`form_register_asterisco_form_image`).style.fontWeight='bold';
+        $(`form_register_asterisco_image`).innerText=' *';
+        $(`form_register_asterisco_image`).style.color='red';
+        $(`form_register_asterisco_image`).style.fontWeight='bold';
         $(campo.id).style.border='2px solid red'
-        $(`form_register_asterisco_form_image`).hidden=false;
+        $(`form_register_asterisco_image`).hidden=false;
         return false;
     }
 }
