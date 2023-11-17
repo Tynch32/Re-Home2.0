@@ -5,11 +5,13 @@ module.exports = [
   check("name").notEmpty()
     .withMessage("* El nombre es obligatorio")
     .isLength({ min: 2 })
-    .withMessage('* El nombre debe tener al menos 2 caracteres'),
+    .withMessage('* El nombre debe tener al menos 2 caracteres')
+    .isAlpha().withMessage('El nombre solo debe contener letras.'),
   check("surname").notEmpty()
     .withMessage("* El apellido es obligatorio")
     .isLength({ min: 2 })
-    .withMessage('* El apellido debe tener al menos 2 caracteres'),
+    .withMessage('* El apellido debe tener al menos 2 caracteres')
+    .isAlpha().withMessage('El nombre solo debe contener letras.'),
   body("email")
     .notEmpty()
     .withMessage("* El email es obligatorio")

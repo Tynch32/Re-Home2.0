@@ -33,7 +33,7 @@ CREATE TABLE `addresses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,'Jose C. Paz','Buenos Aires','Argentina','Calle 123',NULL,NULL),(2,'Palermo','Buenos Aires','Argentina','Calle falsa 123',NULL,'2023-10-27 21:41:49'),(4,'CABA','Buenos Aires','Argentina','Calle Faltante','2023-10-27 20:41:57','2023-10-27 20:41:57');
+INSERT INTO `addresses` VALUES (1,'Jose C. Paz','Buenos Aires','Argentina','Calle 123',NULL,NULL),(2,'Palermo','Buenos Aires','Argentina','Calle falsa 123',NULL,'2023-10-27 21:41:49'),(4,'CABA','Buenos Aires','Argentina','Calle Faltante','2023-10-27 20:41:57','2023-10-27 20:41:57'),(20,'','','',NULL,'2023-11-17 04:28:18','2023-11-17 04:28:18');
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `image_user` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `image_user` (
 
 LOCK TABLES `image_user` WRITE;
 /*!40000 ALTER TABLE `image_user` DISABLE KEYS */;
-INSERT INTO `image_user` VALUES (1,'1696631076554_users_.jpg',NULL,NULL),(2,'1696631134852_users_.png',NULL,NULL),(3,'1698439317338_users_.webp','2023-10-27 20:41:57','2023-10-27 20:41:57');
+INSERT INTO `image_user` VALUES (1,'1696631076554_users_.jpg',NULL,NULL),(2,'1696631134852_users_.png',NULL,NULL),(3,'1698439317338_users_.webp','2023-10-27 20:41:57','2023-10-27 20:41:57'),(19,'1700195298403_users_.jpg','2023-11-17 04:28:18','2023-11-17 04:28:18');
 /*!40000 ALTER TABLE `image_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +232,7 @@ CREATE TABLE `shopping_cart` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +241,7 @@ CREATE TABLE `shopping_cart` (
 
 LOCK TABLES `shopping_cart` WRITE;
 /*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-INSERT INTO `shopping_cart` VALUES (1,NULL,'2023-11-03 05:38:16'),(2,NULL,'2023-11-05 04:39:05'),(4,'2023-10-27 20:41:57','2023-11-03 06:14:49');
+INSERT INTO `shopping_cart` VALUES (1,NULL,'2023-11-03 05:38:16'),(2,NULL,'2023-11-05 04:39:05'),(4,'2023-10-27 20:41:57','2023-11-03 06:14:49'),(20,'2023-11-17 04:28:18','2023-11-17 04:28:18');
 /*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,7 +275,7 @@ CREATE TABLE `users` (
   CONSTRAINT `user_image_id` FOREIGN KEY (`image_id`) REFERENCES `image_user` (`id`),
   CONSTRAINT `user_role_id` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`),
   CONSTRAINT `user_shoppingcart_id` FOREIGN KEY (`shoppingcart_id`) REFERENCES `shopping_cart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -284,7 +284,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Martin','Velazquez','martin@gmail.com','$2a$10$bH70EZM8fFVad0y61uy3E.GkQ3LhJvripjShgjrT049WlQ5SncyDC',2,1,1,1,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(2,'Marisa','Ferrada','marisa@gmail.com','$2a$10$/lCLK7VxFU7fs7fvwJz8eO9fyqi1KYJS7mNuXhp1VWwVPRoSnn2Wq',1,2,2,2,'2023-10-25 00:18:16','2023-10-27 21:41:49'),(3,'Marilyn','Sayago','marilyn@gmail.com','$2a$10$xHIXl7..sYH6qV83dxT9Te0Lk8U/tDluUw4DAYcP1K2Q2x24MyO3u',1,4,4,3,'2023-10-27 20:41:57','2023-10-27 20:41:57');
+INSERT INTO `users` VALUES (1,'Martin','Velazquez','martin@gmail.com','$2a$10$bH70EZM8fFVad0y61uy3E.GkQ3LhJvripjShgjrT049WlQ5SncyDC',2,1,1,1,'2023-10-25 00:18:16','2023-10-25 00:18:16'),(2,'Marisa','Ferrada','marisa@gmail.com','$2a$10$/lCLK7VxFU7fs7fvwJz8eO9fyqi1KYJS7mNuXhp1VWwVPRoSnn2Wq',1,2,2,2,'2023-10-25 00:18:16','2023-10-27 21:41:49'),(3,'Marilyn','Sayago','marilyn@gmail.com','$2a$10$xHIXl7..sYH6qV83dxT9Te0Lk8U/tDluUw4DAYcP1K2Q2x24MyO3u',1,4,4,3,'2023-10-27 20:41:57','2023-10-27 20:41:57'),(19,'Juan','Velazquez','juan@gmail.com','$2a$10$lFhj8gvsVu8.ShkWAX/pjuzC0hruYfoJQHvunIlIx9ysTlva2IARO',1,20,20,19,'2023-11-17 04:28:18','2023-11-17 04:28:18');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-16 15:03:58
+-- Dump completed on 2023-11-17  1:32:02

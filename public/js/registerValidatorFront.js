@@ -35,20 +35,27 @@ let estanCompletosLosCampos= () =>{
 }
 let validarCampo=(campo,nombre)=>{
     $(`${campo.id}_error`).hidden=true;
-    if($(campo.id).value.trim().length<2){
-        if($(campo.id).value.trim().length==1){
-            $(`register_form_${campo.id}`).innerText = `* El ${nombre} debe tener min. 2 caracteres`
-            $(`register_form_${campo.id}`).hidden = false;
-            validacionIncorrecta(campo)
+    
+        if($(campo.id).value.trim().length<2){
+            if($(campo.id).value.trim().length==1){
+                $(`register_form_${campo.id}`).innerText = `* El ${nombre} debe tener min. 2 caracteres`
+                $(`register_form_${campo.id}`).hidden = false;
+                validacionIncorrecta(campo)
+            }else{
+                $(`register_form_${campo.id}`).innerText = `* El ${nombre} es obligatorio`
+                $(`register_form_${campo.id}`).hidden = false;
+                validacionIncorrecta(campo)
+            }
         }else{
-            $(`register_form_${campo.id}`).innerText = `* El ${nombre} es obligatorio`
-            $(`register_form_${campo.id}`).hidden = false;
-            validacionIncorrecta(campo)
+            if(!(/^[A-Za-z]+$/.test($(campo.id).value.trim()))){
+                $(`register_form_${campo.id}`).innerText = `* El ${nombre} debe tener solo letras`
+                $(`register_form_${campo.id}`).hidden = false;
+                validacionIncorrecta(campo)
+            }else{
+                $(`register_form_${campo.id}`).hidden = true;
+            validacionCorrecta(campo)
+            }
         }
-    }else{
-        $(`register_form_${campo.id}`).hidden = true;
-        validacionCorrecta(campo)
-    }
 }
 let validarCampoContraseña=(campo)=>{
     $(`${campo.id}_error`).hidden=true;
@@ -144,6 +151,7 @@ let validarContraseña = (password) =>{
 
     $('email').addEventListener('blur',function(){
         validacionEmail(this);
+        toggleEnabledButton();
     })
     $('email').addEventListener('keyup',function(){
         validacionEmail(this);
@@ -151,17 +159,19 @@ let validarContraseña = (password) =>{
     })
 
     $('name').addEventListener('blur',function(){
-        validarCampo(this,'nombre')
+        validarCampo(this,'nombre');
+        toggleEnabledButton();
     })
     $('name').addEventListener('keyup',function(){
-        validarCampo(this,'nombre')
+        validarCampo(this,'nombre');
         toggleEnabledButton();
     })
     $('surname').addEventListener('blur',function(){
-        validarCampo(this,'apellido')
+        validarCampo(this,'apellido');
+        toggleEnabledButton();
     })
     $('surname').addEventListener('keyup',function(){
-        validarCampo(this,'apellido')
+        validarCampo(this,'apellido');
         toggleEnabledButton();
     })
     $('password').addEventListener('keyup',function(){
@@ -185,7 +195,7 @@ let validarContraseña = (password) =>{
         toggleEnabledButton();
     })
     $('form_register_box').addEventListener('mouseover',function(){
-        toggleEnabledButton()
+        toggleEnabledButton();
     })
 
 let validacionImagen=(image)=>{
@@ -206,5 +216,6 @@ let validacionImagen=(image)=>{
     }
 }
     $('form_image').addEventListener('blur',function(){
-        validacionImagen(this)
+        validacionImagen(this);
+        toggleEnabledButton();
     })
