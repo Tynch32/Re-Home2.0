@@ -54,29 +54,32 @@ let validarPrecio=()=>{
     }
 }
 let validarDescuento=()=>{
-    if(!(/^\d+$/.test($('discount').value))){
-        $(`product_form_discount`).innerText = `* El descuento solo debe tener números`
-        $(`product_form_discount`).hidden = false;
-        validacionIncorrecta($(`discount`))
-    }else{
-        if(($('discount').value)<0){
-            $(`product_form_discount`).innerText = `* El descuento debe ser mayor o igual a 0`
+    if($('discount').value!=""){
+        if(!(/^\d+$/.test($('discount').value))){
+            $(`product_form_discount`).innerText = `* El descuento solo debe tener números`
             $(`product_form_discount`).hidden = false;
             validacionIncorrecta($(`discount`))
         }else{
-            if(($('discount').value)>100){
-                $(`product_form_discount`).innerText = `* El descuento debe ser menor a 100`
+            if(($('discount').value)<0){
+                $(`product_form_discount`).innerText = `* El descuento debe ser mayor o igual a 0`
                 $(`product_form_discount`).hidden = false;
-            validacionIncorrecta($(`discount`))
+                validacionIncorrecta($(`discount`))
             }else{
-                $(`product_form_discount`).hidden = true;
-            validacionCorrecta($(`discount`))
+                if(($('discount').value)>=100){
+                    $(`product_form_discount`).innerText = `* El descuento debe ser menor a 100`
+                    $(`product_form_discount`).hidden = false;
+                validacionIncorrecta($(`discount`))
+                }else{
+                    $(`product_form_discount`).hidden = true;
+                    validacionCorrecta($(`discount`))
+                }
             }
-            
         }
+    }else{
+        $(`product_form_discount`).hidden = true;
+        validacionCorrecta($(`discount`))
     }
 }
-
     $('name').addEventListener('blur',function(){
         validarCampo(this,'nombre',5,20);
     })
@@ -89,9 +92,42 @@ let validarDescuento=()=>{
     $('description').addEventListener('keyup',function(){
         validarCampo(this,'descripcion',20,500);
     })
-    $('price').addEventListener('keyup',function(){
+    $('price').addEventListener('blur',function(){
         validarPrecio()
     })
     $('price').addEventListener('keyup',function(){
         validarPrecio()
     })
+    $('discount').addEventListener('blur',function(){
+        validarDescuento()
+    })
+    $('discount').addEventListener('keyup',function(){
+        validarDescuento()
+    })
+    $('category').addEventListener('change',function(){
+        $(`category_error`).hidden=true;
+        validacionCorrecta($(`category`))
+    })
+
+let validacionImagen=(image)=>{
+    if(image.files.length>0){
+        $(`form_product_asterisco_image`).innerText=' ✓';
+        $(`form_product_asterisco_image`).style.color='#39b54a';
+        $(`form_product_asterisco_image`).style.fontWeight='bold';
+        $('form_image').style.border='2px solid #39b54a'
+        $(`image_error`).hidden=true;
+        return true;
+    }else{
+        $(`form_product_asterisco_image`).innerText=' *';
+        $(`form_product_asterisco_image`).style.color='red';
+        $(`form_product_asterisco_image`).style.fontWeight='bold';
+        $('form_image').style.border='2px solid red'
+        $(`form_product_asterisco_image`).hidden=false;
+        return false;
+    }
+}
+    $('form_image').addEventListener('blur',function(){
+        validacionImagen(this);
+        toggleEnabledButton();
+    })
+    

@@ -1,3 +1,6 @@
+#form_addProduct_box #category{
+    border:2px solid red;
+}
 #form_addProduct_asteriscos{
     color: red
 }
@@ -15,4 +18,14 @@
 }
 #form_product_asterisco_image{
     color:red;
+}
+#input-box-shadow{
+    color: blueviolet;
+}
+#form_edit_product #category{
+    border:2px solid #39b54a;
+}
+#form_edit_product_tilde{
+    color: #39b54a;
+    font-weight: bold;
 }

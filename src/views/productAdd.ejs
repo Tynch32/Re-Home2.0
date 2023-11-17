@@ -36,7 +36,7 @@
                     <small id="form_product_asterisco_category">*</small>
                     <select class="form-select"
                       aria-label="Default select example" name="category" id="category">
-                      <option value="" selected hidden>Seleccione...</option>
+                      <option value="0" selected hidden>Seleccione...</option>
                       <% categories.forEach((category,index)=> { %>
                         <option value="<%= category.id %>" <%=locals.old && (locals.old.category===category.name
                           && 'selected' ) %>>
@@ -66,6 +66,7 @@
                   </div>
                   <div class="col-12 col-md-6 sm-12">
                     <label for="discount" class="form-label">Descuento en %</label>
+                    <small id="form_product_asterisco_discount"></small>
                     <input type="number" class="form-control" id="discount" name="discount" />
                     <small hidden id="product_form_discount" class="text-danger ms-2">
                       * 

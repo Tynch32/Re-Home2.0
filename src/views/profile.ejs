@@ -11,21 +11,33 @@
             <div class="col-12 col-md-10 col-lg-8 col-sm-11 mx-auto mt-5">
                 <div class="card mb-3 shadow-lg">
                   <div class="card-header">
-                    Perfil usuario
+                    <b>Perfil de usuario: </b><%=name%> <%= surname %> <small id="form_register_asteriscos">
+                        Los campos con un * son obligatorios
+                    </small>
                   </div>
                   <div class="card-body">
                     <form action="/users/update/<%= id %>?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="name" class="form-label">Nombre</label>
+                            <small id="form_register_asterisco_name">*</small>
                             <input type="text" class="form-control" id="name" placeholder="Tu nombre" name="name" value="<%= name %>">
-                            <small class="text-danger ms-2">
+                            <small hidden id="register_form_name" class="text-danger ms-2">
+                                * El nombre es obligatorio
+                            </small>
+                            <small id="name_error" class="text-danger ms-2">
                                 <%= locals.errors && (errors.name && errors.name.msg) %>
                             </small>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6">
                             <label for="surname" class="form-label">Apellido</label>
+                            <small id="form_register_asterisco_surname">
+                                *
+                            </small>
                             <input type="text" class="form-control" id="surname" placeholder="Ingrese su apellido" name="surname" value="<%= surname %>">
-                            <small class="text-danger ms-2">
+                            <small hidden id="register_form_surname" class="text-danger ms-2">
+                                * El apellido es obligatorio
+                            </small>
+                            <small id="surname_error" class="text-danger ms-2">
                                 <%= locals.errors && (errors.surname && errors.surname.msg) %>
                             </small>
                         </div>
@@ -80,6 +92,7 @@
     </main>
     <%- include('partials/footer') %>
     <%- include('partials/scripts') %>
+    <script src="/js/profileValidatorFront.js"></script>
 </body>
 
 </html>

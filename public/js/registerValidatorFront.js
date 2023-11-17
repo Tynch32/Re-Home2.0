@@ -76,8 +76,12 @@ let validarCampoContraseña=(campo)=>{
 let toggleEnabledButton = () => {
     if(estanCompletosLosCampos()){
         $('button_register_success').disabled=false;
+        $('button_register_success').style.background='linear-gradient(to right, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%)';
+        $('button_register_success').style.border='gold';
     }else{
         $('button_register_success').disabled=true;
+        $('button_register_success').style.background='#212529';
+        $('button_register_success').style.border='1px solid #212529';
     }
 }
 let validacionEmail = (email) =>{
@@ -210,7 +214,7 @@ let validacionImagen=(image)=>{
         $(`form_register_asterisco_image`).innerText=' *';
         $(`form_register_asterisco_image`).style.color='red';
         $(`form_register_asterisco_image`).style.fontWeight='bold';
-        $(campo.id).style.border='2px solid red'
+        $('form_image').style.border='2px solid red'
         $(`form_register_asterisco_image`).hidden=false;
         return false;
     }

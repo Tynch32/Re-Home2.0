@@ -8,9 +8,12 @@
         <main id="home_main" class="container">
             <div class="row">
                 <div class="col-12 col-md-8 mx-auto mt-5">
-                    <div class="card shadow">
+                    <div id="form_edit_product" class="card shadow">
                         <div class="card-header">
-                            <h4 class="card-name">Editar producto</h4>
+                            <b class="card-name">Editar producto</b>
+                            <small id="form_addProduct_asteriscos">
+                                Los campos con un * son obligatorios
+                              </small>
                         </div>
                         <div class="card-body">
                             <form
@@ -18,17 +21,22 @@
                                 method="POST" class="row"
                                 enctype="multipart/form-data">
                                 <div class="col-12 col-md-6 mb-3">
-                                    <label for="name" class="form-label">Título</label>
+                                    <label for="name" class="form-label">Nombre</label>
+                                    <small id="form_product_asterisco_name">*</small>
                                     <input type="text"  class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>"
                                         id="name"
                                         placeholder="Título del producto"
                                         name="name" value="<%= product.name %>">
-                                        <small class="text-danger ms-2">
-                                            <%= locals.errors && (errors.name && errors.name.msg) %>
+                                        <small hidden id="product_form_name" class="text-danger ms-2">
+                                            * El nombre es obligatorio
                                           </small>
+                                        <small id="name_error" class="text-danger ms-2">
+                                            <%= locals.errors && (errors.name && errors.name.msg) %>
+                                        </small>
                                 </div>
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="category" class="form-label">Categoría</label>
+                                    <small id="form_edit_product_tilde"> ✓</small>
                                     <select class="form-select" aria-label="Default select example" name="category" id="category">
                                         <% categories.forEach(category_i=> { %>
                                             <option <%=category_i.name==product.product_category.name?'selected':'' %> value="<%= category_i.name%>">
@@ -39,31 +47,41 @@
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label for="price" class="form-label">Precio</label>
+                                    <small id="form_product_asterisco_price">*</small>
                                     <input type="number" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
                                         id="price" name="price"
                                         value="<%= Math.trunc(product.price) %>">
-                                        <small class="text-danger ms-2">
-                                            <%= locals.errors && (errors.price && errors.price.msg) %>
+                                        <small hidden id="product_form_price" class="text-danger ms-2">
+                                            * El precio es obligatorio
                                           </small>
+                                        <small id="price_error"class="text-danger ms-2">
+                                            <%= locals.errors && (errors.price && errors.price.msg) %>
+                                        </small>
                       
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
-                                    <label for="discount" class="form-label">Descuento</label>
+                                    <label for="discount" class="form-label">Descuento en %</label>
+                                    <small id="form_product_asterisco_discount"></small>
                                     <input type="number" class="form-control"
                                         id="discount" name="discount"
                                         value="<%= product.discount %>">
+                                        <small hidden id="product_form_discount" class="text-danger ms-2">
+                                            * 
+                                        </small>
                                 </div>
-
                                 <div class="col-12 mb-3">
                                     <label for="description" class="form-label">Descripción</label>
-                                    <textarea name="description"
-                                        id="description"  class="form-control  <%= locals.errors && (errors.description && 'is-invalid') %>"
-                                        style="resize: none;"><%= product.description %></textarea>
-                                        <small class="text-danger ms-2">
-                                            <%= locals.errors && (errors.description && errors.description.msg) %>
-                                          </small>
+                                    <small id="form_product_asterisco_description">*</small>
+                                    <textarea name="description" id="description" 
+                                      class="form-control  <%= locals.errors && (errors.description && 'is-invalid') %>"
+                                      style="resize: none;"><%= product.description %></textarea>
+                                    <small hidden id="product_form_description" class="text-danger ms-2">
+                                        * La descripción es obligatoria
+                                    </small>
+                                    <small id="description_error" class="text-danger ms-2">
+                                        <%= locals.errors && (errors.description && errors.description.msg) %>
+                                    </small>
                                 </div>
-                                
                                 <div id="image_product_edit" class="col-12 col-lg-3 col-md-3 col-sm-3 d-flex">
                                     <% product.product_image.forEach(image=> { %>
                                     <img
@@ -71,17 +89,12 @@
                                         alt>
                                     <% }) %>
                                 </div>
-                                <div
-                                    class="col-12 d-flex justify-content-end gap-2 mb-3">
-                                    <label for="image" class="btn btn-secondary">Imagen
-                                        principal</label>
-                                    <input type="file" name="image" id="image"
-                                        hidden />
-                                    <label for="images"
-                                        class="btn btn-secondary">Imágenes</label>
-                                    <input type="file" multiple name="images"
-                                        id="images" hidden />
-                                    <button class="btn btn-dark">Guardar cambios</button>
+                                <div class="col-12 col-md-6 sm-12">
+                                    <label for="form_images" class="form-label">Agregar Imagenes</label>
+                                    <input type="file" multiple class="form-control" name="images" id="form_images"/>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button id="button_product_success" type="submit" class="btn btn-dark ">Guardar cambios</button>
                                 </div>
                             </form>
                         </div>
@@ -92,6 +105,7 @@
         </main>
         <%- include('partials/footer') %>
         <%- include('partials/scripts') %>
+        <script src="/js/productValidatorFront.js"></script>
     </body>
 
 </html>

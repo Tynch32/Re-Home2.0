@@ -12,7 +12,12 @@
   --headerMenus: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(74, 74, 74) 100%);
   --footerGradiente: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
   --cookieGradiente: linear-gradient(to top,rgb(26, 26, 26) 0%,#303030  100%);
+}
 
+.form-control:focus {
+  border: 1px solid var(--viñaDelMar);
+  background-color: #fafafa;
+  box-shadow: none;
 }
 
 * {
