@@ -29,7 +29,7 @@ let validarCampo=(campo,nombre)=>{
                 validacionIncorrecta(campo)
             }
         }else{
-            if(!(/^[A-Za-z]+$/.test($(campo.id).value.trim()))){
+            if(!(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/.test($(campo.id).value.trim()))){
                 $(`register_form_${campo.id}`).innerText = `* El ${nombre} debe tener solo letras`
                 $(`register_form_${campo.id}`).hidden = false;
                 validacionIncorrecta(campo)
