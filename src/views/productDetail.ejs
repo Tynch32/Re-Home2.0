@@ -15,7 +15,7 @@
 						<div class="product_detail_image_box">
 							<div class="product_detail_image">
 								<img id="main-image"
-								src="/img/products/<%= product.product_image[0].file || 'default-image.png' %>"
+								src="/img/products/<%= product.product_image.length>0 ? product.product_image[0].file :"default-image.png" %>"
 								class="img-fluid  animate__animated animate__flipInX" alt="...">
 							</div>
 							<div class="product_detail_image_navigation_box">
@@ -23,21 +23,21 @@
 									<ul class="pagination">
 										<li class="page-item">
 											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
-												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[0].file%>')">
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[0].file :`default-image.png`%>')">
 												<span aria-hidden="true">&laquo;</span>
 											</div>
 										</li>
 										<% product.product_image.forEach((image,id)=> {%>
 										<li class="page-item">
 											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
-												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[id].file%>')">
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[id].file :`default-image.png`%>')">
 												<%= id+1 %>
 											</div>
 										</li>
 										<%}); %>
 										<li class="page-item">
 											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
-												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%=product.product_image[product.product_image.length-1].file%>')">
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[product.product_image.length-1].file :`default-image.png`%>')">
 												<span aria-hidden="true">&raquo;</span>
 											</div>
 										</li>

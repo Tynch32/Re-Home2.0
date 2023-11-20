@@ -18,10 +18,10 @@ const productsEditValidator = require("../validations/productsEditValidator");
 router.get("/detail/:id", detail);
 //Create product
 router.get("/add",adminCheck, add);
-router.post("/add",upload.fields([{name: "image"},{name: "images"}]),productAddValidator,create);
+router.post("/add",upload.fields([{name: "image"}]),productAddValidator,create);
 //Update product
 router.get("/edit/:id",adminCheck, edit);
-router.put("/update/:id",upload.fields([{name: "image"},{name: "images"}]),productsEditValidator,update);
+router.put("/update/:id",upload.fields([{name: "image"}]),productsEditValidator,update);
 //Delete product
 router.delete("/remove/:id",adminCheck, remove);
 //Search product

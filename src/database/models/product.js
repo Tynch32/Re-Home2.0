@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false
       },
       price:{
-        type: dataTypes.BIGINT(10),
+        type: dataTypes.BIGINT(20),
         allowNull: false,
       },
       discount:{

@@ -90,14 +90,17 @@
                                     <% }) %>
                                 </div>
                                 <div class="col-12 col-md-6 sm-12">
-                                    <label for="form_images" class="form-label">Agregar Imagenes</label>
-                                    <input type="file" multiple class="form-control" name="images" accept=".JPG, .JPEG, .PNG, .GIF, .WEBP" id="form_images"/>
-                                    <small hidden id="product_form_images" class="text-danger ms-2">
+                                    <label for="form_image" class="form-label">Imagenes</label>
+                                    <small id="form_product_asterisco_image">
+                                        *
+                                      </small>
+                                      <input type="file" multiple class="form-control" name="image" accept=".JPG, .JPEG, .PNG, .GIF, .WEBP" id="form_image"/>
+                                      <small hidden id="product_form_image" class="text-danger ms-2">
                                         &nbsp;&nbsp;* Solo se permiten formatos .jpg .jpeg .png .gif
                                       </small>
-                                    <small id="images_error" class="text-danger ms-2">
+                                      <small id="image_error" class="text-danger ms-2">
                                         <%= locals.errors && (errors.image && errors.image.msg) %>
-                                    </small>
+                                      </small>
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button id="button_product_success" type="submit" class="btn btn-dark ">Guardar cambios</button>

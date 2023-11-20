@@ -59,7 +59,7 @@
                                             <div class="card mb-3">
                                                 <div class="row g-0">
                                                     <div class="col-md-6">
-                                                        <img src="/img/products/<%= product.product_image[0].file || 'img-pdto-1.jpg'%>"
+                                                        <img src="/img/products/<%= product.product_image.length>0 ? product.product_image[0].file :"default-image.png" %>"
                                                             class="img-fluid" alt="...">
                                                     </div>
                                                     <div class="col-md-6">

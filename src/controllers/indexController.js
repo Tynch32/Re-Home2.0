@@ -17,7 +17,10 @@ module.exports = {
               categories.push(product.product_category)
               nombresSinRepetir.push(product.product_category.name)}
             });
-          categories.sort();
+          categories.sort((a,b)=>{
+            return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+          }
+          );
       return res.render("index", {products,cookie,categories,addPuntos});
     }).catch((errors)=>console.log(errors));
   },

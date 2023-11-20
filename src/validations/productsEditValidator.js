@@ -7,9 +7,9 @@ module.exports = [
     .bail()
     .isLength({
       min: 5,
-      max: 50,
+      max: 70,
     })
-    .withMessage("* Debe tener entre 5 y 50 caracteres"),
+    .withMessage("* Debe tener entre 5 y 70 caracteres"),
   check("price")
     .notEmpty()
     .withMessage("* El precio es obligatorio")

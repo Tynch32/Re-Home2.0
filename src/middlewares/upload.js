@@ -1,5 +1,6 @@
 const multer = require('multer');
 const path = require('path');
+const {hashSync} = require ('bcryptjs')
 
 const storage = multer.diskStorage({
     
@@ -7,7 +8,9 @@ const storage = multer.diskStorage({
         return cb(null, './public/img/products')
     },
     filename : (req, file, cb) => {
-        return cb(null, `${Date.now()}_products_${path.extname(file.originalname)}`)
+        let nombre = hashSync(file.originalname,6).toString()
+        nombre = nombre.replace(/[\/\\]/g, '');
+        return cb(null, `${nombre}${path.extname(file.originalname)}`)
     }
 });
 

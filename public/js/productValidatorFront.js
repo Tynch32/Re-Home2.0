@@ -81,10 +81,10 @@ let validarDescuento=()=>{
     }
 }
     $('name').addEventListener('blur',function(){
-        validarCampo(this,'nombre',5,20);
+        validarCampo(this,'nombre',5,70);
     })
     $('name').addEventListener('keyup',function(){
-        validarCampo(this,'nombre',5,20);
+        validarCampo(this,'nombre',5,70);
     })
     $('description').addEventListener('blur',function(){
         validarCampo(this,'descripcion',20,500);
@@ -110,7 +110,11 @@ let validarDescuento=()=>{
     })
 
 let validacionImagen=(image)=>{
-    if(image.files.length>0 && validarFormatoImagen(image.files[0].name)){
+    let todasLasImagenesSonValidas = true;
+    for (let i = 0; i < image.files.length; i++) {
+        todasLasImagenesSonValidas=todasLasImagenesSonValidas&&validarFormatoImagen(image.files[i].name)
+    }
+    if(image.files.length>0 && todasLasImagenesSonValidas && validarFormatoImagen(image.files[0].name)){
         $(`form_product_asterisco_image`).innerText=' ✓';
         $(`form_product_asterisco_image`).style.color='#39b54a';
         $(`form_product_asterisco_image`).style.fontWeight='bold';
@@ -135,32 +139,9 @@ let validarFormatoImagen=(archivo)=>{
     return extensionesValidas.includes(extension);
 }
 
-let validacionImagenes=(image)=>{
-    let todasLasImagenesSonValidas = true;
-    console.log(image.files);
-
-    for (let i = 0; i < image.files.length; i++) {
-        todasLasImagenesSonValidas=todasLasImagenesSonValidas&&validarFormatoImagen(image.files[i].name)
-    }
-
-    if(todasLasImagenesSonValidas){
-        $('form_images').style.border='2px solid #39b54a'
-        $(`product_form_images`).hidden=true;
-        return true;
-    }else{
-        $('form_images').style.border='2px solid red'
-        $(`product_form_images`).hidden=false;
-        return false;
-    }
-}
     if($('form_image')){
         $('form_image').addEventListener('blur',function(){
             validacionImagen(this);
         })
     }
-
-    $('form_images').addEventListener('blur',function(){
-        validacionImagenes(this);
-    })
-
     

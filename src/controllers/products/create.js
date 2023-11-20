@@ -4,7 +4,7 @@ const db = require("../../database/models");
 
 module.exports = async (req,res) => {
     const errors = validationResult(req);
-    
+    console.log(req.files.image);
     if(errors.isEmpty()){
         await db.Product.create({
             name: req.body.name,
@@ -17,12 +17,8 @@ module.exports = async (req,res) => {
             attributes: [[db.Sequelize.fn('max', db.Sequelize.col('id')), 'max_id']],
             }).then(result => {
             let maxId = result.get('max_id');
-                db.Images_product.create({
-                    file: req.files.image[0].filename,
-                    product_id: maxId
-                })
-                if(req.files.images) {
-                    req.files.images.forEach(async file => {
+                if(req.files.image) {
+                    req.files.image.forEach(async file => {
                         await db.Images_product.create({
                             file: file.filename,
                             product_id: maxId
@@ -32,10 +28,9 @@ module.exports = async (req,res) => {
                 return res.redirect('/admin')
             })
     }else{
-        (req.files.image && existsSync(`./public/img/products/${req.files.image[0].filename }`)) && unlinkSync(`./public/img/products/${req.files.image[0].filename }`);
 
-        if(req.files.images) {
-            req.files.images.forEach(file => {
+        if(req.files.image) {
+            req.files.image.forEach(file => {
                 existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
             })
         }
