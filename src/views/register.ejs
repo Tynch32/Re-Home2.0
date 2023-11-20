@@ -109,10 +109,15 @@
                             </small>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="form_image" class="form-label">Imagen principal</label><small id="form_register_asterisco_image">
+                            <label for="form_image" class="form-label">Foto de perfil</label><small id="form_register_asterisco_image">
                                 *
                             </small>
-                            <input type="file" class="form-control" name="image" id="form_image"/>
+                            <input type="file" class="form-control" name="image" accept=".JPG, .JPEG, .PNG, .GIF" id="form_image"/>
+                            <small hidden id="register_form_image" class="text-danger ms-2">
+                                * La foto de perfil es obligatoria 
+                                <br>
+                                &nbsp;&nbsp;* Solo se permiten formatos .jpg .jpeg .png .gif
+                            </small>
                             <small id="image_error" class="text-danger ms-2">
                                 <%= locals.errors && (errors.image && errors.image.msg) %>
                             </small>

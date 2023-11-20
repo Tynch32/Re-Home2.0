@@ -110,11 +110,12 @@ let validarDescuento=()=>{
     })
 
 let validacionImagen=(image)=>{
-    if(image.files.length>0){
+    if(image.files.length>0 && validarFormatoImagen(image.files[0].name)){
         $(`form_product_asterisco_image`).innerText=' ✓';
         $(`form_product_asterisco_image`).style.color='#39b54a';
         $(`form_product_asterisco_image`).style.fontWeight='bold';
-        $('form_image').style.border='2px solid #39b54a'
+        $('form_image').style.border='2px solid #39b54a';
+        $(`product_form_image`).hidden=true;
         $(`image_error`).hidden=true;
         return true;
     }else{
@@ -123,11 +124,43 @@ let validacionImagen=(image)=>{
         $(`form_product_asterisco_image`).style.fontWeight='bold';
         $('form_image').style.border='2px solid red'
         $(`form_product_asterisco_image`).hidden=false;
+        $(`product_form_image`).hidden=false;
         return false;
     }
 }
-    $('form_image').addEventListener('blur',function(){
-        validacionImagen(this);
-        toggleEnabledButton();
+let validarFormatoImagen=(archivo)=>{
+    let inputArchivo = archivo;
+    let extension = inputArchivo.split('.').pop().toLowerCase();
+    let extensionesValidas = ['jpg','jpeg','png','gif'];
+    return extensionesValidas.includes(extension);
+}
+
+let validacionImagenes=(image)=>{
+    let todasLasImagenesSonValidas = true;
+    console.log(image.files);
+
+    for (let i = 0; i < image.files.length; i++) {
+        todasLasImagenesSonValidas=todasLasImagenesSonValidas&&validarFormatoImagen(image.files[i].name)
+    }
+
+    if(todasLasImagenesSonValidas){
+        $('form_images').style.border='2px solid #39b54a'
+        $(`product_form_images`).hidden=true;
+        return true;
+    }else{
+        $('form_images').style.border='2px solid red'
+        $(`product_form_images`).hidden=false;
+        return false;
+    }
+}
+    if($('form_image')){
+        $('form_image').addEventListener('blur',function(){
+            validacionImagen(this);
+        })
+    }
+
+    $('form_images').addEventListener('blur',function(){
+        validacionImagenes(this);
     })
+
     

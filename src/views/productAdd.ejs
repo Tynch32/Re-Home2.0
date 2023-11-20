@@ -89,9 +89,11 @@
                     <label for="form_image" class="form-label">Imagen principal</label><small id="form_product_asterisco_image">
                       *
                     </small>
-                    <input type="file" class="form-control" name="image" id="form_image"/>
+                    <input type="file" class="form-control" name="image" accept=".JPG, .JPEG, .PNG, .GIF" id="form_image"/>
                     <small hidden id="product_form_image" class="text-danger ms-2">
                       * La imagen principal es obligatoria
+                      <br>
+                                &nbsp;&nbsp;* Solo se permiten formatos .jpg .jpeg .png .gif
                     </small>
                     <small id="image_error" class="text-danger ms-2">
                       <%= locals.errors && (errors.image && errors.image.msg) %>
@@ -99,7 +101,13 @@
                   </div>
                   <div class="col-12 col-md-6 sm-12">
                     <label for="form_images" class="form-label">Imagenes secundarias</label>
-                    <input type="file" multiple class="form-control" name="images" id="form_images"/>
+                    <input type="file" multiple class="form-control" name="images" accept=".JPG, .JPEG, .PNG, .GIF" id="form_images"/>
+                    <small hidden id="product_form_images" class="text-danger ms-2">
+                      &nbsp;&nbsp;* Solo se permiten formatos .jpg .jpeg .png .gif
+                    </small>
+                    <small id="images_error" class="text-danger ms-2">
+                      <%= locals.errors && (errors.image && errors.image.msg) %>
+                    </small>
                   </div>
                   <div class="col-12 col-md-12 sm-12 d-flex justify-content-end">
                     <button id="button_product_success" type="submit" class="btn btn-dark">Guardar cambios</button>
