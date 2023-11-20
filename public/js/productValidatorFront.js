@@ -131,7 +131,7 @@ let validacionImagen=(image)=>{
 let validarFormatoImagen=(archivo)=>{
     let inputArchivo = archivo;
     let extension = inputArchivo.split('.').pop().toLowerCase();
-    let extensionesValidas = ['jpg','jpeg','png','gif'];
+    let extensionesValidas = ['jpg','jpeg','png','gif','webp'];
     return extensionesValidas.includes(extension);
 }
 

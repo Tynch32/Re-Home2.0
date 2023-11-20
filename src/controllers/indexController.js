@@ -17,6 +17,7 @@ module.exports = {
               categories.push(product.product_category)
               nombresSinRepetir.push(product.product_category.name)}
             });
+          categories.sort();
       return res.render("index", {products,cookie,categories,addPuntos});
     }).catch((errors)=>console.log(errors));
   },
@@ -26,7 +27,9 @@ module.exports = {
     }).then((products) => {
         db.User.findAll({include:['roleId']})
         .then((users) => {
-          db.Category.findAll({include:['product_category']})
+          db.Category.findAll({
+            order:[['name', 'ASC']],
+            include:['product_category']})
           .then((categories) => {
             return res.render("admin", {products,users,categories,moment,addPuntos});
           }).catch((errors)=>console.log(errors));
