@@ -6,6 +6,7 @@
 		<%- include('partials/header') %>
 			<main class="home_main">
 				<div class="container products-wrapper">
+					<%- include('partials/filterCategory',{categories})%>
 					<div class="row d-inline-flex p-2">
 						<div class="col-12">
 							<h2 class="products-title">Productos de la categoría: "<%=id%>"</h2>
