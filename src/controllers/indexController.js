@@ -5,7 +5,7 @@ const addPuntos = require('../middlewares/addPuntos')
 module.exports = {
   index: (req, res) => {
     db.Product.findAll({
-      order:[['name', 'ASC']],
+      order:[['category_id', 'ASC']],
       include:['product_image','product_category'],
     })
       .then((products) => {
