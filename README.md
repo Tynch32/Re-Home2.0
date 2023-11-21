@@ -12,3 +12,5 @@ Descripción: El sitio ofrece productos para la construcción y re modelaje del 
 Publico al que apunta: Es a cualquier persona que se dedique a la construccion, asi como tambien a cualquier persona que quiera remodelar o hacer algun cambio en su hogar, desde colocar una estanteria hasta construir un cobertizo.
 
 (Martin) Sitios de referencia por los productos a los que se apunta: https://www.menards.com/main/home.html https://www.easy.com.ar/ https://www.sodimac.com.ar/sodimac-ar/ https://ar.blackanddecker.global/ https://www.diy.com/
+
+***Se requiere ejecutar el archivo Re-Hogar.sql en MySQL workbench para ver el proyecto completo***
