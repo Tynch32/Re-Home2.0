@@ -102,7 +102,11 @@
   border: 0;
   background: var(--botonesDorados);
 }
-
+@media (max-width:1024px){
+  .product_detail_buyinfo_box{
+    width: 100%;
+  }
+}
 @media (max-width:750px){
   .product_detail_container{
     flex-direction: column;
