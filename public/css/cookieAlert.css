@@ -1,5 +1,6 @@
 #div_cookies {
     display: block;
+    z-index: 101;
 }
 .footer_cookie{
     display:flex;
