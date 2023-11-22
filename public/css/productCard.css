@@ -68,16 +68,19 @@
     color: black;
     font-size: 25px;
     font-weight: 600;
+    
 }
 .productCard_discount{
     color: var(--verde);
     font-size: 20px;
     font-weight: 600;
+    font-family: sans-serif;
 }
 .productCard_name{
     padding: 0px 5px 5px 10px;
     color: black;
     overflow: hidden;
+    font-family: sans-serif;
 }
 #admin_tableProduct_price{
     text-decoration: line-through;

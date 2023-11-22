@@ -9,6 +9,12 @@
         </div>
       </a>
     </div>
+    <div id="menu_busqueda_mobile" class="header_searchbar">
+      <form action="/products/search" method="GET" class="search-form">
+        <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+        <button class="header_searchbar_button" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
     <div class="header_menu_desplegado">
       <nav class="home_header_nav-menu">
       <ul class="header_ul">
@@ -50,7 +56,7 @@
               <h3 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h3>
               <button id="button_menu_desplegable" type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
             </div>
-            <div class="offcanvas-body">
+            <div id="header_botones_desplegados" class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
                   <a href="/"><b>Home <i class="fa-solid fa-house"></i></b></a>
