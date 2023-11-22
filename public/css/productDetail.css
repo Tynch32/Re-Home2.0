@@ -49,6 +49,7 @@
   display: flex;
   flex-direction: column;
   padding: 0px 15px;
+  width: 30%;
 }
 .product_detail_buyinfo_title{
   font-weight: 500;
@@ -74,11 +75,11 @@
 }
 .medio_de_pago{
   display: flex;
-  align-items: center;
 }
 .medio_de_pago p {
   font-weight: 500;
   font-size: 1.2em;
+  border-bottom: 1px solid black;
 }
 .medio_de_pago i {
   background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
