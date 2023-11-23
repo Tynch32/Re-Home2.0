@@ -7,7 +7,6 @@ module.exports = async (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     let addressId=0;
-    let shoppingCartId=0;
     let imageId=0;
     await db.Address.create({
       city:req.body.city.trim(),
@@ -15,16 +14,14 @@ module.exports = async (req, res) => {
       country:req.body.country.trim(),
       address:req.body.address
     }).then(address=>addressId=address.id).catch(error=>console.log(error));
-    await db.Shopping_cart.create().then(shoppingCart=>shoppingCartId=shoppingCart.id).catch(error=>console.log(error));
     await db.Image_user.create({file:req.file.filename}).then(image=>imageId=image.id).catch(error=>console.log(error));
-    db.User.create({
+    await db.User.create({
       name: req.body.name.trim(),
       surname: req.body.surname.trim(),
       email: req.body.email.trim(),
       password: hashSync(req.body.password,10),
       role_id: 1,
       address_id: addressId,
-      shoppingcart_id : shoppingCartId,
       image_id: imageId
     }).then(()=>{
       return res.redirect("/users/login");

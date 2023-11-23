@@ -27,10 +27,6 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.BIGINT(10).UNSIGNED,
         allowNull: false
       },
-      shoppingcart_id:{
-        type: dataTypes.BIGINT(10).UNSIGNED,
-        allowNull: false
-      },
       role_id:{
         type: dataTypes.BIGINT(10).UNSIGNED,
         allowNull: false
@@ -53,9 +49,9 @@ module.exports = (sequelize, dataTypes) => {
         as: 'imageId',
         foreignKey: 'image_id'
       }),
-      User.belongsTo(models.Shopping_cart,{
-        as: 'shoppingcartId',
-        foreignKey: 'shoppingcart_id'
+      User.hasOne(models.Order,{
+        as: 'order_user',
+        foreignKey: 'user_id'
       }),
       User.belongsTo(models.Address,{
         as: 'addressId',

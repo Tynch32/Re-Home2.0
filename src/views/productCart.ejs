@@ -168,7 +168,6 @@
                                     Cancelar
                                   </button>
                                     <form action="/products/removeToCart/<%= product.product.id %>" method="POST">
-                                        <input hidden type="text" name="var1" value="<%= locals.userLogin.shoppingcartId %>">
                                         <button type="submit" class="btn btn-danger">
                                           Sí, Eliminar <i class="fa-solid fa-trash-can"></i>
                                         </button>

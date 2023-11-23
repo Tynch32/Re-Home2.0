@@ -3,11 +3,11 @@ const db = require("../../database/models");
 module.exports = (req, res) => {
   db.Order.destroy({ where: {
     product_id: req.params.id,
-    shoppingcart_id: req.body.var1
+    user_id: req.session.userLogin.shoppingcartId
   }})
   .then(async ()=>{
     let cant_Items=0;
-    await db.Order.findAll({where: {shoppingcart_id: req.session.userLogin.shoppingcartId},
+    await db.Order.findAll({where: {user_id: req.session.userLogin.shoppingcartId},
       attributes:['amount']}).then(products=>{
           products.forEach(product => {
               cant_Items+=product.amount

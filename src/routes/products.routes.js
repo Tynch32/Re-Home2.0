@@ -27,6 +27,8 @@ router.delete("/remove/:id",adminCheck, remove);
 //Search product
 router.get('/search',search);
 router.get('/searchCategory/:id',searchCategory);
+
+
 //Add product to cart
 router.post('/addToCart/:id',cookieCheck,userCheck,addToCart);
 //Remove product to cart

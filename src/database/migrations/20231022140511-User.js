@@ -43,15 +43,6 @@ module.exports = {
         },
         allowNull: false
       },
-      shoppingcart_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model:{
-            tableName: "shopping_cart"
-          }
-        },
-        allowNull: false
-      },
       image_id: {
         type: Sequelize.INTEGER,
         references: {

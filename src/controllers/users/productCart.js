@@ -4,7 +4,7 @@ const addPuntos = require('../../middlewares/addPuntos')
 module.exports = async (req,res) => {
     db.Order.findAll({
       where: {
-        shoppingcart_id: req.params.id
+        user_id: req.session.userLogin.shoppingcartId
       },
       include: [
         {
@@ -24,7 +24,7 @@ module.exports = async (req,res) => {
             total+= ((producto.product.price - (producto.product.price * producto.product.discount / 100))*producto.amount);
         });
         return res.render('productCart',{carrito,total,addPuntos})
-    })
+    }).catch(error=>console.log(error))
     
 
 }

@@ -123,10 +123,9 @@
 						</div>
 						<div class="product_detail_buyinfo_button">
 							<form id="formulario_button_agregar" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
-								<input hidden type="text" name="var1" value="<%= locals.userLogin?locals.userLogin.shoppingcartId:0 %>">
-									<button id="button_agregar_producto" type="submit" class="btn btn-success">
-										Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i>
-									</button>
+								<button id="button_agregar_producto" type="submit" class="btn btn-success">
+									Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i>
+								</button>
 							</form>
 						</div>
 					</div>

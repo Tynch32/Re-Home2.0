@@ -21,10 +21,10 @@ module.exports = (req, res) => {
     }
     db.User.update(datosPersonales,{
       where:{
-        id:req.params.id,
+        id:req.session.userLogin.id,
       }
     }).catch(error=>console.log(error));
-    db.User.findByPk(req.params.id).then(user=>{
+    db.User.findByPk(req.session.userLogin.id).then(user=>{
       db.Address.update(direccionNueva,{
           where:{
             id:user.address_id

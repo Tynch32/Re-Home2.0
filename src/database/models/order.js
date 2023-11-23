@@ -11,6 +11,14 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.BIGINT(10),
       allowNull: false,
     },
+    product_id: {
+      type: dataTypes.BIGINT(10),
+      allowNull: false
+    },
+    user_id: {
+      type: dataTypes.BIGINT(10),
+      allowNull: false
+    }
   };
   let config = {
     timestamps: true,
@@ -25,9 +33,9 @@ module.exports = (sequelize, dataTypes) => {
       as: "product",
       foreignKey: "product_id",
     })
-    Order.belongsTo(models.Shopping_cart, {
-      as: "shopping_cart",
-      foreignKey: "shoppingcart_id",
+    Order.belongsTo(models.User, {
+      as: "user",
+      foreignKey: "user_id",
     })
   };
   return Order;

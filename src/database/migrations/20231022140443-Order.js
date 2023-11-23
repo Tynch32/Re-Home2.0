@@ -21,11 +21,11 @@ module.exports = {
         type:Sequelize.INTEGER,
         default:0
       },
-      shoppingcart_id: {
+      user_id: {
         type: Sequelize.INTEGER,
         references: {
           model:{
-            tableName: "shopping_cart"
+            tableName: "users"
           }
         },
         allowNull: false
