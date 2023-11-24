@@ -91,6 +91,7 @@
 }
 .medio_de_pago i {
   background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
+  background-clip:text;
   -webkit-background-clip: text;
   color: transparent;
   font-size: 1.8em;
