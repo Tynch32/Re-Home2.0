@@ -8,6 +8,7 @@
   --light-gray: #ebebeb;
   --verde: #39b54a;
   --botonesDorados: linear-gradient(to right, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%);
+  --botonesDoradosHorizontal: linear-gradient(to top, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%);
   --headerGradiente: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
   --headerMenus: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(74, 74, 74) 100%);
   --footerGradiente: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);

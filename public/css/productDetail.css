@@ -43,7 +43,13 @@
   border: 1px solid var(--light-gray);
   border-radius: 5px;
 }
-
+#product_detail_cambiarFoto{
+  color:white;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+  font-weight: bold;
+  background: var(--botonesDoradosHorizontal);
+  border: 1px solid black;
+}
 /*Medios de Pago*/
 
 .product_detail_buyinfo_box{
@@ -103,6 +109,7 @@
 #button_agregar_producto{
   border: 0;
   background: var(--botonesDorados);
+  text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 @media (max-width:1024px){
   .product_detail_buyinfo_box{

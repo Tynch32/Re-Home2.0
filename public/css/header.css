@@ -64,7 +64,7 @@
     font-weight: 700;
     margin-bottom: 0;
     background: var(--botonesDorados);
-    
+    text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 .home_header_nav-menu ul li a{
   width: 100%;

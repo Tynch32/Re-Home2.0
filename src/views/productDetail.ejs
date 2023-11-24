@@ -22,21 +22,21 @@
 								<nav aria-label="Page navigation example">
 									<ul class="pagination">
 										<li class="page-item">
-											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
+											<div id="product_detail_cambiarFoto" class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
 												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[0].file :`default-image.png`%>')">
 												<span aria-hidden="true">&laquo;</span>
 											</div>
 										</li>
 										<% product.product_image.forEach((image,id)=> {%>
 										<li class="page-item">
-											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
+											<div id="product_detail_cambiarFoto" class="page-link animate__animated animate__fadeIn animate__delay-<%= id%>s"
 												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[id].file :`default-image.png`%>')">
 												<%= id+1 %>
 											</div>
 										</li>
 										<%}); %>
 										<li class="page-item">
-											<div class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
+											<div id="product_detail_cambiarFoto" class="page-link animate__animated animate__fadeIn animate__delay-<%= product.id%>s"
 												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[product.product_image.length-1].file :`default-image.png`%>')">
 												<span aria-hidden="true">&raquo;</span>
 											</div>
@@ -120,6 +120,8 @@
 									</div>
 								</li>
 							</ul>
+						</div>
+						<div>
 						</div>
 						<div class="product_detail_buyinfo_button">
 							<form id="formulario_button_agregar" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
