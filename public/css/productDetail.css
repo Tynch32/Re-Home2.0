@@ -43,12 +43,13 @@
   border: 1px solid var(--light-gray);
   border-radius: 5px;
 }
-#product_detail_cambiarFoto{
+#product_detail_buttons div{
   color:white;
   text-shadow: 0 0 10px rgb(0, 0, 0);
   font-weight: bold;
   background: var(--botonesDoradosHorizontal);
-  border: 1px solid black;
+  border: 1px solid #ffffff36;
+  cursor: pointer;
 }
 /*Medios de Pago*/
 
@@ -87,7 +88,7 @@
 .medio_de_pago p {
   font-weight: 500;
   font-size: 1.2em;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #00000021;
 }
 .medio_de_pago i {
   background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
@@ -112,6 +113,9 @@
   background: var(--botonesDorados);
   text-shadow: 0 0 10px rgb(0, 0, 0);
 }
+.product_detail_image_navigation_box{
+  padding: 2px 0px;
+}
 @media (max-width:1024px){
   .product_detail_buyinfo_box{
     width: 100%;
@@ -120,7 +124,12 @@
 @media (max-width:750px){
   .product_detail_container{
     flex-direction: column;
-    width: 85vw;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .product_detail_description_box{
+    height: 200px;
   }
   .product_detail_buyinfo_title{
     margin: 0;
