@@ -5,16 +5,18 @@ let validarEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 let validacionCorrecta=(campo)=>{
     $(`form_register_asterisco_${campo.id}`).innerText=' ✓';
-    $(`form_register_asterisco_${campo.id}`).style.color='#39b54a';
+    $(`form_register_asterisco_${campo.id}`).style.color='gold';
     $(`form_register_asterisco_${campo.id}`).style.fontWeight='bold';
-    $(campo.id).style.border='2px solid #39b54a'
+    $(campo.id).style.border='2px solid gold';
+    $(campo.id).style.fontWeight="bold";
 }
 let validacionIncorrecta=(campo)=>{
-    $(`form_register_asterisco_${campo.id}`).innerText=' *';
+    $(`form_register_asterisco_${campo.id}`).innerText=' X';
     $(`form_register_asterisco_${campo.id}`).style.color='red';
     $(`form_register_asterisco_${campo.id}`).style.fontWeight='bold';
     $(campo.id).style.border='2px solid red'
     $(`form_register_asterisco_${campo.id}`).hidden=false;
+    $(campo.id).style.fontWeight="normal";
 }
 let coincidenContraseñas=()=>{
     if(($('password').value)==($('password2').value)){
@@ -76,7 +78,7 @@ let validarCampoContraseña=(campo)=>{
 let toggleEnabledButton = () => {
     if(estanCompletosLosCampos()){
         $('button_register_success').disabled=false;
-        $('button_register_success').style.background='linear-gradient(to right, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%)';
+        $('button_register_success').style.background='linear-gradient(to top, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%)';
         $('button_register_success').style.border='gold';
     }else{
         $('button_register_success').disabled=true;
@@ -111,37 +113,47 @@ let validarContraseña = (password) =>{
     let validacion=0;
     if(password.value.length>=8){
         $('password_validation_1').style.color='#39b54a';
+        $('password_validation_1').style.fontWeight="bold";
         validacion++
     }else{
         $('password_validation_1').style.color='red';
+        $('password_validation_1').style.fontWeight="normal";
         validacion--
     }
     if(/[A-Z]/.test(password.value)){
         $('password_validation_2').style.color='#39b54a';
+        $('password_validation_2').style.fontWeight="bold";
         validacion++
     }else{
         $('password_validation_2').style.color='red';
+        $('password_validation_2').style.fontWeight="normal";
         validacion--
     }
     if(/[a-z]/.test(password.value)){
         $('password_validation_3').style.color='#39b54a';
+        $('password_validation_3').style.fontWeight="bold";
         validacion++
     }else{
         $('password_validation_3').style.color='red';
+        $('password_validation_3').style.fontWeight="normal";
         validacion--
     }
     if(/\d/.test(password.value)){
         $('password_validation_4').style.color='#39b54a';
+        $('password_validation_4').style.fontWeight="bold";
         validacion++
     }else{
         $('password_validation_4').style.color='red';
+        $('password_validation_4').style.fontWeight="normal";
         validacion--
     }
     if(/[!@#$%^&*(),.?":{}|<>]/.test(password.value)){
         $('password_validation_5').style.color='#39b54a';
+        $('password_validation_5').style.fontWeight="bold";
         validacion++
     }else{
         $('password_validation_5').style.color='red';
+        $('password_validation_5').style.fontWeight="normal";
         validacion--
     }
     if(validacion>=5){

@@ -6,6 +6,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Rol</th>
+                <th scope="col">Cambiar Rol</th>
                 <th scope="col">Fecha de Registro</th>
             </tr>
         </thead>
@@ -23,6 +24,12 @@
                     </td>
                     <td>
                         <b><%= user.roleId.name%></b>
+                    </td>
+                    <td>
+                        <form action="/users/changeRol/<%= user.id %>?_method=PUT" method="POST">
+                            <input type="number" hidden><%=user.role_id%></input>
+                            <button type="submit" class="btn btn-outline-dark"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                        </form>
                     </td>
                     <td>
                         <%= moment(user.created_at).format('DD/MM/YYYY')%>

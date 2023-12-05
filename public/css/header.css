@@ -39,6 +39,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-shadow: 0px 0px 20px rgb(0, 0, 0);
 }
 .header_ul{
   margin: 0;
@@ -71,6 +72,12 @@
   height: 100%;
   align-self: center;
   text-align: center;
+}
+#header_button_1, #header_button_2{
+
+}
+#header_button_3, #header_button_4{
+  
 }
 #header_button_1:hover{
   box-shadow: 0 0 15px rgb(198, 192, 126);
@@ -120,6 +127,7 @@
     flex-direction: column;
     align-content: center;
   }
+  
   .header_menu_desplegable li{
     display:flex;
     padding-bottom: 5px;
@@ -130,6 +138,7 @@
     align-items: center;
     justify-content: space-evenly;
     background: var(--botonesDorados);
+    text-shadow: 0 0 10px rgb(0, 0, 0);
   }
   .header_menu_desplegable a{
     font-size: 20px;
@@ -148,11 +157,12 @@
   }
   #offcanvasNavbar{
     background: var(--headerMenus);
-    color:white
+    color:white;
   }
   #button_menu_desplegable{
     background: var(--botonesDorados);
     border:0;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
   }
   
 }
@@ -176,6 +186,9 @@
   }
   .home_main_top_arrow{
     display: none;
+  }
+  #offcanvasNavbar{
+    width: 80%;
   }
 }
 

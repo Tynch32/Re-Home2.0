@@ -24,8 +24,9 @@
     gap: 3px;
 }
 #button_cookies{
-    background: var(--botonesDorados);
+    background: var(--botonesDoradosHorizontal);
     border:0;
     font-weight: bold;
-    color:black
+    color: white;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
 }

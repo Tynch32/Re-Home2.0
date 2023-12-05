@@ -4,9 +4,9 @@ let $ = id => document.getElementById(id)
 
 let validacionCorrecta=(campo)=>{
     $(`form_register_asterisco_${campo.id}`).innerText=' ✓';
-    $(`form_register_asterisco_${campo.id}`).style.color='#39b54a';
+    $(`form_register_asterisco_${campo.id}`).style.color='gold';
     $(`form_register_asterisco_${campo.id}`).style.fontWeight='bold';
-    $(campo.id).style.border='2px solid #39b54a'
+    $(campo.id).style.border='2px solid gold'
 }
 let validacionIncorrecta=(campo)=>{
     $(`form_register_asterisco_${campo.id}`).innerText=' *';

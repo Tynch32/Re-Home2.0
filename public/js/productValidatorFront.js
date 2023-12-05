@@ -2,9 +2,9 @@ let $ = id => document.getElementById(id)
 
 let validacionCorrecta=(campo)=>{
     $(`form_product_asterisco_${campo.id}`).innerText=' ✓';
-    $(`form_product_asterisco_${campo.id}`).style.color='#39b54a';
+    $(`form_product_asterisco_${campo.id}`).style.color='gold';
     $(`form_product_asterisco_${campo.id}`).style.fontWeight='bold';
-    $(campo.id).style.border='2px solid #39b54a'
+    $(campo.id).style.border='2px solid gold'
 }
 let validacionIncorrecta=(campo)=>{
     $(`form_product_asterisco_${campo.id}`).innerText=' *';
@@ -116,9 +116,9 @@ let validacionImagen=(image)=>{
     }
     if(image.files.length>0 && todasLasImagenesSonValidas && validarFormatoImagen(image.files[0].name)){
         $(`form_product_asterisco_image`).innerText=' ✓';
-        $(`form_product_asterisco_image`).style.color='#39b54a';
+        $(`form_product_asterisco_image`).style.color='gold';
         $(`form_product_asterisco_image`).style.fontWeight='bold';
-        $('form_image').style.border='2px solid #39b54a';
+        $('form_image').style.border='2px solid gold';
         $(`product_form_image`).hidden=true;
         $(`image_error`).hidden=true;
         return true;

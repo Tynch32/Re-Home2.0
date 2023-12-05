@@ -19,7 +19,7 @@ let estanCompletosLosCampos= () =>{
 let toggleEnabledButton = () => {
     if(estanCompletosLosCampos()){
         $('button_login_ingresar').disabled=false;
-        $('button_login_ingresar').style.background='linear-gradient(to right, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%)';
+        $('button_login_ingresar').style.background='linear-gradient(to top, rgb(143, 94, 37) 0%, rgb(198, 192, 126) 50%, rgb(143, 94, 37) 100%)';
         $('button_login_ingresar').style.border='gold';
     }else{
         $('button_login_ingresar').disabled=true;
