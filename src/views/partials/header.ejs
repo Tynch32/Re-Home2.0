@@ -10,7 +10,7 @@
       </a>
     </div>
     <div id="menu_busqueda_mobile" class="header_searchbar">
-      <form action="/products/search" method="GET" class="search-form">
+      <form action="/products/search" method="GET" class="search-form" onsubmit="return validarFormulario()">
         <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
         <button class="header_searchbar_button" type="submit"><i class="fas fa-search"></i></button>
       </form>
@@ -20,7 +20,7 @@
       <ul class="header_ul">
         <li id="header_button_1"><a href="/">home <i class="fa-solid fa-house"></i></a></li>
         <div id="header_button_2" class="header_searchbar">
-          <form action="/products/search" method="GET" class="search-form">
+          <form action="/products/search" method="GET" class="search-form" onsubmit="return validarFormulario()">
             <input id="searchbar_header" type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
             <button class="header_searchbar_button" type="submit"><i class="fas fa-search"></i></button>
           </form>
@@ -80,7 +80,7 @@
                 <% } %>
               </ul>
               <div class="header_searchbar">
-                <form action="/products/search" method="GET" class="search-form">
+                <form action="/products/search" method="GET" class="search-form" onsubmit="return validarFormulario()">
                   <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
                   <button class="header_searchbar_button" type="submit"><i class="fas fa-search"></i></button>
                 </form>
@@ -92,5 +92,6 @@
     </div>
     <a class="home_main_top_arrow" href=""><img width="50px" src="/img/volver_arriba_flecha.png"alt=""></a>
   </div>
+  <script src="/js/validarFormularioDeBusqueda.js"></script>
 
 </header>

@@ -4,16 +4,16 @@ const addPuntos = require('../../middlewares/addPuntos')
 module.exports = async (req, res) => {
   let categories = await db.Category.findAll({
     order:[['name', 'ASC']]
-  })
-  db.Product.findAll({where:{
+  }).catch((errors) => console.log(errors));
+  let products = await db.Product.findAll({where:{
     category_id : req.params.id
-  },include:['product_image','product_category']})
-    .then((products) => {
-        return res.render('searchCategory',{
-          products, id : products[0].product_category.name,addPuntos,categories
-        })
-    }).catch((errors) => console.log(errors));
-
+  },include:['product_image','product_category']
+  }).catch((errors) => console.log(errors));
+  if (products?.length > 0) { 
+    return res.render('searchCategory',{products, id : products[0].product_category.name,addPuntos,categories})
+  }else{
+    return res.render('searchCategory',{categories, id: "Sin productos en esta categoría", products: null})
+  }
 
 
 

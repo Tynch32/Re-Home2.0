@@ -7,6 +7,7 @@
 			<main class="home_main">
 				<div class="container products-wrapper">
 					<div class="row d-inline-flex p-2">
+						<%- include('partials/filterCategory',{categories})%>
 						<div class="col-12">
 							<h2 class="products-title-search">Resultados de la búsqueda: "<%= keywords%>"
 							</h2>

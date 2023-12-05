@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head', {title: `Resultados de tu búsqueda:${id}`}) %>
+<%- include('partials/head', {title: `${id}`}) %>
 
 	<body>
 		<%- include('partials/header') %>
@@ -11,7 +11,7 @@
 						<div class="col-12">
 							<h2 class="products-title">Productos de la categoría: "<%=id%>"</h2>
 						</div>
-						<% if(products.length){ %>
+						<% if (products!==null) { %>
 							<% products.forEach((product)=> { %>
 								<div class="col-12 col-lg-4 col-md-6 col-sm-12">
 									<%- include('partials/productCard', {product}) %>
