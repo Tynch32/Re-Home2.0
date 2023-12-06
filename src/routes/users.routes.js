@@ -31,7 +31,6 @@ router.get("/productCart/:id",cookieCheck,userCheck,productCart);
 router.get('/logout',logout);
 //Informacion del sitio
 router.get('/faq',faq)
-//CambiarRolUsuario
-router.get('/changeRol/:id');
+
 
 module.exports = router;

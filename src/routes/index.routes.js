@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 //Controller
-const { index, admin, cookieContract} = require('../controllers/indexController');
+const { index, admin, cookieContract, userChangeRol} = require('../controllers/indexController');
 //Middlewares
 const adminCheck = require('../middlewares/adminCheck');
 
@@ -14,6 +14,8 @@ router.post('/', cookieContract);
 
 //vista admin
 router.get('/admin', adminCheck, admin);
+//CambiarRolUsuario
+router.put('/admin/changeRol/:id',adminCheck,userChangeRol);
 
 //Export
 module.exports = router;

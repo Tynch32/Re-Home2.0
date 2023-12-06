@@ -22,13 +22,12 @@
                     <td>
                         <%= user.surname %>
                     </td>
-                    <td>
+                    <td id="table_user_role">
                         <b><%= user.roleId.name%></b>
                     </td>
                     <td>
-                        <form action="/users/changeRol/<%= user.id %>?_method=PUT" method="POST">
-                            <input type="number" hidden><%=user.role_id%></input>
-                            <button type="submit" class="btn btn-outline-dark"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                        <form action="/admin/changeRol/<%= user.id %>?_method=PUT" method="POST">
+                            <button id="buttonChangeRol" type="submit" class="btn btn-outline-dark"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
                         </form>
                     </td>
                     <td>
@@ -39,4 +38,5 @@
         </tbody>
       
     </table>
+    <script src="/js/buttonChangeRol.js"></script>
 </div>
