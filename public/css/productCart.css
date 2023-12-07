@@ -32,10 +32,11 @@
     text-decoration:line-through;
 }
 #button_calcularTotal{
-    background: var(--botonesDorados);
+    background: var(--botonesDoradosHorizontal);
     border: 0;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 #product_cart_carrito_info {
     background: linear-gradient(to top, rgb(172, 113, 45) 0%, rgb(224, 218, 142) 50%,rgb(186, 122, 49) 100%);
@@ -43,8 +44,9 @@
     color: transparent;
 }
 #product_cart_buttons{
-    background: var(--botonesDorados);
+    background: var(--botonesDoradosHorizontal);
     border: 0;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 #productCart_calc_total{
     text-align: start;

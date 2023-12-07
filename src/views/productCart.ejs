@@ -41,13 +41,13 @@
                                   <%= product.amount%>
                                 </td>
                                 <td>
-                                  $<%= addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100)*product.amount))  %>%>
+                                  $<%= addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100))*product.amount)  %>%>
                                 </td>
                               </tr>
                               <% }) %>
                             </tbody>
                           </table>
-                          <h1 class="modal-title fs-5" id="totalCarritoCompras"> SU TOTAL ES: $<%= addPuntos(total) %></h1>
+                          <h1 class="modal-title fs-5" id="totalCarritoCompras"> SU TOTAL ES: $<%= addPuntos(Math.floor(total)) %></h1>
                         </div>
                       </div>
                     </div>
@@ -86,11 +86,11 @@
                         <td>$<%=addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100))*product.amount)%></td>
                         <td>
                           <div class="productCart_box">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                                 data-bs-target="#detailProduct<%=product.product.id%>">
                                 <i class="fas fa-eye"></i>
                             </button>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                                 data-bs-target="#removeProduct<%= product.product.id %>">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
@@ -138,7 +138,7 @@
                                                               </p>
                                                               <p  class="card-text">
                                                                 Cantidad en el carrito:<br>
-                                                                <i id="product_cart_carrito_info" class="fa-solid fa-cart-shopping"></i> <%=product.amount%> 
+                                                                <i id="product_cart_carrito_info" class="fa-solid fa-cart-shopping"></i> <b><%=product.amount%> </b>
                                                             </p>
                                                       </div>
                                                   </div>
@@ -164,11 +164,11 @@
                                   <p>¿Estás seguro que quieres eliminar el producto: <b><%= product.product.name %></b> de tu carrito de compras?</p> 
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">
+                                  <button type="button" class="btn btn-outline-dark"data-bs-dismiss="modal">
                                     Cancelar
                                   </button>
                                     <form action="/products/removeToCart/<%= product.product.id %>" method="POST">
-                                        <button type="submit" class="btn btn-danger">
+                                        <button type="submit" class="btn btn-outline-dark">
                                           Sí, Eliminar <i class="fa-solid fa-trash-can"></i>
                                         </button>
                                     </form>

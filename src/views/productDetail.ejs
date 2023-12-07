@@ -113,8 +113,14 @@
 						</div>
 						<div>
 						</div>
+						<div class="product_detail_buyinfo_mediosPagos">Cantidad:</div>
 						<div class="product_detail_buyinfo_button">
-							<form id="formulario_button_agregar" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
+							<form id="product_add_form" action="/products/addToCart/<%= product.id %>" method="POST" class="row">
+								<div class="product_detail_cant_products">
+									<button id="cantProduct_button_left">&lt;</button>
+									<input id="product_detail_cant_products" type="number" readonly min="1" value="1" name="cantProducts"></input>
+									<button id="cantProduct_button_right">&gt;</button>
+								</div>
 								<button id="button_agregar_producto" type="submit" class="btn btn-success">
 									Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i>
 								</button>
@@ -125,7 +131,7 @@
 			</main>
 			<%- include('partials/footer') %>
 			<%- include('partials/scripts') %>
-			<script src="/js/imgSliderCasero.js"></script>
+			<script src="/js/cantButtons.js"></script>
 	</body>
 
 </html>
