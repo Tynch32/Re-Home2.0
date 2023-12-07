@@ -82,7 +82,9 @@
                         <% }else{%>
                           <td id="productCart_item_discount"><b>--</b></td>
                         <% }%>
-                        <td><%=product.amount%></td>
+                        <td>
+                          <b><%=product.amount%></b>
+                        </td>
                         <td>$<%=addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100))*product.amount)%></td>
                         <td>
                           <div class="productCart_box">

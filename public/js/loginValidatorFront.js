@@ -2,7 +2,7 @@ let $ = id => document.getElementById(id)
 let validarEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 let validacionCorrecta=(campo)=>{
-    $(campo.id).style.border='2px solid #39b54a'
+    $(campo.id).style.border='2px solid gold'
 }
 let validacionIncorrecta=(campo)=>{
     $(campo.id).style.border='2px solid red'
