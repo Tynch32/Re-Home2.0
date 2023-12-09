@@ -109,7 +109,7 @@
   z-index: 100;
 }
 
-@media(max-width: 725px){
+@media(max-width: 735px){
   .header_menu_desplegado{
     display: none;
   }
@@ -198,5 +198,10 @@
     justify-content: space-around;
     align-items: stretch;
     flex-direction: row;
+  }
+}
+@media (max-width: 900px){
+  #header_button_4 a i {
+    display: none;
   }
 }
