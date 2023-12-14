@@ -53,7 +53,32 @@ const getUserById = async (id) => {
             }
         }
         const user = await db.User.findByPk(id,{
-            include:['roleId','imageId','addressId']
+            attributes:{
+                exclude: ['updated_at','password','address_id','role_id','image_id']
+            },
+            include: [
+                {
+                  model: db.Role,
+                  as: 'roleId', 
+                  attributes: {
+                    exclude: ['id','updated_at','created_at']
+                  }
+                },
+                {
+                  model: db.Image_user,
+                  as: 'imageId', 
+                  attributes: {
+                    exclude: ['id','updated_at','created_at']
+                  }
+                },
+                {
+                  model: db.Address,
+                  as: 'addressId', 
+                  attributes: {
+                    exclude: ['id','updated_at','created_at']
+                  }
+                }
+            ]
         })
 
         if(!user){
