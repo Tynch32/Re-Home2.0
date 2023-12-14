@@ -1,7 +1,7 @@
 const db = require ('../database/models');
 const { Op } = require('sequelize');
 
-const getAllProducts = async (limit, offset,keyword) => {
+const getAllProducts = async (limit, offset, keyword) => {
 
     const options = keyword ? {
         where:{
@@ -17,10 +17,24 @@ const getAllProducts = async (limit, offset,keyword) => {
             limit,
             offset,
             attributes:{
-                exclude: ['updated_at']
+                exclude: ['updated_at','created_at','category_id']
             },
-            include:['product_image','product_category'],
-            ...options
+            include: [
+                {
+                  model: db.Images_product,
+                  as: 'product_image', 
+                  attributes: {
+                    exclude: ['updated_at','created_at']
+                  }
+                },
+                {
+                    model: db.Category,
+                    as: 'product_category', 
+                    attributes: {
+                      exclude: ['updated_at','created_at','image']
+                    }
+                }
+            ]
         })
 
         if(!products){
@@ -49,15 +63,27 @@ const getProductById = async (id) => {
 
     try {
 
-        if(!id){
-            throw {
-                status: 404,
-                message: "ID invalido"
-            }
-        }
-        const product = await db.Product.findByPk(id, {attributes:{
-                exclude: ['updated_at','created_at','category_id']},
-                include:['product_image','product_category'],
+        const product = await db.Product.findByPk(id, {
+        
+            attributes:{
+                exclude: ['updated_at','created_at','category_id']
+            },
+            include: [
+                {
+                  model: db.Images_product,
+                  as: 'product_image', 
+                  attributes: {
+                    exclude: ['updated_at','created_at','product_id']
+                  }
+                },
+                {
+                    model: db.Category,
+                    as: 'product_category', 
+                    attributes: {
+                      exclude: ['updated_at','created_at','image']
+                    }
+                }
+            ]
             }
         )
 
@@ -70,7 +96,6 @@ const getProductById = async (id) => {
         return product;
 
     } catch (error) {
-
         console.log(error);
         throw {
             status: error.status || 500,
@@ -82,12 +107,58 @@ const getProductById = async (id) => {
 const getProductsByCategory = async (id)=>{
 
     try {
-        const products = db.Product.findAll({
+        const products = await db.Product.findAll({
+            where:{
+                category_id:id
+            },
+            attributes: {
+                exclude: ['updated_at','created_at','category_id']
+            }
+        })
+        const count = await db.Product.count({
             where:{
                 category_id:id
             }
         })
-        return products;
+        return {products,count};
+
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || 'Error en el servicio'
+        }
+    }
+}
+
+const getAllCategories = async(limit, offset, keyword) => {
+    const options = keyword ? {
+        where:{
+            name:{
+                [Op.substring] : keyword
+            }
+        }
+    }: null;
+
+    try {
+
+        const categories = await db.Category.findAll({
+            limit,
+            offset
+        })
+
+        if(!categories){
+            throw {
+                status:404,
+                message: "No hay categorias"
+            }
+        }
+
+        const count = await db.Product.count({
+            ...options
+        })
+
+        return {categories,count}
 
     } catch (error) {
         console.log(error);
@@ -101,5 +172,6 @@ const getProductsByCategory = async (id)=>{
 module.exports = {
     getAllProducts,
     getProductById,
-    getProductsByCategory
+    getProductsByCategory,
+    getAllCategories
 }

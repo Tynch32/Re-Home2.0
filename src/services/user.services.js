@@ -10,7 +10,7 @@ const getAllUsers = async (limit, offset, keyword) => {
             }
         }
     } : null;
-
+    
     try {
         const users = await db.User.findAll({
             limit,
