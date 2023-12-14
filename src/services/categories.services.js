@@ -10,12 +10,30 @@ const getProductsByCategory = async (id)=>{
             },
             attributes: {
                 exclude: ['updated_at','created_at','image']
-            }
+            },
+            include: [
+                {
+                  model: db.Product,
+                  as: 'product_category', 
+                  attributes: {
+                    exclude: ['updated_at','created_at','category_id']
+                  }
+                }
+            ]
         })
         const count = await db.Category.count({
             where:{
                 id:id
-            }
+            },
+            include: [
+                {
+                  model: db.Product,
+                  as: 'product_category', 
+                  attributes: {
+                    exclude: ['updated_at','created_at','category_id']
+                  }
+                }
+            ]
         })
         return {categories,count};
 
