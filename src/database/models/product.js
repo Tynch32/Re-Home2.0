@@ -1,5 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
+
   let alias = 'Product';
+  
   let cols = {
       id: {
           type: dataTypes.BIGINT(10).UNSIGNED,
@@ -26,6 +28,7 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.BIGINT(10)
       }
   };
+
   let config = {
       timestamps: true,
       createdAt: 'created_at',
@@ -33,6 +36,7 @@ module.exports = (sequelize, dataTypes) => {
       deletedAt: false,
       tableName: 'products'
   }
+
   const Product = sequelize.define(alias, cols, config); 
 
   Product.associate = function (models){
@@ -49,5 +53,7 @@ module.exports = (sequelize, dataTypes) => {
         foreignKey: 'product_id'
       })
   }
+
   return Product
+
 };

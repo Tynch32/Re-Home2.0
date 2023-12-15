@@ -36,7 +36,7 @@ module.exports = {
                         pages
                     },
                     data:categories
-            })
+                })
         } catch (error) {
             return res.status(error.status || 500).json({
                 ok:false,
@@ -45,5 +45,20 @@ module.exports = {
             })
         }
         
+    },
+    getAllCategories:async (req,res) => {
+        try {
+            const categories = await getAllCategories();
+            return res.status(200).json({
+                ok:true,
+                data:categories.categories
+        })
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok:false,
+                status: error.status || 500,
+                error: error.message || 'Error en el servicio'
+            })
+        }
     }
 }
