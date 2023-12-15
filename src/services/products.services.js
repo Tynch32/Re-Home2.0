@@ -9,7 +9,7 @@ const getAllProducts = async (limit, offset, keyword) => {
                 [Op.substring] : keyword
             }
         }
-    }: null;
+    }: null ;
 
     try {
 
@@ -34,7 +34,8 @@ const getAllProducts = async (limit, offset, keyword) => {
                       exclude: ['updated_at','created_at','image']
                     }
                 }
-            ]
+            ],
+            ...options
         })
 
         if(!products){
