@@ -8,5 +8,6 @@ module.exports = {
     search : require('./products/search'),
     addToCart: require('./products/addToCart'),
     removeToCart: require('./products/removeToCart'),
-    searchCategory: require('./products/searchCategory')
+    searchCategory: require('./products/searchCategory'),
+    oferts: require('./products/oferts')
 }

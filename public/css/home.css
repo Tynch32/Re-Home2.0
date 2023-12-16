@@ -1,5 +1,4 @@
 .home_main{
-  margin-top: 30px;
   background-color: var(--sanAndres);
 }
 #home_main{
@@ -17,4 +16,9 @@
 }
 .products-title-search{
   color:white
+}
+@media (max-width:750px){
+  .home_main{
+    margin-top: 30px;
+  } 
 }

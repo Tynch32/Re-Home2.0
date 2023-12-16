@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 //Products Controller
-const {detail,add,create,edit,update,remove,search,addToCart,removeToCart, searchCategory} = require("../controllers/productsController");
+const {detail,add,create,edit,update,remove,search,addToCart,removeToCart, searchCategory, oferts} = require("../controllers/productsController");
 //Middlewares
 const adminCheck = require("../middlewares/adminCheck");
 const userCheck = require('../middlewares/userCheck');
@@ -27,6 +27,8 @@ router.delete("/remove/:id",adminCheck, remove);
 //Search product
 router.get('/search',search);
 router.get('/searchCategory/:id',searchCategory);
+//ofertas
+router.get('/oferts',oferts);
 
 
 //Add product to cart

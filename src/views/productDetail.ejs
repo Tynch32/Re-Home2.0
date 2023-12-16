@@ -36,9 +36,29 @@
 								</nav>
 							</div>
 						</div>
-						<h5>Detalles del producto:</h5>
-						<div class="product_detail_description_box">
-							<p><%= product.description %></p>
+						<div class="productRelacionados_box">
+						<div><b>Productos Relacionados:</b></div>
+						<div class="productosRelacionados_content">
+							<% relationProduct.forEach((productRelacionado,id)=> {%>
+								<a style="" href="/products/detail/<%= productRelacionado.id %>">
+									<img src="/img/products/<%= productRelacionado.product_image[id]?productRelacionado.product_image[id].file:`default-image.png`%>">
+								</a>
+							<%}); %>	
+						</div>
+						</div>
+						<div class="accordion accordion-flush" id="accordionFlushExample">
+							<div class="accordion-item">
+							  <h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+								  <b>Detalles del producto:</b>
+								</button>
+							  </h2>
+							  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+								<div class="accordion-body">
+									<p><%= product.description %></p>
+								</div>
+							  </div>
+							</div>
 						</div>
 					</div>
 					<div class="product_detail_buyinfo_box">
