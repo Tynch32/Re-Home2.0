@@ -17,3 +17,7 @@ botonDer.addEventListener("click",function(event){
     valor.value=valorActual;
 })
 
+
+
+
+

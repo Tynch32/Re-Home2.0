@@ -11,8 +11,6 @@
 							<h2 class="product_detail_title">
 								<%= product.name %>
 							</h2>
-							<div id="images-length" hidden><%=product.product_image.length%></div>
-							<div id="actualValue"></div>
 						</div>
 						<div class="product_detail_image_box">
 							<div class="product_detail_image">
@@ -26,7 +24,10 @@
 										<% product.product_image.forEach((image,id)=> {%>
 										<li id="product_detail_buttons" class="page-item">
 											<div id="product_detail_cambiarFoto<%=id+1%>" class="page-link animate__animated animate__fadeIn animate__delay-<%=id%>s"
-												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[id].file :`default-image.png`%>')">
+												onclick="document.getElementById('main-image').setAttribute('src','/img/products/<%= product.product_image.length>0 ? product.product_image[id].file :`default-image.png`%>');
+												document.querySelectorAll(`[id*='product_detail_cambiarFoto']`).forEach(element => element.classList.remove('active'));
+												document.getElementById('product_detail_cambiarFoto<%=id+1%>').classList.add('active');
+												">
 												<%= id+1 %>
 											</div>
 										</li>

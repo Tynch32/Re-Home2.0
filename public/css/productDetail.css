@@ -51,6 +51,14 @@
   border: 1px solid #ffffff36;
   cursor: pointer;
 }
+#product_detail_buttons .active{
+  color:white;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+  font-weight: bold;
+  background: var(--botonesDoradosHorizontalSelected);
+  border: 1px solid black;
+  cursor: pointer;
+}
 /*Medios de Pago*/
 
 .product_detail_buyinfo_box{
