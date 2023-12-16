@@ -65,8 +65,9 @@
                     <thead>
                       <tr>
                         <th scope="col">Producto</th>
-                        <th scope="col">Precio</th>
+                        <th scope="col">Original</th>
                         <th scope="col">Descuento</th>
+                        <th scope="col">$ Final</th>
                         <th scope="col">Cant.</th>
                         <th scope="col">SubTotal</th>
                         <th scope="col">Opciones</th>
@@ -76,12 +77,21 @@
                       <% carrito.forEach((product,index)=> { %>
                       <tr>
                         <td><%=product.product.name%></td>
-                        <td>$<%=addPuntos(Math.floor(product.product.price))%></td>
+                        <td>
+                          <%if(product.product.discount>0){%>
+                            <s>&nbsp;$<%=addPuntos(Math.floor(product.product.price))%>&nbsp;</s>
+                            <%}else{%>
+                              $<%=addPuntos(Math.floor(product.product.price))%>
+                          <%}%>
+                        </td>
                         <% if(product.product.discount>0){%>
                           <td><b>-<%=product.product.discount%>% OFF</b></td>
                         <% }else{%>
                           <td id="productCart_item_discount"><b>--</b></td>
                         <% }%>
+                        <td>
+                          $<%=addPuntos(Math.floor(product.product.price - (product.product.price * product.product.discount / 100)))%>
+                        </td>
                         <td>
                           <b><%=product.amount%></b>
                         </td>
@@ -118,12 +128,14 @@
                                                       <div class="card-body">
                                                           <h5 class="card-name">
                                                               <div>
-                                                                  Precio Original:
+                                                                  Precio Final:
                                                               </div>
                                                           </h5>
-                                                              <div class="productCard_finalPrice" id="admin_tableProduct_price">
+                                                            <%if(product.product.discount>0){%>
+                                                                <div class="productCard_finalPrice" id="admin_tableProduct_price">
                                                                   Antes $<%= addPuntos(Math.floor(product.product.price)) %>
-                                                              </div>
+                                                                </div>
+                                                            <%}%>
                                                               <div class="d-flex gap-1">
                                                                   <div class="productCard_finalPrice">
                                                                       $<%= addPuntos(Math.floor((product.product.price - (product.product.price * product.product.discount / 100)))) %>

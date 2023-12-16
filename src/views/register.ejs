@@ -57,13 +57,22 @@
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="province" class="form-label">Provincia</label>
-                            <input type="text" class="form-control" id="province" placeholder="Ingrese su provincia" name="province"
-                            value="<%= locals.old && (old.province && old.province ) %>">
+                            <select class="form-select"
+                            aria-label="Default select example" name="province" id="province">
+                                <option value="0" selected hidden>Seleccione...</option>
+                                <% provinces.forEach((province)=> { %>
+                                    <option value="<%= province.nombre %>" <%=locals.old && (old.province===province.nombre && 'selected' ) %>>
+                                        <%= province.nombre %>
+                                    </option>
+                                <% }) %>
+                            </select>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="city" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="city" placeholder="Ingrese su ciudad" name="city"
-                            value="<%= locals.old && (old.city && old.city ) %>">
+                            <select class="form-select"
+                            aria-label="Default select example" name="city" id="city">
+                                <option value="0" selected hidden>Seleccione...</option>
+                            </select>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="email" class="form-label">Email</label><small id="form_register_asterisco_email">
@@ -134,6 +143,7 @@
     <%- include('partials/footer') %>
     <%- include('partials/scripts') %>
     <script src="/js/registerValidatorFront.js"></script>
+    <script src="/js/cargarCiudades.js"></script>
 </body>
 
 </html>
