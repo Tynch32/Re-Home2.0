@@ -24,7 +24,7 @@ module.exports = {
     getCategories: async (req,res) => {
         const{keyword}=req.query;
         try {
-                const {count,categories} = await getAllCategories(req.query.limit,req.skip,keyword);
+                const {count,categories} = await getProductsByCategory(req.query.limit,req.skip,keyword);
                 const pagesCount = Math.ceil(count/req.query.limit);
                 const currentPage = req.query.page;
                 const pages = paginate.getArrayPages(req)(pagesCount,pagesCount,currentPage);

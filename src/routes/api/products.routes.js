@@ -5,8 +5,6 @@ const {index,show,productsByCategory,getCategories} = require('../../controllers
 
 router.get('/', index);
 router.get('/:id', show);
-router.get('/categories',getCategories);
-router.get('/category/:id',productsByCategory);
 
 
 module.exports = router;

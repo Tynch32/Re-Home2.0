@@ -11,15 +11,6 @@ const getProductsByCategory = async (id)=>{
             attributes: {
                 exclude: ['updated_at','created_at','image']
             },
-            include: [
-                {
-                  model: db.Product,
-                  as: 'product_category', 
-                  attributes: {
-                    exclude: ['updated_at','created_at','category_id']
-                  }
-                }
-            ]
         })
         const count = await db.Category.count({
             where:{
@@ -62,7 +53,15 @@ const getAllCategories = async(limit, offset, keyword) => {
             offset,
             attributes: {
                 exclude: ['updated_at','created_at','image']
-            }
+            },include: [
+                {
+                  model: db.Product,
+                  as: 'product_category', 
+                  attributes: {
+                    exclude: ['updated_at','created_at','category_id']
+                  }
+                }
+            ]
         })
 
         if(!categories){
