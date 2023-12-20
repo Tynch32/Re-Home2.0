@@ -14,7 +14,7 @@ module.exports = async (req,res) => {
                 },
                 order: [['category_id', 'ASC']],
                 include: ['product_image'],
-                limit: 8,
+                limit: 10,
                 offset: req.skip,
             }),
             db.Product.count({where: {
@@ -25,7 +25,7 @@ module.exports = async (req,res) => {
         ]);
         console.log(itemCount);
         const categories = await db.Category.findAll();
-        const pageCount = Math.ceil(itemCount / 8);
+        const pageCount = Math.ceil(itemCount / 10);
         let cookie = req.cookies.grupoReHome10_cookie;
 
         res.render("index", {
