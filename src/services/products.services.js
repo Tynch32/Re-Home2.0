@@ -213,6 +213,87 @@ const getLastProductInDb = async () => {
         }
     }
 }
+const deleteProduct = async(id)=>{
+
+    try {
+        if(isNaN(id)){
+            throw{
+                status:404,
+                message: "ID invalida"
+            }
+        }
+
+        const product = await db.Product.findByPk(id);
+
+        if(!product){
+            throw{
+                status:404,
+                message: "No hay una película con ese ID"
+            }
+        }
+        await db.Images_product.destroy({
+            where: {
+                product_id: id
+            }
+        })
+
+        await db.Order.destroy({
+            where: {
+                product_id: id
+            }
+        })
+
+        await product.destroy()
+
+        return null;
+
+
+    } catch (error) {
+        console.log(error);
+        throw{
+            status: error.status || 500,
+            message : error.message || 'Error en el servicio'
+        }
+    }
+}
+const updateProduct = async (id, dataProduct) => {
+    try {
+        const {name,price,discount,description,category_id} = dataProduct
+
+        const product = await db.Product.findByPk(id,{
+            attributes: {
+                exclude: ['created_at']
+            }
+        });
+
+        if(!product){
+            throw{
+                status: 404,
+                message: 'No hay productos con ese ID'
+            }
+        }
+
+        product.name = name?.trim() || product.name;
+        product.price = price ||product.price;
+        product.discount = discount ||product.discount;
+        product.description = description?.trim() || product.description;
+        product.category_id = category_id || product.category_id;
+        product.updated_at = Date.now();
+
+        await product.save();
+
+        await product.reload();
+
+        return product;
+
+    } catch (error) {
+        console.log(error);
+        throw{
+            status: error.status || 500,
+            message : error.message || 'Error en el servicio'
+        }
+    }
+}
 
 module.exports = {
     getAllProducts,
@@ -220,5 +301,7 @@ module.exports = {
     getProductsByCategory,
     getAllCategories,
     getCantProduct,
-    getLastProductInDb
+    getLastProductInDb,
+    deleteProduct,
+    updateProduct
 }
