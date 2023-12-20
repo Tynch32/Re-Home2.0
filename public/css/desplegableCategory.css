@@ -19,6 +19,7 @@
 }
 #filtrarCategoriasBox{
   padding: 8px;
+  padding-left: 0px;
 }
 
 #filterProducts_categorias:hover h5 i {

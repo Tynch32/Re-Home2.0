@@ -8,8 +8,13 @@
             <main class="home_main">
                 <div class="container products-wrapper">
                     <%- include('partials/banner') %>
-                    <%- include('partials/filterCategory',{categories})%>
-                    <div class="row d-inline-flex p-2">
+                    <div class="row d-inline-flex" >
+                        <div class="menu_categoria_paginator">
+                            <%- include('partials/filterCategory',{categories})%>
+                            <div class="menu_paginator">
+                                <%-include('partials/paginator',{currentPage,pages})%>
+                            </div>
+                        </div>
                         <% products.forEach(product =>  { %>
                             <div class="col-12 col-lg-3 col-md-4 col-sm-6">
                                 <%- include('partials/productCard', {product}) %>

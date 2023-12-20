@@ -6,15 +6,18 @@
 		<%- include('partials/header') %>
 			<main class="home_main">
 				<div class="container products-wrapper">
+					<%- include('partials/banner') %>
 					<div class="row d-inline-flex p-2">
-						<%- include('partials/filterCategory',{categories})%>
+						<div class="menu_categoria_paginator">
+                            <%- include('partials/filterCategory',{categories})%>
+                        </div>
 						<div class="col-12">
 							<h2 class="products-title-search">Resultados de la búsqueda: "<%= keywords%>"
 							</h2>
 						</div>
 						<% if(results.length){ %>
 							<% results.forEach((product)=> { %>
-								<div class="col-12 col-lg-4 col-md-6 col-sm-12">
+								<div class="col-12 col-lg-3 col-md-6 col-sm-12">
 									<%- include('partials/productCard', {product}) %>
 								</div>
 							<% }) %>

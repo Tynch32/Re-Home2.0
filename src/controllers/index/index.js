@@ -1,25 +1,35 @@
 const db = require("../../database/models");
-const addPuntos = require('../../middlewares/addPuntos')
+const addPuntos = require('../../middlewares/addPuntos');
+const paginate = require('express-paginate');
 
-module.exports = (req, res) => {
-    db.Product.findAll({
-        order: [['category_id', 'ASC']],
-        include: ['product_image', 'product_category'],
-    })
-        .then((products) => {
-            let cookie = req.cookies.grupoReHome10_cookie;
-            let categories = [];
-            let nombresSinRepetir = []
-            products.forEach(product => {
-                if (!nombresSinRepetir.includes(product.product_category.name)) {
-                    categories.push(product.product_category)
-                    nombresSinRepetir.push(product.product_category.name)
-                }
-            });
-            categories.sort((a, b) => {
-                return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-            }
-            );
-            return res.render("index", { products, cookie, categories, addPuntos });
-        }).catch((errors) => console.log(errors));
-}
+module.exports = async (req, res) => {
+    try {
+        const currentPage = req.query.page||0;
+        const [products, itemCount] = await Promise.all([
+            db.Product.findAll({
+                order: [['category_id', 'ASC']],
+                include: ['product_image'],
+                limit: 8,
+                offset: req.skip,
+            }),
+            db.Product.count(),
+        ]);
+        const categories = await db.Category.findAll();
+        const pageCount = Math.ceil(itemCount / 8);
+        let cookie = req.cookies.grupoReHome10_cookie;
+
+        res.render("index", {
+            currentPage,
+            products,
+            cookie,
+            categories,
+            addPuntos,
+            pageCount,
+            itemCount,
+            pages: paginate.getArrayPages(req)(pageCount, pageCount, req.query.page),
+        });
+    } catch (errors) {
+        console.log(errors);
+        res.status(500).send('Error interno del servidor');
+    }
+};

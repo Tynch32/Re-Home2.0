@@ -17,6 +17,7 @@
 .products-title-search{
   color:white
 }
+
 @media (max-width:750px){
   .home_main{
     margin-top: 30px;

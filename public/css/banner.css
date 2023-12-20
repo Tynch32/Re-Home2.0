@@ -1,7 +1,6 @@
 .banner_promo img{
     width: 100%;
 }
-
 @media (max-width:767px){
     .banner_promo{
         display: none;
