@@ -2,7 +2,7 @@
     <ul class="pagination">
         <% if (currentPage !== 1) { %>
             <li id="product_detail_buttons" class="page-item">
-                <a class="page-link" href="javascript:void(0)" aria-label="Previous" onclick="handlePagination(event, '/?page=<%= currentPage - 1 %>&limit=8')">
+                <a class="page-link" href="javascript:void(0)" aria-label="Previous" onclick="handlePagination(event, '/?page=<%= currentPage - 1 %>&limit=10')">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -18,7 +18,7 @@
         
         <% if (currentPage !== pages[pages.length -1].number) { %>
             <li id="product_detail_buttons" class="page-item">
-                <a class="page-link" href="javascript:void(0)" aria-label="Next" onclick="handlePagination(event, '/?page=<%= currentPage + 1 %>&limit=8')">
+                <a class="page-link" href="javascript:void(0)" aria-label="Next" onclick="handlePagination(event, '/?page=<%= currentPage + 1 %>&limit=10')">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
@@ -28,7 +28,7 @@
 <script>
     const handlePagination = async (event, endpoint) => {
         event.preventDefault();
-        endpoint=endpoint+"&limit=8"
+        endpoint=endpoint+"&limit=10"
         window.location.href = endpoint;
     }
 </script>
