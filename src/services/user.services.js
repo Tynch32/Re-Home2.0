@@ -20,13 +20,15 @@ const getAllUsers = async (limit, offset, keyword) => {
             },
             ...options
         })
+        if(users){
+            users.map(user=>user.dataValues.detail=`http://localhost:3000/api/users/${user.dataValues.id}`)
+        }
         if(!users){
             throw {
                 status:404,
                 message: "No hay usuarios"
             }
         }
-
         const count = await db.User.count({
             ...options
         })

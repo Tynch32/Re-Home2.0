@@ -37,7 +37,9 @@ const getAllProducts = async (limit, offset, keyword) => {
             ],
             ...options
         })
-
+        if(products){
+            products.map(product=>product.dataValues.detail=`http://localhost:3000/api/products/${product.dataValues.id}`)
+        }
         if(!products){
             throw {
                 status:404,
