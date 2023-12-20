@@ -16,8 +16,17 @@ const getAllUsers = async (limit, offset, keyword) => {
             limit,
             offset,
             attributes:{
-                exclude: ['updated_at','password','address_id','role_id','image_id']
+                exclude: ['updated_at','password','address_id','image_id']
             },
+            include: [
+                {
+                  model: db.Role,
+                  as: 'roleId', 
+                  attributes: {
+                    exclude: ['updated_at','created_at']
+                  }
+                }
+            ],
             ...options
         })
         if(users){
