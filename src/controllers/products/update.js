@@ -5,19 +5,16 @@ const db = require("../../database/models");
 module.exports = async (req, res) => {
 
   const errors = validationResult(req);
-
+  console.log(req.body);
   if(errors.isEmpty()){
     let nuevosValores={
       name:req.body.name,
       price:req.body.price,
       discount:req.body.discount||0,
       description:req.body.description,
-      category_id:0,
+      category_id:req.body.category,
       updated_at: new Date()
     }
-    db.Category.findAll({where:{
-      name:req.body.category
-    }}).then(category=>{nuevosValores.category_id=category.id
       db.Product.update(nuevosValores,{
         where:{
           id:req.params.id
@@ -38,8 +35,7 @@ module.exports = async (req, res) => {
           })
         }
         return res.redirect('/admin')
-      }).catch(error=>console.log(error))
-    }).catch(error=>console.log(error));
+      }).catch(error=>console.log(error));
   }else{
         
         (req.files.image && existsSync(`./public/img/products/${req.files.image[0].filename }`)) && unlinkSync(`./public/img/products/${req.files.image[0].filename }`);

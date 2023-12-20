@@ -38,9 +38,9 @@
                                     <label for="category" class="form-label">Categoría</label>
                                     <small id="form_edit_product_tilde"> ✓</small>
                                     <select class="form-select" aria-label="Default select example" name="category" id="category">
-                                        <% categories.forEach(category_i=> { %>
-                                            <option <%=category_i.name==product.product_category.name?'selected':'' %> value="<%= category_i.name%>">
-                                            <%= category_i.name %>
+                                        <% categories.forEach(category_id=> { %>
+                                            <option <%=category_id.name==product.product_category.name?'selected':'' %> value="<%= category_id.id%>">
+                                            <%= category_id.name %>
                                             </option>
                                         <% }) %>
                                     </select>
@@ -114,7 +114,7 @@
         </main>
         <%- include('partials/footer') %>
         <%- include('partials/scripts') %>
-        <script src="/js/productValidatorFront.js"></script>
+        <script src="/js/productValidatorFront2.js"></script>
     </body>
 
 </html>

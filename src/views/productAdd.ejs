@@ -38,11 +38,11 @@
                       aria-label="Default select example" name="category" id="category">
                       <option value="0" selected hidden>Seleccione...</option>
                       <% categories.forEach((category,index)=> { %>
-                        <option value="<%= category.id %>" <%=locals.old && (locals.old.category===category.name
+                      <option value="<%= category.id %>" <%=locals.old && (locals.old.category===category.name
                           && 'selected' ) %>>
                           <%= category.name %>
-                        </option>
-                        <% }) %>
+                      </option>
+                      <% }) %>
                     </select>
                     <small hidden id="product_form_category" class="text-danger ms-2">
                       * La categoría es obligatoria
@@ -93,7 +93,7 @@
                     <small hidden id="product_form_image" class="text-danger ms-2">
                       * Es obligatorio min 1 imagen.
                       <br>
-                                &nbsp;&nbsp;* Solo se permiten formatos .jpg .jpeg .png .gif
+                                &nbsp;&nbsp;* Solo se permiten formatos .jpg .jpeg .png .gif .webp
                     </small>
                     <small id="image_error" class="text-danger ms-2">
                       <%= locals.errors && (errors.image && errors.image.msg) %>
