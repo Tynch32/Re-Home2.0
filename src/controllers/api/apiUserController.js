@@ -1,4 +1,4 @@
-const {getAllUsers, getUserById} = require('../../services/user.services');
+const {getAllUsers, getUserById, getCantUsers} = require('../../services/user.services');
 
 const createError = require('http-errors');
 const paginate = require('express-paginate');
@@ -40,6 +40,21 @@ module.exports = {
             })
         }catch(error){
             return res.status(error.status || 500).json({
+                ok:false,
+                status: error.status || 500,
+                error: error.message || 'Error en el servicio'
+            })
+        }
+    },
+    cant : async(req,res) => {
+        try {
+            const cant = await getCantUsers();
+            return res.status(200).json({
+                ok:true,
+                data:cant
+            })
+        } catch (error) {
+             return res.status(error.status || 500).json({
                 ok:false,
                 status: error.status || 500,
                 error: error.message || 'Error en el servicio'

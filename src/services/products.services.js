@@ -171,10 +171,23 @@ const getAllCategories = async(limit, offset, keyword) => {
         }
     }
 }
+const getCantProduct = async () => {
+    try {
+        const count = await db.Product.count();
+        return count;
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || 'Error en el servicio'
+        }
+    }
+}
 
 module.exports = {
     getAllProducts,
     getProductById,
     getProductsByCategory,
-    getAllCategories
+    getAllCategories,
+    getCantProduct
 }

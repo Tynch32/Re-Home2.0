@@ -93,7 +93,21 @@ const getAllCategories = async(limit, offset, keyword) => {
     }
 }
 
+const getCantCategories = async () => {
+    try {
+        const count = await db.Category.count();
+        return count;
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || 'Error en el servicio'
+        }
+    }
+}
+
 module.exports = {
     getProductsByCategory,
-    getAllCategories
+    getAllCategories,
+    getCantCategories
 }

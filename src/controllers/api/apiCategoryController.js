@@ -1,9 +1,24 @@
-const {getProductsByCategory,getAllCategories} = require('../../services/categories.services');
+const {getProductsByCategory,getAllCategories,getCantCategories} = require('../../services/categories.services');
 
 const createError = require('http-errors');
 const paginate = require('express-paginate');
 
 module.exports = {
+    cantCategories : async (req,res) => {
+        try {
+            const cantidad = await getCantCategories();
+            return res.status(200).json({
+                ok:true,
+                data:cantidad
+        })
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok:false,
+                status: error.status || 500,
+                error: error.message || 'Error en el servicio'
+            })
+        }
+    },
     productsByCategory: async (req,res) =>{
         const{keyword}=req.query;
         try {

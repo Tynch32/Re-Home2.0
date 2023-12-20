@@ -102,7 +102,21 @@ const getUserById = async (id) => {
     
 }
 
+const getCantUsers = async () => {
+    try {
+        const count = await db.User.count();
+        return count;
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || 'Error en el servicio'
+        }
+    }
+}
+
 module.exports = {
     getAllUsers,
-    getUserById
+    getUserById,
+    getCantUsers
 }
