@@ -183,11 +183,42 @@ const getCantProduct = async () => {
         }
     }
 }
+const getLastProductInDb = async () => {
+    try {
+        const ultimoElemento = await db.Product.findOne({
+            order: [['created_at', 'DESC']],
+            include: [
+                {
+                  model: db.Images_product,
+                  as: 'product_image', 
+                  attributes: {
+                    exclude: ['updated_at','created_at','product_id']
+                  }
+                },
+                {
+                    model: db.Category,
+                    as: 'product_category', 
+                    attributes: {
+                      exclude: ['updated_at','created_at','image']
+                    }
+                }
+            ]
+          });
+        return ultimoElemento;
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || 'Error en el servicio'
+        }
+    }
+}
 
 module.exports = {
     getAllProducts,
     getProductById,
     getProductsByCategory,
     getAllCategories,
-    getCantProduct
+    getCantProduct,
+    getLastProductInDb
 }
