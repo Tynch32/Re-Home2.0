@@ -294,6 +294,30 @@ const updateProduct = async (id, dataProduct) => {
         }
     }
 }
+const topSales = async () => {
+    try {
+        let ventas=[]
+        await db.Venta.findAll().then(venta=>{
+            venta.forEach(element => {
+                let venta={
+                    id:element.dataValues.id,
+                    product_id:element.dataValues.product_id,
+                    cantidad:element.dataValues.cantidad,
+                    precio:element.dataValues.precio,
+                    fecha:element.dataValues.created_at
+                }
+                ventas.push(venta);
+            });
+        })
+        return ventas;
+    } catch (error) {
+        console.log(error);
+        throw{
+            status: error.status || 500,
+            message : error.message || 'Error en el servicio'
+        }
+    }
+}
 
 module.exports = {
     getAllProducts,
@@ -303,5 +327,6 @@ module.exports = {
     getCantProduct,
     getLastProductInDb,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    topSales
 }

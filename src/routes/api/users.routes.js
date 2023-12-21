@@ -4,8 +4,9 @@ const {index,show, cant, changeRol} = require('../../controllers/api/apiUserCont
 /* /api/v1/movies */
 
 router.get('/', index);
-router.get('/cant',cant)
+router.get('/cant',cant);
 router.get('/:id', show);
 router.put('/:id', changeRol)
+
 
 module.exports = router;

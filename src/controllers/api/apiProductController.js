@@ -1,7 +1,8 @@
-const {getAllProducts, getProductById, getProductsByCategory,getAllCategories,getCantProduct,getLastProductInDb,deleteProduct,updateProduct} = require('../../services/products.services');
+const {getAllProducts, getProductById, getProductsByCategory,getAllCategories,getCantProduct,getLastProductInDb,deleteProduct,updateProduct,topSales} = require('../../services/products.services');
 
 const createError = require('http-errors');
 const paginate = require('express-paginate');
+const topSale = require('../products/topSale');
 
 module.exports = {
     index: async (req,res) => {
@@ -145,6 +146,21 @@ module.exports = {
                 data:productUpdated
             })
 
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok:false,
+                status: error.status || 500,
+                error: error.message || 'Error, en el servicio!'
+            })
+        }
+    },
+    topSales: async (req,res) =>{
+        try {
+            const ventas = await topSales();
+            return res.status(200).json({
+                ok:true,
+                data:ventas
+            })
         } catch (error) {
             return res.status(error.status || 500).json({
                 ok:false,
