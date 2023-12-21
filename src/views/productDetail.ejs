@@ -41,7 +41,7 @@
 						<div class="productosRelacionados_content">
 							<% relationProduct.forEach((productRelacionado,id)=> {%>
 								<a style="" href="/products/detail/<%= productRelacionado.id %>">
-									<img src="/img/products/<%= productRelacionado.product_image[id]?productRelacionado.product_image[id].file:`default-image.png`%>">
+									<img src="/img/products/<%= productRelacionado.product_image[0]?productRelacionado.product_image[0].file:`default-image.png`%>">
 								</a>
 							<%}); %>	
 						</div>
