@@ -297,7 +297,7 @@ const updateProduct = async (id, dataProduct) => {
 const topSales = async () => {
     try {
         let ventas=[]
-        await db.Venta.findAll().then(venta=>{
+        await db.Venta.findAll({order: [['created_at', 'ASC']]}).then(venta=>{
             venta.forEach(element => {
                 let venta={
                     id:element.dataValues.id,
