@@ -53,7 +53,9 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                      <button id="product_cart_buttons" type="button" class="btn btn-success" data-bs-dismiss="modal">Realizar Compra <i class="fa-solid fa-truck-fast"></i></button>
+                      <form action="/users/realizarCompra" method="POST">
+                        <button id="product_cart_buttons" type="submit" class="btn btn-success" data-bs-dismiss="modal">Realizar Compra <i class="fa-solid fa-truck-fast"></i></button>
+                      </form>
                     </div>
                   </div>
                 </div>

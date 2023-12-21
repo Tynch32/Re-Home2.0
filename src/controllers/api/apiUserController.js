@@ -1,4 +1,4 @@
-const {getAllUsers, getUserById, getCantUsers} = require('../../services/user.services');
+const {getAllUsers, getUserById, getCantUsers,changeRol} = require('../../services/user.services');
 
 const createError = require('http-errors');
 const paginate = require('express-paginate');
@@ -60,5 +60,21 @@ module.exports = {
                 error: error.message || 'Error en el servicio'
             })
         }
+    },
+    changeRol: async (req,res) => {
+        try {
+            const cant = await changeRol(req.params.id);
+            return res.status(200).json({
+                ok:true,
+                data:cant
+            })
+        } catch (error) {
+             return res.status(error.status || 500).json({
+                ok:false,
+                status: error.status || 500,
+                error: error.message || 'Error en el servicio'
+            })
+        }
     }
+    
 }

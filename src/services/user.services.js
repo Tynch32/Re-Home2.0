@@ -123,9 +123,36 @@ const getCantUsers = async () => {
         }
     }
 }
+const changeRol = async (id) => {
+    try {
+        let valor = await db.User.findOne({
+            attributes:['role_id'],
+            where:{
+                id: id
+            }
+        });
+        if(valor.dataValues.role_id==1){
+            valor=2
+        }else{
+            valor=1
+        }
+        await db.User.update({role_id: valor},{where:{
+            id:id
+        }})
+
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || 'Error en el servicio'
+        }
+    }
+
+}
 
 module.exports = {
     getAllUsers,
     getUserById,
-    getCantUsers
+    getCantUsers,
+    changeRol
 }

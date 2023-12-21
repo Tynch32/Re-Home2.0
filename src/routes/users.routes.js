@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 //User Controllers
-const { register, processRegister, login, processLogin, profile, update, logout, productCart,faq } = require('../controllers/usersController');
+const { register, processRegister, login, processLogin, profile, update, logout, productCart,faq, realizarCompra} = require('../controllers/usersController');
 //Middlewares
 const userCheck = require('../middlewares/userCheck');
 const notUserCheck = require('../middlewares/notUserCheck');
@@ -31,6 +31,8 @@ router.get("/productCart/:id",cookieCheck,userCheck,productCart);
 router.get('/logout',logout);
 //Informacion del sitio
 router.get('/faq',faq)
+
+router.post('/realizarCompra',realizarCompra)
 
 
 module.exports = router;

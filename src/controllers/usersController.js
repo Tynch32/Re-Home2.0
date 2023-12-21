@@ -8,4 +8,5 @@ module.exports = {
     logout : require('./users/logout'),
     productCart: require('./users/productCart'),
     faq: require('./users/faq'),
+    realizarCompra: require('./users/realizarCompra')
 }
