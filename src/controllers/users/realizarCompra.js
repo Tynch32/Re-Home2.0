@@ -14,10 +14,18 @@ module.exports = async (req, res) => {
     })
     productos.forEach(producto => {
       db.Venta.create({
-        product_id: producto.id,
+        product_id: producto.product.id,
         cantidad:producto.amount,
         precio:producto.product.price
       })
     });
-    return null
+    await db.Order.destroy({
+      where:{
+        user_id: req.session.userLogin.shoppingcartId
+      }
+    })
+    req.session.userLogin.cantItems=0;
+    res.cookie('grupoReHome10',req.session.userLogin,{
+      maxAge : 1000 * 60 * 60});
+    return res.redirect('/');
 }

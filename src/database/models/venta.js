@@ -21,6 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
+        tableName: "ventas",
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -30,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Venta.associate = function (models){
         Venta.belongsTo(models.Product,{
-            as: 'venta_product',
+            as: 'ventas_product',
             foreignKey: 'product_id'
         })
     }
