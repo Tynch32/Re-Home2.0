@@ -4,38 +4,29 @@ const paginate = require('express-paginate');
 
 module.exports = async (req,res) => {
     try {
-        const currentPage = req.query.page||0;
-        const [products, itemCount] = await Promise.all([
+        const [products] = await Promise.all([
             db.Product.findAll({
                 where: {
                     discount: {
                         [db.Sequelize.Op.gt]: 0,
                   } 
                 },
-                order: [['category_id', 'ASC']],
+                limit: 3,
+                order: [['price', 'DESC']],
                 include: ['product_image'],
-                limit: 10,
                 offset: req.skip,
             }),
-            db.Product.count({where: {
-                discount: {
-                    [db.Sequelize.Op.gt]: 0,
-              } 
-            }}),
         ]);
+        let product = await db.Product.findByPk(37,{include:['product_image']});
+        await products.push(product)
         const categories = await db.Category.findAll();
-        const pageCount = Math.ceil(itemCount / 10);
         let cookie = req.cookies.grupoReHome10_cookie;
 
-        res.render("oferts", {
-            currentPage,
+        res.render("topSales", {
             products,
             cookie,
             categories,
-            addPuntos,
-            pageCount,
-            itemCount,
-            pages: paginate.getArrayPages(req)(pageCount, pageCount, req.query.page),
+            addPuntos
         });
     } catch (errors) {
         console.log(errors);

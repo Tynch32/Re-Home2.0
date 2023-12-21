@@ -8,25 +8,19 @@
             <main class="home_main">
                 <div class="container products-wrapper">
                     <%- include('partials/banner') %>
-                    <div class="row d-inline-flex p-2">
+                    <div class="row d-inline-flex" >
                         <div class="menu_categoria_paginator">
                             <%- include('partials/filterCategory',{categories})%>
-                            <div class="menu_paginator">
-                                <%-include('partials/paginator',{currentPage,pages})%>
-                            </div>
                         </div>
-                        <% products.forEach(product =>  { %>
+                            <% products.forEach(product =>  { %>
                             <div class="col-12 col-lg-3 col-md-4 col-sm-6">
                                 <%- include('partials/productCard', {product}) %>
                             </div>
-                        <% }) %>
+                            <% }) %>
                     </div>
                 </div>
             </main>
             <%- include('partials/footer') %>
             <%- include('partials/scripts') %>
-            <% if(!cookie){ %>
-                <%- include('partials/cookieAlert',{cookie}) %>
-            <%} %>
     </body>
 </html>

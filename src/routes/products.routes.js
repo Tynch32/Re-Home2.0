@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 //Products Controller
-const {detail,add,create,edit,update,remove,search,addToCart,removeToCart, searchCategory, oferts} = require("../controllers/productsController");
+const {detail,add,create,edit,update,remove,search,addToCart,removeToCart, searchCategory, oferts,topSale} = require("../controllers/productsController");
 //Middlewares
 const adminCheck = require("../middlewares/adminCheck");
 const userCheck = require('../middlewares/userCheck');
@@ -29,6 +29,7 @@ router.get('/search',search);
 router.get('/searchCategory/:id',searchCategory);
 //ofertas
 router.get('/oferts',oferts);
+router.get('/topSales',topSale);
 
 
 //Add product to cart

@@ -9,5 +9,7 @@ module.exports = {
     addToCart: require('./products/addToCart'),
     removeToCart: require('./products/removeToCart'),
     searchCategory: require('./products/searchCategory'),
-    oferts: require('./products/oferts')
+    oferts: require('./products/oferts'),
+    topSale:require('./products/topSale')
+
 }
