@@ -1,16 +1,15 @@
-# Comision 21 - Grupo 10
-## ReHogar
+# Comision 21 - Grupo 11
+## Re-Hogar
 
-"REdiseña, REconstrui y REinventa tu hogar con ReHogar"
+"RE-Diseña, RE-Construi y RE-Inventa tu hogar con Re-Hogar"
 
 Integrante:
+-Martin Velazquez, 27 años de edad, cuento con 8 años de experiencia laboral en el sector gastronómico, a su vez cuento con la misma cantidad de años de experiencia en reparación y mantenimiento de computadoras. Resido en Jose C. Paz y encuentro gran fascinación por la ciencia y la tecnología.
 
-Martin Velazquez: Tengo 26 años, me dedico a reparacion de PC, trabajo hace 8 años en gastronomia, soy de Jose C. Paz, y me apasiona leer fantasia epica, ademas de la ciencia y la tecnologia.
+Descripción: El sitio proporciona una amplia gama de productos destinados a la construcción y remodelación del hogar, abarcando tanto materiales de construcción como artículos de ferretería y muebles.
 
-Descripción: El sitio ofrece productos para la construcción y re modelaje del hogar, así como también materiales de construcción y ferreteria.
+El público objetivo de nuestro servicio abarca a aquellos individuos dedicados a la construcción, así como a cualquier persona interesada en llevar a cabo proyectos de remodelación o cambios en su hogar. Nuestra oferta se extiende desde aquellos que buscan realizar pequeñas modificaciones, como la instalación de estanterías, hasta aquellos que emprenden proyectos más significativos, como la construcción de cobertizos.
 
-Publico al que apunta: Es a cualquier persona que se dedique a la construccion, asi como tambien a cualquier persona que quiera remodelar o hacer algun cambio en su hogar, desde colocar una estanteria hasta construir un cobertizo.
+Sitios de referencia por los productos a los que se apunta: https://www.menards.com/main/home.html https://www.easy.com.ar/ https://www.sodimac.com.ar/sodimac-ar/ https://ar.blackanddecker.global/ https://www.diy.com/
 
-(Martin) Sitios de referencia por los productos a los que se apunta: https://www.menards.com/main/home.html https://www.easy.com.ar/ https://www.sodimac.com.ar/sodimac-ar/ https://ar.blackanddecker.global/ https://www.diy.com/
-
-***Se requiere ejecutar el archivo Re-Hogar.sql en MySQL workbench para ver el proyecto completo***
+Ejecucion del sitio: Se requiere modificar los archivos .env con sus propios datos, asi mismo ejecutar el script Re-Hogar.sql para tener un ejemplo de base de datos con el cual esta vinculado el sitio.
