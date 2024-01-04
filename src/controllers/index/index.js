@@ -9,13 +9,13 @@ module.exports = async (req, res) => {
             db.Product.findAll({
                 order: [['category_id', 'ASC']],
                 include: ['product_image'],
-                limit: 10,
+                limit: 8,
                 offset: req.skip,
             }),
             db.Product.count(),
         ]);
         const categories = await db.Category.findAll();
-        const pageCount = Math.ceil(itemCount / 10);
+        const pageCount = Math.ceil(itemCount / 8);
         let cookie = req.cookies.grupoReHome10_cookie;
 
         res.render("index", {

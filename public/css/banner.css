@@ -1,5 +1,13 @@
-.banner_promo img{
+.banner_promo{
     width: 100%;
+    display: inline;
+}
+.carousel-inner img {
+    width: auto; /* Mantener el tamaño original de la imagen */
+    max-width: 70%; /* Asegurar que la imagen no se desborde del carousel */
+    height: auto; /* Ajustar la altura automáticamente para mantener la proporción original */
+    display: block;
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
 }
 @media (max-width:767px){
     .banner_promo{

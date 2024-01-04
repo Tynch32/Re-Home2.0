@@ -1,5 +1,12 @@
 .home_main{
   background-color: var(--sanAndres);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#carouselExampleAutoplaying {
+  align-items: center;
 }
 #home_main{
   background-color: var(--sanAndres);

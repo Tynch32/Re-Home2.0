@@ -16,6 +16,16 @@
   --cookieGradiente: linear-gradient(to top,rgb(26, 26, 26) 0%,#303030  100%);
 
 }
+.home_main{
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+.main_index{
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
 
 .form-control:focus {
   border: 1px solid var(--viñaDelMar);
@@ -66,6 +76,10 @@ footer {
   justify-content: space-between;
   align-items: flex-end;
 }
+.menu_paginator2{
+  display: flex;
+  justify-content: flex-end;
+}
 @media (max-width:488px){
   .menu_categoria_paginator{
     flex-direction: column;
@@ -77,10 +91,5 @@ footer {
   .menu_paginator2{
     display: flex;
     justify-content: center;
-  }
-}
-@media (min-width:768px){
-  .menu_paginator2{
-    display: none;
   }
 }

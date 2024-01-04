@@ -16,7 +16,7 @@ const cors = require('cors')
 const paginate= require('express-paginate')
 
 //
-app.use(paginate.middleware(10,50));
+app.use(paginate.middleware(8,50));
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 // view engine setup

@@ -1,0 +1,14 @@
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #00000023;
+}
+.carousel-inner {
+  transition: none;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: gold; /* Puedes cambiar "red" por el color que desees */
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+}
